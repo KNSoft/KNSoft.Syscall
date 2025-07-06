@@ -12,6 +12,7 @@ static __declspec(allocate(".ScThunk$ZZZ")) PSYSCALL_THUNK_DATA Syscall_Thunk_La
 
 static const UNICODE_STRING g_usWin32u = RTL_CONSTANT_STRING(L"win32u.dll");
 static SYSCALL_DLL Ntdll = { 0 }, Win32u = { 0 };
+static NTSTATUS Win32uStatus = STATUS_SUCCESS;
 
 static
 CHAR
@@ -38,7 +39,6 @@ NTSTATUS
 Syscall_InitThunk(
     _Inout_ PSYSCALL_THUNK_DATA* Thunk)
 {
-    NTSTATUS Status;
     PSYSCALL_DLL SyscallDll;
     PCSTR Symbol;
     CHAR DecodedName[128 + 1];
@@ -59,11 +59,16 @@ Syscall_InitThunk(
     {
         if (Win32u.DllBase == NULL)
         {
-            /* FIXME: Load from system directory only */
-            Status = LdrLoadDll(NULL, NULL, (PUNICODE_STRING)&g_usWin32u, &Win32u.DllBase);
-            if (!NT_SUCCESS(Status))
+            if (!NT_SUCCESS(Win32uStatus))
             {
-                return Status;
+                goto _Not_Found;
+            }
+            /* FIXME: Load from system directory only */
+            /* TODO: Use NtOpenSection instead */
+            Win32uStatus = LdrLoadDll(NULL, NULL, (PUNICODE_STRING)&g_usWin32u, &Win32u.DllBase);
+            if (!NT_SUCCESS(Win32uStatus))
+            {
+                goto _Not_Found;
             }
             Syscall_InitDll(TRUE, &Win32u);
         }
@@ -132,6 +137,7 @@ _Write_Char:
         return STATUS_SUCCESS;
     }
 
+_Not_Found:
     *Thunk = (PSYSCALL_THUNK_DATA)&Syscall_Proc_Not_Found;
     Syscall_Log(DPFLTR_ERROR_LEVEL, "[KNSoft.Syscall] Error: Symbol %hs not found\n", DecodedName);
     return STATUS_PROCEDURE_NOT_FOUND;

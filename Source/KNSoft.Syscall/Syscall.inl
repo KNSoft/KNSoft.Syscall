@@ -21,7 +21,7 @@ typedef union _SYSCALL_THUNK_DATA
     struct
     {
         SYSCALL_THUNK_DATA_HEADER Header;
-        _Field_size_bytes_(BlobSize + 1) BYTE Blob[];
+        _Field_size_bytes_(Header.BlobSize + 1) BYTE Blob[];
     };
     ULONG SSN;
 } SYSCALL_THUNK_DATA, *PSYSCALL_THUNK_DATA;
