@@ -6,47 +6,65 @@ OPTION EPILOGUE:NONE
 
 EXTERN Syscall_Proc:SIZE_T
 
-$SYSCALL_SSN MACRO Name:REQ
-
-    EXTERN @CatStr(<Syscall_ThunkData_>, <Name>, <:DWORD>)
-    EXITM <@CatStr(<Syscall_ThunkData_>, <Name>)>
-
-ENDM
+$SYSCALL_FUNCNAME TEXTEQU <>
+$SYSCALL_THUNKNAME TEXTEQU <>
 
 IFDEF _M_X64
 
-$SYSCALL MACRO Name:REQ, ArgCount
+$SYSCALL_FUNC MACRO Name:REQ, ArgCount
 
-    LOCAL FuncName
-    FuncName CATSTR <Syscall_>, <Name>
+    $SYSCALL_FUNCNAME CATSTR <Syscall_>, <Name>
 
+    $SYSCALL_FUNCNAME LABEL PROC
     ALIGN 16
-    FuncName PROC PUBLIC
-
-    mov eax, $SYSCALL_SSN(Name)
+    mov eax, $SYSCALL_THUNKNAME
     jmp [Syscall_Proc]
-
-    FuncName ENDP
 
 ENDM
 
 ELSEIFDEF _M_IX86
 
-$SYSCALL MACRO Name:REQ, ArgCount:REQ
+$SYSCALL_FUNC MACRO Name:REQ, ArgCount:REQ
 
-    LOCAL ArgSize, FuncName
+    LOCAL ArgSize
     ArgSize = ArgCount * 4
-    FuncName CATSTR <Syscall_>, <Name>, <@>, %(ArgSize)
+    $SYSCALL_FUNCNAME CATSTR <Syscall_>, <Name>, <@>, %(ArgSize)
 
+    $SYSCALL_FUNCNAME LABEL PROC
     ALIGN 16
-    FuncName PROC C PUBLIC
-
-    mov eax, $SYSCALL_SSN(Name)
+    mov eax, $SYSCALL_THUNKNAME
     call [Syscall_Proc]
     ret ArgSize
-
-    FuncName ENDP
 
 ENDM
 
 ENDIF
+
+$SYSCALL MACRO Name:REQ, NtUser:REQ, ArgCount:REQ, Blob:VARARG
+
+    LOCAL BlobSize, BlobArray
+    BlobSize = -1
+    BlobArray TEXTEQU <>
+    FOR p, <Blob>
+        BlobArray CATSTR BlobArray, <p, >
+        BlobSize = BlobSize + 1
+    ENDM
+    $SYSCALL_THUNKNAME CATSTR <Syscall_ThunkData_>, <Name>
+
+ScCode SEGMENT PARA READ EXECUTE ALIAS(".ScCode")
+    $SYSCALL_FUNC Name, ArgCount
+ScCode ENDS
+
+ScData SEGMENT DWORD READ WRITE ALIAS(".ScData")
+    ALIGN 4
+    $SYSCALL_THUNKNAME dd ((ArgCount AND 011111b) SHL 7) OR ((BlobSize AND 0111111b) SHL 1) OR (NtUser AND 01b)
+    SIZE_T offset $SYSCALL_FUNCNAME
+    db @SubStr(<%BlobArray>, 1, @SizeStr(<%BlobArray>) - 2)
+ScData ENDS
+
+ScThunk SEGMENT ALIGN(SIZEOF SIZE_T) READ WRITE ALIAS(".ScThunk$THK")
+    PUBLIC Name
+    Name SIZE_T offset $SYSCALL_THUNKNAME
+ScThunk ENDS
+
+ENDM

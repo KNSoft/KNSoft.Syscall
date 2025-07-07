@@ -158,7 +158,7 @@ Syscall_Init(VOID)
     if (Syscall_InitArch())
     {
         g_hrInitState = S_OK;
-        for (PSYSCALL_THUNK_DATA* Thunk = Syscall_Thunk_First; Thunk != Syscall_Thunk_Last; Thunk++)
+        for (PSYSCALL_THUNK_DATA* Thunk = Syscall_Thunk_First + 1; Thunk != Syscall_Thunk_Last; Thunk++)
         {
             if (*Thunk != NULL)
             {

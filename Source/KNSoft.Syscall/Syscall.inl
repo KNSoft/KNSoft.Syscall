@@ -4,19 +4,21 @@
 
 EXTERN_C_START
 
+#pragma pack(push, 1)
+
 typedef DECLSPEC_ALIGN(4) struct _SYSCALL_THUNK_DATA_HEADER
 {
     struct
     {
-        USHORT NtUser : 1;      // 0: ntdll, 1: win32u
-        USHORT BlobSize : 6;    // Size of Blob in bytes - 1, 0-63
-        USHORT ArgCount : 5;    // Number of arguments, 0-31
-        USHORT NotUsed : 4;     // Reserved
+        ULONG NtUser : 1;   // 0: ntdll, 1: win32u
+        ULONG BlobSize : 6; // Size of Blob in bytes - 1, 0-63
+        ULONG ArgCount : 5; // Number of arguments, 0-31
+        ULONG NotUsed : 20; // Reserved
     };
     PVOID Proc;
 } SYSCALL_THUNK_DATA_HEADER, *PSYSCALL_THUNK_DATA_HEADER;
 
-typedef union _SYSCALL_THUNK_DATA
+typedef DECLSPEC_ALIGN(4) union _SYSCALL_THUNK_DATA
 {
     struct
     {
@@ -25,6 +27,8 @@ typedef union _SYSCALL_THUNK_DATA
     };
     ULONG SSN;
 } SYSCALL_THUNK_DATA, *PSYSCALL_THUNK_DATA;
+
+#pragma pack(pop)
 
 LOGICAL
 Syscall_InitArch(VOID);
@@ -48,10 +52,10 @@ typedef DECLSPEC_ALIGN(4) struct _SYSCALL_DLL
 ULONG
 FORCEINLINE
 Syscall_GetName(
-    _In_ LOGICAL IsNtUser,
+    _In_ LOGICAL NtUser,
     _In_ PCSTR Name)
 {
-    if (!IsNtUser)
+    if (!NtUser)
     {
         if (*(PWORD)Name == 'wZ')
         {
@@ -70,7 +74,7 @@ Syscall_GetName(
 VOID
 FORCEINLINE
 Syscall_InitDll(
-    _In_ LOGICAL IsNtUser,
+    _In_ LOGICAL NtUser,
     _Inout_ PSYSCALL_DLL SyscallDll)
 {
     DWORD i;
@@ -84,7 +88,7 @@ Syscall_InitDll(
 
     for (i = SyscallDll->ExportTable->NumberOfNames; i > 0; i--)
     {
-        if (Syscall_GetName(IsNtUser, Add2Ptr(SyscallDll->DllBase, SyscallDll->NameRVAs[i - 1])) != 0)
+        if (Syscall_GetName(NtUser, Add2Ptr(SyscallDll->DllBase, SyscallDll->NameRVAs[i - 1])) != 0)
         {
             SyscallDll->SearchBegin = i;
             return;

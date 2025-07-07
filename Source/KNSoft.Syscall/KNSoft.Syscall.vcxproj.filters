@@ -4,12 +4,10 @@
     <None Include="Syscall.inl" />
     <None Include="Syscall.inc" />
     <None Include="packages.config" />
-    <None Include="Syscall.x64.asm" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Arch.c" />
     <ClCompile Include="Initializer.c" />
-    <ClCompile Include="Syscall.Thunks.c" />
     <ClCompile Include="Log.c" />
   </ItemGroup>
   <ItemGroup>
@@ -17,7 +15,1848 @@
     <ClInclude Include="Syscall.Thunks.h" />
   </ItemGroup>
   <ItemGroup>
+    <MASM Include="Syscall.x64.asm" />
     <MASM Include="Syscall.x86.asm" />
-    <MASM Include="Syscall.Thunks.Proc.asm" />
+    <MASM Include="Thunks\ScAcceptConnectPort.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAccessCheck.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAccessCheckAndAuditAlarm.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAccessCheckByType.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAccessCheckByTypeAndAuditAlarm.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAccessCheckByTypeResultList.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAccessCheckByTypeResultListAndAuditAlarm.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAccessCheckByTypeResultListAndAuditAlarmByHandle.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAcquireCrossVmMutant.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAcquireProcessActivityReference.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAddAtom.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAddAtomEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAddBootEntry.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAddDriverEntry.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAdjustGroupsToken.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAdjustPrivilegesToken.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAdjustTokenClaimsAndDeviceGroups.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlertResumeThread.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlertThread.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlertThreadByThreadId.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlertThreadByThreadIdEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAllocateLocallyUniqueId.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAllocateReserveObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAllocateUserPhysicalPages.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAllocateUserPhysicalPagesEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAllocateUuids.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAllocateVirtualMemory.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAllocateVirtualMemoryEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlpcAcceptConnectPort.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlpcCancelMessage.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlpcConnectPort.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlpcConnectPortEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlpcCreatePort.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlpcCreatePortSection.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlpcCreateResourceReserve.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlpcCreateSectionView.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlpcCreateSecurityContext.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlpcDeletePortSection.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlpcDeleteResourceReserve.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlpcDeleteSectionView.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlpcDeleteSecurityContext.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlpcDisconnectPort.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlpcImpersonateClientContainerOfPort.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlpcImpersonateClientOfPort.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlpcOpenSenderProcess.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlpcOpenSenderThread.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlpcQueryInformation.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlpcQueryInformationMessage.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlpcRevokeSecurityContext.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlpcSendWaitReceivePort.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAlpcSetInformation.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScApphelpCacheControl.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAreMappedFilesTheSame.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAssignProcessToJobObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScAssociateWaitCompletionPacket.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCallbackReturn.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCallEnclave.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCancelIoFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCancelIoFileEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCancelSynchronousIoFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCancelTimer.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCancelTimer2.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCancelWaitCompletionPacket.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScChangeProcessState.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScChangeThreadState.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScClearEvent.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScClose.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCloseObjectAuditAlarm.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCommitComplete.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCommitEnlistment.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCommitRegistryTransaction.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCommitTransaction.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCompactKeys.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCompareObjects.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCompareSigningLevels.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCompareTokens.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCompleteConnectPort.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCompressKey.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScConnectPort.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScContinue.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScContinueEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScConvertBetweenAuxiliaryCounterAndPerformanceCounter.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCopyFileChunk.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateCrossVmEvent.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateCrossVmMutant.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateDebugObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateDirectoryObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateDirectoryObjectEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateEnclave.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateEnlistment.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateEvent.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateEventPair.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateIoCompletion.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateIoRing.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateIRTimer.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateJobObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateJobSet.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateKey.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateKeyedEvent.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateKeyTransacted.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateLowBoxToken.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateMailslotFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateMutant.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateNamedPipeFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreatePagingFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreatePartition.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreatePort.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreatePrivateNamespace.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateProcess.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateProcessEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateProcessStateChange.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateProfile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateProfileEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateRegistryTransaction.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateResourceManager.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateSection.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateSectionEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateSemaphore.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateSymbolicLinkObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateThread.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateThreadEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateThreadStateChange.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateTimer.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateTimer2.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateToken.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateTokenEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateTransaction.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateTransactionManager.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateUserProcess.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateWaitablePort.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateWaitCompletionPacket.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateWnfStateName.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateWorkerFactory.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScDebugActiveProcess.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScDebugContinue.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScDelayExecution.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScDeleteAtom.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScDeleteBootEntry.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScDeleteDriverEntry.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScDeleteFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScDeleteKey.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScDeleteObjectAuditAlarm.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScDeletePrivateNamespace.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScDeleteValueKey.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScDeleteWnfStateData.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScDeleteWnfStateName.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScDeviceIoControlFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScDisableLastKnownGood.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScDisplayString.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScDrawText.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScDuplicateObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScDuplicateToken.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScEnableLastKnownGood.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScEnumerateBootEntries.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScEnumerateDriverEntries.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScEnumerateKey.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScEnumerateSystemEnvironmentValuesEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScEnumerateTransactionObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScEnumerateValueKey.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScExtendSection.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScFilterBootOption.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScFilterToken.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScFilterTokenEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScFindAtom.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScFlushBuffersFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScFlushBuffersFileEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScFlushInstallUILanguage.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScFlushInstructionCache.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScFlushKey.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScFlushProcessWriteBuffers.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScFlushVirtualMemory.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScFlushWriteBuffer.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScFreeUserPhysicalPages.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScFreeVirtualMemory.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScFreezeRegistry.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScFreezeTransactions.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScFsControlFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScGetCachedSigningLevel.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScGetCompleteWnfStateSubscription.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScGetContextThread.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScGetCurrentProcessorNumber.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScGetCurrentProcessorNumberEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScGetDevicePowerState.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScGetMUIRegistryInfo.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScGetNextProcess.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScGetNextThread.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScGetNlsSectionPtr.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScGetNotificationResourceManager.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScGetPlugPlayEvent.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScGetWriteWatch.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScImpersonateAnonymousToken.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScImpersonateClientOfPort.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScImpersonateThread.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScInitializeEnclave.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScInitializeNlsFiles.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScInitializeRegistry.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScInitiatePowerAction.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScIsProcessInJob.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScIsSystemResumeAutomatic.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScIsUILanguageComitted.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScListenPort.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScLoadDriver.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScLoadEnclaveData.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScLoadKey.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScLoadKey2.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScLoadKey3.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScLoadKeyEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScLockFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScLockProductActivationKeys.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScLockRegistryKey.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScLockVirtualMemory.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScMakePermanentObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScMakeTemporaryObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScManagePartition.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScMapCMFModule.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScMapUserPhysicalPages.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScMapUserPhysicalPagesScatter.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScMapViewOfSection.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScMapViewOfSectionEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScModifyBootEntry.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScModifyDriverEntry.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScNotifyChangeDirectoryFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScNotifyChangeDirectoryFileEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScNotifyChangeKey.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScNotifyChangeMultipleKeys.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScNotifyChangeSession.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenDirectoryObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenEnlistment.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenEvent.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenEventPair.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenIoCompletion.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenJobObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenKey.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenKeyedEvent.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenKeyEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenKeyTransacted.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenKeyTransactedEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenMutant.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenObjectAuditAlarm.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenPartition.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenPrivateNamespace.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenProcess.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenProcessToken.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenProcessTokenEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenRegistryTransaction.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenResourceManager.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenSection.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenSemaphore.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenSession.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenSymbolicLinkObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenThread.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenThreadToken.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenThreadTokenEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenTimer.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenTransaction.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenTransactionManager.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScPlugPlayControl.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScPowerInformation.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScPrepareComplete.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScPrepareEnlistment.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScPrePrepareComplete.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScPrePrepareEnlistment.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScPrivilegeCheck.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScPrivilegedServiceAuditAlarm.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScPrivilegeObjectAuditAlarm.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScPropagationComplete.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScPropagationFailed.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScProtectVirtualMemory.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScPssCaptureVaSpaceBulk.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScPulseEvent.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryAttributesFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryAuxiliaryCounterFrequency.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryBootEntryOrder.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryBootOptions.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryDebugFilterState.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryDefaultLocale.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryDefaultUILanguage.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryDirectoryFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryDirectoryFileEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryDirectoryObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryDriverEntryOrder.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryEaFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryEvent.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryFullAttributesFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryInformationAtom.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryInformationByName.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryInformationCpuPartition.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryInformationEnlistment.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryInformationFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryInformationJobObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryInformationPort.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryInformationProcess.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryInformationResourceManager.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryInformationThread.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryInformationToken.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryInformationTransaction.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryInformationTransactionManager.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryInformationWorkerFactory.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryInstallUILanguage.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryIntervalProfile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryIoCompletion.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryIoRingCapabilities.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryKey.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryLicenseValue.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryMultipleValueKey.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryMutant.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryOpenSubKeys.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryOpenSubKeysEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryPerformanceCounter.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryPortInformationProcess.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryQuotaInformationFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQuerySection.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQuerySecurityAttributesToken.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQuerySecurityObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQuerySecurityPolicy.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQuerySemaphore.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQuerySymbolicLinkObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQuerySystemEnvironmentValue.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQuerySystemEnvironmentValueEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQuerySystemInformation.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQuerySystemInformationEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQuerySystemTime.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryTimer.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryTimerResolution.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryValueKey.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryVirtualMemory.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryVolumeInformationFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryWnfStateData.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueryWnfStateNameInformation.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueueApcThread.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueueApcThreadEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScQueueApcThreadEx2.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScRaiseException.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScRaiseHardError.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScReadFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScReadFileScatter.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScReadOnlyEnlistment.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScReadRequestData.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScReadVirtualMemory.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScReadVirtualMemoryEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScRecoverEnlistment.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScRecoverResourceManager.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScRecoverTransactionManager.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScRegisterProtocolAddressInformation.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScRegisterThreadTerminatePort.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScReleaseKeyedEvent.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScReleaseMutant.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScReleaseSemaphore.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScReleaseWorkerFactoryWorker.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScRemoveIoCompletion.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScRemoveIoCompletionEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScRemoveProcessDebug.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScRenameKey.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScRenameTransactionManager.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScReplaceKey.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScReplacePartitionUnit.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScReplyPort.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScReplyWaitReceivePort.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScReplyWaitReceivePortEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScReplyWaitReplyPort.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScRequestPort.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScRequestWaitReplyPort.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScResetEvent.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScResetWriteWatch.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScRestoreKey.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScResumeProcess.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScResumeThread.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScRevertContainerImpersonation.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScRollbackComplete.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScRollbackEnlistment.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScRollbackRegistryTransaction.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScRollbackTransaction.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScRollforwardTransactionManager.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSaveKey.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSaveKeyEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSaveMergedKeys.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSecureConnectPort.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSerializeBoot.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetBootEntryOrder.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetBootOptions.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetCachedSigningLevel.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetCachedSigningLevel2.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetContextThread.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetDebugFilterState.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetDefaultHardErrorPort.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetDefaultLocale.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetDefaultUILanguage.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetDriverEntryOrder.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetEaFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetEvent.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetEventBoostPriority.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetEventEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetHighEventPair.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetHighWaitLowEventPair.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetInformationDebugObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetInformationEnlistment.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetInformationFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetInformationIoRing.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetInformationJobObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetInformationKey.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetInformationObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetInformationProcess.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetInformationResourceManager.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetInformationSymbolicLink.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetInformationThread.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetInformationToken.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetInformationTransaction.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetInformationTransactionManager.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetInformationVirtualMemory.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetInformationWorkerFactory.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetIntervalProfile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetIoCompletion.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetIoCompletionEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetIRTimer.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetLdtEntries.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetLowEventPair.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetLowWaitHighEventPair.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetQuotaInformationFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetSecurityObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetSystemEnvironmentValue.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetSystemEnvironmentValueEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetSystemInformation.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetSystemPowerState.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetSystemTime.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetThreadExecutionState.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetTimer.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetTimer2.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetTimerEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetTimerResolution.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetUuidSeed.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetValueKey.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetVolumeInformationFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetWnfProcessNotificationEvent.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScShutdownSystem.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScShutdownWorkerFactory.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSignalAndWaitForSingleObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSinglePhaseReject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScStartProfile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScStopProfile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSubmitIoRing.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSubscribeWnfStateChange.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSuspendProcess.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSuspendThread.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSystemDebugControl.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScTerminateEnclave.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScTerminateJobObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScTerminateProcess.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScTerminateThread.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScTestAlert.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScThawRegistry.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScThawTransactions.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScTraceControl.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScTraceEvent.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScTranslateFilePath.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUmsThreadYield.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUnloadDriver.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUnloadKey.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUnloadKey2.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUnloadKeyEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUnlockFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUnlockVirtualMemory.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUnmapViewOfSection.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUnmapViewOfSectionEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUnsubscribeWnfStateChange.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUpdateWnfStateData.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserAttachThreadInput.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserBeginPaint.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserBlockInput.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserBuildHwndList.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserBuildNameList.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserBuildPropList.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserCalculatePopupWindowPosition.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserCanCurrentThreadChangeForeground.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserCheckAccessForIntegrityLevel.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserCheckProcessForClipboardAccess.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserChildWindowFromPointEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserClipCursor.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserCloseDesktop.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserCloseWindowStation.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserConsoleControl.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserCopyAcceleratorTable.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserCreateAcceleratorTable.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserCreateWindowStation.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserDeleteMenu.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserDestroyMenu.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserDestroyWindow.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserDisableProcessWindowsGhosting.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserDragDetect.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserDragObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserDrawAnimatedRects.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserEndMenu.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserEndPaint.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserEnumDisplayMonitors.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserExcludeUpdateRgn.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserFindWindowEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserFlashWindowEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetAncestor.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetCaretBlinkTime.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetCaretPos.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetClassName.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetClipCursor.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetComboBoxInfo.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetCurrentInputMessageSource.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetCursor.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetCursorInfo.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetDCEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetDisplayAutoRotationPreferences.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetDoubleClickTime.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetForegroundWindow.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetGuiResources.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetGUIThreadInfo.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetIconInfo.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetIconSize.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetLayeredWindowAttributes.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetListBoxInfo.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetMenuBarInfo.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetMenuItemRect.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetMouseMovePointsEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetObjectInformation.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetProcessWindowStation.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetRawInputData.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetRawInputDeviceList.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetRegisteredRawInputDevices.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetSendMessageReceiver.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetSystemMenu.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetThreadDesktop.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetThreadState.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetTitleBarInfo.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetWindowDC.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGetWindowPlacement.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserGhostWindowFromHungWindow.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserHiliteMenuItem.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserHungWindowFromGhostWindow.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserInternalGetWindowIcon.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserInternalGetWindowText.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserInvalidateRect.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserInvalidateRgn.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserIsTouchWindow.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserKillTimer.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserLockWorkStation.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserLogicalToPhysicalPoint.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserMenuItemFromPoint.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserMoveWindow.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserOpenDesktop.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserOpenInputDesktop.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserOpenWindowStation.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserPhysicalToLogicalPoint.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserPrintWindow.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserQueryInformationThread.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserQueryWindow.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserRaiseLowerShellWindow.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserRealChildWindowFromPoint.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserRedrawWindow.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserRegisterHotKey.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserRemoveMenu.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSendInput.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSetActiveWindow.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSetAdditionalForegroundBoostProcesses.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSetAdditionalPowerThrottlingProcess.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSetCapture.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSetChildWindowNoActivate.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSetClassWord.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSetCursorPos.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSetFocus.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSetForegroundWindowForApplication.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSetInformationThread.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSetLayeredWindowAttributes.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSetMessageExtraInfo.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSetProcessRestrictionExemption.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSetProcessWindowStation.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSetThreadDesktop.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSetTimer.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSetWindowPlacement.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSetWindowPos.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSetWindowStationUser.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSetWindowWord.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserShellForegroundBoostProcess.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserShowCursor.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserShowWindow.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserShowWindowAsync.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserShutdownBlockReasonQuery.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserShutdownReasonDestroy.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSwitchDesktop.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserTestForInteractiveUser.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserTrackMouseEvent.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserTrackPopupMenuEx.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserUnhookWinEvent.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserUnregisterHotKey.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserUserHandleGrantAccess.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserValidateRect.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserWindowFromDC.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserWindowFromPhysicalPoint.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserWindowFromPoint.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScVdmControl.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScWaitForAlertByThreadId.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScWaitForDebugEvent.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScWaitForKeyedEvent.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScWaitForMultipleObjects.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScWaitForMultipleObjects32.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScWaitForSingleObject.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScWaitForWorkViaWorkerFactory.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScWaitHighEventPair.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScWaitLowEventPair.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScWorkerFactoryWorkerReady.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScWriteFile.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScWriteFileGather.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScWriteRequestData.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScWriteVirtualMemory.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScYieldExecution.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Thunks">
+      <UniqueIdentifier>{5600237a-574b-4c4f-992c-a421d7e50d20}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

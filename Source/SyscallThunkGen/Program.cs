@@ -3,7 +3,7 @@
  * Copyright (c) KNSoft.org (https://github.com/KNSoft). All rights reserved.
  * Licensed under the MIT license.
  * 
- * Usage: SyscallThunkGen Path-To-NDK-Dir Output-Directory
+ * Usage: ThunkGenerator Path-To-NDK-Dir Output-Directory
  */
 
 using System;
@@ -13,23 +13,8 @@ String CodeIncludeOnce = "#pragma once\r\n\r\n";
 String CodeIncludePublic = "#include <KNSoft/NDK/NDK.h>\r\n\r\n";
 String CodeCBegin = "EXTERN_C_START\r\n\r\n";
 String CodeCEnd = "EXTERN_C_END\r\n";
-
-String CodeThunksC = @"
-#include ""Syscall.inl""
-
-#pragma section("".ScData"", long, read, write)
-#pragma section("".ScThunk$THK"", long, read, write)
-
-#define DEFINE_THUNK(Name, NtUser, BlobSize, ArgCount, ...)\
-EXTERN_C FN_##Name Syscall_##Name;\
-__declspec(allocate("".ScData"")) DECLSPEC_ALIGN(4) struct\
-{\
-    SYSCALL_THUNK_DATA_HEADER Header;\
-    BYTE Blob[BlobSize + 1];\
-} Syscall_ThunkData_##Name = { { { NtUser, BlobSize, ArgCount }, &Syscall_##Name },  { __VA_ARGS__ } };\
-__declspec(allocate("".ScThunk$THK"")) FN_##Name * volatile Name = (FN_##Name *)&Syscall_ThunkData_##Name
-
-";
+String CodeAsmBegin = "INCLUDE Syscall.inc\r\n\r\n";
+String CodeAsmEnd = "END\r\n";
 
 String MaxName = String.Empty, MaxArg = String.Empty;
 Int32 MaxNameCount = 0, MaxArgCount = 0;
@@ -37,25 +22,18 @@ Int32 MaxNameCount = 0, MaxArgCount = 0;
 /* Initialize output file streams */
 
 StreamWriter ThunksH = File.CreateText(args[1] + @"\Syscall.Thunks.h");
-StreamWriter ThunksC = File.CreateText(args[1] + @"\Syscall.Thunks.c");
-StreamWriter ThunksAsm = File.CreateText(args[1] + @"\Syscall.Thunks.Proc.asm");
 
 ThunksH.Write(CodeIncludeOnce + CodeIncludePublic + CodeCBegin);
-ThunksC.Write(CodeThunksC);
-ThunksAsm.Write("INCLUDE Syscall.inc\r\n\r\nScCode SEGMENT PARA READ EXECUTE ALIAS(\".ScCode\")\r\n\r\n");
 
 ResolveFile(args[0] + @"\NT\ZwApi.h", false);
 ResolveFile(args[0] + @"\NT\Win32K\Win32KApi.h", true);
 
 ThunksH.Write(CodeCEnd);
-ThunksAsm.Write("\r\nScCode ENDS\r\n\r\nEND\r\n");
 
 Console.WriteLine("MaxName: {0} ({1})", MaxName, MaxNameCount);
 Console.WriteLine("MaxArg: {0} ({1})", MaxArg, MaxArgCount);
 
-ThunksAsm.Dispose();
 ThunksH.Dispose();
-ThunksC.Dispose();
 
 void ResolveFile(String Path, Boolean IsWin32u)
 {
@@ -119,7 +97,7 @@ void ResolveFile(String Path, Boolean IsWin32u)
                 ThunksH.WriteLine(FileContent[j]);
             }
         }
-        ThunksH.WriteLine("EXTERN_C FN_Sc" + Name + "* volatile Sc" + Name + ";");
+        ThunksH.WriteLine("EXTERN_C DECLSPEC_POINTERALIGN FN_Sc" + Name + "* volatile Sc" + Name + ";");
         ThunksH.WriteLine();
 
         /* Prepare thunk data */
@@ -211,11 +189,13 @@ void ResolveFile(String Path, Boolean IsWin32u)
             Name = "User" + Name;
         }
         Name = "Sc" + Name;
-        ThunksC.Write("DEFINE_THUNK(" + Name + ", " +
-                      (IsWin32u ? "1" : "0") + ", " +
-                      (BlobSize - 1).ToString() + ", " +
-                      ArgCount.ToString() + ", " +
-                      String.Join(", ", ThunkData) + ");\r\n");
-        ThunksAsm.Write("$SYSCALL " + Name + ", " + ArgCount.ToString() + "\r\n");
+
+        File.WriteAllText(args[1] + @"\Thunks\" + Name + ".asm",
+                          CodeAsmBegin +
+                          "$SYSCALL " + Name + ", " +
+                          (IsWin32u ? "1" : "0") + ", " +
+                          ArgCount.ToString() + ", " +
+                          String.Join(", ", ThunkData) + "\r\n\r\n" +
+                          CodeAsmEnd);
     }
 }
