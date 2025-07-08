@@ -3,9 +3,14 @@
 EXTERN_C PVOID Syscall_Proc_Not_Found;
 EXTERN_C PVOID Syscall_Proc_Not_Supported;
 
+#if defined(_M_X64)
+#define SYSCALL_PROC_STUB(Proc, ArgCount) ((PVOID)Proc)
+#elif defined(_M_IX86)
+#define SYSCALL_PROC_STUB(Proc, ArgCount) Add2Ptr(Proc, ArgCount * 8);
+#endif
+
 #pragma section(".ScThunk$AAA", long, read, write)
 #pragma section(".ScThunk$ZZZ", long, read, write)
-// #pragma comment(linker, "/merge:.ScThunk=.data")
 
 static __declspec(allocate(".ScThunk$AAA")) PSYSCALL_THUNK_DATA Syscall_Thunk_First[] = { NULL };
 static __declspec(allocate(".ScThunk$ZZZ")) PSYSCALL_THUNK_DATA Syscall_Thunk_Last[] = { NULL };
@@ -127,7 +132,7 @@ _Write_Char:
                                                 SyscallDll->FuncRVAs[SyscallDll->NameOrdinals[i - 1]]),
                                         &SSN))
         {
-            *Thunk = (PSYSCALL_THUNK_DATA)&Syscall_Proc_Not_Supported;
+            *Thunk = (PSYSCALL_THUNK_DATA)SYSCALL_PROC_STUB(&Syscall_Proc_Not_Supported, ThunkData->Header.ArgCount);
             Syscall_Log(DPFLTR_ERROR_LEVEL, "[KNSoft.Syscall] Error: Initialize %hs failed\n", Symbol);
             return STATUS_NOT_SUPPORTED;
         }
@@ -138,7 +143,7 @@ _Write_Char:
     }
 
 _Not_Found:
-    *Thunk = (PSYSCALL_THUNK_DATA)&Syscall_Proc_Not_Found;
+    *Thunk = (PSYSCALL_THUNK_DATA)SYSCALL_PROC_STUB(&Syscall_Proc_Not_Found, ThunkData->Header.ArgCount);
     Syscall_Log(DPFLTR_ERROR_LEVEL, "[KNSoft.Syscall] Error: Symbol %hs not found\n", DecodedName);
     return STATUS_PROCEDURE_NOT_FOUND;
 }

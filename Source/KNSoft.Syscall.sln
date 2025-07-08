@@ -10,7 +10,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KNSoft.Syscall", "KNSoft.Sy
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SyscallInfo", "SyscallInfo\SyscallInfo.vcxproj", "{6F1779F4-DBBD-4EFA-8909-5C66878348F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThunkGenerator", "SyscallThunkGen\ThunkGenerator.csproj", "{7A9E3D8D-5A3D-4073-8EB1-D7B138CFA4B5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThunkGenerator", "ThunkGenerator\ThunkGenerator.csproj", "{7A9E3D8D-5A3D-4073-8EB1-D7B138CFA4B5}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest", "UnitTest\UnitTest.vcxproj", "{9B5F6DC0-FEF3-4466-A18F-EE2CBBB523C9}"
 	ProjectSection(ProjectDependencies) = postProject

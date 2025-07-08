@@ -4,25 +4,85 @@ INCLUDE Syscall.inc
 
 ASSUME fs:NOTHING
 
-; FIXME / WIP
+; STATUS_PROCEDURE_NOT_FOUND
 $PUBLIC_LABEL Syscall_Proc_Not_Found
     ALIGN 16
-    shr eax, 7
-    and eax, 011111b
-    shl eax, 2
-    add esp, eax
     mov eax, 0C000007Ah ; STATUS_PROCEDURE_NOT_FOUND
-    retn
+    db 0C2h, 000h, 000h ; ret 0
+    mov eax, 0C000007Ah
+    ret 4 * 1
+    mov eax, 0C000007Ah
+    ret 4 * 2
+    mov eax, 0C000007Ah
+    ret 4 * 3
+    mov eax, 0C000007Ah
+    ret 4 * 4
+    mov eax, 0C000007Ah
+    ret 4 * 5
+    mov eax, 0C000007Ah
+    ret 4 * 6
+    mov eax, 0C000007Ah
+    ret 4 * 7
+    mov eax, 0C000007Ah
+    ret 4 * 8
+    mov eax, 0C000007Ah
+    ret 4 * 9
+    mov eax, 0C000007Ah
+    ret 4 * 10
+    mov eax, 0C000007Ah
+    ret 4 * 11
+    mov eax, 0C000007Ah
+    ret 4 * 12
+    mov eax, 0C000007Ah
+    ret 4 * 13
+    mov eax, 0C000007Ah
+    ret 4 * 14
+    mov eax, 0C000007Ah
+    ret 4 * 15
+    mov eax, 0C000007Ah
+    ret 4 * 16
+    mov eax, 0C000007Ah
+    ret 4 * 17
 
-; FIXME / WIP
+; STATUS_NOT_SUPPORTED
 $PUBLIC_LABEL Syscall_Proc_Not_Supported
     ALIGN 16
-    shr eax, 7
-    and eax, 011111b
-    shl eax, 2
-    add esp, eax
     mov eax, 0C00000BBh ; STATUS_NOT_SUPPORTED
-    retn
+    db 0C2h, 000h, 000h ; ret 0
+    mov eax, 0C00000BBh
+    ret 4 * 1
+    mov eax, 0C00000BBh
+    ret 4 * 2
+    mov eax, 0C00000BBh
+    ret 4 * 3
+    mov eax, 0C00000BBh
+    ret 4 * 4
+    mov eax, 0C00000BBh
+    ret 4 * 5
+    mov eax, 0C00000BBh
+    ret 4 * 6
+    mov eax, 0C00000BBh
+    ret 4 * 7
+    mov eax, 0C00000BBh
+    ret 4 * 8
+    mov eax, 0C00000BBh
+    ret 4 * 9
+    mov eax, 0C00000BBh
+    ret 4 * 10
+    mov eax, 0C00000BBh
+    ret 4 * 11
+    mov eax, 0C00000BBh
+    ret 4 * 12
+    mov eax, 0C00000BBh
+    ret 4 * 13
+    mov eax, 0C00000BBh
+    ret 4 * 14
+    mov eax, 0C00000BBh
+    ret 4 * 15
+    mov eax, 0C00000BBh
+    ret 4 * 16
+    mov eax, 0C00000BBh
+    ret 4 * 17
 
 $PUBLIC_LABEL Syscall_Proc_X86
     ALIGN 16
