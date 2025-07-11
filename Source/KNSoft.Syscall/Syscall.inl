@@ -6,19 +6,19 @@ EXTERN_C_START
 
 #pragma pack(push, 1)
 
-typedef DECLSPEC_ALIGN(4) struct _SYSCALL_THUNK_DATA_HEADER
+typedef struct _SYSCALL_THUNK_DATA_HEADER
 {
     struct
     {
-        ULONG NtUser : 1;   // 0: ntdll, 1: win32u
-        ULONG BlobSize : 6; // Size of Blob in bytes - 1, 0-63
-        ULONG ArgCount : 5; // Number of arguments, 0-31
-        ULONG NotUsed : 20; // Reserved
+        USHORT NtUser : 1;      // 0: ntdll, 1: win32u
+        USHORT BlobSize : 6;    // Size of Blob in bytes - 1, 0-63
+        USHORT ArgCount : 5;    // Number of arguments, 0-31
+        USHORT NotUsed : 4;     // Reserved
     };
     PVOID Proc;
 } SYSCALL_THUNK_DATA_HEADER, *PSYSCALL_THUNK_DATA_HEADER;
 
-typedef DECLSPEC_ALIGN(4) union _SYSCALL_THUNK_DATA
+typedef union _SYSCALL_THUNK_DATA
 {
     struct
     {
@@ -27,6 +27,10 @@ typedef DECLSPEC_ALIGN(4) union _SYSCALL_THUNK_DATA
     };
     ULONG SSN;
 } SYSCALL_THUNK_DATA, *PSYSCALL_THUNK_DATA;
+
+_STATIC_ASSERT(UFIELD_OFFSET(SYSCALL_THUNK_DATA, Header.Proc) == 2);
+_STATIC_ASSERT(sizeof(SYSCALL_THUNK_DATA_HEADER) == sizeof(USHORT) + sizeof(PVOID));
+_STATIC_ASSERT(sizeof(SYSCALL_THUNK_DATA) == sizeof(SYSCALL_THUNK_DATA_HEADER));
 
 #pragma pack(pop)
 

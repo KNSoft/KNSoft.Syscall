@@ -4,7 +4,7 @@ include KNSoft\NDK\Assembly\NDK.inc
 OPTION PROLOGUE:NONE
 OPTION EPILOGUE:NONE
 
-EXTERN Syscall_Proc:SIZE_T
+EXTERN Syscall_FastSystemCall:SIZE_T
 
 $SYSCALL_FUNCNAME TEXTEQU <>
 $SYSCALL_THUNKNAME TEXTEQU <>
@@ -17,8 +17,8 @@ $SYSCALL_FUNC MACRO Name:REQ, ArgCount
 
     $SYSCALL_FUNCNAME LABEL PROC
     ALIGN 16
-    mov eax, $SYSCALL_THUNKNAME
-    jmp [Syscall_Proc]
+    mov eax, dword ptr $SYSCALL_THUNKNAME
+    jmp [Syscall_FastSystemCall]
 
 ENDM
 
@@ -32,8 +32,8 @@ $SYSCALL_FUNC MACRO Name:REQ, ArgCount:REQ
 
     $SYSCALL_FUNCNAME LABEL PROC
     ALIGN 16
-    mov eax, $SYSCALL_THUNKNAME
-    call [Syscall_Proc]
+    mov eax, dword ptr $SYSCALL_THUNKNAME
+    call [Syscall_FastSystemCall]
     ret ArgSize
 
 ENDM
@@ -57,7 +57,7 @@ ScCode ENDS
 
 ScData SEGMENT DWORD READ WRITE ALIAS(".ScData")
     ALIGN 4
-    $SYSCALL_THUNKNAME dd ((ArgCount AND 011111b) SHL 7) OR ((BlobSize AND 0111111b) SHL 1) OR (NtUser AND 01b)
+    $SYSCALL_THUNKNAME dw ((ArgCount AND 011111b) SHL 7) OR ((BlobSize AND 0111111b) SHL 1) OR (NtUser AND 01b)
     SIZE_T offset $SYSCALL_FUNCNAME
     db @SubStr(<%BlobArray>, 1, @SizeStr(<%BlobArray>) - 2)
 ScData ENDS

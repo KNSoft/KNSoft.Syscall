@@ -165,16 +165,15 @@ Syscall_Init(VOID)
         g_hrInitState = S_OK;
         for (PSYSCALL_THUNK_DATA* Thunk = Syscall_Thunk_First + 1; Thunk != Syscall_Thunk_Last; Thunk++)
         {
-            if (*Thunk != NULL)
+            if (*Thunk != NULL && !NT_SUCCESS(Syscall_InitThunk(Thunk)))
             {
-                if (!NT_SUCCESS(Syscall_InitThunk(Thunk)))
-                {
-                    g_hrInitState = S_FALSE;
-                }
+                /* Not all thunks initialized successfully */
+                g_hrInitState = S_FALSE;
             }
         }
     } else
     {
+        /* Unimplemented, welcome to send PR */
         g_hrInitState = E_NOTIMPL;
     }
 

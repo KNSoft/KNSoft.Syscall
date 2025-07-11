@@ -20,4 +20,6 @@ HRESULT
 NTAPI
 Syscall_Init(VOID);
 
+EXTERN_C PVOID* Syscall_FastSystemCall;
+
 EXTERN_C_END

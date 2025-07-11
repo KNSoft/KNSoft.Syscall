@@ -5349,6 +5349,77 @@ EXTERN_C DECLSPEC_POINTERALIGN FN_ScWorkerFactoryWorkerReady* volatile ScWorkerF
 typedef
 NTSTATUS
 NTAPI
+FN_ScWow64AllocateVirtualMemory64(
+    _In_ HANDLE ProcessHandle,
+    _Inout_ _At_(*BaseAddress,
+                 _Readable_bytes_(*RegionSize)
+                 _Writable_bytes_(*RegionSize)
+                 _Post_readable_byte_size_(*RegionSize)) PULONGLONG BaseAddress,
+    _In_ ULONGLONG ZeroBits,
+    _Inout_ PULONGLONG RegionSize,
+    _In_ ULONG AllocationType,
+    _In_ ULONG Protect
+    );
+EXTERN_C DECLSPEC_POINTERALIGN FN_ScWow64AllocateVirtualMemory64* volatile ScWow64AllocateVirtualMemory64;
+
+typedef
+NTSTATUS
+NTAPI
+FN_ScWow64GetNativeSystemInformation(
+    _In_ SYSTEM_INFORMATION_CLASS SystemInformationClass,
+    _In_ PVOID NativeSystemInformation,
+    _In_ ULONG InformationLength,
+    _Out_opt_ PULONG ReturnLength
+    );
+EXTERN_C DECLSPEC_POINTERALIGN FN_ScWow64GetNativeSystemInformation* volatile ScWow64GetNativeSystemInformation;
+
+typedef
+BOOLEAN
+NTAPI
+FN_ScWow64IsProcessorFeaturePresent(
+    _In_ ULONG ProcessorFeature
+    );
+EXTERN_C DECLSPEC_POINTERALIGN FN_ScWow64IsProcessorFeaturePresent* volatile ScWow64IsProcessorFeaturePresent;
+
+typedef
+NTSTATUS
+NTAPI
+FN_ScWow64QueryInformationProcess64(
+    _In_ HANDLE ProcessHandle,
+    _In_ PROCESSINFOCLASS ProcessInformationClass,
+    _Out_writes_bytes_to_(ProcessInformationLength, *ReturnLength) PVOID ProcessInformation,
+    _In_ ULONG ProcessInformationLength,
+    _Out_opt_ PULONG ReturnLength
+    );
+EXTERN_C DECLSPEC_POINTERALIGN FN_ScWow64QueryInformationProcess64* volatile ScWow64QueryInformationProcess64;
+
+typedef
+NTSTATUS
+NTAPI
+FN_ScWow64ReadVirtualMemory64(
+    _In_ HANDLE ProcessHandle,
+    _In_ ULONGLONG BaseAddress,
+    _Out_writes_bytes_to_(NumberOfBytesToRead, *NumberOfBytesRead) PVOID Buffer,
+    _In_ ULONGLONG NumberOfBytesToRead,
+    _Out_opt_ PULONGLONG NumberOfBytesRead
+    );
+EXTERN_C DECLSPEC_POINTERALIGN FN_ScWow64ReadVirtualMemory64* volatile ScWow64ReadVirtualMemory64;
+
+typedef
+NTSTATUS
+NTAPI
+FN_ScWow64WriteVirtualMemory64(
+    _In_ HANDLE ProcessHandle,
+    _In_ ULONGLONG BaseAddress,
+    _In_reads_bytes_(NumberOfBytesToWrite) PVOID Buffer,
+    _In_ ULONGLONG NumberOfBytesToWrite,
+    _Out_opt_ PULONGLONG NumberOfBytesWritten
+    );
+EXTERN_C DECLSPEC_POINTERALIGN FN_ScWow64WriteVirtualMemory64* volatile ScWow64WriteVirtualMemory64;
+
+typedef
+NTSTATUS
+NTAPI
 FN_ScWriteFile(
     _In_ HANDLE FileHandle,
     _In_opt_ HANDLE Event,

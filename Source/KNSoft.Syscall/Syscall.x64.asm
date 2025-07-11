@@ -12,13 +12,13 @@ $PUBLIC_LABEL Syscall_Proc_Not_Supported
     mov eax, 0C00000BBh ; STATUS_NOT_SUPPORTED
     ret
 
-$PUBLIC_LABEL Syscall_Proc_GE_Win11_X64
+$PUBLIC_LABEL Syscall_Proc_Fast
     ALIGN 16
     mov r10, rcx
     syscall
     ret
 
-$PUBLIC_LABEL Syscall_Proc_Int2E_GE_Win11_X64
+$PUBLIC_LABEL Syscall_Proc_Int2E
     ALIGN 16
     mov r10, rcx
     int 02Eh
