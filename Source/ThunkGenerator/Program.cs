@@ -16,8 +16,8 @@ String CodeCEnd = "EXTERN_C_END\r\n";
 String CodeAsmBegin = "INCLUDE Syscall.inc\r\n\r\n";
 String CodeAsmEnd = "END\r\n";
 
-String MaxName = String.Empty, MaxArg = String.Empty;
-Int32 MaxNameCount = 0, MaxArgCount = 0;
+String MinName = String.Empty, MaxName = String.Empty, MaxArg = String.Empty;
+Int32 MinNameCount = Int32.MaxValue, MaxNameCount = 0, MaxArgCount = 0;
 
 /* Initialize output file streams */
 
@@ -30,6 +30,7 @@ ResolveFile(args[0] + @"\NT\Win32K\Win32KApi.h", true);
 
 ThunksH.Write(CodeCEnd);
 
+Console.WriteLine("MinName: {0} ({1})", MinName, MinNameCount);
 Console.WriteLine("MaxName: {0} ({1})", MaxName, MaxNameCount);
 Console.WriteLine("MaxArg: {0} ({1})", MaxArg, MaxArgCount);
 
@@ -97,7 +98,7 @@ void ResolveFile(String Path, Boolean IsWin32u)
                 ThunksH.WriteLine(FileContent[j]);
             }
         }
-        ThunksH.WriteLine("EXTERN_C DECLSPEC_POINTERALIGN FN_Sc" + Name + "* volatile Sc" + Name + ";");
+        ThunksH.WriteLine("EXTERN_C FN_Sc" + Name + "* volatile Sc" + Name + ";");
         ThunksH.WriteLine();
 
         /* Prepare thunk data */
@@ -109,6 +110,11 @@ void ResolveFile(String Path, Boolean IsWin32u)
         {
             MaxNameCount = Name.Length;
             MaxName = Name;
+        }
+        if (Name.Length < MinNameCount)
+        {
+            MinNameCount = Name.Length;
+            MinName = Name;
         }
         if (Name.Length > 128)
         {

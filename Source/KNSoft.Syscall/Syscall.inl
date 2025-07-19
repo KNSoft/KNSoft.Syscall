@@ -28,11 +28,11 @@ typedef union _SYSCALL_THUNK_DATA
     ULONG SSN;
 } SYSCALL_THUNK_DATA, *PSYSCALL_THUNK_DATA;
 
+#pragma pack(pop)
+
 _STATIC_ASSERT(UFIELD_OFFSET(SYSCALL_THUNK_DATA, Header.Proc) == 2);
 _STATIC_ASSERT(sizeof(SYSCALL_THUNK_DATA_HEADER) == sizeof(USHORT) + sizeof(PVOID));
 _STATIC_ASSERT(sizeof(SYSCALL_THUNK_DATA) == sizeof(SYSCALL_THUNK_DATA_HEADER));
-
-#pragma pack(pop)
 
 LOGICAL
 Syscall_InitArch(VOID);
@@ -72,6 +72,7 @@ Syscall_GetName(
             return 6;
         }
     }
+
     return 0;
 }
 
@@ -98,9 +99,7 @@ Syscall_InitDll(
             return;
         }
     }
-
     SyscallDll->SearchBegin = SyscallDll->ExportTable->NumberOfNames;
-    return;
 }
 
 EXTERN_C_END

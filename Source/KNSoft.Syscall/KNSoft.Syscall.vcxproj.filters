@@ -4,6 +4,7 @@
     <None Include="Syscall.inl" />
     <None Include="Syscall.inc" />
     <None Include="packages.config" />
+    <None Include="Syscall.x86.asm" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Arch.c" />
@@ -16,7 +17,6 @@
   </ItemGroup>
   <ItemGroup>
     <MASM Include="Syscall.x64.asm" />
-    <MASM Include="Syscall.x86.asm" />
     <MASM Include="Thunks\ScAcceptConnectPort.asm">
       <Filter>Thunks</Filter>
     </MASM>

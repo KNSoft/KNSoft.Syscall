@@ -2,7 +2,8 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="Main.c" />
-    <ClCompile Include="Test.c" />
+    <ClCompile Include="MemPageAlloc.c" />
+    <ClCompile Include="NotFound.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

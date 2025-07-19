@@ -15,7 +15,7 @@ FN_ScAcceptConnectPort(
     _Inout_opt_ PPORT_VIEW ServerView,
     _Out_opt_ PREMOTE_PORT_VIEW ClientView
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAcceptConnectPort* volatile ScAcceptConnectPort;
+EXTERN_C FN_ScAcceptConnectPort* volatile ScAcceptConnectPort;
 
 typedef
 NTSTATUS
@@ -30,7 +30,7 @@ FN_ScAccessCheck(
     _Out_ PACCESS_MASK GrantedAccess,
     _Out_ PNTSTATUS AccessStatus
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAccessCheck* volatile ScAccessCheck;
+EXTERN_C FN_ScAccessCheck* volatile ScAccessCheck;
 
 typedef
 NTSTATUS
@@ -48,7 +48,7 @@ FN_ScAccessCheckAndAuditAlarm(
     _Out_ PNTSTATUS AccessStatus,
     _Out_ PBOOLEAN GenerateOnClose
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAccessCheckAndAuditAlarm* volatile ScAccessCheckAndAuditAlarm;
+EXTERN_C FN_ScAccessCheckAndAuditAlarm* volatile ScAccessCheckAndAuditAlarm;
 
 typedef
 NTSTATUS
@@ -66,7 +66,7 @@ FN_ScAccessCheckByType(
     _Out_ PACCESS_MASK GrantedAccess,
     _Out_ PNTSTATUS AccessStatus
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAccessCheckByType* volatile ScAccessCheckByType;
+EXTERN_C FN_ScAccessCheckByType* volatile ScAccessCheckByType;
 
 typedef
 NTSTATUS
@@ -89,7 +89,7 @@ FN_ScAccessCheckByTypeAndAuditAlarm(
     _Out_ PNTSTATUS AccessStatus,
     _Out_ PBOOLEAN GenerateOnClose
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAccessCheckByTypeAndAuditAlarm* volatile ScAccessCheckByTypeAndAuditAlarm;
+EXTERN_C FN_ScAccessCheckByTypeAndAuditAlarm* volatile ScAccessCheckByTypeAndAuditAlarm;
 
 typedef
 NTSTATUS
@@ -107,7 +107,7 @@ FN_ScAccessCheckByTypeResultList(
     _Out_writes_(ObjectTypeListLength) PACCESS_MASK GrantedAccess,
     _Out_writes_(ObjectTypeListLength) PNTSTATUS AccessStatus
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAccessCheckByTypeResultList* volatile ScAccessCheckByTypeResultList;
+EXTERN_C FN_ScAccessCheckByTypeResultList* volatile ScAccessCheckByTypeResultList;
 
 typedef
 NTSTATUS
@@ -130,7 +130,7 @@ FN_ScAccessCheckByTypeResultListAndAuditAlarm(
     _Out_writes_(ObjectTypeListLength) PNTSTATUS AccessStatus,
     _Out_ PBOOLEAN GenerateOnClose
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAccessCheckByTypeResultListAndAuditAlarm* volatile ScAccessCheckByTypeResultListAndAuditAlarm;
+EXTERN_C FN_ScAccessCheckByTypeResultListAndAuditAlarm* volatile ScAccessCheckByTypeResultListAndAuditAlarm;
 
 typedef
 NTSTATUS
@@ -154,7 +154,7 @@ FN_ScAccessCheckByTypeResultListAndAuditAlarmByHandle(
     _Out_writes_(ObjectTypeListLength) PNTSTATUS AccessStatus,
     _Out_ PBOOLEAN GenerateOnClose
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAccessCheckByTypeResultListAndAuditAlarmByHandle* volatile ScAccessCheckByTypeResultListAndAuditAlarmByHandle;
+EXTERN_C FN_ScAccessCheckByTypeResultListAndAuditAlarmByHandle* volatile ScAccessCheckByTypeResultListAndAuditAlarmByHandle;
 
 typedef
 NTSTATUS
@@ -163,7 +163,7 @@ FN_ScAcquireCrossVmMutant(
     _In_ HANDLE CrossVmMutant,
     _In_ PLARGE_INTEGER Timeout
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAcquireCrossVmMutant* volatile ScAcquireCrossVmMutant;
+EXTERN_C FN_ScAcquireCrossVmMutant* volatile ScAcquireCrossVmMutant;
 
 typedef
 NTSTATUS
@@ -173,7 +173,7 @@ FN_ScAcquireProcessActivityReference(
     _In_ HANDLE ParentProcessHandle,
     _In_ PROCESS_ACTIVITY_TYPE ProcessActivityType
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAcquireProcessActivityReference* volatile ScAcquireProcessActivityReference;
+EXTERN_C FN_ScAcquireProcessActivityReference* volatile ScAcquireProcessActivityReference;
 
 typedef
 NTSTATUS
@@ -183,7 +183,7 @@ FN_ScAddAtom(
     _In_ ULONG Length,
     _Out_opt_ PRTL_ATOM Atom
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAddAtom* volatile ScAddAtom;
+EXTERN_C FN_ScAddAtom* volatile ScAddAtom;
 
 typedef
 NTSTATUS
@@ -194,7 +194,7 @@ FN_ScAddAtomEx(
     _Out_opt_ PRTL_ATOM Atom,
     _In_ ULONG Flags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAddAtomEx* volatile ScAddAtomEx;
+EXTERN_C FN_ScAddAtomEx* volatile ScAddAtomEx;
 
 typedef
 NTSTATUS
@@ -203,7 +203,7 @@ FN_ScAddBootEntry(
     _In_ PBOOT_ENTRY BootEntry,
     _Out_opt_ PULONG Id
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAddBootEntry* volatile ScAddBootEntry;
+EXTERN_C FN_ScAddBootEntry* volatile ScAddBootEntry;
 
 typedef
 NTSTATUS
@@ -212,7 +212,7 @@ FN_ScAddDriverEntry(
     _In_ PEFI_DRIVER_ENTRY DriverEntry,
     _Out_opt_ PULONG Id
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAddDriverEntry* volatile ScAddDriverEntry;
+EXTERN_C FN_ScAddDriverEntry* volatile ScAddDriverEntry;
 
 typedef
 NTSTATUS
@@ -225,7 +225,7 @@ FN_ScAdjustGroupsToken(
     _Out_writes_bytes_to_opt_(BufferLength, *ReturnLength) PTOKEN_GROUPS PreviousState,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAdjustGroupsToken* volatile ScAdjustGroupsToken;
+EXTERN_C FN_ScAdjustGroupsToken* volatile ScAdjustGroupsToken;
 
 typedef
 NTSTATUS
@@ -238,7 +238,7 @@ FN_ScAdjustPrivilegesToken(
     _Out_writes_bytes_to_opt_(BufferLength, *ReturnLength) PTOKEN_PRIVILEGES PreviousState,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAdjustPrivilegesToken* volatile ScAdjustPrivilegesToken;
+EXTERN_C FN_ScAdjustPrivilegesToken* volatile ScAdjustPrivilegesToken;
 
 typedef
 NTSTATUS
@@ -261,7 +261,7 @@ FN_ScAdjustTokenClaimsAndDeviceGroups(
     _Out_opt_ PULONG DeviceReturnLength,
     _Out_opt_ PULONG DeviceGroupsReturnBufferLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAdjustTokenClaimsAndDeviceGroups* volatile ScAdjustTokenClaimsAndDeviceGroups;
+EXTERN_C FN_ScAdjustTokenClaimsAndDeviceGroups* volatile ScAdjustTokenClaimsAndDeviceGroups;
 
 typedef
 NTSTATUS
@@ -270,7 +270,7 @@ FN_ScAlertResumeThread(
     _In_ HANDLE ThreadHandle,
     _Out_opt_ PULONG PreviousSuspendCount
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlertResumeThread* volatile ScAlertResumeThread;
+EXTERN_C FN_ScAlertResumeThread* volatile ScAlertResumeThread;
 
 typedef
 NTSTATUS
@@ -278,7 +278,7 @@ NTAPI
 FN_ScAlertThread(
     _In_ HANDLE ThreadHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlertThread* volatile ScAlertThread;
+EXTERN_C FN_ScAlertThread* volatile ScAlertThread;
 
 typedef
 NTSTATUS
@@ -286,7 +286,7 @@ NTAPI
 FN_ScAlertThreadByThreadId(
     _In_ HANDLE ThreadId
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlertThreadByThreadId* volatile ScAlertThreadByThreadId;
+EXTERN_C FN_ScAlertThreadByThreadId* volatile ScAlertThreadByThreadId;
 
 typedef
 NTSTATUS
@@ -295,7 +295,7 @@ FN_ScAlertThreadByThreadIdEx(
     _In_ HANDLE ThreadId,
     _In_opt_ PRTL_SRWLOCK Lock
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlertThreadByThreadIdEx* volatile ScAlertThreadByThreadIdEx;
+EXTERN_C FN_ScAlertThreadByThreadIdEx* volatile ScAlertThreadByThreadIdEx;
 
 typedef
 NTSTATUS
@@ -303,7 +303,7 @@ NTAPI
 FN_ScAllocateLocallyUniqueId(
     _Out_ PLUID Luid
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAllocateLocallyUniqueId* volatile ScAllocateLocallyUniqueId;
+EXTERN_C FN_ScAllocateLocallyUniqueId* volatile ScAllocateLocallyUniqueId;
 
 typedef
 NTSTATUS
@@ -313,7 +313,7 @@ FN_ScAllocateReserveObject(
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes,
     _In_ MEMORY_RESERVE_TYPE Type
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAllocateReserveObject* volatile ScAllocateReserveObject;
+EXTERN_C FN_ScAllocateReserveObject* volatile ScAllocateReserveObject;
 
 typedef
 NTSTATUS
@@ -323,7 +323,7 @@ FN_ScAllocateUserPhysicalPages(
     _Inout_ PSIZE_T NumberOfPages,
     _Out_writes_(*NumberOfPages) PULONG_PTR UserPfnArray
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAllocateUserPhysicalPages* volatile ScAllocateUserPhysicalPages;
+EXTERN_C FN_ScAllocateUserPhysicalPages* volatile ScAllocateUserPhysicalPages;
 
 typedef
 NTSTATUS
@@ -335,7 +335,7 @@ FN_ScAllocateUserPhysicalPagesEx(
     _Inout_updates_opt_(ExtendedParameterCount) PMEM_EXTENDED_PARAMETER ExtendedParameters,
     _In_ ULONG ExtendedParameterCount
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAllocateUserPhysicalPagesEx* volatile ScAllocateUserPhysicalPagesEx;
+EXTERN_C FN_ScAllocateUserPhysicalPagesEx* volatile ScAllocateUserPhysicalPagesEx;
 
 typedef
 NTSTATUS
@@ -346,7 +346,7 @@ FN_ScAllocateUuids(
     _Out_ PULONG Sequence,
     _Out_ PCHAR Seed
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAllocateUuids* volatile ScAllocateUuids;
+EXTERN_C FN_ScAllocateUuids* volatile ScAllocateUuids;
 
 typedef
 NTSTATUS
@@ -359,7 +359,7 @@ FN_ScAllocateVirtualMemory(
     _In_ ULONG AllocationType,
     _In_ ULONG PageProtection
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAllocateVirtualMemory* volatile ScAllocateVirtualMemory;
+EXTERN_C FN_ScAllocateVirtualMemory* volatile ScAllocateVirtualMemory;
 
 typedef
 NTSTATUS
@@ -373,7 +373,7 @@ FN_ScAllocateVirtualMemoryEx(
     _Inout_updates_opt_(ExtendedParameterCount) PMEM_EXTENDED_PARAMETER ExtendedParameters,
     _In_ ULONG ExtendedParameterCount
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAllocateVirtualMemoryEx* volatile ScAllocateVirtualMemoryEx;
+EXTERN_C FN_ScAllocateVirtualMemoryEx* volatile ScAllocateVirtualMemoryEx;
 
 typedef
 NTSTATUS
@@ -389,7 +389,7 @@ FN_ScAlpcAcceptConnectPort(
     _Inout_opt_ PALPC_MESSAGE_ATTRIBUTES ConnectionMessageAttributes,
     _In_ BOOLEAN AcceptConnection
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlpcAcceptConnectPort* volatile ScAlpcAcceptConnectPort;
+EXTERN_C FN_ScAlpcAcceptConnectPort* volatile ScAlpcAcceptConnectPort;
 
 typedef
 NTSTATUS
@@ -399,7 +399,7 @@ FN_ScAlpcCancelMessage(
     _In_ ULONG Flags,
     _In_ PALPC_CONTEXT_ATTR MessageContext
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlpcCancelMessage* volatile ScAlpcCancelMessage;
+EXTERN_C FN_ScAlpcCancelMessage* volatile ScAlpcCancelMessage;
 
 typedef
 NTSTATUS
@@ -417,7 +417,7 @@ FN_ScAlpcConnectPort(
     _Inout_opt_ PALPC_MESSAGE_ATTRIBUTES InMessageAttributes,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlpcConnectPort* volatile ScAlpcConnectPort;
+EXTERN_C FN_ScAlpcConnectPort* volatile ScAlpcConnectPort;
 
 typedef
 NTSTATUS
@@ -435,7 +435,7 @@ FN_ScAlpcConnectPortEx(
     _Inout_opt_ PALPC_MESSAGE_ATTRIBUTES InMessageAttributes,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlpcConnectPortEx* volatile ScAlpcConnectPortEx;
+EXTERN_C FN_ScAlpcConnectPortEx* volatile ScAlpcConnectPortEx;
 
 typedef
 NTSTATUS
@@ -445,7 +445,7 @@ FN_ScAlpcCreatePort(
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_opt_ PALPC_PORT_ATTRIBUTES PortAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlpcCreatePort* volatile ScAlpcCreatePort;
+EXTERN_C FN_ScAlpcCreatePort* volatile ScAlpcCreatePort;
 
 typedef
 NTSTATUS
@@ -458,7 +458,7 @@ FN_ScAlpcCreatePortSection(
     _Out_ PALPC_HANDLE AlpcSectionHandle,
     _Out_ PSIZE_T ActualSectionSize
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlpcCreatePortSection* volatile ScAlpcCreatePortSection;
+EXTERN_C FN_ScAlpcCreatePortSection* volatile ScAlpcCreatePortSection;
 
 typedef
 NTSTATUS
@@ -469,7 +469,7 @@ FN_ScAlpcCreateResourceReserve(
     _In_ SIZE_T MessageSize,
     _Out_ PALPC_HANDLE ResourceId
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlpcCreateResourceReserve* volatile ScAlpcCreateResourceReserve;
+EXTERN_C FN_ScAlpcCreateResourceReserve* volatile ScAlpcCreateResourceReserve;
 
 typedef
 NTSTATUS
@@ -479,7 +479,7 @@ FN_ScAlpcCreateSectionView(
     _Reserved_ ULONG Flags,
     _Inout_ PALPC_DATA_VIEW_ATTR ViewAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlpcCreateSectionView* volatile ScAlpcCreateSectionView;
+EXTERN_C FN_ScAlpcCreateSectionView* volatile ScAlpcCreateSectionView;
 
 typedef
 NTSTATUS
@@ -489,7 +489,7 @@ FN_ScAlpcCreateSecurityContext(
     _Reserved_ ULONG Flags,
     _Inout_ PALPC_SECURITY_ATTR SecurityAttribute
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlpcCreateSecurityContext* volatile ScAlpcCreateSecurityContext;
+EXTERN_C FN_ScAlpcCreateSecurityContext* volatile ScAlpcCreateSecurityContext;
 
 typedef
 NTSTATUS
@@ -499,7 +499,7 @@ FN_ScAlpcDeletePortSection(
     _Reserved_ ULONG Flags,
     _In_ ALPC_HANDLE SectionHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlpcDeletePortSection* volatile ScAlpcDeletePortSection;
+EXTERN_C FN_ScAlpcDeletePortSection* volatile ScAlpcDeletePortSection;
 
 typedef
 NTSTATUS
@@ -509,7 +509,7 @@ FN_ScAlpcDeleteResourceReserve(
     _Reserved_ ULONG Flags,
     _In_ ALPC_HANDLE ResourceId
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlpcDeleteResourceReserve* volatile ScAlpcDeleteResourceReserve;
+EXTERN_C FN_ScAlpcDeleteResourceReserve* volatile ScAlpcDeleteResourceReserve;
 
 typedef
 NTSTATUS
@@ -519,7 +519,7 @@ FN_ScAlpcDeleteSectionView(
     _Reserved_ ULONG Flags,
     _In_ PVOID ViewBase
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlpcDeleteSectionView* volatile ScAlpcDeleteSectionView;
+EXTERN_C FN_ScAlpcDeleteSectionView* volatile ScAlpcDeleteSectionView;
 
 typedef
 NTSTATUS
@@ -529,7 +529,7 @@ FN_ScAlpcDeleteSecurityContext(
     _Reserved_ ULONG Flags,
     _In_ ALPC_HANDLE ContextHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlpcDeleteSecurityContext* volatile ScAlpcDeleteSecurityContext;
+EXTERN_C FN_ScAlpcDeleteSecurityContext* volatile ScAlpcDeleteSecurityContext;
 
 typedef
 NTSTATUS
@@ -538,7 +538,7 @@ FN_ScAlpcDisconnectPort(
     _In_ HANDLE PortHandle,
     _In_ ULONG Flags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlpcDisconnectPort* volatile ScAlpcDisconnectPort;
+EXTERN_C FN_ScAlpcDisconnectPort* volatile ScAlpcDisconnectPort;
 
 typedef
 NTSTATUS
@@ -548,7 +548,7 @@ FN_ScAlpcImpersonateClientContainerOfPort(
     _In_ PPORT_MESSAGE Message,
     _Reserved_ ULONG Flags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlpcImpersonateClientContainerOfPort* volatile ScAlpcImpersonateClientContainerOfPort;
+EXTERN_C FN_ScAlpcImpersonateClientContainerOfPort* volatile ScAlpcImpersonateClientContainerOfPort;
 
 typedef
 NTSTATUS
@@ -558,7 +558,7 @@ FN_ScAlpcImpersonateClientOfPort(
     _In_ PPORT_MESSAGE Message,
     _In_ PVOID Flags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlpcImpersonateClientOfPort* volatile ScAlpcImpersonateClientOfPort;
+EXTERN_C FN_ScAlpcImpersonateClientOfPort* volatile ScAlpcImpersonateClientOfPort;
 
 typedef
 NTSTATUS
@@ -571,7 +571,7 @@ FN_ScAlpcOpenSenderProcess(
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlpcOpenSenderProcess* volatile ScAlpcOpenSenderProcess;
+EXTERN_C FN_ScAlpcOpenSenderProcess* volatile ScAlpcOpenSenderProcess;
 
 typedef
 NTSTATUS
@@ -584,7 +584,7 @@ FN_ScAlpcOpenSenderThread(
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlpcOpenSenderThread* volatile ScAlpcOpenSenderThread;
+EXTERN_C FN_ScAlpcOpenSenderThread* volatile ScAlpcOpenSenderThread;
 
 typedef
 NTSTATUS
@@ -596,7 +596,7 @@ FN_ScAlpcQueryInformation(
     _In_ ULONG Length,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlpcQueryInformation* volatile ScAlpcQueryInformation;
+EXTERN_C FN_ScAlpcQueryInformation* volatile ScAlpcQueryInformation;
 
 typedef
 NTSTATUS
@@ -609,7 +609,7 @@ FN_ScAlpcQueryInformationMessage(
     _In_ ULONG Length,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlpcQueryInformationMessage* volatile ScAlpcQueryInformationMessage;
+EXTERN_C FN_ScAlpcQueryInformationMessage* volatile ScAlpcQueryInformationMessage;
 
 typedef
 NTSTATUS
@@ -619,7 +619,7 @@ FN_ScAlpcRevokeSecurityContext(
     _Reserved_ ULONG Flags,
     _In_ ALPC_HANDLE ContextHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlpcRevokeSecurityContext* volatile ScAlpcRevokeSecurityContext;
+EXTERN_C FN_ScAlpcRevokeSecurityContext* volatile ScAlpcRevokeSecurityContext;
 
 typedef
 NTSTATUS
@@ -634,7 +634,7 @@ FN_ScAlpcSendWaitReceivePort(
     _Inout_opt_ PALPC_MESSAGE_ATTRIBUTES ReceiveMessageAttributes,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlpcSendWaitReceivePort* volatile ScAlpcSendWaitReceivePort;
+EXTERN_C FN_ScAlpcSendWaitReceivePort* volatile ScAlpcSendWaitReceivePort;
 
 typedef
 NTSTATUS
@@ -645,7 +645,7 @@ FN_ScAlpcSetInformation(
     _In_reads_bytes_opt_(Length) PVOID PortInformation,
     _In_ ULONG Length
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAlpcSetInformation* volatile ScAlpcSetInformation;
+EXTERN_C FN_ScAlpcSetInformation* volatile ScAlpcSetInformation;
 
 typedef
 NTSTATUS
@@ -654,7 +654,7 @@ FN_ScApphelpCacheControl(
     _In_ ULONG ServiceClass,
     _Inout_opt_ PVOID ServiceContext // AHC_SERVICE_DATA
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScApphelpCacheControl* volatile ScApphelpCacheControl;
+EXTERN_C FN_ScApphelpCacheControl* volatile ScApphelpCacheControl;
 
 typedef
 NTSTATUS
@@ -663,7 +663,7 @@ FN_ScAreMappedFilesTheSame(
     _In_ PVOID File1MappedAsAnImage,
     _In_ PVOID File2MappedAsFile
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAreMappedFilesTheSame* volatile ScAreMappedFilesTheSame;
+EXTERN_C FN_ScAreMappedFilesTheSame* volatile ScAreMappedFilesTheSame;
 
 typedef
 NTSTATUS
@@ -672,7 +672,7 @@ FN_ScAssignProcessToJobObject(
     _In_ HANDLE JobHandle,
     _In_ HANDLE ProcessHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAssignProcessToJobObject* volatile ScAssignProcessToJobObject;
+EXTERN_C FN_ScAssignProcessToJobObject* volatile ScAssignProcessToJobObject;
 
 typedef
 NTSTATUS
@@ -687,7 +687,7 @@ FN_ScAssociateWaitCompletionPacket(
     _In_ ULONG_PTR IoStatusInformation,
     _Out_opt_ PBOOLEAN AlreadySignaled
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScAssociateWaitCompletionPacket* volatile ScAssociateWaitCompletionPacket;
+EXTERN_C FN_ScAssociateWaitCompletionPacket* volatile ScAssociateWaitCompletionPacket;
 
 typedef
 NTSTATUS
@@ -697,7 +697,7 @@ FN_ScCallbackReturn(
     _In_ ULONG OutputLength,
     _In_ NTSTATUS Status
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCallbackReturn* volatile ScCallbackReturn;
+EXTERN_C FN_ScCallbackReturn* volatile ScCallbackReturn;
 
 typedef
 NTSTATUS
@@ -708,7 +708,7 @@ FN_ScCallEnclave(
     _In_ ULONG Flags,                 // ENCLAVE_CALL_FLAG_*
     _Inout_ PVOID* RoutineParamReturn // input routine parameter, output routine return value
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCallEnclave* volatile ScCallEnclave;
+EXTERN_C FN_ScCallEnclave* volatile ScCallEnclave;
 
 typedef
 NTSTATUS
@@ -717,7 +717,7 @@ FN_ScCancelIoFile(
     _In_ HANDLE FileHandle,
     _Out_ PIO_STATUS_BLOCK IoStatusBlock
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCancelIoFile* volatile ScCancelIoFile;
+EXTERN_C FN_ScCancelIoFile* volatile ScCancelIoFile;
 
 typedef
 NTSTATUS
@@ -727,7 +727,7 @@ FN_ScCancelIoFileEx(
     _In_opt_ PIO_STATUS_BLOCK IoRequestToCancel,
     _Out_ PIO_STATUS_BLOCK IoStatusBlock
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCancelIoFileEx* volatile ScCancelIoFileEx;
+EXTERN_C FN_ScCancelIoFileEx* volatile ScCancelIoFileEx;
 
 typedef
 NTSTATUS
@@ -737,7 +737,7 @@ FN_ScCancelSynchronousIoFile(
     _In_opt_ PIO_STATUS_BLOCK IoRequestToCancel,
     _Out_ PIO_STATUS_BLOCK IoStatusBlock
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCancelSynchronousIoFile* volatile ScCancelSynchronousIoFile;
+EXTERN_C FN_ScCancelSynchronousIoFile* volatile ScCancelSynchronousIoFile;
 
 typedef
 NTSTATUS
@@ -746,7 +746,7 @@ FN_ScCancelTimer(
     _In_ HANDLE TimerHandle,
     _Out_opt_ PBOOLEAN CurrentState
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCancelTimer* volatile ScCancelTimer;
+EXTERN_C FN_ScCancelTimer* volatile ScCancelTimer;
 
 typedef
 NTSTATUS
@@ -755,7 +755,7 @@ FN_ScCancelTimer2(
     _In_ HANDLE TimerHandle,
     _In_ PT2_CANCEL_PARAMETERS Parameters
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCancelTimer2* volatile ScCancelTimer2;
+EXTERN_C FN_ScCancelTimer2* volatile ScCancelTimer2;
 
 typedef
 NTSTATUS
@@ -764,7 +764,7 @@ FN_ScCancelWaitCompletionPacket(
     _In_ HANDLE WaitCompletionPacketHandle,
     _In_ BOOLEAN RemoveSignaledPacket
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCancelWaitCompletionPacket* volatile ScCancelWaitCompletionPacket;
+EXTERN_C FN_ScCancelWaitCompletionPacket* volatile ScCancelWaitCompletionPacket;
 
 typedef
 NTSTATUS
@@ -777,7 +777,7 @@ FN_ScChangeProcessState(
     _In_opt_ _Reserved_ SIZE_T ExtendedInformationLength,
     _In_opt_ _Reserved_ ULONG Reserved
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScChangeProcessState* volatile ScChangeProcessState;
+EXTERN_C FN_ScChangeProcessState* volatile ScChangeProcessState;
 
 typedef
 NTSTATUS
@@ -790,7 +790,7 @@ FN_ScChangeThreadState(
     _In_opt_ SIZE_T ExtendedInformationLength,
     _In_opt_ ULONG Reserved
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScChangeThreadState* volatile ScChangeThreadState;
+EXTERN_C FN_ScChangeThreadState* volatile ScChangeThreadState;
 
 typedef
 NTSTATUS
@@ -798,7 +798,7 @@ NTAPI
 FN_ScClearEvent(
     _In_ HANDLE EventHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScClearEvent* volatile ScClearEvent;
+EXTERN_C FN_ScClearEvent* volatile ScClearEvent;
 
 typedef
 NTSTATUS
@@ -806,7 +806,7 @@ NTAPI
 FN_ScClose(
     _In_ _Post_ptr_invalid_ HANDLE Handle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScClose* volatile ScClose;
+EXTERN_C FN_ScClose* volatile ScClose;
 
 typedef
 NTSTATUS
@@ -816,7 +816,7 @@ FN_ScCloseObjectAuditAlarm(
     _In_opt_ PVOID HandleId,
     _In_ BOOLEAN GenerateOnClose
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCloseObjectAuditAlarm* volatile ScCloseObjectAuditAlarm;
+EXTERN_C FN_ScCloseObjectAuditAlarm* volatile ScCloseObjectAuditAlarm;
 
 typedef
 NTSTATUS
@@ -825,7 +825,7 @@ FN_ScCommitComplete(
     _In_ HANDLE EnlistmentHandle,
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCommitComplete* volatile ScCommitComplete;
+EXTERN_C FN_ScCommitComplete* volatile ScCommitComplete;
 
 typedef
 NTSTATUS
@@ -834,7 +834,7 @@ FN_ScCommitEnlistment(
     _In_ HANDLE EnlistmentHandle,
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCommitEnlistment* volatile ScCommitEnlistment;
+EXTERN_C FN_ScCommitEnlistment* volatile ScCommitEnlistment;
 
 typedef
 NTSTATUS
@@ -843,7 +843,7 @@ FN_ScCommitRegistryTransaction(
     _In_ HANDLE RegistryTransactionHandle,
     _Reserved_ ULONG Flags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCommitRegistryTransaction* volatile ScCommitRegistryTransaction;
+EXTERN_C FN_ScCommitRegistryTransaction* volatile ScCommitRegistryTransaction;
 
 typedef
 NTSTATUS
@@ -852,7 +852,7 @@ FN_ScCommitTransaction(
     _In_ HANDLE TransactionHandle,
     _In_ BOOLEAN Wait
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCommitTransaction* volatile ScCommitTransaction;
+EXTERN_C FN_ScCommitTransaction* volatile ScCommitTransaction;
 
 typedef
 NTSTATUS
@@ -861,7 +861,7 @@ FN_ScCompactKeys(
     _In_ ULONG Count,
     _In_reads_(Count) HANDLE KeyArray[]
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCompactKeys* volatile ScCompactKeys;
+EXTERN_C FN_ScCompactKeys* volatile ScCompactKeys;
 
 typedef
 NTSTATUS
@@ -870,7 +870,7 @@ FN_ScCompareObjects(
     _In_ HANDLE FirstObjectHandle,
     _In_ HANDLE SecondObjectHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCompareObjects* volatile ScCompareObjects;
+EXTERN_C FN_ScCompareObjects* volatile ScCompareObjects;
 
 typedef
 NTSTATUS
@@ -879,7 +879,7 @@ FN_ScCompareSigningLevels(
     _In_ SE_SIGNING_LEVEL FirstSigningLevel,
     _In_ SE_SIGNING_LEVEL SecondSigningLevel
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCompareSigningLevels* volatile ScCompareSigningLevels;
+EXTERN_C FN_ScCompareSigningLevels* volatile ScCompareSigningLevels;
 
 typedef
 NTSTATUS
@@ -889,7 +889,7 @@ FN_ScCompareTokens(
     _In_ HANDLE SecondTokenHandle,
     _Out_ PBOOLEAN Equal
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCompareTokens* volatile ScCompareTokens;
+EXTERN_C FN_ScCompareTokens* volatile ScCompareTokens;
 
 typedef
 NTSTATUS
@@ -897,7 +897,7 @@ NTAPI
 FN_ScCompleteConnectPort(
     _In_ HANDLE PortHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCompleteConnectPort* volatile ScCompleteConnectPort;
+EXTERN_C FN_ScCompleteConnectPort* volatile ScCompleteConnectPort;
 
 typedef
 NTSTATUS
@@ -905,7 +905,7 @@ NTAPI
 FN_ScCompressKey(
     _In_ HANDLE KeyHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCompressKey* volatile ScCompressKey;
+EXTERN_C FN_ScCompressKey* volatile ScCompressKey;
 
 typedef
 NTSTATUS
@@ -920,7 +920,7 @@ FN_ScConnectPort(
     _Inout_updates_bytes_to_opt_(*ConnectionInformationLength, *ConnectionInformationLength) PVOID ConnectionInformation,
     _Inout_opt_ PULONG ConnectionInformationLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScConnectPort* volatile ScConnectPort;
+EXTERN_C FN_ScConnectPort* volatile ScConnectPort;
 
 typedef
 NTSTATUS
@@ -929,7 +929,7 @@ FN_ScContinue(
     _In_ PCONTEXT ContextRecord,
     _In_ BOOLEAN TestAlert
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScContinue* volatile ScContinue;
+EXTERN_C FN_ScContinue* volatile ScContinue;
 
 typedef
 NTSTATUS
@@ -938,7 +938,7 @@ FN_ScContinueEx(
     _In_ PCONTEXT ContextRecord,
     _In_ PVOID ContinueArgument // PKCONTINUE_ARGUMENT and BOOLEAN are valid
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScContinueEx* volatile ScContinueEx;
+EXTERN_C FN_ScContinueEx* volatile ScContinueEx;
 
 typedef
 NTSTATUS
@@ -949,7 +949,7 @@ FN_ScConvertBetweenAuxiliaryCounterAndPerformanceCounter(
     _Out_ PULONG64 ConvertedValue,
     _Out_opt_ PULONG64 ConversionError
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScConvertBetweenAuxiliaryCounterAndPerformanceCounter* volatile ScConvertBetweenAuxiliaryCounterAndPerformanceCounter;
+EXTERN_C FN_ScConvertBetweenAuxiliaryCounterAndPerformanceCounter* volatile ScConvertBetweenAuxiliaryCounterAndPerformanceCounter;
 
 typedef
 NTSTATUS
@@ -966,7 +966,7 @@ FN_ScCopyFileChunk(
     _In_opt_ PULONG DestKey,
     _In_ ULONG Flags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCopyFileChunk* volatile ScCopyFileChunk;
+EXTERN_C FN_ScCopyFileChunk* volatile ScCopyFileChunk;
 
 typedef
 NTSTATUS
@@ -979,7 +979,7 @@ FN_ScCreateCrossVmEvent(
     _In_ LPCGUID VMID,
     _In_ LPCGUID ServiceID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateCrossVmEvent* volatile ScCreateCrossVmEvent;
+EXTERN_C FN_ScCreateCrossVmEvent* volatile ScCreateCrossVmEvent;
 
 typedef
 NTSTATUS
@@ -992,7 +992,7 @@ FN_ScCreateCrossVmMutant(
     _In_ LPCGUID VMID,
     _In_ LPCGUID ServiceID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateCrossVmMutant* volatile ScCreateCrossVmMutant;
+EXTERN_C FN_ScCreateCrossVmMutant* volatile ScCreateCrossVmMutant;
 
 typedef
 NTSTATUS
@@ -1003,7 +1003,7 @@ FN_ScCreateDebugObject(
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_ ULONG Flags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateDebugObject* volatile ScCreateDebugObject;
+EXTERN_C FN_ScCreateDebugObject* volatile ScCreateDebugObject;
 
 typedef
 NTSTATUS
@@ -1013,7 +1013,7 @@ FN_ScCreateDirectoryObject(
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateDirectoryObject* volatile ScCreateDirectoryObject;
+EXTERN_C FN_ScCreateDirectoryObject* volatile ScCreateDirectoryObject;
 
 typedef
 NTSTATUS
@@ -1025,7 +1025,7 @@ FN_ScCreateDirectoryObjectEx(
     _In_ HANDLE ShadowDirectoryHandle,
     _In_ ULONG Flags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateDirectoryObjectEx* volatile ScCreateDirectoryObjectEx;
+EXTERN_C FN_ScCreateDirectoryObjectEx* volatile ScCreateDirectoryObjectEx;
 
 typedef
 NTSTATUS
@@ -1041,7 +1041,7 @@ FN_ScCreateEnclave(
     _In_ ULONG EnclaveInformationLength,
     _Out_opt_ PULONG EnclaveError
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateEnclave* volatile ScCreateEnclave;
+EXTERN_C FN_ScCreateEnclave* volatile ScCreateEnclave;
 
 typedef
 NTSTATUS
@@ -1056,7 +1056,7 @@ FN_ScCreateEnlistment(
     _In_ NOTIFICATION_MASK NotificationMask,
     _In_opt_ PVOID EnlistmentKey
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateEnlistment* volatile ScCreateEnlistment;
+EXTERN_C FN_ScCreateEnlistment* volatile ScCreateEnlistment;
 
 typedef
 NTSTATUS
@@ -1068,7 +1068,7 @@ FN_ScCreateEvent(
     _In_ EVENT_TYPE EventType,
     _In_ BOOLEAN InitialState
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateEvent* volatile ScCreateEvent;
+EXTERN_C FN_ScCreateEvent* volatile ScCreateEvent;
 
 typedef
 NTSTATUS
@@ -1078,7 +1078,7 @@ FN_ScCreateEventPair(
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateEventPair* volatile ScCreateEventPair;
+EXTERN_C FN_ScCreateEventPair* volatile ScCreateEventPair;
 
 typedef
 NTSTATUS
@@ -1096,7 +1096,7 @@ FN_ScCreateFile(
     _In_reads_bytes_opt_(EaLength) PVOID EaBuffer,
     _In_ ULONG EaLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateFile* volatile ScCreateFile;
+EXTERN_C FN_ScCreateFile* volatile ScCreateFile;
 
 typedef
 NTSTATUS
@@ -1107,7 +1107,7 @@ FN_ScCreateIoCompletion(
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_opt_ ULONG Count
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateIoCompletion* volatile ScCreateIoCompletion;
+EXTERN_C FN_ScCreateIoCompletion* volatile ScCreateIoCompletion;
 
 typedef
 NTSTATUS
@@ -1119,7 +1119,7 @@ FN_ScCreateIoRing(
     _In_ ULONG OutputParametersLength,
     _Out_ PVOID OutputParameters
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateIoRing* volatile ScCreateIoRing;
+EXTERN_C FN_ScCreateIoRing* volatile ScCreateIoRing;
 
 typedef
 NTSTATUS
@@ -1129,7 +1129,7 @@ FN_ScCreateIRTimer(
     _In_ PVOID Reserved,
     _In_ ACCESS_MASK DesiredAccess
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateIRTimer* volatile ScCreateIRTimer;
+EXTERN_C FN_ScCreateIRTimer* volatile ScCreateIRTimer;
 
 typedef
 NTSTATUS
@@ -1139,7 +1139,7 @@ FN_ScCreateJobObject(
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateJobObject* volatile ScCreateJobObject;
+EXTERN_C FN_ScCreateJobObject* volatile ScCreateJobObject;
 
 typedef
 NTSTATUS
@@ -1149,7 +1149,7 @@ FN_ScCreateJobSet(
     _In_reads_(NumJob) PJOB_SET_ARRAY UserJobSet,
     _In_ ULONG Flags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateJobSet* volatile ScCreateJobSet;
+EXTERN_C FN_ScCreateJobSet* volatile ScCreateJobSet;
 
 typedef
 NTSTATUS
@@ -1163,7 +1163,7 @@ FN_ScCreateKey(
     _In_ ULONG CreateOptions,
     _Out_opt_ PULONG Disposition
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateKey* volatile ScCreateKey;
+EXTERN_C FN_ScCreateKey* volatile ScCreateKey;
 
 typedef
 NTSTATUS
@@ -1174,7 +1174,7 @@ FN_ScCreateKeyedEvent(
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes,
     _Reserved_ ULONG Flags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateKeyedEvent* volatile ScCreateKeyedEvent;
+EXTERN_C FN_ScCreateKeyedEvent* volatile ScCreateKeyedEvent;
 
 typedef
 NTSTATUS
@@ -1189,7 +1189,7 @@ FN_ScCreateKeyTransacted(
     _In_ HANDLE TransactionHandle,
     _Out_opt_ PULONG Disposition
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateKeyTransacted* volatile ScCreateKeyTransacted;
+EXTERN_C FN_ScCreateKeyTransacted* volatile ScCreateKeyTransacted;
 
 typedef
 NTSTATUS
@@ -1205,7 +1205,7 @@ FN_ScCreateLowBoxToken(
     _In_ ULONG HandleCount,
     _In_reads_opt_(HandleCount) HANDLE *Handles
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateLowBoxToken* volatile ScCreateLowBoxToken;
+EXTERN_C FN_ScCreateLowBoxToken* volatile ScCreateLowBoxToken;
 
 typedef
 NTSTATUS
@@ -1220,7 +1220,7 @@ FN_ScCreateMailslotFile(
     _In_ ULONG MaximumMessageSize,
     _In_ PLARGE_INTEGER ReadTimeout
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateMailslotFile* volatile ScCreateMailslotFile;
+EXTERN_C FN_ScCreateMailslotFile* volatile ScCreateMailslotFile;
 
 typedef
 NTSTATUS
@@ -1231,7 +1231,7 @@ FN_ScCreateMutant(
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes,
     _In_ BOOLEAN InitialOwner
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateMutant* volatile ScCreateMutant;
+EXTERN_C FN_ScCreateMutant* volatile ScCreateMutant;
 
 typedef
 NTSTATUS
@@ -1252,7 +1252,7 @@ FN_ScCreateNamedPipeFile(
     _In_ ULONG OutboundQuota,
     _In_ PLARGE_INTEGER DefaultTimeout
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateNamedPipeFile* volatile ScCreateNamedPipeFile;
+EXTERN_C FN_ScCreateNamedPipeFile* volatile ScCreateNamedPipeFile;
 
 typedef
 NTSTATUS
@@ -1263,7 +1263,7 @@ FN_ScCreatePagingFile(
     _In_ PLARGE_INTEGER MaximumSize,
     _In_ ULONG Priority
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreatePagingFile* volatile ScCreatePagingFile;
+EXTERN_C FN_ScCreatePagingFile* volatile ScCreatePagingFile;
 
 typedef
 NTSTATUS
@@ -1275,7 +1275,7 @@ FN_ScCreatePartition(
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes,
     _In_ ULONG PreferredNode
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreatePartition* volatile ScCreatePartition;
+EXTERN_C FN_ScCreatePartition* volatile ScCreatePartition;
 
 typedef
 NTSTATUS
@@ -1287,7 +1287,7 @@ FN_ScCreatePort(
     _In_ ULONG MaxMessageLength,
     _In_opt_ ULONG MaxPoolUsage
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreatePort* volatile ScCreatePort;
+EXTERN_C FN_ScCreatePort* volatile ScCreatePort;
 
 typedef
 NTSTATUS
@@ -1298,7 +1298,7 @@ FN_ScCreatePrivateNamespace(
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_ POBJECT_BOUNDARY_DESCRIPTOR BoundaryDescriptor
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreatePrivateNamespace* volatile ScCreatePrivateNamespace;
+EXTERN_C FN_ScCreatePrivateNamespace* volatile ScCreatePrivateNamespace;
 
 typedef
 NTSTATUS
@@ -1313,7 +1313,7 @@ FN_ScCreateProcess(
     _In_opt_ HANDLE DebugPort,
     _In_opt_ HANDLE TokenHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateProcess* volatile ScCreateProcess;
+EXTERN_C FN_ScCreateProcess* volatile ScCreateProcess;
 
 typedef
 NTSTATUS
@@ -1329,7 +1329,7 @@ FN_ScCreateProcessEx(
     _In_opt_ HANDLE TokenHandle,
     _Reserved_ ULONG Reserved // JobMemberLevel
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateProcessEx* volatile ScCreateProcessEx;
+EXTERN_C FN_ScCreateProcessEx* volatile ScCreateProcessEx;
 
 typedef
 NTSTATUS
@@ -1341,7 +1341,7 @@ FN_ScCreateProcessStateChange(
     _In_ HANDLE ProcessHandle,
     _In_opt_ _Reserved_ ULONG Reserved
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateProcessStateChange* volatile ScCreateProcessStateChange;
+EXTERN_C FN_ScCreateProcessStateChange* volatile ScCreateProcessStateChange;
 
 typedef
 NTSTATUS
@@ -1357,7 +1357,7 @@ FN_ScCreateProfile(
     _In_ KPROFILE_SOURCE ProfileSource,
     _In_ KAFFINITY Affinity
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateProfile* volatile ScCreateProfile;
+EXTERN_C FN_ScCreateProfile* volatile ScCreateProfile;
 
 typedef
 NTSTATUS
@@ -1374,7 +1374,7 @@ FN_ScCreateProfileEx(
     _In_ USHORT GroupCount,
     _In_reads_(GroupCount) PGROUP_AFFINITY GroupAffinity
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateProfileEx* volatile ScCreateProfileEx;
+EXTERN_C FN_ScCreateProfileEx* volatile ScCreateProfileEx;
 
 typedef
 NTSTATUS
@@ -1385,7 +1385,7 @@ FN_ScCreateRegistryTransaction(
     _In_opt_ POBJECT_ATTRIBUTES ObjAttributes,
     _Reserved_ ULONG CreateOptions
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateRegistryTransaction* volatile ScCreateRegistryTransaction;
+EXTERN_C FN_ScCreateRegistryTransaction* volatile ScCreateRegistryTransaction;
 
 typedef
 NTSTATUS
@@ -1399,7 +1399,7 @@ FN_ScCreateResourceManager(
     _In_opt_ ULONG CreateOptions,
     _In_opt_ PUNICODE_STRING Description
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateResourceManager* volatile ScCreateResourceManager;
+EXTERN_C FN_ScCreateResourceManager* volatile ScCreateResourceManager;
 
 typedef
 NTSTATUS
@@ -1413,7 +1413,7 @@ FN_ScCreateSection(
     _In_ ULONG AllocationAttributes,
     _In_opt_ HANDLE FileHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateSection* volatile ScCreateSection;
+EXTERN_C FN_ScCreateSection* volatile ScCreateSection;
 
 typedef
 NTSTATUS
@@ -1429,7 +1429,7 @@ FN_ScCreateSectionEx(
     _Inout_updates_opt_(ExtendedParameterCount) PMEM_EXTENDED_PARAMETER ExtendedParameters,
     _In_ ULONG ExtendedParameterCount
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateSectionEx* volatile ScCreateSectionEx;
+EXTERN_C FN_ScCreateSectionEx* volatile ScCreateSectionEx;
 
 typedef
 NTSTATUS
@@ -1441,7 +1441,7 @@ FN_ScCreateSemaphore(
     _In_ LONG InitialCount,
     _In_ LONG MaximumCount
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateSemaphore* volatile ScCreateSemaphore;
+EXTERN_C FN_ScCreateSemaphore* volatile ScCreateSemaphore;
 
 typedef
 NTSTATUS
@@ -1452,7 +1452,7 @@ FN_ScCreateSymbolicLinkObject(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_ PUNICODE_STRING LinkTarget
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateSymbolicLinkObject* volatile ScCreateSymbolicLinkObject;
+EXTERN_C FN_ScCreateSymbolicLinkObject* volatile ScCreateSymbolicLinkObject;
 
 typedef
 NTSTATUS
@@ -1467,7 +1467,7 @@ FN_ScCreateThread(
     _In_ PINITIAL_TEB InitialTeb,
     _In_ BOOLEAN CreateSuspended
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateThread* volatile ScCreateThread;
+EXTERN_C FN_ScCreateThread* volatile ScCreateThread;
 
 typedef
 NTSTATUS
@@ -1485,7 +1485,7 @@ FN_ScCreateThreadEx(
     _In_ SIZE_T MaximumStackSize,
     _In_opt_ PPS_ATTRIBUTE_LIST AttributeList
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateThreadEx* volatile ScCreateThreadEx;
+EXTERN_C FN_ScCreateThreadEx* volatile ScCreateThreadEx;
 
 typedef
 NTSTATUS
@@ -1497,7 +1497,7 @@ FN_ScCreateThreadStateChange(
     _In_ HANDLE ThreadHandle,
     _In_opt_ _Reserved_ ULONG Reserved
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateThreadStateChange* volatile ScCreateThreadStateChange;
+EXTERN_C FN_ScCreateThreadStateChange* volatile ScCreateThreadStateChange;
 
 typedef
 NTSTATUS
@@ -1508,7 +1508,7 @@ FN_ScCreateTimer(
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes,
     _In_ TIMER_TYPE TimerType
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateTimer* volatile ScCreateTimer;
+EXTERN_C FN_ScCreateTimer* volatile ScCreateTimer;
 
 typedef
 NTSTATUS
@@ -1520,7 +1520,7 @@ FN_ScCreateTimer2(
     _In_ ULONG Attributes, // TIMER_TYPE
     _In_ ACCESS_MASK DesiredAccess
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateTimer2* volatile ScCreateTimer2;
+EXTERN_C FN_ScCreateTimer2* volatile ScCreateTimer2;
 
 typedef
 NTSTATUS
@@ -1540,7 +1540,7 @@ FN_ScCreateToken(
     _In_opt_ PTOKEN_DEFAULT_DACL DefaultDacl,
     _In_ PTOKEN_SOURCE Source
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateToken* volatile ScCreateToken;
+EXTERN_C FN_ScCreateToken* volatile ScCreateToken;
 
 typedef
 NTSTATUS
@@ -1564,7 +1564,7 @@ FN_ScCreateTokenEx(
     _In_opt_ PTOKEN_DEFAULT_DACL DefaultDacl,
     _In_ PTOKEN_SOURCE Source
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateTokenEx* volatile ScCreateTokenEx;
+EXTERN_C FN_ScCreateTokenEx* volatile ScCreateTokenEx;
 
 typedef
 NTSTATUS
@@ -1581,7 +1581,7 @@ FN_ScCreateTransaction(
     _In_opt_ PLARGE_INTEGER Timeout,
     _In_opt_ PUNICODE_STRING Description
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateTransaction* volatile ScCreateTransaction;
+EXTERN_C FN_ScCreateTransaction* volatile ScCreateTransaction;
 
 typedef
 NTSTATUS
@@ -1594,7 +1594,7 @@ FN_ScCreateTransactionManager(
     _In_opt_ ULONG CreateOptions,
     _In_opt_ ULONG CommitStrength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateTransactionManager* volatile ScCreateTransactionManager;
+EXTERN_C FN_ScCreateTransactionManager* volatile ScCreateTransactionManager;
 
 typedef
 NTSTATUS
@@ -1612,7 +1612,7 @@ FN_ScCreateUserProcess(
     _Inout_ PPS_CREATE_INFO CreateInfo,
     _In_opt_ PPS_ATTRIBUTE_LIST AttributeList
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateUserProcess* volatile ScCreateUserProcess;
+EXTERN_C FN_ScCreateUserProcess* volatile ScCreateUserProcess;
 
 typedef
 NTSTATUS
@@ -1624,7 +1624,7 @@ FN_ScCreateWaitablePort(
     _In_ ULONG MaxMessageLength,
     _In_opt_ ULONG MaxPoolUsage
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateWaitablePort* volatile ScCreateWaitablePort;
+EXTERN_C FN_ScCreateWaitablePort* volatile ScCreateWaitablePort;
 
 typedef
 NTSTATUS
@@ -1634,7 +1634,7 @@ FN_ScCreateWaitCompletionPacket(
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateWaitCompletionPacket* volatile ScCreateWaitCompletionPacket;
+EXTERN_C FN_ScCreateWaitCompletionPacket* volatile ScCreateWaitCompletionPacket;
 
 typedef
 NTSTATUS
@@ -1648,7 +1648,7 @@ FN_ScCreateWnfStateName(
     _In_ ULONG MaximumStateSize,
     _In_ PSECURITY_DESCRIPTOR SecurityDescriptor
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateWnfStateName* volatile ScCreateWnfStateName;
+EXTERN_C FN_ScCreateWnfStateName* volatile ScCreateWnfStateName;
 
 typedef
 NTSTATUS
@@ -1665,7 +1665,7 @@ FN_ScCreateWorkerFactory(
     _In_opt_ SIZE_T StackReserve,
     _In_opt_ SIZE_T StackCommit
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScCreateWorkerFactory* volatile ScCreateWorkerFactory;
+EXTERN_C FN_ScCreateWorkerFactory* volatile ScCreateWorkerFactory;
 
 typedef
 NTSTATUS
@@ -1674,7 +1674,7 @@ FN_ScDebugActiveProcess(
     _In_ HANDLE ProcessHandle,
     _In_ HANDLE DebugObjectHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScDebugActiveProcess* volatile ScDebugActiveProcess;
+EXTERN_C FN_ScDebugActiveProcess* volatile ScDebugActiveProcess;
 
 typedef
 NTSTATUS
@@ -1684,7 +1684,7 @@ FN_ScDebugContinue(
     _In_ PCLIENT_ID ClientId,
     _In_ NTSTATUS ContinueStatus
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScDebugContinue* volatile ScDebugContinue;
+EXTERN_C FN_ScDebugContinue* volatile ScDebugContinue;
 
 typedef
 NTSTATUS
@@ -1693,7 +1693,7 @@ FN_ScDelayExecution(
     _In_ BOOLEAN Alertable,
     _In_ PLARGE_INTEGER DelayInterval
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScDelayExecution* volatile ScDelayExecution;
+EXTERN_C FN_ScDelayExecution* volatile ScDelayExecution;
 
 typedef
 NTSTATUS
@@ -1701,7 +1701,7 @@ NTAPI
 FN_ScDeleteAtom(
     _In_ RTL_ATOM Atom
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScDeleteAtom* volatile ScDeleteAtom;
+EXTERN_C FN_ScDeleteAtom* volatile ScDeleteAtom;
 
 typedef
 NTSTATUS
@@ -1709,7 +1709,7 @@ NTAPI
 FN_ScDeleteBootEntry(
     _In_ ULONG Id
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScDeleteBootEntry* volatile ScDeleteBootEntry;
+EXTERN_C FN_ScDeleteBootEntry* volatile ScDeleteBootEntry;
 
 typedef
 NTSTATUS
@@ -1717,7 +1717,7 @@ NTAPI
 FN_ScDeleteDriverEntry(
     _In_ ULONG Id
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScDeleteDriverEntry* volatile ScDeleteDriverEntry;
+EXTERN_C FN_ScDeleteDriverEntry* volatile ScDeleteDriverEntry;
 
 typedef
 NTSTATUS
@@ -1725,7 +1725,7 @@ NTAPI
 FN_ScDeleteFile(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScDeleteFile* volatile ScDeleteFile;
+EXTERN_C FN_ScDeleteFile* volatile ScDeleteFile;
 
 typedef
 NTSTATUS
@@ -1733,7 +1733,7 @@ NTAPI
 FN_ScDeleteKey(
     _In_ HANDLE KeyHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScDeleteKey* volatile ScDeleteKey;
+EXTERN_C FN_ScDeleteKey* volatile ScDeleteKey;
 
 typedef
 NTSTATUS
@@ -1743,7 +1743,7 @@ FN_ScDeleteObjectAuditAlarm(
     _In_opt_ PVOID HandleId,
     _In_ BOOLEAN GenerateOnClose
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScDeleteObjectAuditAlarm* volatile ScDeleteObjectAuditAlarm;
+EXTERN_C FN_ScDeleteObjectAuditAlarm* volatile ScDeleteObjectAuditAlarm;
 
 typedef
 NTSTATUS
@@ -1751,7 +1751,7 @@ NTAPI
 FN_ScDeletePrivateNamespace(
     _In_ HANDLE NamespaceHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScDeletePrivateNamespace* volatile ScDeletePrivateNamespace;
+EXTERN_C FN_ScDeletePrivateNamespace* volatile ScDeletePrivateNamespace;
 
 typedef
 NTSTATUS
@@ -1760,7 +1760,7 @@ FN_ScDeleteValueKey(
     _In_ HANDLE KeyHandle,
     _In_ PUNICODE_STRING ValueName
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScDeleteValueKey* volatile ScDeleteValueKey;
+EXTERN_C FN_ScDeleteValueKey* volatile ScDeleteValueKey;
 
 typedef
 NTSTATUS
@@ -1769,7 +1769,7 @@ FN_ScDeleteWnfStateData(
     _In_ PCWNF_STATE_NAME StateName,
     _In_opt_ const VOID* ExplicitScope
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScDeleteWnfStateData* volatile ScDeleteWnfStateData;
+EXTERN_C FN_ScDeleteWnfStateData* volatile ScDeleteWnfStateData;
 
 typedef
 NTSTATUS
@@ -1777,7 +1777,7 @@ NTAPI
 FN_ScDeleteWnfStateName(
     _In_ PCWNF_STATE_NAME StateName
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScDeleteWnfStateName* volatile ScDeleteWnfStateName;
+EXTERN_C FN_ScDeleteWnfStateName* volatile ScDeleteWnfStateName;
 
 typedef
 NTSTATUS
@@ -1794,7 +1794,7 @@ FN_ScDeviceIoControlFile(
     _Out_writes_bytes_opt_(OutputBufferLength) PVOID OutputBuffer,
     _In_ ULONG OutputBufferLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScDeviceIoControlFile* volatile ScDeviceIoControlFile;
+EXTERN_C FN_ScDeviceIoControlFile* volatile ScDeviceIoControlFile;
 
 typedef
 NTSTATUS
@@ -1802,7 +1802,7 @@ NTAPI
 FN_ScDisableLastKnownGood(
     VOID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScDisableLastKnownGood* volatile ScDisableLastKnownGood;
+EXTERN_C FN_ScDisableLastKnownGood* volatile ScDisableLastKnownGood;
 
 typedef
 NTSTATUS
@@ -1810,7 +1810,7 @@ NTAPI
 FN_ScDisplayString(
     _In_ PUNICODE_STRING String
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScDisplayString* volatile ScDisplayString;
+EXTERN_C FN_ScDisplayString* volatile ScDisplayString;
 
 typedef
 NTSTATUS
@@ -1818,7 +1818,7 @@ NTAPI
 FN_ScDrawText(
     _In_ PUNICODE_STRING Text
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScDrawText* volatile ScDrawText;
+EXTERN_C FN_ScDrawText* volatile ScDrawText;
 
 typedef
 NTSTATUS
@@ -1832,7 +1832,7 @@ FN_ScDuplicateObject(
     _In_ ULONG HandleAttributes,
     _In_ ULONG Options
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScDuplicateObject* volatile ScDuplicateObject;
+EXTERN_C FN_ScDuplicateObject* volatile ScDuplicateObject;
 
 typedef
 NTSTATUS
@@ -1845,7 +1845,7 @@ FN_ScDuplicateToken(
     _In_ TOKEN_TYPE Type,
     _Out_ PHANDLE NewTokenHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScDuplicateToken* volatile ScDuplicateToken;
+EXTERN_C FN_ScDuplicateToken* volatile ScDuplicateToken;
 
 typedef
 NTSTATUS
@@ -1853,7 +1853,7 @@ NTAPI
 FN_ScEnableLastKnownGood(
     VOID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScEnableLastKnownGood* volatile ScEnableLastKnownGood;
+EXTERN_C FN_ScEnableLastKnownGood* volatile ScEnableLastKnownGood;
 
 typedef
 NTSTATUS
@@ -1862,7 +1862,7 @@ FN_ScEnumerateBootEntries(
     _Out_writes_bytes_opt_(*BufferLength) PVOID Buffer,
     _Inout_ PULONG BufferLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScEnumerateBootEntries* volatile ScEnumerateBootEntries;
+EXTERN_C FN_ScEnumerateBootEntries* volatile ScEnumerateBootEntries;
 
 typedef
 NTSTATUS
@@ -1871,7 +1871,7 @@ FN_ScEnumerateDriverEntries(
     _Out_writes_bytes_opt_(*BufferLength) PVOID Buffer,
     _Inout_ PULONG BufferLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScEnumerateDriverEntries* volatile ScEnumerateDriverEntries;
+EXTERN_C FN_ScEnumerateDriverEntries* volatile ScEnumerateDriverEntries;
 
 typedef
 NTSTATUS
@@ -1884,7 +1884,7 @@ FN_ScEnumerateKey(
     _In_ ULONG Length,
     _Out_ PULONG ResultLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScEnumerateKey* volatile ScEnumerateKey;
+EXTERN_C FN_ScEnumerateKey* volatile ScEnumerateKey;
 
 typedef
 NTSTATUS
@@ -1894,7 +1894,7 @@ FN_ScEnumerateSystemEnvironmentValuesEx(
     _Out_ PVOID Buffer,
     _Inout_ PULONG BufferLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScEnumerateSystemEnvironmentValuesEx* volatile ScEnumerateSystemEnvironmentValuesEx;
+EXTERN_C FN_ScEnumerateSystemEnvironmentValuesEx* volatile ScEnumerateSystemEnvironmentValuesEx;
 
 typedef
 NTSTATUS
@@ -1906,7 +1906,7 @@ FN_ScEnumerateTransactionObject(
     _In_ ULONG ObjectCursorLength,
     _Out_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScEnumerateTransactionObject* volatile ScEnumerateTransactionObject;
+EXTERN_C FN_ScEnumerateTransactionObject* volatile ScEnumerateTransactionObject;
 
 typedef
 NTSTATUS
@@ -1919,7 +1919,7 @@ FN_ScEnumerateValueKey(
     _In_ ULONG Length,
     _Out_ PULONG ResultLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScEnumerateValueKey* volatile ScEnumerateValueKey;
+EXTERN_C FN_ScEnumerateValueKey* volatile ScEnumerateValueKey;
 
 typedef
 NTSTATUS
@@ -1928,7 +1928,7 @@ FN_ScExtendSection(
     _In_ HANDLE SectionHandle,
     _Inout_ PLARGE_INTEGER NewSectionSize
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScExtendSection* volatile ScExtendSection;
+EXTERN_C FN_ScExtendSection* volatile ScExtendSection;
 
 typedef
 NTSTATUS
@@ -1940,7 +1940,7 @@ FN_ScFilterBootOption(
     _In_reads_bytes_opt_(DataSize) PVOID Data,
     _In_ ULONG DataSize
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScFilterBootOption* volatile ScFilterBootOption;
+EXTERN_C FN_ScFilterBootOption* volatile ScFilterBootOption;
 
 typedef
 NTSTATUS
@@ -1953,7 +1953,7 @@ FN_ScFilterToken(
     _In_opt_ PTOKEN_GROUPS RestrictedSids,
     _Out_ PHANDLE NewTokenHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScFilterToken* volatile ScFilterToken;
+EXTERN_C FN_ScFilterToken* volatile ScFilterToken;
 
 typedef
 NTSTATUS
@@ -1974,7 +1974,7 @@ FN_ScFilterTokenEx(
     _In_opt_ PTOKEN_GROUPS RestrictedDeviceGroups,
     _Out_ PHANDLE NewTokenHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScFilterTokenEx* volatile ScFilterTokenEx;
+EXTERN_C FN_ScFilterTokenEx* volatile ScFilterTokenEx;
 
 typedef
 NTSTATUS
@@ -1984,7 +1984,7 @@ FN_ScFindAtom(
     _In_ ULONG Length,
     _Out_opt_ PRTL_ATOM Atom
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScFindAtom* volatile ScFindAtom;
+EXTERN_C FN_ScFindAtom* volatile ScFindAtom;
 
 typedef
 NTSTATUS
@@ -1993,7 +1993,7 @@ FN_ScFlushBuffersFile(
     _In_ HANDLE FileHandle,
     _Out_ PIO_STATUS_BLOCK IoStatusBlock
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScFlushBuffersFile* volatile ScFlushBuffersFile;
+EXTERN_C FN_ScFlushBuffersFile* volatile ScFlushBuffersFile;
 
 typedef
 NTSTATUS
@@ -2005,7 +2005,7 @@ FN_ScFlushBuffersFileEx(
     _In_ ULONG ParametersSize,
     _Out_ PIO_STATUS_BLOCK IoStatusBlock
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScFlushBuffersFileEx* volatile ScFlushBuffersFileEx;
+EXTERN_C FN_ScFlushBuffersFileEx* volatile ScFlushBuffersFileEx;
 
 typedef
 NTSTATUS
@@ -2014,7 +2014,7 @@ FN_ScFlushInstallUILanguage(
     _In_ LANGID InstallUILanguage,
     _In_ ULONG SetComittedFlag
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScFlushInstallUILanguage* volatile ScFlushInstallUILanguage;
+EXTERN_C FN_ScFlushInstallUILanguage* volatile ScFlushInstallUILanguage;
 
 typedef
 NTSTATUS
@@ -2024,7 +2024,7 @@ FN_ScFlushInstructionCache(
     _In_opt_ PVOID BaseAddress,
     _In_ SIZE_T RegionSize
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScFlushInstructionCache* volatile ScFlushInstructionCache;
+EXTERN_C FN_ScFlushInstructionCache* volatile ScFlushInstructionCache;
 
 typedef
 NTSTATUS
@@ -2032,7 +2032,7 @@ NTAPI
 FN_ScFlushKey(
     _In_ HANDLE KeyHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScFlushKey* volatile ScFlushKey;
+EXTERN_C FN_ScFlushKey* volatile ScFlushKey;
 
 typedef
 NTSTATUS
@@ -2040,7 +2040,7 @@ NTAPI
 FN_ScFlushProcessWriteBuffers(
     VOID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScFlushProcessWriteBuffers* volatile ScFlushProcessWriteBuffers;
+EXTERN_C FN_ScFlushProcessWriteBuffers* volatile ScFlushProcessWriteBuffers;
 
 typedef
 NTSTATUS
@@ -2051,7 +2051,7 @@ FN_ScFlushVirtualMemory(
     _Inout_ PSIZE_T RegionSize,
     _Out_ PIO_STATUS_BLOCK IoStatus
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScFlushVirtualMemory* volatile ScFlushVirtualMemory;
+EXTERN_C FN_ScFlushVirtualMemory* volatile ScFlushVirtualMemory;
 
 typedef
 NTSTATUS
@@ -2059,7 +2059,7 @@ NTAPI
 FN_ScFlushWriteBuffer(
     VOID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScFlushWriteBuffer* volatile ScFlushWriteBuffer;
+EXTERN_C FN_ScFlushWriteBuffer* volatile ScFlushWriteBuffer;
 
 typedef
 NTSTATUS
@@ -2069,7 +2069,7 @@ FN_ScFreeUserPhysicalPages(
     _Inout_ PULONG_PTR NumberOfPages,
     _In_reads_(*NumberOfPages) PULONG_PTR UserPfnArray
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScFreeUserPhysicalPages* volatile ScFreeUserPhysicalPages;
+EXTERN_C FN_ScFreeUserPhysicalPages* volatile ScFreeUserPhysicalPages;
 
 typedef
 NTSTATUS
@@ -2080,7 +2080,7 @@ FN_ScFreeVirtualMemory(
     _Inout_ PSIZE_T RegionSize,
     _In_ ULONG FreeType
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScFreeVirtualMemory* volatile ScFreeVirtualMemory;
+EXTERN_C FN_ScFreeVirtualMemory* volatile ScFreeVirtualMemory;
 
 typedef
 NTSTATUS
@@ -2088,7 +2088,7 @@ NTAPI
 FN_ScFreezeRegistry(
     _In_ ULONG TimeOutInSeconds
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScFreezeRegistry* volatile ScFreezeRegistry;
+EXTERN_C FN_ScFreezeRegistry* volatile ScFreezeRegistry;
 
 typedef
 NTSTATUS
@@ -2097,7 +2097,7 @@ FN_ScFreezeTransactions(
     _In_ PLARGE_INTEGER FreezeTimeout,
     _In_ PLARGE_INTEGER ThawTimeout
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScFreezeTransactions* volatile ScFreezeTransactions;
+EXTERN_C FN_ScFreezeTransactions* volatile ScFreezeTransactions;
 
 typedef
 NTSTATUS
@@ -2114,7 +2114,7 @@ FN_ScFsControlFile(
     _Out_writes_bytes_opt_(OutputBufferLength) PVOID OutputBuffer,
     _In_ ULONG OutputBufferLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScFsControlFile* volatile ScFsControlFile;
+EXTERN_C FN_ScFsControlFile* volatile ScFsControlFile;
 
 typedef
 NTSTATUS
@@ -2127,7 +2127,7 @@ FN_ScGetCachedSigningLevel(
     _Inout_opt_ PULONG ThumbprintSize,
     _Out_opt_ PULONG ThumbprintAlgorithm
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScGetCachedSigningLevel* volatile ScGetCachedSigningLevel;
+EXTERN_C FN_ScGetCachedSigningLevel* volatile ScGetCachedSigningLevel;
 
 typedef
 NTSTATUS
@@ -2140,7 +2140,7 @@ FN_ScGetCompleteWnfStateSubscription(
     _Out_writes_bytes_(DescriptorSize) PWNF_DELIVERY_DESCRIPTOR NewDeliveryDescriptor,
     _In_ ULONG DescriptorSize
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScGetCompleteWnfStateSubscription* volatile ScGetCompleteWnfStateSubscription;
+EXTERN_C FN_ScGetCompleteWnfStateSubscription* volatile ScGetCompleteWnfStateSubscription;
 
 typedef
 NTSTATUS
@@ -2149,7 +2149,7 @@ FN_ScGetContextThread(
     _In_ HANDLE ThreadHandle,
     _Inout_ PCONTEXT ThreadContext
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScGetContextThread* volatile ScGetContextThread;
+EXTERN_C FN_ScGetContextThread* volatile ScGetContextThread;
 
 typedef
 ULONG
@@ -2157,7 +2157,7 @@ NTAPI
 FN_ScGetCurrentProcessorNumber(
     VOID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScGetCurrentProcessorNumber* volatile ScGetCurrentProcessorNumber;
+EXTERN_C FN_ScGetCurrentProcessorNumber* volatile ScGetCurrentProcessorNumber;
 
 typedef
 ULONG
@@ -2165,7 +2165,7 @@ NTAPI
 FN_ScGetCurrentProcessorNumberEx(
     _Out_opt_ PPROCESSOR_NUMBER ProcessorNumber
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScGetCurrentProcessorNumberEx* volatile ScGetCurrentProcessorNumberEx;
+EXTERN_C FN_ScGetCurrentProcessorNumberEx* volatile ScGetCurrentProcessorNumberEx;
 
 typedef
 NTSTATUS
@@ -2174,7 +2174,7 @@ FN_ScGetDevicePowerState(
     _In_ HANDLE Device,
     _Out_ PDEVICE_POWER_STATE State
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScGetDevicePowerState* volatile ScGetDevicePowerState;
+EXTERN_C FN_ScGetDevicePowerState* volatile ScGetDevicePowerState;
 
 typedef
 NTSTATUS
@@ -2184,7 +2184,7 @@ FN_ScGetMUIRegistryInfo(
     _Inout_ PULONG DataSize,
     _Out_ PVOID Data
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScGetMUIRegistryInfo* volatile ScGetMUIRegistryInfo;
+EXTERN_C FN_ScGetMUIRegistryInfo* volatile ScGetMUIRegistryInfo;
 
 typedef
 NTSTATUS
@@ -2196,7 +2196,7 @@ FN_ScGetNextProcess(
     _In_ ULONG Flags,
     _Out_ PHANDLE NewProcessHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScGetNextProcess* volatile ScGetNextProcess;
+EXTERN_C FN_ScGetNextProcess* volatile ScGetNextProcess;
 
 typedef
 NTSTATUS
@@ -2209,7 +2209,7 @@ FN_ScGetNextThread(
     _In_ ULONG Flags,
     _Out_ PHANDLE NewThreadHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScGetNextThread* volatile ScGetNextThread;
+EXTERN_C FN_ScGetNextThread* volatile ScGetNextThread;
 
 typedef
 NTSTATUS
@@ -2221,7 +2221,7 @@ FN_ScGetNlsSectionPtr(
     _Out_ PVOID *SectionPointer,
     _Out_ PULONG SectionSize
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScGetNlsSectionPtr* volatile ScGetNlsSectionPtr;
+EXTERN_C FN_ScGetNlsSectionPtr* volatile ScGetNlsSectionPtr;
 
 typedef
 NTSTATUS
@@ -2235,7 +2235,7 @@ FN_ScGetNotificationResourceManager(
     _In_ ULONG Asynchronous,
     _In_opt_ ULONG_PTR AsynchronousContext
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScGetNotificationResourceManager* volatile ScGetNotificationResourceManager;
+EXTERN_C FN_ScGetNotificationResourceManager* volatile ScGetNotificationResourceManager;
 
 typedef
 NTSTATUS
@@ -2246,7 +2246,7 @@ FN_ScGetPlugPlayEvent(
     _Out_writes_bytes_(EventBufferSize) PPLUGPLAY_EVENT_BLOCK EventBlock,
     _In_ ULONG EventBufferSize
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScGetPlugPlayEvent* volatile ScGetPlugPlayEvent;
+EXTERN_C FN_ScGetPlugPlayEvent* volatile ScGetPlugPlayEvent;
 
 typedef
 NTSTATUS
@@ -2260,7 +2260,7 @@ FN_ScGetWriteWatch(
     _Inout_ PULONG_PTR EntriesInUserAddressArray,
     _Out_ PULONG Granularity
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScGetWriteWatch* volatile ScGetWriteWatch;
+EXTERN_C FN_ScGetWriteWatch* volatile ScGetWriteWatch;
 
 typedef
 NTSTATUS
@@ -2268,7 +2268,7 @@ NTAPI
 FN_ScImpersonateAnonymousToken(
     _In_ HANDLE ThreadHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScImpersonateAnonymousToken* volatile ScImpersonateAnonymousToken;
+EXTERN_C FN_ScImpersonateAnonymousToken* volatile ScImpersonateAnonymousToken;
 
 typedef
 NTSTATUS
@@ -2277,7 +2277,7 @@ FN_ScImpersonateClientOfPort(
     _In_ HANDLE PortHandle,
     _In_ PPORT_MESSAGE Message
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScImpersonateClientOfPort* volatile ScImpersonateClientOfPort;
+EXTERN_C FN_ScImpersonateClientOfPort* volatile ScImpersonateClientOfPort;
 
 typedef
 NTSTATUS
@@ -2287,7 +2287,7 @@ FN_ScImpersonateThread(
     _In_ HANDLE ClientThreadHandle,
     _In_ PSECURITY_QUALITY_OF_SERVICE SecurityQos
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScImpersonateThread* volatile ScImpersonateThread;
+EXTERN_C FN_ScImpersonateThread* volatile ScImpersonateThread;
 
 typedef
 NTSTATUS
@@ -2299,7 +2299,7 @@ FN_ScInitializeEnclave(
     _In_ ULONG EnclaveInformationLength,
     _Out_opt_ PULONG EnclaveError
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScInitializeEnclave* volatile ScInitializeEnclave;
+EXTERN_C FN_ScInitializeEnclave* volatile ScInitializeEnclave;
 
 typedef
 NTSTATUS
@@ -2310,7 +2310,7 @@ FN_ScInitializeNlsFiles(
     _Out_ PLARGE_INTEGER DefaultCasingTableSize,
     _Out_opt_ PULONG CurrentNLSVersion
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScInitializeNlsFiles* volatile ScInitializeNlsFiles;
+EXTERN_C FN_ScInitializeNlsFiles* volatile ScInitializeNlsFiles;
 
 typedef
 NTSTATUS
@@ -2318,7 +2318,7 @@ NTAPI
 FN_ScInitializeRegistry(
     _In_ USHORT BootCondition
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScInitializeRegistry* volatile ScInitializeRegistry;
+EXTERN_C FN_ScInitializeRegistry* volatile ScInitializeRegistry;
 
 typedef
 NTSTATUS
@@ -2329,7 +2329,7 @@ FN_ScInitiatePowerAction(
     _In_ ULONG Flags, // POWER_ACTION_* flags
     _In_ BOOLEAN Asynchronous
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScInitiatePowerAction* volatile ScInitiatePowerAction;
+EXTERN_C FN_ScInitiatePowerAction* volatile ScInitiatePowerAction;
 
 typedef
 NTSTATUS
@@ -2338,7 +2338,7 @@ FN_ScIsProcessInJob(
     _In_ HANDLE ProcessHandle,
     _In_opt_ HANDLE JobHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScIsProcessInJob* volatile ScIsProcessInJob;
+EXTERN_C FN_ScIsProcessInJob* volatile ScIsProcessInJob;
 
 typedef
 BOOLEAN
@@ -2346,7 +2346,7 @@ NTAPI
 FN_ScIsSystemResumeAutomatic(
     VOID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScIsSystemResumeAutomatic* volatile ScIsSystemResumeAutomatic;
+EXTERN_C FN_ScIsSystemResumeAutomatic* volatile ScIsSystemResumeAutomatic;
 
 typedef
 NTSTATUS
@@ -2354,7 +2354,7 @@ NTAPI
 FN_ScIsUILanguageComitted(
     VOID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScIsUILanguageComitted* volatile ScIsUILanguageComitted;
+EXTERN_C FN_ScIsUILanguageComitted* volatile ScIsUILanguageComitted;
 
 typedef
 NTSTATUS
@@ -2363,7 +2363,7 @@ FN_ScListenPort(
     _In_ HANDLE PortHandle,
     _Out_ PPORT_MESSAGE ConnectionRequest
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScListenPort* volatile ScListenPort;
+EXTERN_C FN_ScListenPort* volatile ScListenPort;
 
 typedef
 NTSTATUS
@@ -2371,7 +2371,7 @@ NTAPI
 FN_ScLoadDriver(
     _In_ PUNICODE_STRING DriverServiceName
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScLoadDriver* volatile ScLoadDriver;
+EXTERN_C FN_ScLoadDriver* volatile ScLoadDriver;
 
 typedef
 NTSTATUS
@@ -2387,7 +2387,7 @@ FN_ScLoadEnclaveData(
     _Out_opt_ PSIZE_T NumberOfBytesWritten,
     _Out_opt_ PULONG EnclaveError
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScLoadEnclaveData* volatile ScLoadEnclaveData;
+EXTERN_C FN_ScLoadEnclaveData* volatile ScLoadEnclaveData;
 
 typedef
 NTSTATUS
@@ -2396,7 +2396,7 @@ FN_ScLoadKey(
     _In_ POBJECT_ATTRIBUTES TargetKey,
     _In_ POBJECT_ATTRIBUTES SourceFile
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScLoadKey* volatile ScLoadKey;
+EXTERN_C FN_ScLoadKey* volatile ScLoadKey;
 
 typedef
 NTSTATUS
@@ -2406,7 +2406,7 @@ FN_ScLoadKey2(
     _In_ POBJECT_ATTRIBUTES SourceFile,
     _In_ ULONG Flags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScLoadKey2* volatile ScLoadKey2;
+EXTERN_C FN_ScLoadKey2* volatile ScLoadKey2;
 
 typedef
 NTSTATUS
@@ -2421,7 +2421,7 @@ FN_ScLoadKey3(
     _Out_opt_ PHANDLE RootHandle,
     _Reserved_ PVOID Reserved
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScLoadKey3* volatile ScLoadKey3;
+EXTERN_C FN_ScLoadKey3* volatile ScLoadKey3;
 
 typedef
 NTSTATUS
@@ -2436,7 +2436,7 @@ FN_ScLoadKeyEx(
     _Out_opt_ PHANDLE RootHandle,
     _Reserved_ PVOID Reserved // previously PIO_STATUS_BLOCK
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScLoadKeyEx* volatile ScLoadKeyEx;
+EXTERN_C FN_ScLoadKeyEx* volatile ScLoadKeyEx;
 
 typedef
 NTSTATUS
@@ -2453,7 +2453,7 @@ FN_ScLockFile(
     _In_ BOOLEAN FailImmediately,
     _In_ BOOLEAN ExclusiveLock
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScLockFile* volatile ScLockFile;
+EXTERN_C FN_ScLockFile* volatile ScLockFile;
 
 typedef
 NTSTATUS
@@ -2462,7 +2462,7 @@ FN_ScLockProductActivationKeys(
     _Inout_opt_ ULONG *pPrivateVer,
     _Out_opt_ ULONG *pSafeMode
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScLockProductActivationKeys* volatile ScLockProductActivationKeys;
+EXTERN_C FN_ScLockProductActivationKeys* volatile ScLockProductActivationKeys;
 
 typedef
 NTSTATUS
@@ -2470,7 +2470,7 @@ NTAPI
 FN_ScLockRegistryKey(
     _In_ HANDLE KeyHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScLockRegistryKey* volatile ScLockRegistryKey;
+EXTERN_C FN_ScLockRegistryKey* volatile ScLockRegistryKey;
 
 typedef
 NTSTATUS
@@ -2481,7 +2481,7 @@ FN_ScLockVirtualMemory(
     _Inout_ PSIZE_T RegionSize,
     _In_ ULONG MapType
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScLockVirtualMemory* volatile ScLockVirtualMemory;
+EXTERN_C FN_ScLockVirtualMemory* volatile ScLockVirtualMemory;
 
 typedef
 NTSTATUS
@@ -2489,7 +2489,7 @@ NTAPI
 FN_ScMakePermanentObject(
     _In_ HANDLE Handle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScMakePermanentObject* volatile ScMakePermanentObject;
+EXTERN_C FN_ScMakePermanentObject* volatile ScMakePermanentObject;
 
 typedef
 NTSTATUS
@@ -2497,7 +2497,7 @@ NTAPI
 FN_ScMakeTemporaryObject(
     _In_ HANDLE Handle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScMakeTemporaryObject* volatile ScMakeTemporaryObject;
+EXTERN_C FN_ScMakeTemporaryObject* volatile ScMakeTemporaryObject;
 
 typedef
 NTSTATUS
@@ -2509,7 +2509,7 @@ FN_ScManagePartition(
     _Inout_updates_bytes_(PartitionInformationLength) PVOID PartitionInformation,
     _In_ ULONG PartitionInformationLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScManagePartition* volatile ScManagePartition;
+EXTERN_C FN_ScManagePartition* volatile ScManagePartition;
 
 typedef
 NTSTATUS
@@ -2522,7 +2522,7 @@ FN_ScMapCMFModule(
     _Out_opt_ PULONG ViewSizeOut,
     _Out_opt_ PVOID *BaseAddress
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScMapCMFModule* volatile ScMapCMFModule;
+EXTERN_C FN_ScMapCMFModule* volatile ScMapCMFModule;
 
 typedef
 NTSTATUS
@@ -2532,7 +2532,7 @@ FN_ScMapUserPhysicalPages(
     _In_ SIZE_T NumberOfPages,
     _In_reads_opt_(NumberOfPages) PULONG_PTR UserPfnArray
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScMapUserPhysicalPages* volatile ScMapUserPhysicalPages;
+EXTERN_C FN_ScMapUserPhysicalPages* volatile ScMapUserPhysicalPages;
 
 typedef
 NTSTATUS
@@ -2542,7 +2542,7 @@ FN_ScMapUserPhysicalPagesScatter(
     _In_ SIZE_T NumberOfPages,
     _In_reads_opt_(NumberOfPages) PULONG_PTR UserPfnArray
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScMapUserPhysicalPagesScatter* volatile ScMapUserPhysicalPagesScatter;
+EXTERN_C FN_ScMapUserPhysicalPagesScatter* volatile ScMapUserPhysicalPagesScatter;
 
 typedef
 NTSTATUS
@@ -2559,7 +2559,7 @@ FN_ScMapViewOfSection(
     _In_ ULONG AllocationType,
     _In_ ULONG PageProtection
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScMapViewOfSection* volatile ScMapViewOfSection;
+EXTERN_C FN_ScMapViewOfSection* volatile ScMapViewOfSection;
 
 typedef
 NTSTATUS
@@ -2575,7 +2575,7 @@ FN_ScMapViewOfSectionEx(
     _Inout_updates_opt_(ExtendedParameterCount) PMEM_EXTENDED_PARAMETER ExtendedParameters,
     _In_ ULONG ExtendedParameterCount
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScMapViewOfSectionEx* volatile ScMapViewOfSectionEx;
+EXTERN_C FN_ScMapViewOfSectionEx* volatile ScMapViewOfSectionEx;
 
 typedef
 NTSTATUS
@@ -2583,7 +2583,7 @@ NTAPI
 FN_ScModifyBootEntry(
     _In_ PBOOT_ENTRY BootEntry
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScModifyBootEntry* volatile ScModifyBootEntry;
+EXTERN_C FN_ScModifyBootEntry* volatile ScModifyBootEntry;
 
 typedef
 NTSTATUS
@@ -2591,7 +2591,7 @@ NTAPI
 FN_ScModifyDriverEntry(
     _In_ PEFI_DRIVER_ENTRY DriverEntry
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScModifyDriverEntry* volatile ScModifyDriverEntry;
+EXTERN_C FN_ScModifyDriverEntry* volatile ScModifyDriverEntry;
 
 typedef
 NTSTATUS
@@ -2607,7 +2607,7 @@ FN_ScNotifyChangeDirectoryFile(
     _In_ ULONG CompletionFilter,
     _In_ BOOLEAN WatchTree
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScNotifyChangeDirectoryFile* volatile ScNotifyChangeDirectoryFile;
+EXTERN_C FN_ScNotifyChangeDirectoryFile* volatile ScNotifyChangeDirectoryFile;
 
 typedef
 NTSTATUS
@@ -2624,7 +2624,7 @@ FN_ScNotifyChangeDirectoryFileEx(
     _In_ BOOLEAN WatchTree,
     _In_opt_ DIRECTORY_NOTIFY_INFORMATION_CLASS DirectoryNotifyInformationClass
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScNotifyChangeDirectoryFileEx* volatile ScNotifyChangeDirectoryFileEx;
+EXTERN_C FN_ScNotifyChangeDirectoryFileEx* volatile ScNotifyChangeDirectoryFileEx;
 
 typedef
 NTSTATUS
@@ -2641,7 +2641,7 @@ FN_ScNotifyChangeKey(
     _In_ ULONG BufferSize,
     _In_ BOOLEAN Asynchronous
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScNotifyChangeKey* volatile ScNotifyChangeKey;
+EXTERN_C FN_ScNotifyChangeKey* volatile ScNotifyChangeKey;
 
 typedef
 NTSTATUS
@@ -2660,7 +2660,7 @@ FN_ScNotifyChangeMultipleKeys(
     _In_ ULONG BufferSize,
     _In_ BOOLEAN Asynchronous
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScNotifyChangeMultipleKeys* volatile ScNotifyChangeMultipleKeys;
+EXTERN_C FN_ScNotifyChangeMultipleKeys* volatile ScNotifyChangeMultipleKeys;
 
 typedef
 NTSTATUS
@@ -2675,7 +2675,7 @@ FN_ScNotifyChangeSession(
     _In_reads_bytes_opt_(PayloadSize) PVOID Payload,
     _In_ ULONG PayloadSize
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScNotifyChangeSession* volatile ScNotifyChangeSession;
+EXTERN_C FN_ScNotifyChangeSession* volatile ScNotifyChangeSession;
 
 typedef
 NTSTATUS
@@ -2685,7 +2685,7 @@ FN_ScOpenDirectoryObject(
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenDirectoryObject* volatile ScOpenDirectoryObject;
+EXTERN_C FN_ScOpenDirectoryObject* volatile ScOpenDirectoryObject;
 
 typedef
 NTSTATUS
@@ -2697,7 +2697,7 @@ FN_ScOpenEnlistment(
     _In_ LPGUID EnlistmentGuid,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenEnlistment* volatile ScOpenEnlistment;
+EXTERN_C FN_ScOpenEnlistment* volatile ScOpenEnlistment;
 
 typedef
 NTSTATUS
@@ -2707,7 +2707,7 @@ FN_ScOpenEvent(
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenEvent* volatile ScOpenEvent;
+EXTERN_C FN_ScOpenEvent* volatile ScOpenEvent;
 
 typedef
 NTSTATUS
@@ -2717,7 +2717,7 @@ FN_ScOpenEventPair(
     _In_ ACCESS_MASK DesiredAccess,
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenEventPair* volatile ScOpenEventPair;
+EXTERN_C FN_ScOpenEventPair* volatile ScOpenEventPair;
 
 typedef
 NTSTATUS
@@ -2730,7 +2730,7 @@ FN_ScOpenFile(
     _In_ ULONG ShareAccess,
     _In_ ULONG OpenOptions
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenFile* volatile ScOpenFile;
+EXTERN_C FN_ScOpenFile* volatile ScOpenFile;
 
 typedef
 NTSTATUS
@@ -2740,7 +2740,7 @@ FN_ScOpenIoCompletion(
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenIoCompletion* volatile ScOpenIoCompletion;
+EXTERN_C FN_ScOpenIoCompletion* volatile ScOpenIoCompletion;
 
 typedef
 NTSTATUS
@@ -2750,7 +2750,7 @@ FN_ScOpenJobObject(
     _In_ ACCESS_MASK DesiredAccess,
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenJobObject* volatile ScOpenJobObject;
+EXTERN_C FN_ScOpenJobObject* volatile ScOpenJobObject;
 
 typedef
 NTSTATUS
@@ -2760,7 +2760,7 @@ FN_ScOpenKey(
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenKey* volatile ScOpenKey;
+EXTERN_C FN_ScOpenKey* volatile ScOpenKey;
 
 typedef
 NTSTATUS
@@ -2770,7 +2770,7 @@ FN_ScOpenKeyedEvent(
     _In_ ACCESS_MASK DesiredAccess,
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenKeyedEvent* volatile ScOpenKeyedEvent;
+EXTERN_C FN_ScOpenKeyedEvent* volatile ScOpenKeyedEvent;
 
 typedef
 NTSTATUS
@@ -2781,7 +2781,7 @@ FN_ScOpenKeyEx(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_ ULONG OpenOptions
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenKeyEx* volatile ScOpenKeyEx;
+EXTERN_C FN_ScOpenKeyEx* volatile ScOpenKeyEx;
 
 typedef
 NTSTATUS
@@ -2792,7 +2792,7 @@ FN_ScOpenKeyTransacted(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_ HANDLE TransactionHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenKeyTransacted* volatile ScOpenKeyTransacted;
+EXTERN_C FN_ScOpenKeyTransacted* volatile ScOpenKeyTransacted;
 
 typedef
 NTSTATUS
@@ -2804,7 +2804,7 @@ FN_ScOpenKeyTransactedEx(
     _In_ ULONG OpenOptions,
     _In_ HANDLE TransactionHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenKeyTransactedEx* volatile ScOpenKeyTransactedEx;
+EXTERN_C FN_ScOpenKeyTransactedEx* volatile ScOpenKeyTransactedEx;
 
 typedef
 NTSTATUS
@@ -2814,7 +2814,7 @@ FN_ScOpenMutant(
     _In_ ACCESS_MASK DesiredAccess,
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenMutant* volatile ScOpenMutant;
+EXTERN_C FN_ScOpenMutant* volatile ScOpenMutant;
 
 typedef
 NTSTATUS
@@ -2833,7 +2833,7 @@ FN_ScOpenObjectAuditAlarm(
     _In_ BOOLEAN AccessGranted,
     _Out_ PBOOLEAN GenerateOnClose
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenObjectAuditAlarm* volatile ScOpenObjectAuditAlarm;
+EXTERN_C FN_ScOpenObjectAuditAlarm* volatile ScOpenObjectAuditAlarm;
 
 typedef
 NTSTATUS
@@ -2843,7 +2843,7 @@ FN_ScOpenPartition(
     _In_ ACCESS_MASK DesiredAccess,
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenPartition* volatile ScOpenPartition;
+EXTERN_C FN_ScOpenPartition* volatile ScOpenPartition;
 
 typedef
 NTSTATUS
@@ -2854,7 +2854,7 @@ FN_ScOpenPrivateNamespace(
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_ POBJECT_BOUNDARY_DESCRIPTOR BoundaryDescriptor
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenPrivateNamespace* volatile ScOpenPrivateNamespace;
+EXTERN_C FN_ScOpenPrivateNamespace* volatile ScOpenPrivateNamespace;
 
 typedef
 NTSTATUS
@@ -2865,7 +2865,7 @@ FN_ScOpenProcess(
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes,
     _In_opt_ PCLIENT_ID ClientId
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenProcess* volatile ScOpenProcess;
+EXTERN_C FN_ScOpenProcess* volatile ScOpenProcess;
 
 typedef
 NTSTATUS
@@ -2875,7 +2875,7 @@ FN_ScOpenProcessToken(
     _In_ ACCESS_MASK DesiredAccess,
     _Out_ PHANDLE TokenHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenProcessToken* volatile ScOpenProcessToken;
+EXTERN_C FN_ScOpenProcessToken* volatile ScOpenProcessToken;
 
 typedef
 NTSTATUS
@@ -2886,7 +2886,7 @@ FN_ScOpenProcessTokenEx(
     _In_ ULONG HandleAttributes,
     _Out_ PHANDLE TokenHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenProcessTokenEx* volatile ScOpenProcessTokenEx;
+EXTERN_C FN_ScOpenProcessTokenEx* volatile ScOpenProcessTokenEx;
 
 typedef
 NTSTATUS
@@ -2896,7 +2896,7 @@ FN_ScOpenRegistryTransaction(
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenRegistryTransaction* volatile ScOpenRegistryTransaction;
+EXTERN_C FN_ScOpenRegistryTransaction* volatile ScOpenRegistryTransaction;
 
 typedef
 NTSTATUS
@@ -2908,7 +2908,7 @@ FN_ScOpenResourceManager(
     _In_opt_ LPGUID ResourceManagerGuid,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenResourceManager* volatile ScOpenResourceManager;
+EXTERN_C FN_ScOpenResourceManager* volatile ScOpenResourceManager;
 
 typedef
 NTSTATUS
@@ -2918,7 +2918,7 @@ FN_ScOpenSection(
     _In_ ACCESS_MASK DesiredAccess,
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenSection* volatile ScOpenSection;
+EXTERN_C FN_ScOpenSection* volatile ScOpenSection;
 
 typedef
 NTSTATUS
@@ -2928,7 +2928,7 @@ FN_ScOpenSemaphore(
     _In_ ACCESS_MASK DesiredAccess,
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenSemaphore* volatile ScOpenSemaphore;
+EXTERN_C FN_ScOpenSemaphore* volatile ScOpenSemaphore;
 
 typedef
 NTSTATUS
@@ -2938,7 +2938,7 @@ FN_ScOpenSession(
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenSession* volatile ScOpenSession;
+EXTERN_C FN_ScOpenSession* volatile ScOpenSession;
 
 typedef
 NTSTATUS
@@ -2948,7 +2948,7 @@ FN_ScOpenSymbolicLinkObject(
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenSymbolicLinkObject* volatile ScOpenSymbolicLinkObject;
+EXTERN_C FN_ScOpenSymbolicLinkObject* volatile ScOpenSymbolicLinkObject;
 
 typedef
 NTSTATUS
@@ -2959,7 +2959,7 @@ FN_ScOpenThread(
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes,
     _In_opt_ PCLIENT_ID ClientId
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenThread* volatile ScOpenThread;
+EXTERN_C FN_ScOpenThread* volatile ScOpenThread;
 
 typedef
 NTSTATUS
@@ -2970,7 +2970,7 @@ FN_ScOpenThreadToken(
     _In_ BOOLEAN OpenAsSelf,
     _Out_ PHANDLE TokenHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenThreadToken* volatile ScOpenThreadToken;
+EXTERN_C FN_ScOpenThreadToken* volatile ScOpenThreadToken;
 
 typedef
 NTSTATUS
@@ -2982,7 +2982,7 @@ FN_ScOpenThreadTokenEx(
     _In_ ULONG HandleAttributes,
     _Out_ PHANDLE TokenHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenThreadTokenEx* volatile ScOpenThreadTokenEx;
+EXTERN_C FN_ScOpenThreadTokenEx* volatile ScOpenThreadTokenEx;
 
 typedef
 NTSTATUS
@@ -2992,7 +2992,7 @@ FN_ScOpenTimer(
     _In_ ACCESS_MASK DesiredAccess,
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenTimer* volatile ScOpenTimer;
+EXTERN_C FN_ScOpenTimer* volatile ScOpenTimer;
 
 typedef
 NTSTATUS
@@ -3004,7 +3004,7 @@ FN_ScOpenTransaction(
     _In_ LPGUID Uow,
     _In_opt_ HANDLE TmHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenTransaction* volatile ScOpenTransaction;
+EXTERN_C FN_ScOpenTransaction* volatile ScOpenTransaction;
 
 typedef
 NTSTATUS
@@ -3017,7 +3017,7 @@ FN_ScOpenTransactionManager(
     _In_opt_ LPGUID TmIdentity,
     _In_opt_ ULONG OpenOptions
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScOpenTransactionManager* volatile ScOpenTransactionManager;
+EXTERN_C FN_ScOpenTransactionManager* volatile ScOpenTransactionManager;
 
 typedef
 NTSTATUS
@@ -3027,7 +3027,7 @@ FN_ScPlugPlayControl(
     _Inout_updates_bytes_(PnPControlDataLength) PVOID PnPControlData,
     _In_ ULONG PnPControlDataLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScPlugPlayControl* volatile ScPlugPlayControl;
+EXTERN_C FN_ScPlugPlayControl* volatile ScPlugPlayControl;
 
 typedef
 NTSTATUS
@@ -3039,7 +3039,7 @@ FN_ScPowerInformation(
     _Out_writes_bytes_opt_(OutputBufferLength) PVOID OutputBuffer,
     _In_ ULONG OutputBufferLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScPowerInformation* volatile ScPowerInformation;
+EXTERN_C FN_ScPowerInformation* volatile ScPowerInformation;
 
 typedef
 NTSTATUS
@@ -3048,7 +3048,7 @@ FN_ScPrepareComplete(
     _In_ HANDLE EnlistmentHandle,
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScPrepareComplete* volatile ScPrepareComplete;
+EXTERN_C FN_ScPrepareComplete* volatile ScPrepareComplete;
 
 typedef
 NTSTATUS
@@ -3057,7 +3057,7 @@ FN_ScPrepareEnlistment(
     _In_ HANDLE EnlistmentHandle,
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScPrepareEnlistment* volatile ScPrepareEnlistment;
+EXTERN_C FN_ScPrepareEnlistment* volatile ScPrepareEnlistment;
 
 typedef
 NTSTATUS
@@ -3066,7 +3066,7 @@ FN_ScPrePrepareComplete(
     _In_ HANDLE EnlistmentHandle,
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScPrePrepareComplete* volatile ScPrePrepareComplete;
+EXTERN_C FN_ScPrePrepareComplete* volatile ScPrePrepareComplete;
 
 typedef
 NTSTATUS
@@ -3075,7 +3075,7 @@ FN_ScPrePrepareEnlistment(
     _In_ HANDLE EnlistmentHandle,
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScPrePrepareEnlistment* volatile ScPrePrepareEnlistment;
+EXTERN_C FN_ScPrePrepareEnlistment* volatile ScPrePrepareEnlistment;
 
 typedef
 NTSTATUS
@@ -3085,7 +3085,7 @@ FN_ScPrivilegeCheck(
     _Inout_ PPRIVILEGE_SET RequiredPrivileges,
     _Out_ PBOOLEAN Result
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScPrivilegeCheck* volatile ScPrivilegeCheck;
+EXTERN_C FN_ScPrivilegeCheck* volatile ScPrivilegeCheck;
 
 typedef
 NTSTATUS
@@ -3097,7 +3097,7 @@ FN_ScPrivilegedServiceAuditAlarm(
     _In_ PPRIVILEGE_SET Privileges,
     _In_ BOOLEAN AccessGranted
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScPrivilegedServiceAuditAlarm* volatile ScPrivilegedServiceAuditAlarm;
+EXTERN_C FN_ScPrivilegedServiceAuditAlarm* volatile ScPrivilegedServiceAuditAlarm;
 
 typedef
 NTSTATUS
@@ -3110,7 +3110,7 @@ FN_ScPrivilegeObjectAuditAlarm(
     _In_ PPRIVILEGE_SET Privileges,
     _In_ BOOLEAN AccessGranted
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScPrivilegeObjectAuditAlarm* volatile ScPrivilegeObjectAuditAlarm;
+EXTERN_C FN_ScPrivilegeObjectAuditAlarm* volatile ScPrivilegeObjectAuditAlarm;
 
 typedef
 NTSTATUS
@@ -3121,7 +3121,7 @@ FN_ScPropagationComplete(
     _In_ ULONG BufferLength,
     _In_ PVOID Buffer
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScPropagationComplete* volatile ScPropagationComplete;
+EXTERN_C FN_ScPropagationComplete* volatile ScPropagationComplete;
 
 typedef
 NTSTATUS
@@ -3131,7 +3131,7 @@ FN_ScPropagationFailed(
     _In_ ULONG RequestCookie,
     _In_ NTSTATUS PropStatus
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScPropagationFailed* volatile ScPropagationFailed;
+EXTERN_C FN_ScPropagationFailed* volatile ScPropagationFailed;
 
 typedef
 NTSTATUS
@@ -3143,7 +3143,7 @@ FN_ScProtectVirtualMemory(
     _In_ ULONG NewProtection,
     _Out_ PULONG OldProtection
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScProtectVirtualMemory* volatile ScProtectVirtualMemory;
+EXTERN_C FN_ScProtectVirtualMemory* volatile ScProtectVirtualMemory;
 
 typedef
 NTSTATUS
@@ -3155,7 +3155,7 @@ FN_ScPssCaptureVaSpaceBulk(
     _In_ SIZE_T BulkInformationLength,
     _Out_opt_ PSIZE_T ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScPssCaptureVaSpaceBulk* volatile ScPssCaptureVaSpaceBulk;
+EXTERN_C FN_ScPssCaptureVaSpaceBulk* volatile ScPssCaptureVaSpaceBulk;
 
 typedef
 NTSTATUS
@@ -3164,7 +3164,7 @@ FN_ScPulseEvent(
     _In_ HANDLE EventHandle,
     _Out_opt_ PLONG PreviousState
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScPulseEvent* volatile ScPulseEvent;
+EXTERN_C FN_ScPulseEvent* volatile ScPulseEvent;
 
 typedef
 NTSTATUS
@@ -3173,7 +3173,7 @@ FN_ScQueryAttributesFile(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes,
     _Out_ PFILE_BASIC_INFORMATION FileInformation
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryAttributesFile* volatile ScQueryAttributesFile;
+EXTERN_C FN_ScQueryAttributesFile* volatile ScQueryAttributesFile;
 
 typedef
 NTSTATUS
@@ -3181,7 +3181,7 @@ NTAPI
 FN_ScQueryAuxiliaryCounterFrequency(
     _Out_ PULONG64 AuxiliaryCounterFrequency
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryAuxiliaryCounterFrequency* volatile ScQueryAuxiliaryCounterFrequency;
+EXTERN_C FN_ScQueryAuxiliaryCounterFrequency* volatile ScQueryAuxiliaryCounterFrequency;
 
 typedef
 NTSTATUS
@@ -3190,7 +3190,7 @@ FN_ScQueryBootEntryOrder(
     _Out_writes_opt_(*Count) PULONG Ids,
     _Inout_ PULONG Count
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryBootEntryOrder* volatile ScQueryBootEntryOrder;
+EXTERN_C FN_ScQueryBootEntryOrder* volatile ScQueryBootEntryOrder;
 
 typedef
 NTSTATUS
@@ -3199,7 +3199,7 @@ FN_ScQueryBootOptions(
     _Out_writes_bytes_opt_(*BootOptionsLength) PBOOT_OPTIONS BootOptions,
     _Inout_ PULONG BootOptionsLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryBootOptions* volatile ScQueryBootOptions;
+EXTERN_C FN_ScQueryBootOptions* volatile ScQueryBootOptions;
 
 typedef
 NTSTATUS
@@ -3208,7 +3208,7 @@ FN_ScQueryDebugFilterState(
     _In_ ULONG ComponentId,
     _In_ ULONG Level
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryDebugFilterState* volatile ScQueryDebugFilterState;
+EXTERN_C FN_ScQueryDebugFilterState* volatile ScQueryDebugFilterState;
 
 typedef
 NTSTATUS
@@ -3217,7 +3217,7 @@ FN_ScQueryDefaultLocale(
     _In_ BOOLEAN UserProfile,
     _Out_ PLCID DefaultLocaleId
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryDefaultLocale* volatile ScQueryDefaultLocale;
+EXTERN_C FN_ScQueryDefaultLocale* volatile ScQueryDefaultLocale;
 
 typedef
 NTSTATUS
@@ -3225,7 +3225,7 @@ NTAPI
 FN_ScQueryDefaultUILanguage(
     _Out_ LANGID *DefaultUILanguageId
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryDefaultUILanguage* volatile ScQueryDefaultUILanguage;
+EXTERN_C FN_ScQueryDefaultUILanguage* volatile ScQueryDefaultUILanguage;
 
 typedef
 NTSTATUS
@@ -3243,7 +3243,7 @@ FN_ScQueryDirectoryFile(
     _In_opt_ PUNICODE_STRING FileName,
     _In_ BOOLEAN RestartScan
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryDirectoryFile* volatile ScQueryDirectoryFile;
+EXTERN_C FN_ScQueryDirectoryFile* volatile ScQueryDirectoryFile;
 
 typedef
 NTSTATUS
@@ -3260,7 +3260,7 @@ FN_ScQueryDirectoryFileEx(
     _In_ ULONG QueryFlags,
     _In_opt_ PUNICODE_STRING FileName
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryDirectoryFileEx* volatile ScQueryDirectoryFileEx;
+EXTERN_C FN_ScQueryDirectoryFileEx* volatile ScQueryDirectoryFileEx;
 
 typedef
 NTSTATUS
@@ -3274,7 +3274,7 @@ FN_ScQueryDirectoryObject(
     _Inout_ PULONG Context,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryDirectoryObject* volatile ScQueryDirectoryObject;
+EXTERN_C FN_ScQueryDirectoryObject* volatile ScQueryDirectoryObject;
 
 typedef
 NTSTATUS
@@ -3283,7 +3283,7 @@ FN_ScQueryDriverEntryOrder(
     _Out_writes_opt_(*Count) PULONG Ids,
     _Inout_ PULONG Count
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryDriverEntryOrder* volatile ScQueryDriverEntryOrder;
+EXTERN_C FN_ScQueryDriverEntryOrder* volatile ScQueryDriverEntryOrder;
 
 typedef
 NTSTATUS
@@ -3299,7 +3299,7 @@ FN_ScQueryEaFile(
     _In_opt_ PULONG EaIndex,
     _In_ BOOLEAN RestartScan
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryEaFile* volatile ScQueryEaFile;
+EXTERN_C FN_ScQueryEaFile* volatile ScQueryEaFile;
 
 typedef
 NTSTATUS
@@ -3311,7 +3311,7 @@ FN_ScQueryEvent(
     _In_ ULONG EventInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryEvent* volatile ScQueryEvent;
+EXTERN_C FN_ScQueryEvent* volatile ScQueryEvent;
 
 typedef
 NTSTATUS
@@ -3320,7 +3320,7 @@ FN_ScQueryFullAttributesFile(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes,
     _Out_ PFILE_NETWORK_OPEN_INFORMATION FileInformation
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryFullAttributesFile* volatile ScQueryFullAttributesFile;
+EXTERN_C FN_ScQueryFullAttributesFile* volatile ScQueryFullAttributesFile;
 
 typedef
 NTSTATUS
@@ -3332,7 +3332,7 @@ FN_ScQueryInformationAtom(
     _In_ ULONG AtomInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryInformationAtom* volatile ScQueryInformationAtom;
+EXTERN_C FN_ScQueryInformationAtom* volatile ScQueryInformationAtom;
 
 typedef
 NTSTATUS
@@ -3344,7 +3344,7 @@ FN_ScQueryInformationByName(
     _In_ ULONG Length,
     _In_ FILE_INFORMATION_CLASS FileInformationClass
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryInformationByName* volatile ScQueryInformationByName;
+EXTERN_C FN_ScQueryInformationByName* volatile ScQueryInformationByName;
 
 typedef
 NTSTATUS
@@ -3356,7 +3356,7 @@ FN_ScQueryInformationCpuPartition(
     _In_ ULONG CpuPartitionInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryInformationCpuPartition* volatile ScQueryInformationCpuPartition;
+EXTERN_C FN_ScQueryInformationCpuPartition* volatile ScQueryInformationCpuPartition;
 
 typedef
 NTSTATUS
@@ -3368,7 +3368,7 @@ FN_ScQueryInformationEnlistment(
     _In_ ULONG EnlistmentInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryInformationEnlistment* volatile ScQueryInformationEnlistment;
+EXTERN_C FN_ScQueryInformationEnlistment* volatile ScQueryInformationEnlistment;
 
 typedef
 NTSTATUS
@@ -3380,7 +3380,7 @@ FN_ScQueryInformationFile(
     _In_ ULONG Length,
     _In_ FILE_INFORMATION_CLASS FileInformationClass
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryInformationFile* volatile ScQueryInformationFile;
+EXTERN_C FN_ScQueryInformationFile* volatile ScQueryInformationFile;
 
 typedef
 NTSTATUS
@@ -3392,7 +3392,7 @@ FN_ScQueryInformationJobObject(
     _In_ ULONG JobObjectInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryInformationJobObject* volatile ScQueryInformationJobObject;
+EXTERN_C FN_ScQueryInformationJobObject* volatile ScQueryInformationJobObject;
 
 typedef
 NTSTATUS
@@ -3404,7 +3404,7 @@ FN_ScQueryInformationPort(
     _In_ ULONG Length,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryInformationPort* volatile ScQueryInformationPort;
+EXTERN_C FN_ScQueryInformationPort* volatile ScQueryInformationPort;
 
 typedef
 NTSTATUS
@@ -3416,7 +3416,7 @@ FN_ScQueryInformationProcess(
     _In_ ULONG ProcessInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryInformationProcess* volatile ScQueryInformationProcess;
+EXTERN_C FN_ScQueryInformationProcess* volatile ScQueryInformationProcess;
 
 typedef
 NTSTATUS
@@ -3428,7 +3428,7 @@ FN_ScQueryInformationResourceManager(
     _In_ ULONG ResourceManagerInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryInformationResourceManager* volatile ScQueryInformationResourceManager;
+EXTERN_C FN_ScQueryInformationResourceManager* volatile ScQueryInformationResourceManager;
 
 typedef
 NTSTATUS
@@ -3440,7 +3440,7 @@ FN_ScQueryInformationThread(
     _In_ ULONG ThreadInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryInformationThread* volatile ScQueryInformationThread;
+EXTERN_C FN_ScQueryInformationThread* volatile ScQueryInformationThread;
 
 typedef
 NTSTATUS
@@ -3452,7 +3452,7 @@ FN_ScQueryInformationToken(
     _In_ ULONG TokenInformationLength,
     _Out_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryInformationToken* volatile ScQueryInformationToken;
+EXTERN_C FN_ScQueryInformationToken* volatile ScQueryInformationToken;
 
 typedef
 NTSTATUS
@@ -3464,7 +3464,7 @@ FN_ScQueryInformationTransaction(
     _In_ ULONG TransactionInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryInformationTransaction* volatile ScQueryInformationTransaction;
+EXTERN_C FN_ScQueryInformationTransaction* volatile ScQueryInformationTransaction;
 
 typedef
 NTSTATUS
@@ -3476,7 +3476,7 @@ FN_ScQueryInformationTransactionManager(
     _In_ ULONG TransactionManagerInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryInformationTransactionManager* volatile ScQueryInformationTransactionManager;
+EXTERN_C FN_ScQueryInformationTransactionManager* volatile ScQueryInformationTransactionManager;
 
 typedef
 NTSTATUS
@@ -3488,7 +3488,7 @@ FN_ScQueryInformationWorkerFactory(
     _In_ ULONG WorkerFactoryInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryInformationWorkerFactory* volatile ScQueryInformationWorkerFactory;
+EXTERN_C FN_ScQueryInformationWorkerFactory* volatile ScQueryInformationWorkerFactory;
 
 typedef
 NTSTATUS
@@ -3496,7 +3496,7 @@ NTAPI
 FN_ScQueryInstallUILanguage(
     _Out_ LANGID *InstallUILanguageId
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryInstallUILanguage* volatile ScQueryInstallUILanguage;
+EXTERN_C FN_ScQueryInstallUILanguage* volatile ScQueryInstallUILanguage;
 
 typedef
 NTSTATUS
@@ -3505,7 +3505,7 @@ FN_ScQueryIntervalProfile(
     _In_ KPROFILE_SOURCE ProfileSource,
     _Out_ PULONG Interval
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryIntervalProfile* volatile ScQueryIntervalProfile;
+EXTERN_C FN_ScQueryIntervalProfile* volatile ScQueryIntervalProfile;
 
 typedef
 NTSTATUS
@@ -3517,7 +3517,7 @@ FN_ScQueryIoCompletion(
     _In_ ULONG IoCompletionInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryIoCompletion* volatile ScQueryIoCompletion;
+EXTERN_C FN_ScQueryIoCompletion* volatile ScQueryIoCompletion;
 
 typedef
 NTSTATUS
@@ -3526,7 +3526,7 @@ FN_ScQueryIoRingCapabilities(
     _In_ SIZE_T IoRingCapabilitiesLength,
     _Out_ PVOID IoRingCapabilities
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryIoRingCapabilities* volatile ScQueryIoRingCapabilities;
+EXTERN_C FN_ScQueryIoRingCapabilities* volatile ScQueryIoRingCapabilities;
 
 typedef
 NTSTATUS
@@ -3538,7 +3538,7 @@ FN_ScQueryKey(
     _In_ ULONG Length,
     _Out_ PULONG ResultLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryKey* volatile ScQueryKey;
+EXTERN_C FN_ScQueryKey* volatile ScQueryKey;
 
 typedef
 NTSTATUS
@@ -3550,7 +3550,7 @@ FN_ScQueryLicenseValue(
     _In_ ULONG DataSize,
     _Out_ PULONG ResultDataSize
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryLicenseValue* volatile ScQueryLicenseValue;
+EXTERN_C FN_ScQueryLicenseValue* volatile ScQueryLicenseValue;
 
 typedef
 NTSTATUS
@@ -3563,7 +3563,7 @@ FN_ScQueryMultipleValueKey(
     _Inout_ PULONG BufferLength,
     _Out_opt_ PULONG RequiredBufferLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryMultipleValueKey* volatile ScQueryMultipleValueKey;
+EXTERN_C FN_ScQueryMultipleValueKey* volatile ScQueryMultipleValueKey;
 
 typedef
 NTSTATUS
@@ -3575,7 +3575,7 @@ FN_ScQueryMutant(
     _In_ ULONG MutantInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryMutant* volatile ScQueryMutant;
+EXTERN_C FN_ScQueryMutant* volatile ScQueryMutant;
 
 typedef
 NTSTATUS
@@ -3587,7 +3587,7 @@ FN_ScQueryObject(
     _In_ ULONG ObjectInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryObject* volatile ScQueryObject;
+EXTERN_C FN_ScQueryObject* volatile ScQueryObject;
 
 typedef
 NTSTATUS
@@ -3596,7 +3596,7 @@ FN_ScQueryOpenSubKeys(
     _In_ POBJECT_ATTRIBUTES TargetKey,
     _Out_ PULONG HandleCount
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryOpenSubKeys* volatile ScQueryOpenSubKeys;
+EXTERN_C FN_ScQueryOpenSubKeys* volatile ScQueryOpenSubKeys;
 
 typedef
 NTSTATUS
@@ -3607,7 +3607,7 @@ FN_ScQueryOpenSubKeysEx(
     _Out_writes_bytes_opt_(BufferLength) PVOID Buffer,
     _Out_ PULONG RequiredSize
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryOpenSubKeysEx* volatile ScQueryOpenSubKeysEx;
+EXTERN_C FN_ScQueryOpenSubKeysEx* volatile ScQueryOpenSubKeysEx;
 
 typedef
 NTSTATUS
@@ -3616,7 +3616,7 @@ FN_ScQueryPerformanceCounter(
     _Out_ PLARGE_INTEGER PerformanceCounter,
     _Out_opt_ PLARGE_INTEGER PerformanceFrequency
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryPerformanceCounter* volatile ScQueryPerformanceCounter;
+EXTERN_C FN_ScQueryPerformanceCounter* volatile ScQueryPerformanceCounter;
 
 typedef
 NTSTATUS
@@ -3624,7 +3624,7 @@ NTAPI
 FN_ScQueryPortInformationProcess(
     VOID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryPortInformationProcess* volatile ScQueryPortInformationProcess;
+EXTERN_C FN_ScQueryPortInformationProcess* volatile ScQueryPortInformationProcess;
 
 typedef
 NTSTATUS
@@ -3640,7 +3640,7 @@ FN_ScQueryQuotaInformationFile(
     _In_opt_ PSID StartSid,
     _In_ BOOLEAN RestartScan
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryQuotaInformationFile* volatile ScQueryQuotaInformationFile;
+EXTERN_C FN_ScQueryQuotaInformationFile* volatile ScQueryQuotaInformationFile;
 
 typedef
 NTSTATUS
@@ -3652,7 +3652,7 @@ FN_ScQuerySection(
     _In_ SIZE_T SectionInformationLength,
     _Out_opt_ PSIZE_T ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQuerySection* volatile ScQuerySection;
+EXTERN_C FN_ScQuerySection* volatile ScQuerySection;
 
 typedef
 NTSTATUS
@@ -3665,7 +3665,7 @@ FN_ScQuerySecurityAttributesToken(
     _In_ ULONG Length,
     _Out_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQuerySecurityAttributesToken* volatile ScQuerySecurityAttributesToken;
+EXTERN_C FN_ScQuerySecurityAttributesToken* volatile ScQuerySecurityAttributesToken;
 
 typedef
 NTSTATUS
@@ -3677,7 +3677,7 @@ FN_ScQuerySecurityObject(
     _In_ ULONG Length,
     _Out_ PULONG LengthNeeded
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQuerySecurityObject* volatile ScQuerySecurityObject;
+EXTERN_C FN_ScQuerySecurityObject* volatile ScQuerySecurityObject;
 
 typedef
 NTSTATUS
@@ -3690,7 +3690,7 @@ FN_ScQuerySecurityPolicy(
     _Out_writes_bytes_opt_(*ValueSize) PVOID Value,
     _Inout_ PULONG ValueSize
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQuerySecurityPolicy* volatile ScQuerySecurityPolicy;
+EXTERN_C FN_ScQuerySecurityPolicy* volatile ScQuerySecurityPolicy;
 
 typedef
 NTSTATUS
@@ -3702,7 +3702,7 @@ FN_ScQuerySemaphore(
     _In_ ULONG SemaphoreInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQuerySemaphore* volatile ScQuerySemaphore;
+EXTERN_C FN_ScQuerySemaphore* volatile ScQuerySemaphore;
 
 typedef
 NTSTATUS
@@ -3712,7 +3712,7 @@ FN_ScQuerySymbolicLinkObject(
     _Inout_ PUNICODE_STRING LinkTarget,
     _Out_opt_ PULONG ReturnedLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQuerySymbolicLinkObject* volatile ScQuerySymbolicLinkObject;
+EXTERN_C FN_ScQuerySymbolicLinkObject* volatile ScQuerySymbolicLinkObject;
 
 typedef
 NTSTATUS
@@ -3723,7 +3723,7 @@ FN_ScQuerySystemEnvironmentValue(
     _In_ USHORT ValueLength,
     _Out_opt_ PUSHORT ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQuerySystemEnvironmentValue* volatile ScQuerySystemEnvironmentValue;
+EXTERN_C FN_ScQuerySystemEnvironmentValue* volatile ScQuerySystemEnvironmentValue;
 
 typedef
 NTSTATUS
@@ -3735,7 +3735,7 @@ FN_ScQuerySystemEnvironmentValueEx(
     _Inout_ PULONG BufferLength,
     _Out_opt_ PULONG Attributes // EFI_VARIABLE_*
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQuerySystemEnvironmentValueEx* volatile ScQuerySystemEnvironmentValueEx;
+EXTERN_C FN_ScQuerySystemEnvironmentValueEx* volatile ScQuerySystemEnvironmentValueEx;
 
 typedef
 NTSTATUS
@@ -3746,7 +3746,7 @@ FN_ScQuerySystemInformation(
     _In_ ULONG SystemInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQuerySystemInformation* volatile ScQuerySystemInformation;
+EXTERN_C FN_ScQuerySystemInformation* volatile ScQuerySystemInformation;
 
 typedef
 NTSTATUS
@@ -3759,7 +3759,7 @@ FN_ScQuerySystemInformationEx(
     _In_ ULONG SystemInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQuerySystemInformationEx* volatile ScQuerySystemInformationEx;
+EXTERN_C FN_ScQuerySystemInformationEx* volatile ScQuerySystemInformationEx;
 
 typedef
 NTSTATUS
@@ -3767,7 +3767,7 @@ NTAPI
 FN_ScQuerySystemTime(
     _Out_ PLARGE_INTEGER SystemTime
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQuerySystemTime* volatile ScQuerySystemTime;
+EXTERN_C FN_ScQuerySystemTime* volatile ScQuerySystemTime;
 
 typedef
 NTSTATUS
@@ -3779,7 +3779,7 @@ FN_ScQueryTimer(
     _In_ ULONG TimerInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryTimer* volatile ScQueryTimer;
+EXTERN_C FN_ScQueryTimer* volatile ScQueryTimer;
 
 typedef
 NTSTATUS
@@ -3789,7 +3789,7 @@ FN_ScQueryTimerResolution(
     _Out_ PULONG MinimumTime,
     _Out_ PULONG CurrentTime
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryTimerResolution* volatile ScQueryTimerResolution;
+EXTERN_C FN_ScQueryTimerResolution* volatile ScQueryTimerResolution;
 
 typedef
 NTSTATUS
@@ -3802,7 +3802,7 @@ FN_ScQueryValueKey(
     _In_ ULONG Length,
     _Out_ PULONG ResultLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryValueKey* volatile ScQueryValueKey;
+EXTERN_C FN_ScQueryValueKey* volatile ScQueryValueKey;
 
 typedef
 NTSTATUS
@@ -3815,7 +3815,7 @@ FN_ScQueryVirtualMemory(
     _In_ SIZE_T MemoryInformationLength,
     _Out_opt_ PSIZE_T ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryVirtualMemory* volatile ScQueryVirtualMemory;
+EXTERN_C FN_ScQueryVirtualMemory* volatile ScQueryVirtualMemory;
 
 typedef
 NTSTATUS
@@ -3827,7 +3827,7 @@ FN_ScQueryVolumeInformationFile(
     _In_ ULONG Length,
     _In_ FSINFOCLASS FsInformationClass
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryVolumeInformationFile* volatile ScQueryVolumeInformationFile;
+EXTERN_C FN_ScQueryVolumeInformationFile* volatile ScQueryVolumeInformationFile;
 
 typedef
 NTSTATUS
@@ -3840,7 +3840,7 @@ FN_ScQueryWnfStateData(
     _Out_writes_bytes_opt_(*BufferLength) PVOID Buffer,
     _Inout_ PULONG BufferLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryWnfStateData* volatile ScQueryWnfStateData;
+EXTERN_C FN_ScQueryWnfStateData* volatile ScQueryWnfStateData;
 
 typedef
 NTSTATUS
@@ -3852,7 +3852,7 @@ FN_ScQueryWnfStateNameInformation(
     _Out_writes_bytes_(BufferLength) PVOID Buffer,
     _In_ ULONG BufferLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueryWnfStateNameInformation* volatile ScQueryWnfStateNameInformation;
+EXTERN_C FN_ScQueryWnfStateNameInformation* volatile ScQueryWnfStateNameInformation;
 
 typedef
 NTSTATUS
@@ -3864,7 +3864,7 @@ FN_ScQueueApcThread(
     _In_opt_ PVOID ApcArgument2,
     _In_opt_ PVOID ApcArgument3
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueueApcThread* volatile ScQueueApcThread;
+EXTERN_C FN_ScQueueApcThread* volatile ScQueueApcThread;
 
 typedef
 NTSTATUS
@@ -3877,7 +3877,7 @@ FN_ScQueueApcThreadEx(
     _In_opt_ PVOID ApcArgument2,
     _In_opt_ PVOID ApcArgument3
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueueApcThreadEx* volatile ScQueueApcThreadEx;
+EXTERN_C FN_ScQueueApcThreadEx* volatile ScQueueApcThreadEx;
 
 typedef
 NTSTATUS
@@ -3891,7 +3891,7 @@ FN_ScQueueApcThreadEx2(
     _In_opt_ PVOID ApcArgument2,
     _In_opt_ PVOID ApcArgument3
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScQueueApcThreadEx2* volatile ScQueueApcThreadEx2;
+EXTERN_C FN_ScQueueApcThreadEx2* volatile ScQueueApcThreadEx2;
 
 typedef
 NTSTATUS
@@ -3901,7 +3901,7 @@ FN_ScRaiseException(
     _In_ PCONTEXT ContextRecord,
     _In_ BOOLEAN FirstChance
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScRaiseException* volatile ScRaiseException;
+EXTERN_C FN_ScRaiseException* volatile ScRaiseException;
 
 typedef
 NTSTATUS
@@ -3914,7 +3914,7 @@ FN_ScRaiseHardError(
     _In_ ULONG ValidResponseOptions,
     _Out_ PULONG Response
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScRaiseHardError* volatile ScRaiseHardError;
+EXTERN_C FN_ScRaiseHardError* volatile ScRaiseHardError;
 
 typedef
 NTSTATUS
@@ -3930,7 +3930,7 @@ FN_ScReadFile(
     _In_opt_ PLARGE_INTEGER ByteOffset,
     _In_opt_ PULONG Key
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScReadFile* volatile ScReadFile;
+EXTERN_C FN_ScReadFile* volatile ScReadFile;
 
 typedef
 NTSTATUS
@@ -3946,7 +3946,7 @@ FN_ScReadFileScatter(
     _In_opt_ PLARGE_INTEGER ByteOffset,
     _In_opt_ PULONG Key
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScReadFileScatter* volatile ScReadFileScatter;
+EXTERN_C FN_ScReadFileScatter* volatile ScReadFileScatter;
 
 typedef
 NTSTATUS
@@ -3955,7 +3955,7 @@ FN_ScReadOnlyEnlistment(
     _In_ HANDLE EnlistmentHandle,
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScReadOnlyEnlistment* volatile ScReadOnlyEnlistment;
+EXTERN_C FN_ScReadOnlyEnlistment* volatile ScReadOnlyEnlistment;
 
 typedef
 NTSTATUS
@@ -3968,7 +3968,7 @@ FN_ScReadRequestData(
     _In_ SIZE_T BufferSize,
     _Out_opt_ PSIZE_T NumberOfBytesRead
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScReadRequestData* volatile ScReadRequestData;
+EXTERN_C FN_ScReadRequestData* volatile ScReadRequestData;
 
 typedef
 NTSTATUS
@@ -3980,7 +3980,7 @@ FN_ScReadVirtualMemory(
     _In_ SIZE_T NumberOfBytesToRead,
     _Out_opt_ PSIZE_T NumberOfBytesRead
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScReadVirtualMemory* volatile ScReadVirtualMemory;
+EXTERN_C FN_ScReadVirtualMemory* volatile ScReadVirtualMemory;
 
 typedef
 NTSTATUS
@@ -3993,7 +3993,7 @@ FN_ScReadVirtualMemoryEx(
     _Out_opt_ PSIZE_T NumberOfBytesRead,
     _In_ ULONG Flags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScReadVirtualMemoryEx* volatile ScReadVirtualMemoryEx;
+EXTERN_C FN_ScReadVirtualMemoryEx* volatile ScReadVirtualMemoryEx;
 
 typedef
 NTSTATUS
@@ -4002,7 +4002,7 @@ FN_ScRecoverEnlistment(
     _In_ HANDLE EnlistmentHandle,
     _In_opt_ PVOID EnlistmentKey
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScRecoverEnlistment* volatile ScRecoverEnlistment;
+EXTERN_C FN_ScRecoverEnlistment* volatile ScRecoverEnlistment;
 
 typedef
 NTSTATUS
@@ -4010,7 +4010,7 @@ NTAPI
 FN_ScRecoverResourceManager(
     _In_ HANDLE ResourceManagerHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScRecoverResourceManager* volatile ScRecoverResourceManager;
+EXTERN_C FN_ScRecoverResourceManager* volatile ScRecoverResourceManager;
 
 typedef
 NTSTATUS
@@ -4018,7 +4018,7 @@ NTAPI
 FN_ScRecoverTransactionManager(
     _In_ HANDLE TransactionManagerHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScRecoverTransactionManager* volatile ScRecoverTransactionManager;
+EXTERN_C FN_ScRecoverTransactionManager* volatile ScRecoverTransactionManager;
 
 typedef
 NTSTATUS
@@ -4030,7 +4030,7 @@ FN_ScRegisterProtocolAddressInformation(
     _In_ PVOID ProtocolInformation,
     _In_opt_ ULONG CreateOptions
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScRegisterProtocolAddressInformation* volatile ScRegisterProtocolAddressInformation;
+EXTERN_C FN_ScRegisterProtocolAddressInformation* volatile ScRegisterProtocolAddressInformation;
 
 typedef
 NTSTATUS
@@ -4038,7 +4038,7 @@ NTAPI
 FN_ScRegisterThreadTerminatePort(
     _In_ HANDLE PortHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScRegisterThreadTerminatePort* volatile ScRegisterThreadTerminatePort;
+EXTERN_C FN_ScRegisterThreadTerminatePort* volatile ScRegisterThreadTerminatePort;
 
 typedef
 NTSTATUS
@@ -4049,7 +4049,7 @@ FN_ScReleaseKeyedEvent(
     _In_ BOOLEAN Alertable,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScReleaseKeyedEvent* volatile ScReleaseKeyedEvent;
+EXTERN_C FN_ScReleaseKeyedEvent* volatile ScReleaseKeyedEvent;
 
 typedef
 NTSTATUS
@@ -4058,7 +4058,7 @@ FN_ScReleaseMutant(
     _In_ HANDLE MutantHandle,
     _Out_opt_ PLONG PreviousCount
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScReleaseMutant* volatile ScReleaseMutant;
+EXTERN_C FN_ScReleaseMutant* volatile ScReleaseMutant;
 
 typedef
 NTSTATUS
@@ -4068,7 +4068,7 @@ FN_ScReleaseSemaphore(
     _In_ LONG ReleaseCount,
     _Out_opt_ PLONG PreviousCount
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScReleaseSemaphore* volatile ScReleaseSemaphore;
+EXTERN_C FN_ScReleaseSemaphore* volatile ScReleaseSemaphore;
 
 typedef
 NTSTATUS
@@ -4076,7 +4076,7 @@ NTAPI
 FN_ScReleaseWorkerFactoryWorker(
     _In_ HANDLE WorkerFactoryHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScReleaseWorkerFactoryWorker* volatile ScReleaseWorkerFactoryWorker;
+EXTERN_C FN_ScReleaseWorkerFactoryWorker* volatile ScReleaseWorkerFactoryWorker;
 
 typedef
 NTSTATUS
@@ -4088,7 +4088,7 @@ FN_ScRemoveIoCompletion(
     _Out_ PIO_STATUS_BLOCK IoStatusBlock,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScRemoveIoCompletion* volatile ScRemoveIoCompletion;
+EXTERN_C FN_ScRemoveIoCompletion* volatile ScRemoveIoCompletion;
 
 typedef
 NTSTATUS
@@ -4101,7 +4101,7 @@ FN_ScRemoveIoCompletionEx(
     _In_opt_ PLARGE_INTEGER Timeout,
     _In_ BOOLEAN Alertable
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScRemoveIoCompletionEx* volatile ScRemoveIoCompletionEx;
+EXTERN_C FN_ScRemoveIoCompletionEx* volatile ScRemoveIoCompletionEx;
 
 typedef
 NTSTATUS
@@ -4110,7 +4110,7 @@ FN_ScRemoveProcessDebug(
     _In_ HANDLE ProcessHandle,
     _In_ HANDLE DebugObjectHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScRemoveProcessDebug* volatile ScRemoveProcessDebug;
+EXTERN_C FN_ScRemoveProcessDebug* volatile ScRemoveProcessDebug;
 
 typedef
 NTSTATUS
@@ -4119,7 +4119,7 @@ FN_ScRenameKey(
     _In_ HANDLE KeyHandle,
     _In_ PUNICODE_STRING NewName
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScRenameKey* volatile ScRenameKey;
+EXTERN_C FN_ScRenameKey* volatile ScRenameKey;
 
 typedef
 NTSTATUS
@@ -4128,7 +4128,7 @@ FN_ScRenameTransactionManager(
     _In_ PUNICODE_STRING LogFileName,
     _In_ LPGUID ExistingTransactionManagerGuid
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScRenameTransactionManager* volatile ScRenameTransactionManager;
+EXTERN_C FN_ScRenameTransactionManager* volatile ScRenameTransactionManager;
 
 typedef
 NTSTATUS
@@ -4138,7 +4138,7 @@ FN_ScReplaceKey(
     _In_ HANDLE TargetHandle,
     _In_ POBJECT_ATTRIBUTES OldFile
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScReplaceKey* volatile ScReplaceKey;
+EXTERN_C FN_ScReplaceKey* volatile ScReplaceKey;
 
 typedef
 NTSTATUS
@@ -4148,7 +4148,7 @@ FN_ScReplacePartitionUnit(
     _In_ PUNICODE_STRING SpareInstancePath,
     _In_ ULONG Flags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScReplacePartitionUnit* volatile ScReplacePartitionUnit;
+EXTERN_C FN_ScReplacePartitionUnit* volatile ScReplacePartitionUnit;
 
 typedef
 NTSTATUS
@@ -4157,7 +4157,7 @@ FN_ScReplyPort(
     _In_ HANDLE PortHandle,
     _In_reads_bytes_(ReplyMessage->u1.s1.TotalLength) PPORT_MESSAGE ReplyMessage
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScReplyPort* volatile ScReplyPort;
+EXTERN_C FN_ScReplyPort* volatile ScReplyPort;
 
 typedef
 NTSTATUS
@@ -4168,7 +4168,7 @@ FN_ScReplyWaitReceivePort(
     _In_reads_bytes_opt_(ReplyMessage->u1.s1.TotalLength) PPORT_MESSAGE ReplyMessage,
     _Out_ PPORT_MESSAGE ReceiveMessage
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScReplyWaitReceivePort* volatile ScReplyWaitReceivePort;
+EXTERN_C FN_ScReplyWaitReceivePort* volatile ScReplyWaitReceivePort;
 
 typedef
 NTSTATUS
@@ -4180,7 +4180,7 @@ FN_ScReplyWaitReceivePortEx(
     _Out_ PPORT_MESSAGE ReceiveMessage,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScReplyWaitReceivePortEx* volatile ScReplyWaitReceivePortEx;
+EXTERN_C FN_ScReplyWaitReceivePortEx* volatile ScReplyWaitReceivePortEx;
 
 typedef
 NTSTATUS
@@ -4189,7 +4189,7 @@ FN_ScReplyWaitReplyPort(
     _In_ HANDLE PortHandle,
     _Inout_ PPORT_MESSAGE ReplyMessage
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScReplyWaitReplyPort* volatile ScReplyWaitReplyPort;
+EXTERN_C FN_ScReplyWaitReplyPort* volatile ScReplyWaitReplyPort;
 
 typedef
 NTSTATUS
@@ -4198,7 +4198,7 @@ FN_ScRequestPort(
     _In_ HANDLE PortHandle,
     _In_reads_bytes_(RequestMessage->u1.s1.TotalLength) PPORT_MESSAGE RequestMessage
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScRequestPort* volatile ScRequestPort;
+EXTERN_C FN_ScRequestPort* volatile ScRequestPort;
 
 typedef
 NTSTATUS
@@ -4208,7 +4208,7 @@ FN_ScRequestWaitReplyPort(
     _In_reads_bytes_(RequestMessage->u1.s1.TotalLength) PPORT_MESSAGE RequestMessage,
     _Out_ PPORT_MESSAGE ReplyMessage
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScRequestWaitReplyPort* volatile ScRequestWaitReplyPort;
+EXTERN_C FN_ScRequestWaitReplyPort* volatile ScRequestWaitReplyPort;
 
 typedef
 NTSTATUS
@@ -4217,7 +4217,7 @@ FN_ScResetEvent(
     _In_ HANDLE EventHandle,
     _Out_opt_ PLONG PreviousState
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScResetEvent* volatile ScResetEvent;
+EXTERN_C FN_ScResetEvent* volatile ScResetEvent;
 
 typedef
 NTSTATUS
@@ -4227,7 +4227,7 @@ FN_ScResetWriteWatch(
     _In_ PVOID BaseAddress,
     _In_ SIZE_T RegionSize
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScResetWriteWatch* volatile ScResetWriteWatch;
+EXTERN_C FN_ScResetWriteWatch* volatile ScResetWriteWatch;
 
 typedef
 NTSTATUS
@@ -4237,7 +4237,7 @@ FN_ScRestoreKey(
     _In_ HANDLE FileHandle,
     _In_ ULONG Flags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScRestoreKey* volatile ScRestoreKey;
+EXTERN_C FN_ScRestoreKey* volatile ScRestoreKey;
 
 typedef
 NTSTATUS
@@ -4245,7 +4245,7 @@ NTAPI
 FN_ScResumeProcess(
     _In_ HANDLE ProcessHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScResumeProcess* volatile ScResumeProcess;
+EXTERN_C FN_ScResumeProcess* volatile ScResumeProcess;
 
 typedef
 NTSTATUS
@@ -4254,7 +4254,7 @@ FN_ScResumeThread(
     _In_ HANDLE ThreadHandle,
     _Out_opt_ PULONG PreviousSuspendCount
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScResumeThread* volatile ScResumeThread;
+EXTERN_C FN_ScResumeThread* volatile ScResumeThread;
 
 typedef
 NTSTATUS
@@ -4262,7 +4262,7 @@ NTAPI
 FN_ScRevertContainerImpersonation(
     VOID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScRevertContainerImpersonation* volatile ScRevertContainerImpersonation;
+EXTERN_C FN_ScRevertContainerImpersonation* volatile ScRevertContainerImpersonation;
 
 typedef
 NTSTATUS
@@ -4271,7 +4271,7 @@ FN_ScRollbackComplete(
     _In_ HANDLE EnlistmentHandle,
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScRollbackComplete* volatile ScRollbackComplete;
+EXTERN_C FN_ScRollbackComplete* volatile ScRollbackComplete;
 
 typedef
 NTSTATUS
@@ -4280,7 +4280,7 @@ FN_ScRollbackEnlistment(
     _In_ HANDLE EnlistmentHandle,
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScRollbackEnlistment* volatile ScRollbackEnlistment;
+EXTERN_C FN_ScRollbackEnlistment* volatile ScRollbackEnlistment;
 
 typedef
 NTSTATUS
@@ -4289,7 +4289,7 @@ FN_ScRollbackRegistryTransaction(
     _In_ HANDLE RegistryTransactionHandle,
     _Reserved_ ULONG Flags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScRollbackRegistryTransaction* volatile ScRollbackRegistryTransaction;
+EXTERN_C FN_ScRollbackRegistryTransaction* volatile ScRollbackRegistryTransaction;
 
 typedef
 NTSTATUS
@@ -4298,7 +4298,7 @@ FN_ScRollbackTransaction(
     _In_ HANDLE TransactionHandle,
     _In_ BOOLEAN Wait
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScRollbackTransaction* volatile ScRollbackTransaction;
+EXTERN_C FN_ScRollbackTransaction* volatile ScRollbackTransaction;
 
 typedef
 NTSTATUS
@@ -4307,7 +4307,7 @@ FN_ScRollforwardTransactionManager(
     _In_ HANDLE TransactionManagerHandle,
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScRollforwardTransactionManager* volatile ScRollforwardTransactionManager;
+EXTERN_C FN_ScRollforwardTransactionManager* volatile ScRollforwardTransactionManager;
 
 typedef
 NTSTATUS
@@ -4316,7 +4316,7 @@ FN_ScSaveKey(
     _In_ HANDLE KeyHandle,
     _In_ HANDLE FileHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSaveKey* volatile ScSaveKey;
+EXTERN_C FN_ScSaveKey* volatile ScSaveKey;
 
 typedef
 NTSTATUS
@@ -4326,7 +4326,7 @@ FN_ScSaveKeyEx(
     _In_ HANDLE FileHandle,
     _In_ ULONG Format
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSaveKeyEx* volatile ScSaveKeyEx;
+EXTERN_C FN_ScSaveKeyEx* volatile ScSaveKeyEx;
 
 typedef
 NTSTATUS
@@ -4336,7 +4336,7 @@ FN_ScSaveMergedKeys(
     _In_ HANDLE LowPrecedenceKeyHandle,
     _In_ HANDLE FileHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSaveMergedKeys* volatile ScSaveMergedKeys;
+EXTERN_C FN_ScSaveMergedKeys* volatile ScSaveMergedKeys;
 
 typedef
 NTSTATUS
@@ -4352,7 +4352,7 @@ FN_ScSecureConnectPort(
     _Inout_updates_bytes_to_opt_(*ConnectionInformationLength, *ConnectionInformationLength) PVOID ConnectionInformation,
     _Inout_opt_ PULONG ConnectionInformationLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSecureConnectPort* volatile ScSecureConnectPort;
+EXTERN_C FN_ScSecureConnectPort* volatile ScSecureConnectPort;
 
 typedef
 NTSTATUS
@@ -4360,7 +4360,7 @@ NTAPI
 FN_ScSerializeBoot(
     VOID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSerializeBoot* volatile ScSerializeBoot;
+EXTERN_C FN_ScSerializeBoot* volatile ScSerializeBoot;
 
 typedef
 NTSTATUS
@@ -4369,7 +4369,7 @@ FN_ScSetBootEntryOrder(
     _In_reads_(Count) PULONG Ids,
     _In_ ULONG Count
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetBootEntryOrder* volatile ScSetBootEntryOrder;
+EXTERN_C FN_ScSetBootEntryOrder* volatile ScSetBootEntryOrder;
 
 typedef
 NTSTATUS
@@ -4378,7 +4378,7 @@ FN_ScSetBootOptions(
     _In_ PBOOT_OPTIONS BootOptions,
     _In_ ULONG FieldsToChange
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetBootOptions* volatile ScSetBootOptions;
+EXTERN_C FN_ScSetBootOptions* volatile ScSetBootOptions;
 
 typedef
 NTSTATUS
@@ -4390,7 +4390,7 @@ FN_ScSetCachedSigningLevel(
     _In_ ULONG SourceFileCount,
     _In_opt_ HANDLE TargetFile
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetCachedSigningLevel* volatile ScSetCachedSigningLevel;
+EXTERN_C FN_ScSetCachedSigningLevel* volatile ScSetCachedSigningLevel;
 
 typedef
 NTSTATUS
@@ -4403,7 +4403,7 @@ FN_ScSetCachedSigningLevel2(
     _In_opt_ HANDLE TargetFile,
     _In_opt_ SE_SET_FILE_CACHE_INFORMATION* CacheInformation
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetCachedSigningLevel2* volatile ScSetCachedSigningLevel2;
+EXTERN_C FN_ScSetCachedSigningLevel2* volatile ScSetCachedSigningLevel2;
 
 typedef
 NTSTATUS
@@ -4412,7 +4412,7 @@ FN_ScSetContextThread(
     _In_ HANDLE ThreadHandle,
     _In_ PCONTEXT ThreadContext
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetContextThread* volatile ScSetContextThread;
+EXTERN_C FN_ScSetContextThread* volatile ScSetContextThread;
 
 typedef
 NTSTATUS
@@ -4422,7 +4422,7 @@ FN_ScSetDebugFilterState(
     _In_ ULONG Level,
     _In_ BOOLEAN State
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetDebugFilterState* volatile ScSetDebugFilterState;
+EXTERN_C FN_ScSetDebugFilterState* volatile ScSetDebugFilterState;
 
 typedef
 NTSTATUS
@@ -4430,7 +4430,7 @@ NTAPI
 FN_ScSetDefaultHardErrorPort(
     _In_ HANDLE DefaultHardErrorPort
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetDefaultHardErrorPort* volatile ScSetDefaultHardErrorPort;
+EXTERN_C FN_ScSetDefaultHardErrorPort* volatile ScSetDefaultHardErrorPort;
 
 typedef
 NTSTATUS
@@ -4439,7 +4439,7 @@ FN_ScSetDefaultLocale(
     _In_ BOOLEAN UserProfile,
     _In_ LCID DefaultLocaleId
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetDefaultLocale* volatile ScSetDefaultLocale;
+EXTERN_C FN_ScSetDefaultLocale* volatile ScSetDefaultLocale;
 
 typedef
 NTSTATUS
@@ -4447,7 +4447,7 @@ NTAPI
 FN_ScSetDefaultUILanguage(
     _In_ LANGID DefaultUILanguageId
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetDefaultUILanguage* volatile ScSetDefaultUILanguage;
+EXTERN_C FN_ScSetDefaultUILanguage* volatile ScSetDefaultUILanguage;
 
 typedef
 NTSTATUS
@@ -4456,7 +4456,7 @@ FN_ScSetDriverEntryOrder(
     _In_reads_(Count) PULONG Ids,
     _In_ ULONG Count
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetDriverEntryOrder* volatile ScSetDriverEntryOrder;
+EXTERN_C FN_ScSetDriverEntryOrder* volatile ScSetDriverEntryOrder;
 
 typedef
 NTSTATUS
@@ -4467,7 +4467,7 @@ FN_ScSetEaFile(
     _In_reads_bytes_(Length) PVOID Buffer,
     _In_ ULONG Length
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetEaFile* volatile ScSetEaFile;
+EXTERN_C FN_ScSetEaFile* volatile ScSetEaFile;
 
 typedef
 NTSTATUS
@@ -4476,7 +4476,7 @@ FN_ScSetEvent(
     _In_ HANDLE EventHandle,
     _Out_opt_ PLONG PreviousState
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetEvent* volatile ScSetEvent;
+EXTERN_C FN_ScSetEvent* volatile ScSetEvent;
 
 typedef
 NTSTATUS
@@ -4485,7 +4485,7 @@ FN_ScSetEventEx(
     _In_ HANDLE ThreadId,
     _In_opt_ PRTL_SRWLOCK Lock
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetEventEx* volatile ScSetEventEx;
+EXTERN_C FN_ScSetEventEx* volatile ScSetEventEx;
 
 typedef
 NTSTATUS
@@ -4493,7 +4493,7 @@ NTAPI
 FN_ScSetEventBoostPriority(
     _In_ HANDLE EventHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetEventBoostPriority* volatile ScSetEventBoostPriority;
+EXTERN_C FN_ScSetEventBoostPriority* volatile ScSetEventBoostPriority;
 
 typedef
 NTSTATUS
@@ -4501,7 +4501,7 @@ NTAPI
 FN_ScSetHighEventPair(
     _In_ HANDLE EventPairHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetHighEventPair* volatile ScSetHighEventPair;
+EXTERN_C FN_ScSetHighEventPair* volatile ScSetHighEventPair;
 
 typedef
 NTSTATUS
@@ -4509,7 +4509,7 @@ NTAPI
 FN_ScSetHighWaitLowEventPair(
     _In_ HANDLE EventPairHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetHighWaitLowEventPair* volatile ScSetHighWaitLowEventPair;
+EXTERN_C FN_ScSetHighWaitLowEventPair* volatile ScSetHighWaitLowEventPair;
 
 typedef
 NTSTATUS
@@ -4521,7 +4521,7 @@ FN_ScSetInformationDebugObject(
     _In_ ULONG DebugInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetInformationDebugObject* volatile ScSetInformationDebugObject;
+EXTERN_C FN_ScSetInformationDebugObject* volatile ScSetInformationDebugObject;
 
 typedef
 NTSTATUS
@@ -4532,7 +4532,7 @@ FN_ScSetInformationEnlistment(
     _In_reads_bytes_(EnlistmentInformationLength) PVOID EnlistmentInformation,
     _In_ ULONG EnlistmentInformationLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetInformationEnlistment* volatile ScSetInformationEnlistment;
+EXTERN_C FN_ScSetInformationEnlistment* volatile ScSetInformationEnlistment;
 
 typedef
 NTSTATUS
@@ -4544,7 +4544,7 @@ FN_ScSetInformationFile(
     _In_ ULONG Length,
     _In_ FILE_INFORMATION_CLASS FileInformationClass
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetInformationFile* volatile ScSetInformationFile;
+EXTERN_C FN_ScSetInformationFile* volatile ScSetInformationFile;
 
 typedef
 NTSTATUS
@@ -4555,7 +4555,7 @@ FN_ScSetInformationIoRing(
     _In_ ULONG IoRingInformationLength,
     _In_ PVOID IoRingInformation
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetInformationIoRing* volatile ScSetInformationIoRing;
+EXTERN_C FN_ScSetInformationIoRing* volatile ScSetInformationIoRing;
 
 typedef
 NTSTATUS
@@ -4566,7 +4566,7 @@ FN_ScSetInformationJobObject(
     _In_reads_bytes_(JobObjectInformationLength) PVOID JobObjectInformation,
     _In_ ULONG JobObjectInformationLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetInformationJobObject* volatile ScSetInformationJobObject;
+EXTERN_C FN_ScSetInformationJobObject* volatile ScSetInformationJobObject;
 
 typedef
 NTSTATUS
@@ -4577,7 +4577,7 @@ FN_ScSetInformationKey(
     _In_reads_bytes_(KeySetInformationLength) PVOID KeySetInformation,
     _In_ ULONG KeySetInformationLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetInformationKey* volatile ScSetInformationKey;
+EXTERN_C FN_ScSetInformationKey* volatile ScSetInformationKey;
 
 typedef
 NTSTATUS
@@ -4588,7 +4588,7 @@ FN_ScSetInformationObject(
     _In_reads_bytes_(ObjectInformationLength) PVOID ObjectInformation,
     _In_ ULONG ObjectInformationLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetInformationObject* volatile ScSetInformationObject;
+EXTERN_C FN_ScSetInformationObject* volatile ScSetInformationObject;
 
 typedef
 NTSTATUS
@@ -4599,7 +4599,7 @@ FN_ScSetInformationProcess(
     _In_reads_bytes_(ProcessInformationLength) PVOID ProcessInformation,
     _In_ ULONG ProcessInformationLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetInformationProcess* volatile ScSetInformationProcess;
+EXTERN_C FN_ScSetInformationProcess* volatile ScSetInformationProcess;
 
 typedef
 NTSTATUS
@@ -4610,7 +4610,7 @@ FN_ScSetInformationResourceManager(
     _In_reads_bytes_(ResourceManagerInformationLength) PVOID ResourceManagerInformation,
     _In_ ULONG ResourceManagerInformationLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetInformationResourceManager* volatile ScSetInformationResourceManager;
+EXTERN_C FN_ScSetInformationResourceManager* volatile ScSetInformationResourceManager;
 
 typedef
 NTSTATUS
@@ -4621,7 +4621,7 @@ FN_ScSetInformationSymbolicLink(
     _In_reads_bytes_(SymbolicLinkInformationLength) PVOID SymbolicLinkInformation,
     _In_ ULONG SymbolicLinkInformationLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetInformationSymbolicLink* volatile ScSetInformationSymbolicLink;
+EXTERN_C FN_ScSetInformationSymbolicLink* volatile ScSetInformationSymbolicLink;
 
 typedef
 NTSTATUS
@@ -4632,7 +4632,7 @@ FN_ScSetInformationThread(
     _In_reads_bytes_(ThreadInformationLength) PVOID ThreadInformation,
     _In_ ULONG ThreadInformationLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetInformationThread* volatile ScSetInformationThread;
+EXTERN_C FN_ScSetInformationThread* volatile ScSetInformationThread;
 
 typedef
 NTSTATUS
@@ -4643,7 +4643,7 @@ FN_ScSetInformationToken(
     _In_reads_bytes_(TokenInformationLength) PVOID TokenInformation,
     _In_ ULONG TokenInformationLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetInformationToken* volatile ScSetInformationToken;
+EXTERN_C FN_ScSetInformationToken* volatile ScSetInformationToken;
 
 typedef
 NTSTATUS
@@ -4654,7 +4654,7 @@ FN_ScSetInformationTransaction(
     _In_reads_bytes_(TransactionInformationLength) PVOID TransactionInformation,
     _In_ ULONG TransactionInformationLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetInformationTransaction* volatile ScSetInformationTransaction;
+EXTERN_C FN_ScSetInformationTransaction* volatile ScSetInformationTransaction;
 
 typedef
 NTSTATUS
@@ -4665,7 +4665,7 @@ FN_ScSetInformationTransactionManager(
     _In_reads_bytes_(TransactionManagerInformationLength) PVOID TransactionManagerInformation,
     _In_ ULONG TransactionManagerInformationLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetInformationTransactionManager* volatile ScSetInformationTransactionManager;
+EXTERN_C FN_ScSetInformationTransactionManager* volatile ScSetInformationTransactionManager;
 
 typedef
 NTSTATUS
@@ -4678,7 +4678,7 @@ FN_ScSetInformationVirtualMemory(
     _In_reads_bytes_(VmInformationLength) PVOID VmInformation,
     _In_ ULONG VmInformationLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetInformationVirtualMemory* volatile ScSetInformationVirtualMemory;
+EXTERN_C FN_ScSetInformationVirtualMemory* volatile ScSetInformationVirtualMemory;
 
 typedef
 NTSTATUS
@@ -4689,7 +4689,7 @@ FN_ScSetInformationWorkerFactory(
     _In_reads_bytes_(WorkerFactoryInformationLength) PVOID WorkerFactoryInformation,
     _In_ ULONG WorkerFactoryInformationLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetInformationWorkerFactory* volatile ScSetInformationWorkerFactory;
+EXTERN_C FN_ScSetInformationWorkerFactory* volatile ScSetInformationWorkerFactory;
 
 typedef
 NTSTATUS
@@ -4698,7 +4698,7 @@ FN_ScSetIntervalProfile(
     _In_ ULONG Interval,
     _In_ KPROFILE_SOURCE Source
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetIntervalProfile* volatile ScSetIntervalProfile;
+EXTERN_C FN_ScSetIntervalProfile* volatile ScSetIntervalProfile;
 
 typedef
 NTSTATUS
@@ -4710,7 +4710,7 @@ FN_ScSetIoCompletion(
     _In_ NTSTATUS IoStatus,
     _In_ ULONG_PTR IoStatusInformation
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetIoCompletion* volatile ScSetIoCompletion;
+EXTERN_C FN_ScSetIoCompletion* volatile ScSetIoCompletion;
 
 typedef
 NTSTATUS
@@ -4723,7 +4723,7 @@ FN_ScSetIoCompletionEx(
     _In_ NTSTATUS IoStatus,
     _In_ ULONG_PTR IoStatusInformation
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetIoCompletionEx* volatile ScSetIoCompletionEx;
+EXTERN_C FN_ScSetIoCompletionEx* volatile ScSetIoCompletionEx;
 
 typedef
 NTSTATUS
@@ -4732,7 +4732,7 @@ FN_ScSetIRTimer(
     _In_ HANDLE TimerHandle,
     _In_opt_ PLARGE_INTEGER DueTime
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetIRTimer* volatile ScSetIRTimer;
+EXTERN_C FN_ScSetIRTimer* volatile ScSetIRTimer;
 
 typedef
 NTSTATUS
@@ -4745,7 +4745,7 @@ FN_ScSetLdtEntries(
     _In_ ULONG Entry1Low,
     _In_ ULONG Entry1Hi
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetLdtEntries* volatile ScSetLdtEntries;
+EXTERN_C FN_ScSetLdtEntries* volatile ScSetLdtEntries;
 
 typedef
 NTSTATUS
@@ -4753,7 +4753,7 @@ NTAPI
 FN_ScSetLowEventPair(
     _In_ HANDLE EventPairHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetLowEventPair* volatile ScSetLowEventPair;
+EXTERN_C FN_ScSetLowEventPair* volatile ScSetLowEventPair;
 
 typedef
 NTSTATUS
@@ -4761,7 +4761,7 @@ NTAPI
 FN_ScSetLowWaitHighEventPair(
     _In_ HANDLE EventPairHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetLowWaitHighEventPair* volatile ScSetLowWaitHighEventPair;
+EXTERN_C FN_ScSetLowWaitHighEventPair* volatile ScSetLowWaitHighEventPair;
 
 typedef
 NTSTATUS
@@ -4772,7 +4772,7 @@ FN_ScSetQuotaInformationFile(
     _In_reads_bytes_(Length) PVOID Buffer,
     _In_ ULONG Length
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetQuotaInformationFile* volatile ScSetQuotaInformationFile;
+EXTERN_C FN_ScSetQuotaInformationFile* volatile ScSetQuotaInformationFile;
 
 typedef
 NTSTATUS
@@ -4782,7 +4782,7 @@ FN_ScSetSecurityObject(
     _In_ SECURITY_INFORMATION SecurityInformation,
     _In_ PSECURITY_DESCRIPTOR SecurityDescriptor
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetSecurityObject* volatile ScSetSecurityObject;
+EXTERN_C FN_ScSetSecurityObject* volatile ScSetSecurityObject;
 
 typedef
 NTSTATUS
@@ -4791,7 +4791,7 @@ FN_ScSetSystemEnvironmentValue(
     _In_ PUNICODE_STRING VariableName,
     _In_ PUNICODE_STRING VariableValue
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetSystemEnvironmentValue* volatile ScSetSystemEnvironmentValue;
+EXTERN_C FN_ScSetSystemEnvironmentValue* volatile ScSetSystemEnvironmentValue;
 
 typedef
 NTSTATUS
@@ -4803,7 +4803,7 @@ FN_ScSetSystemEnvironmentValueEx(
     _In_ ULONG BufferLength, // 0 = delete variable
     _In_ ULONG Attributes // EFI_VARIABLE_*
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetSystemEnvironmentValueEx* volatile ScSetSystemEnvironmentValueEx;
+EXTERN_C FN_ScSetSystemEnvironmentValueEx* volatile ScSetSystemEnvironmentValueEx;
 
 typedef
 NTSTATUS
@@ -4813,7 +4813,7 @@ FN_ScSetSystemInformation(
     _In_reads_bytes_opt_(SystemInformationLength) PVOID SystemInformation,
     _In_ ULONG SystemInformationLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetSystemInformation* volatile ScSetSystemInformation;
+EXTERN_C FN_ScSetSystemInformation* volatile ScSetSystemInformation;
 
 typedef
 NTSTATUS
@@ -4823,7 +4823,7 @@ FN_ScSetSystemPowerState(
     _In_ SYSTEM_POWER_STATE LightestSystemState,
     _In_ ULONG Flags // POWER_ACTION_* flags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetSystemPowerState* volatile ScSetSystemPowerState;
+EXTERN_C FN_ScSetSystemPowerState* volatile ScSetSystemPowerState;
 
 typedef
 NTSTATUS
@@ -4832,7 +4832,7 @@ FN_ScSetSystemTime(
     _In_opt_ PLARGE_INTEGER SystemTime,
     _Out_opt_ PLARGE_INTEGER PreviousTime
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetSystemTime* volatile ScSetSystemTime;
+EXTERN_C FN_ScSetSystemTime* volatile ScSetSystemTime;
 
 typedef
 NTSTATUS
@@ -4841,7 +4841,7 @@ FN_ScSetThreadExecutionState(
     _In_ EXECUTION_STATE NewFlags, // ES_* flags
     _Out_ EXECUTION_STATE *PreviousFlags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetThreadExecutionState* volatile ScSetThreadExecutionState;
+EXTERN_C FN_ScSetThreadExecutionState* volatile ScSetThreadExecutionState;
 
 typedef
 NTSTATUS
@@ -4855,7 +4855,7 @@ FN_ScSetTimer(
     _In_opt_ LONG Period,
     _Out_opt_ PBOOLEAN PreviousState
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetTimer* volatile ScSetTimer;
+EXTERN_C FN_ScSetTimer* volatile ScSetTimer;
 
 typedef
 NTSTATUS
@@ -4866,7 +4866,7 @@ FN_ScSetTimer2(
     _In_opt_ PLARGE_INTEGER Period,
     _In_ PT2_SET_PARAMETERS Parameters
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetTimer2* volatile ScSetTimer2;
+EXTERN_C FN_ScSetTimer2* volatile ScSetTimer2;
 
 typedef
 NTSTATUS
@@ -4877,7 +4877,7 @@ FN_ScSetTimerEx(
     _Inout_updates_bytes_opt_(TimerSetInformationLength) PVOID TimerSetInformation,
     _In_ ULONG TimerSetInformationLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetTimerEx* volatile ScSetTimerEx;
+EXTERN_C FN_ScSetTimerEx* volatile ScSetTimerEx;
 
 typedef
 NTSTATUS
@@ -4887,7 +4887,7 @@ FN_ScSetTimerResolution(
     _In_ BOOLEAN SetResolution,
     _Out_ PULONG ActualTime
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetTimerResolution* volatile ScSetTimerResolution;
+EXTERN_C FN_ScSetTimerResolution* volatile ScSetTimerResolution;
 
 typedef
 NTSTATUS
@@ -4895,7 +4895,7 @@ NTAPI
 FN_ScSetUuidSeed(
     _In_ PCHAR Seed
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetUuidSeed* volatile ScSetUuidSeed;
+EXTERN_C FN_ScSetUuidSeed* volatile ScSetUuidSeed;
 
 typedef
 NTSTATUS
@@ -4908,7 +4908,7 @@ FN_ScSetValueKey(
     _In_reads_bytes_opt_(DataSize) PVOID Data,
     _In_ ULONG DataSize
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetValueKey* volatile ScSetValueKey;
+EXTERN_C FN_ScSetValueKey* volatile ScSetValueKey;
 
 typedef
 NTSTATUS
@@ -4920,7 +4920,7 @@ FN_ScSetVolumeInformationFile(
     _In_ ULONG Length,
     _In_ FSINFOCLASS FsInformationClass
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetVolumeInformationFile* volatile ScSetVolumeInformationFile;
+EXTERN_C FN_ScSetVolumeInformationFile* volatile ScSetVolumeInformationFile;
 
 typedef
 NTSTATUS
@@ -4928,7 +4928,7 @@ NTAPI
 FN_ScSetWnfProcessNotificationEvent(
     _In_ HANDLE NotificationEvent
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSetWnfProcessNotificationEvent* volatile ScSetWnfProcessNotificationEvent;
+EXTERN_C FN_ScSetWnfProcessNotificationEvent* volatile ScSetWnfProcessNotificationEvent;
 
 typedef
 NTSTATUS
@@ -4936,7 +4936,7 @@ NTAPI
 FN_ScShutdownSystem(
     _In_ SHUTDOWN_ACTION Action
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScShutdownSystem* volatile ScShutdownSystem;
+EXTERN_C FN_ScShutdownSystem* volatile ScShutdownSystem;
 
 typedef
 NTSTATUS
@@ -4945,7 +4945,7 @@ FN_ScShutdownWorkerFactory(
     _In_ HANDLE WorkerFactoryHandle,
     _Inout_ volatile LONG *PendingWorkerCount
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScShutdownWorkerFactory* volatile ScShutdownWorkerFactory;
+EXTERN_C FN_ScShutdownWorkerFactory* volatile ScShutdownWorkerFactory;
 
 typedef
 NTSTATUS
@@ -4956,7 +4956,7 @@ FN_ScSignalAndWaitForSingleObject(
     _In_ BOOLEAN Alertable,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSignalAndWaitForSingleObject* volatile ScSignalAndWaitForSingleObject;
+EXTERN_C FN_ScSignalAndWaitForSingleObject* volatile ScSignalAndWaitForSingleObject;
 
 typedef
 NTSTATUS
@@ -4965,7 +4965,7 @@ FN_ScSinglePhaseReject(
     _In_ HANDLE EnlistmentHandle,
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSinglePhaseReject* volatile ScSinglePhaseReject;
+EXTERN_C FN_ScSinglePhaseReject* volatile ScSinglePhaseReject;
 
 typedef
 NTSTATUS
@@ -4973,7 +4973,7 @@ NTAPI
 FN_ScStartProfile(
     _In_ HANDLE ProfileHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScStartProfile* volatile ScStartProfile;
+EXTERN_C FN_ScStartProfile* volatile ScStartProfile;
 
 typedef
 NTSTATUS
@@ -4981,7 +4981,7 @@ NTAPI
 FN_ScStopProfile(
     _In_ HANDLE ProfileHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScStopProfile* volatile ScStopProfile;
+EXTERN_C FN_ScStopProfile* volatile ScStopProfile;
 
 typedef
 NTSTATUS
@@ -4992,7 +4992,7 @@ FN_ScSubmitIoRing(
     _In_opt_ ULONG WaitOperations,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSubmitIoRing* volatile ScSubmitIoRing;
+EXTERN_C FN_ScSubmitIoRing* volatile ScSubmitIoRing;
 
 typedef
 NTSTATUS
@@ -5003,7 +5003,7 @@ FN_ScSubscribeWnfStateChange(
     _In_ ULONG EventMask,
     _Out_opt_ PULONG64 SubscriptionId
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSubscribeWnfStateChange* volatile ScSubscribeWnfStateChange;
+EXTERN_C FN_ScSubscribeWnfStateChange* volatile ScSubscribeWnfStateChange;
 
 typedef
 NTSTATUS
@@ -5011,7 +5011,7 @@ NTAPI
 FN_ScSuspendProcess(
     _In_ HANDLE ProcessHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSuspendProcess* volatile ScSuspendProcess;
+EXTERN_C FN_ScSuspendProcess* volatile ScSuspendProcess;
 
 typedef
 NTSTATUS
@@ -5020,7 +5020,7 @@ FN_ScSuspendThread(
     _In_ HANDLE ThreadHandle,
     _Out_opt_ PULONG PreviousSuspendCount
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSuspendThread* volatile ScSuspendThread;
+EXTERN_C FN_ScSuspendThread* volatile ScSuspendThread;
 
 typedef
 NTSTATUS
@@ -5033,7 +5033,7 @@ FN_ScSystemDebugControl(
     _In_ ULONG OutputBufferLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScSystemDebugControl* volatile ScSystemDebugControl;
+EXTERN_C FN_ScSystemDebugControl* volatile ScSystemDebugControl;
 
 typedef
 NTSTATUS
@@ -5042,7 +5042,7 @@ FN_ScTerminateEnclave(
     _In_ PVOID BaseAddress,
     _In_ ULONG Flags // TERMINATE_ENCLAVE_FLAG_*
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScTerminateEnclave* volatile ScTerminateEnclave;
+EXTERN_C FN_ScTerminateEnclave* volatile ScTerminateEnclave;
 
 typedef
 NTSTATUS
@@ -5051,7 +5051,7 @@ FN_ScTerminateJobObject(
     _In_ HANDLE JobHandle,
     _In_ NTSTATUS ExitStatus
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScTerminateJobObject* volatile ScTerminateJobObject;
+EXTERN_C FN_ScTerminateJobObject* volatile ScTerminateJobObject;
 
 typedef
 NTSTATUS
@@ -5060,7 +5060,7 @@ FN_ScTerminateProcess(
     _In_opt_ HANDLE ProcessHandle,
     _In_ NTSTATUS ExitStatus
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScTerminateProcess* volatile ScTerminateProcess;
+EXTERN_C FN_ScTerminateProcess* volatile ScTerminateProcess;
 
 typedef
 NTSTATUS
@@ -5069,7 +5069,7 @@ FN_ScTerminateThread(
     _In_opt_ HANDLE ThreadHandle,
     _In_ NTSTATUS ExitStatus
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScTerminateThread* volatile ScTerminateThread;
+EXTERN_C FN_ScTerminateThread* volatile ScTerminateThread;
 
 typedef
 NTSTATUS
@@ -5077,7 +5077,7 @@ NTAPI
 FN_ScTestAlert(
     VOID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScTestAlert* volatile ScTestAlert;
+EXTERN_C FN_ScTestAlert* volatile ScTestAlert;
 
 typedef
 NTSTATUS
@@ -5085,7 +5085,7 @@ NTAPI
 FN_ScThawRegistry(
     VOID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScThawRegistry* volatile ScThawRegistry;
+EXTERN_C FN_ScThawRegistry* volatile ScThawRegistry;
 
 typedef
 NTSTATUS
@@ -5093,7 +5093,7 @@ NTAPI
 FN_ScThawTransactions(
     VOID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScThawTransactions* volatile ScThawTransactions;
+EXTERN_C FN_ScThawTransactions* volatile ScThawTransactions;
 
 typedef
 NTSTATUS
@@ -5106,7 +5106,7 @@ FN_ScTraceControl(
     _In_ ULONG OutputBufferLength,
     _Out_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScTraceControl* volatile ScTraceControl;
+EXTERN_C FN_ScTraceControl* volatile ScTraceControl;
 
 typedef
 NTSTATUS
@@ -5117,7 +5117,7 @@ FN_ScTraceEvent(
     _In_ ULONG FieldSize,
     _In_ PVOID Fields
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScTraceEvent* volatile ScTraceEvent;
+EXTERN_C FN_ScTraceEvent* volatile ScTraceEvent;
 
 typedef
 NTSTATUS
@@ -5128,7 +5128,7 @@ FN_ScTranslateFilePath(
     _Out_writes_bytes_opt_(*OutputFilePathLength) PFILE_PATH OutputFilePath,
     _Inout_opt_ PULONG OutputFilePathLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScTranslateFilePath* volatile ScTranslateFilePath;
+EXTERN_C FN_ScTranslateFilePath* volatile ScTranslateFilePath;
 
 typedef
 NTSTATUS
@@ -5136,7 +5136,7 @@ NTAPI
 FN_ScUmsThreadYield(
     _In_ PVOID SchedulerParam
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUmsThreadYield* volatile ScUmsThreadYield;
+EXTERN_C FN_ScUmsThreadYield* volatile ScUmsThreadYield;
 
 typedef
 NTSTATUS
@@ -5144,7 +5144,7 @@ NTAPI
 FN_ScUnloadDriver(
     _In_ PUNICODE_STRING DriverServiceName
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUnloadDriver* volatile ScUnloadDriver;
+EXTERN_C FN_ScUnloadDriver* volatile ScUnloadDriver;
 
 typedef
 NTSTATUS
@@ -5152,7 +5152,7 @@ NTAPI
 FN_ScUnloadKey(
     _In_ POBJECT_ATTRIBUTES TargetKey
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUnloadKey* volatile ScUnloadKey;
+EXTERN_C FN_ScUnloadKey* volatile ScUnloadKey;
 
 typedef
 NTSTATUS
@@ -5161,7 +5161,7 @@ FN_ScUnloadKey2(
     _In_ POBJECT_ATTRIBUTES TargetKey,
     _In_ ULONG Flags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUnloadKey2* volatile ScUnloadKey2;
+EXTERN_C FN_ScUnloadKey2* volatile ScUnloadKey2;
 
 typedef
 NTSTATUS
@@ -5170,7 +5170,7 @@ FN_ScUnloadKeyEx(
     _In_ POBJECT_ATTRIBUTES TargetKey,
     _In_opt_ HANDLE Event
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUnloadKeyEx* volatile ScUnloadKeyEx;
+EXTERN_C FN_ScUnloadKeyEx* volatile ScUnloadKeyEx;
 
 typedef
 NTSTATUS
@@ -5182,7 +5182,7 @@ FN_ScUnlockFile(
     _In_ PLARGE_INTEGER Length,
     _In_ ULONG Key
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUnlockFile* volatile ScUnlockFile;
+EXTERN_C FN_ScUnlockFile* volatile ScUnlockFile;
 
 typedef
 NTSTATUS
@@ -5193,7 +5193,7 @@ FN_ScUnlockVirtualMemory(
     _Inout_ PSIZE_T RegionSize,
     _In_ ULONG MapType
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUnlockVirtualMemory* volatile ScUnlockVirtualMemory;
+EXTERN_C FN_ScUnlockVirtualMemory* volatile ScUnlockVirtualMemory;
 
 typedef
 NTSTATUS
@@ -5202,7 +5202,7 @@ FN_ScUnmapViewOfSection(
     _In_ HANDLE ProcessHandle,
     _In_opt_ PVOID BaseAddress
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUnmapViewOfSection* volatile ScUnmapViewOfSection;
+EXTERN_C FN_ScUnmapViewOfSection* volatile ScUnmapViewOfSection;
 
 typedef
 NTSTATUS
@@ -5212,7 +5212,7 @@ FN_ScUnmapViewOfSectionEx(
     _In_opt_ PVOID BaseAddress,
     _In_ ULONG Flags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUnmapViewOfSectionEx* volatile ScUnmapViewOfSectionEx;
+EXTERN_C FN_ScUnmapViewOfSectionEx* volatile ScUnmapViewOfSectionEx;
 
 typedef
 NTSTATUS
@@ -5220,7 +5220,7 @@ NTAPI
 FN_ScUnsubscribeWnfStateChange(
     _In_ PCWNF_STATE_NAME StateName
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUnsubscribeWnfStateChange* volatile ScUnsubscribeWnfStateChange;
+EXTERN_C FN_ScUnsubscribeWnfStateChange* volatile ScUnsubscribeWnfStateChange;
 
 typedef
 NTSTATUS
@@ -5234,7 +5234,7 @@ FN_ScUpdateWnfStateData(
     _In_ WNF_CHANGE_STAMP MatchingChangeStamp,
     _In_ LOGICAL CheckStamp
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUpdateWnfStateData* volatile ScUpdateWnfStateData;
+EXTERN_C FN_ScUpdateWnfStateData* volatile ScUpdateWnfStateData;
 
 typedef
 NTSTATUS
@@ -5243,7 +5243,7 @@ FN_ScVdmControl(
     _In_ VDMSERVICECLASS Service,
     _Inout_ PVOID ServiceData
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScVdmControl* volatile ScVdmControl;
+EXTERN_C FN_ScVdmControl* volatile ScVdmControl;
 
 typedef
 NTSTATUS
@@ -5252,7 +5252,7 @@ FN_ScWaitForAlertByThreadId(
     _In_opt_ PVOID Address,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScWaitForAlertByThreadId* volatile ScWaitForAlertByThreadId;
+EXTERN_C FN_ScWaitForAlertByThreadId* volatile ScWaitForAlertByThreadId;
 
 typedef
 NTSTATUS
@@ -5263,7 +5263,7 @@ FN_ScWaitForDebugEvent(
     _In_opt_ PLARGE_INTEGER Timeout,
     _Out_ PDBGUI_WAIT_STATE_CHANGE WaitStateChange
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScWaitForDebugEvent* volatile ScWaitForDebugEvent;
+EXTERN_C FN_ScWaitForDebugEvent* volatile ScWaitForDebugEvent;
 
 typedef
 NTSTATUS
@@ -5274,7 +5274,7 @@ FN_ScWaitForKeyedEvent(
     _In_ BOOLEAN Alertable,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScWaitForKeyedEvent* volatile ScWaitForKeyedEvent;
+EXTERN_C FN_ScWaitForKeyedEvent* volatile ScWaitForKeyedEvent;
 
 typedef
 NTSTATUS
@@ -5286,7 +5286,7 @@ FN_ScWaitForMultipleObjects(
     _In_ BOOLEAN Alertable,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScWaitForMultipleObjects* volatile ScWaitForMultipleObjects;
+EXTERN_C FN_ScWaitForMultipleObjects* volatile ScWaitForMultipleObjects;
 
 typedef
 NTSTATUS
@@ -5298,7 +5298,7 @@ FN_ScWaitForMultipleObjects32(
     _In_ BOOLEAN Alertable,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScWaitForMultipleObjects32* volatile ScWaitForMultipleObjects32;
+EXTERN_C FN_ScWaitForMultipleObjects32* volatile ScWaitForMultipleObjects32;
 
 typedef
 NTSTATUS
@@ -5308,7 +5308,7 @@ FN_ScWaitForSingleObject(
     _In_ BOOLEAN Alertable,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScWaitForSingleObject* volatile ScWaitForSingleObject;
+EXTERN_C FN_ScWaitForSingleObject* volatile ScWaitForSingleObject;
 
 typedef
 NTSTATUS
@@ -5320,7 +5320,7 @@ FN_ScWaitForWorkViaWorkerFactory(
     _Out_ PULONG PacketsReturned,
     _In_ PWORKER_FACTORY_DEFERRED_WORK DeferredWork
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScWaitForWorkViaWorkerFactory* volatile ScWaitForWorkViaWorkerFactory;
+EXTERN_C FN_ScWaitForWorkViaWorkerFactory* volatile ScWaitForWorkViaWorkerFactory;
 
 typedef
 NTSTATUS
@@ -5328,7 +5328,7 @@ NTAPI
 FN_ScWaitHighEventPair(
     _In_ HANDLE EventPairHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScWaitHighEventPair* volatile ScWaitHighEventPair;
+EXTERN_C FN_ScWaitHighEventPair* volatile ScWaitHighEventPair;
 
 typedef
 NTSTATUS
@@ -5336,7 +5336,7 @@ NTAPI
 FN_ScWaitLowEventPair(
     _In_ HANDLE EventPairHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScWaitLowEventPair* volatile ScWaitLowEventPair;
+EXTERN_C FN_ScWaitLowEventPair* volatile ScWaitLowEventPair;
 
 typedef
 NTSTATUS
@@ -5344,7 +5344,7 @@ NTAPI
 FN_ScWorkerFactoryWorkerReady(
     _In_ HANDLE WorkerFactoryHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScWorkerFactoryWorkerReady* volatile ScWorkerFactoryWorkerReady;
+EXTERN_C FN_ScWorkerFactoryWorkerReady* volatile ScWorkerFactoryWorkerReady;
 
 typedef
 NTSTATUS
@@ -5360,7 +5360,7 @@ FN_ScWow64AllocateVirtualMemory64(
     _In_ ULONG AllocationType,
     _In_ ULONG Protect
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScWow64AllocateVirtualMemory64* volatile ScWow64AllocateVirtualMemory64;
+EXTERN_C FN_ScWow64AllocateVirtualMemory64* volatile ScWow64AllocateVirtualMemory64;
 
 typedef
 NTSTATUS
@@ -5371,7 +5371,7 @@ FN_ScWow64GetNativeSystemInformation(
     _In_ ULONG InformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScWow64GetNativeSystemInformation* volatile ScWow64GetNativeSystemInformation;
+EXTERN_C FN_ScWow64GetNativeSystemInformation* volatile ScWow64GetNativeSystemInformation;
 
 typedef
 BOOLEAN
@@ -5379,7 +5379,7 @@ NTAPI
 FN_ScWow64IsProcessorFeaturePresent(
     _In_ ULONG ProcessorFeature
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScWow64IsProcessorFeaturePresent* volatile ScWow64IsProcessorFeaturePresent;
+EXTERN_C FN_ScWow64IsProcessorFeaturePresent* volatile ScWow64IsProcessorFeaturePresent;
 
 typedef
 NTSTATUS
@@ -5391,7 +5391,7 @@ FN_ScWow64QueryInformationProcess64(
     _In_ ULONG ProcessInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScWow64QueryInformationProcess64* volatile ScWow64QueryInformationProcess64;
+EXTERN_C FN_ScWow64QueryInformationProcess64* volatile ScWow64QueryInformationProcess64;
 
 typedef
 NTSTATUS
@@ -5403,7 +5403,7 @@ FN_ScWow64ReadVirtualMemory64(
     _In_ ULONGLONG NumberOfBytesToRead,
     _Out_opt_ PULONGLONG NumberOfBytesRead
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScWow64ReadVirtualMemory64* volatile ScWow64ReadVirtualMemory64;
+EXTERN_C FN_ScWow64ReadVirtualMemory64* volatile ScWow64ReadVirtualMemory64;
 
 typedef
 NTSTATUS
@@ -5415,7 +5415,7 @@ FN_ScWow64WriteVirtualMemory64(
     _In_ ULONGLONG NumberOfBytesToWrite,
     _Out_opt_ PULONGLONG NumberOfBytesWritten
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScWow64WriteVirtualMemory64* volatile ScWow64WriteVirtualMemory64;
+EXTERN_C FN_ScWow64WriteVirtualMemory64* volatile ScWow64WriteVirtualMemory64;
 
 typedef
 NTSTATUS
@@ -5431,7 +5431,7 @@ FN_ScWriteFile(
     _In_opt_ PLARGE_INTEGER ByteOffset,
     _In_opt_ PULONG Key
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScWriteFile* volatile ScWriteFile;
+EXTERN_C FN_ScWriteFile* volatile ScWriteFile;
 
 typedef
 NTSTATUS
@@ -5447,7 +5447,7 @@ FN_ScWriteFileGather(
     _In_opt_ PLARGE_INTEGER ByteOffset,
     _In_opt_ PULONG Key
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScWriteFileGather* volatile ScWriteFileGather;
+EXTERN_C FN_ScWriteFileGather* volatile ScWriteFileGather;
 
 typedef
 NTSTATUS
@@ -5460,7 +5460,7 @@ FN_ScWriteRequestData(
     _In_ SIZE_T BufferSize,
     _Out_opt_ PSIZE_T NumberOfBytesWritten
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScWriteRequestData* volatile ScWriteRequestData;
+EXTERN_C FN_ScWriteRequestData* volatile ScWriteRequestData;
 
 typedef
 NTSTATUS
@@ -5472,7 +5472,7 @@ FN_ScWriteVirtualMemory(
     _In_ SIZE_T NumberOfBytesToWrite,
     _Out_opt_ PSIZE_T NumberOfBytesWritten
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScWriteVirtualMemory* volatile ScWriteVirtualMemory;
+EXTERN_C FN_ScWriteVirtualMemory* volatile ScWriteVirtualMemory;
 
 typedef
 NTSTATUS
@@ -5480,7 +5480,7 @@ NTAPI
 FN_ScYieldExecution(
     VOID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScYieldExecution* volatile ScYieldExecution;
+EXTERN_C FN_ScYieldExecution* volatile ScYieldExecution;
 
 typedef
 NTSTATUS
@@ -5490,7 +5490,7 @@ FN_ScUserAttachThreadInput(
     _In_ ULONG IdAttachTo,
     _In_ BOOL Attach
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserAttachThreadInput* volatile ScUserAttachThreadInput;
+EXTERN_C FN_ScUserAttachThreadInput* volatile ScUserAttachThreadInput;
 
 typedef
 HDC
@@ -5499,7 +5499,7 @@ FN_ScUserBeginPaint(
     _In_ HWND WindowHandle,
     _Inout_ LPPAINTSTRUCT lpPaint
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserBeginPaint* volatile ScUserBeginPaint;
+EXTERN_C FN_ScUserBeginPaint* volatile ScUserBeginPaint;
 
 typedef
 BOOL
@@ -5507,7 +5507,7 @@ NTAPI
 FN_ScUserBlockInput(
     _In_ BOOL BlockInput
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserBlockInput* volatile ScUserBlockInput;
+EXTERN_C FN_ScUserBlockInput* volatile ScUserBlockInput;
 
 typedef
 HWND
@@ -5519,7 +5519,7 @@ FN_ScUserFindWindowEx(
     _In_ PCUNICODE_STRING WindowName,
     _In_ ULONG Type // FW_*
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserFindWindowEx* volatile ScUserFindWindowEx;
+EXTERN_C FN_ScUserFindWindowEx* volatile ScUserFindWindowEx;
 
 typedef
 NTSTATUS
@@ -5534,7 +5534,7 @@ FN_ScUserBuildHwndList(
     _Out_writes_bytes_(HwndListInformationLength) PVOID HwndListInformation,
     _Out_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserBuildHwndList* volatile ScUserBuildHwndList;
+EXTERN_C FN_ScUserBuildHwndList* volatile ScUserBuildHwndList;
 
 typedef
 NTSTATUS
@@ -5545,7 +5545,7 @@ FN_ScUserBuildNameList(
     _Out_writes_bytes_(NameListInformationLength) PVOID NameListInformation,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserBuildNameList* volatile ScUserBuildNameList;
+EXTERN_C FN_ScUserBuildNameList* volatile ScUserBuildNameList;
 
 typedef
 NTSTATUS
@@ -5556,7 +5556,7 @@ FN_ScUserBuildPropList(
     _Out_writes_bytes_(PropListInformationLength) PVOID PropListInformation,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserBuildPropList* volatile ScUserBuildPropList;
+EXTERN_C FN_ScUserBuildPropList* volatile ScUserBuildPropList;
 
 typedef
 LOGICAL
@@ -5564,7 +5564,7 @@ NTAPI
 FN_ScUserCanCurrentThreadChangeForeground(
     VOID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserCanCurrentThreadChangeForeground* volatile ScUserCanCurrentThreadChangeForeground;
+EXTERN_C FN_ScUserCanCurrentThreadChangeForeground* volatile ScUserCanCurrentThreadChangeForeground;
 
 typedef
 BOOL
@@ -5576,7 +5576,7 @@ FN_ScUserCalculatePopupWindowPosition(
     _Inout_ RECT* excludeRect,
     _Inout_ RECT* popupWindowPosition
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserCalculatePopupWindowPosition* volatile ScUserCalculatePopupWindowPosition;
+EXTERN_C FN_ScUserCalculatePopupWindowPosition* volatile ScUserCalculatePopupWindowPosition;
 
 typedef
 NTSTATUS
@@ -5586,7 +5586,7 @@ FN_ScUserCheckAccessForIntegrityLevel(
     _In_ ULONG ProcessIdSecond,
     _Out_ PBOOLEAN GrantedAccess
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserCheckAccessForIntegrityLevel* volatile ScUserCheckAccessForIntegrityLevel;
+EXTERN_C FN_ScUserCheckAccessForIntegrityLevel* volatile ScUserCheckAccessForIntegrityLevel;
 
 typedef
 NTSTATUS
@@ -5595,7 +5595,7 @@ FN_ScUserCheckProcessForClipboardAccess(
     _In_ ULONG ProcessId,
     _Out_ PULONG GrantedAccess
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserCheckProcessForClipboardAccess* volatile ScUserCheckProcessForClipboardAccess;
+EXTERN_C FN_ScUserCheckProcessForClipboardAccess* volatile ScUserCheckProcessForClipboardAccess;
 
 typedef
 LOGICAL
@@ -5603,7 +5603,7 @@ NTAPI
 FN_ScUserCloseWindowStation(
     _In_ HWINSTA WindowStationHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserCloseWindowStation* volatile ScUserCloseWindowStation;
+EXTERN_C FN_ScUserCloseWindowStation* volatile ScUserCloseWindowStation;
 
 typedef
 LOGICAL
@@ -5611,7 +5611,7 @@ NTAPI
 FN_ScUserDisableProcessWindowsGhosting(
     VOID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserDisableProcessWindowsGhosting* volatile ScUserDisableProcessWindowsGhosting;
+EXTERN_C FN_ScUserDisableProcessWindowsGhosting* volatile ScUserDisableProcessWindowsGhosting;
 
 typedef
 NTSTATUS
@@ -5621,7 +5621,7 @@ FN_ScUserConsoleControl(
     _In_reads_bytes_(ConsoleInformationLength) PVOID ConsoleInformation,
     _In_ ULONG ConsoleInformationLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserConsoleControl* volatile ScUserConsoleControl;
+EXTERN_C FN_ScUserConsoleControl* volatile ScUserConsoleControl;
 
 typedef
 NTSTATUS
@@ -5636,7 +5636,7 @@ FN_ScUserCreateWindowStation(
     _In_opt_ PUNICODE_STRING LanguageIdString,
     _In_opt_ ULONG KeyboardLocale
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserCreateWindowStation* volatile ScUserCreateWindowStation;
+EXTERN_C FN_ScUserCreateWindowStation* volatile ScUserCreateWindowStation;
 
 typedef
 HWND
@@ -5646,7 +5646,7 @@ FN_ScUserGetClassName(
     _In_ BOOL Real,
     _Out_ PUNICODE_STRING ClassName
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetClassName* volatile ScUserGetClassName;
+EXTERN_C FN_ScUserGetClassName* volatile ScUserGetClassName;
 
 typedef
 HWND
@@ -5654,7 +5654,7 @@ NTAPI
 FN_ScUserGetForegroundWindow(
     VOID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetForegroundWindow* volatile ScUserGetForegroundWindow;
+EXTERN_C FN_ScUserGetForegroundWindow* volatile ScUserGetForegroundWindow;
 
 typedef
 LOGICAL
@@ -5667,7 +5667,7 @@ FN_ScUserGetIconInfo(
     _Out_opt_ PULONG ColorBits,
     _In_ LOGICAL IsCursorHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetIconInfo* volatile ScUserGetIconInfo;
+EXTERN_C FN_ScUserGetIconInfo* volatile ScUserGetIconInfo;
 
 typedef
 LOGICAL
@@ -5678,7 +5678,7 @@ FN_ScUserGetIconSize(
     _Out_ PULONG XX,
     _Out_ PULONG YY
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetIconSize* volatile ScUserGetIconSize;
+EXTERN_C FN_ScUserGetIconSize* volatile ScUserGetIconSize;
 
 typedef
 HWND
@@ -5686,7 +5686,7 @@ NTAPI
 FN_ScUserGetProcessWindowStation(
     VOID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetProcessWindowStation* volatile ScUserGetProcessWindowStation;
+EXTERN_C FN_ScUserGetProcessWindowStation* volatile ScUserGetProcessWindowStation;
 
 typedef
 ULONG_PTR
@@ -5694,7 +5694,7 @@ NTAPI
 FN_ScUserGetThreadState(
     _In_ ULONG UserThreadState
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetThreadState* volatile ScUserGetThreadState;
+EXTERN_C FN_ScUserGetThreadState* volatile ScUserGetThreadState;
 
 typedef
 HWND
@@ -5702,7 +5702,7 @@ NTAPI
 FN_ScUserGhostWindowFromHungWindow(
     _In_ HWND WindowHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGhostWindowFromHungWindow* volatile ScUserGhostWindowFromHungWindow;
+EXTERN_C FN_ScUserGhostWindowFromHungWindow* volatile ScUserGhostWindowFromHungWindow;
 
 typedef
 HWND
@@ -5710,7 +5710,7 @@ NTAPI
 FN_ScUserHungWindowFromGhostWindow(
     _In_ HWND WindowHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserHungWindowFromGhostWindow* volatile ScUserHungWindowFromGhostWindow;
+EXTERN_C FN_ScUserHungWindowFromGhostWindow* volatile ScUserHungWindowFromGhostWindow;
 
 typedef
 ULONG
@@ -5720,7 +5720,7 @@ FN_ScUserInternalGetWindowText(
     _Out_writes_to_(cchMaxCount, return + 1) LPWSTR pString,
     _In_ ULONG cchMaxCount
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserInternalGetWindowText* volatile ScUserInternalGetWindowText;
+EXTERN_C FN_ScUserInternalGetWindowText* volatile ScUserInternalGetWindowText;
 
 typedef
 HICON
@@ -5729,7 +5729,7 @@ FN_ScUserInternalGetWindowIcon(
     _In_ HWND WindowHandle,
     _In_ ULONG IconType
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserInternalGetWindowIcon* volatile ScUserInternalGetWindowIcon;
+EXTERN_C FN_ScUserInternalGetWindowIcon* volatile ScUserInternalGetWindowIcon;
 
 typedef
 HANDLE
@@ -5739,7 +5739,7 @@ FN_ScUserOpenDesktop(
     _In_ ULONG Flags,
     _In_ ACCESS_MASK DesiredAccess
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserOpenDesktop* volatile ScUserOpenDesktop;
+EXTERN_C FN_ScUserOpenDesktop* volatile ScUserOpenDesktop;
 
 typedef
 HWINSTA
@@ -5748,7 +5748,7 @@ FN_ScUserOpenWindowStation(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_ ACCESS_MASK DesiredAccess
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserOpenWindowStation* volatile ScUserOpenWindowStation;
+EXTERN_C FN_ScUserOpenWindowStation* volatile ScUserOpenWindowStation;
 
 typedef
 ULONG_PTR
@@ -5757,7 +5757,7 @@ FN_ScUserQueryWindow(
     _In_ HWND WindowHandle,
     _In_ WINDOWINFOCLASS WindowInfo
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserQueryWindow* volatile ScUserQueryWindow;
+EXTERN_C FN_ScUserQueryWindow* volatile ScUserQueryWindow;
 
 typedef
 HWND
@@ -5765,7 +5765,7 @@ NTAPI
 FN_ScUserSetActiveWindow(
     _In_ HWND WindowHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserSetActiveWindow* volatile ScUserSetActiveWindow;
+EXTERN_C FN_ScUserSetActiveWindow* volatile ScUserSetActiveWindow;
 
 typedef
 LPARAM
@@ -5773,7 +5773,7 @@ NTAPI
 FN_ScUserSetMessageExtraInfo(
     _In_ LPARAM lParam
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserSetMessageExtraInfo* volatile ScUserSetMessageExtraInfo;
+EXTERN_C FN_ScUserSetMessageExtraInfo* volatile ScUserSetMessageExtraInfo;
 
 typedef
 NTSTATUS
@@ -5781,7 +5781,7 @@ NTAPI
 FN_ScUserSetChildWindowNoActivate(
     _In_ HWND WindowHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserSetChildWindowNoActivate* volatile ScUserSetChildWindowNoActivate;
+EXTERN_C FN_ScUserSetChildWindowNoActivate* volatile ScUserSetChildWindowNoActivate;
 
 typedef
 HWND
@@ -5789,7 +5789,7 @@ NTAPI
 FN_ScUserSetFocus(
     _In_ HWND WindowHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserSetFocus* volatile ScUserSetFocus;
+EXTERN_C FN_ScUserSetFocus* volatile ScUserSetFocus;
 
 typedef
 NTSTATUS
@@ -5800,7 +5800,7 @@ FN_ScUserSetInformationThread(
     _In_reads_bytes_(ThreadInformationLength) PVOID ThreadInformation,
     _In_ ULONG ThreadInformationLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserSetInformationThread* volatile ScUserSetInformationThread;
+EXTERN_C FN_ScUserSetInformationThread* volatile ScUserSetInformationThread;
 
 typedef
 LOGICAL
@@ -5808,7 +5808,7 @@ NTAPI
 FN_ScUserSetProcessWindowStation(
     _In_ HWINSTA WindowStationHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserSetProcessWindowStation* volatile ScUserSetProcessWindowStation;
+EXTERN_C FN_ScUserSetProcessWindowStation* volatile ScUserSetProcessWindowStation;
 
 typedef
 BOOL
@@ -5817,7 +5817,7 @@ FN_ScUserSetWindowPlacement(
     _In_  HWND WindowHandle,
     _Inout_ const WINDOWPLACEMENT* lpwndpl
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserSetWindowPlacement* volatile ScUserSetWindowPlacement;
+EXTERN_C FN_ScUserSetWindowPlacement* volatile ScUserSetWindowPlacement;
 
 typedef
 LOGICAL
@@ -5828,7 +5828,7 @@ FN_ScUserSetWindowStationUser(
     _In_ PSID UserSid,
     _In_ ULONG UserSidLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserSetWindowStationUser* volatile ScUserSetWindowStationUser;
+EXTERN_C FN_ScUserSetWindowStationUser* volatile ScUserSetWindowStationUser;
 
 typedef
 NTSTATUS
@@ -5836,7 +5836,7 @@ NTAPI
 FN_ScUserTestForInteractiveUser(
     _In_ PLUID AuthenticationId
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserTestForInteractiveUser* volatile ScUserTestForInteractiveUser;
+EXTERN_C FN_ScUserTestForInteractiveUser* volatile ScUserTestForInteractiveUser;
 
 typedef
 LOGICAL
@@ -5846,7 +5846,7 @@ FN_ScUserSwitchDesktop(
     _In_opt_ ULONG Flags,
     _In_opt_ ULONG FadeTime
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserSwitchDesktop* volatile ScUserSwitchDesktop;
+EXTERN_C FN_ScUserSwitchDesktop* volatile ScUserSwitchDesktop;
 
 typedef
 LOGICAL
@@ -5854,7 +5854,7 @@ NTAPI
 FN_ScUserSetThreadDesktop(
     _In_ HDESK DesktopHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserSetThreadDesktop* volatile ScUserSetThreadDesktop;
+EXTERN_C FN_ScUserSetThreadDesktop* volatile ScUserSetThreadDesktop;
 
 typedef
 HWND
@@ -5864,7 +5864,7 @@ FN_ScUserChildWindowFromPointEx(
     _In_ POINT pt,
     _In_ ULONG flags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserChildWindowFromPointEx* volatile ScUserChildWindowFromPointEx;
+EXTERN_C FN_ScUserChildWindowFromPointEx* volatile ScUserChildWindowFromPointEx;
 
 typedef
 BOOL
@@ -5872,7 +5872,7 @@ NTAPI
 FN_ScUserClipCursor(
     _In_ const RECT* lpRect
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserClipCursor* volatile ScUserClipCursor;
+EXTERN_C FN_ScUserClipCursor* volatile ScUserClipCursor;
 
 typedef
 BOOL
@@ -5880,7 +5880,7 @@ NTAPI
 FN_ScUserCloseDesktop(
     _In_ HDESK DesktopHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserCloseDesktop* volatile ScUserCloseDesktop;
+EXTERN_C FN_ScUserCloseDesktop* volatile ScUserCloseDesktop;
 
 typedef
 LONG
@@ -5890,7 +5890,7 @@ FN_ScUserCopyAcceleratorTable(
     _In_ LPACCEL lpAccelDst,
     _In_ LONG cAccelEntries
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserCopyAcceleratorTable* volatile ScUserCopyAcceleratorTable;
+EXTERN_C FN_ScUserCopyAcceleratorTable* volatile ScUserCopyAcceleratorTable;
 
 typedef
 HACCEL
@@ -5899,7 +5899,7 @@ FN_ScUserCreateAcceleratorTable(
     _In_ LPACCEL paccel,
     _In_ LONG cAccel
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserCreateAcceleratorTable* volatile ScUserCreateAcceleratorTable;
+EXTERN_C FN_ScUserCreateAcceleratorTable* volatile ScUserCreateAcceleratorTable;
 
 typedef
 BOOL
@@ -5909,7 +5909,7 @@ FN_ScUserDeleteMenu(
     _In_ ULONG Position,
     _In_ ULONG Flags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserDeleteMenu* volatile ScUserDeleteMenu;
+EXTERN_C FN_ScUserDeleteMenu* volatile ScUserDeleteMenu;
 
 typedef
 BOOL
@@ -5917,7 +5917,7 @@ NTAPI
 FN_ScUserDestroyMenu(
     _In_ HMENU MenuHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserDestroyMenu* volatile ScUserDestroyMenu;
+EXTERN_C FN_ScUserDestroyMenu* volatile ScUserDestroyMenu;
 
 typedef
 BOOL
@@ -5925,7 +5925,7 @@ NTAPI
 FN_ScUserDestroyWindow(
     _In_ HWND WindowHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserDestroyWindow* volatile ScUserDestroyWindow;
+EXTERN_C FN_ScUserDestroyWindow* volatile ScUserDestroyWindow;
 
 typedef
 BOOL
@@ -5934,7 +5934,7 @@ FN_ScUserDragDetect(
     _In_ HWND WindowHandle,
     _In_ POINT pt
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserDragDetect* volatile ScUserDragDetect;
+EXTERN_C FN_ScUserDragDetect* volatile ScUserDragDetect;
 
 typedef
 ULONG
@@ -5946,7 +5946,7 @@ FN_ScUserDragObject(
     _In_ ULONG_PTR data,
     _In_ HCURSOR hcur
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserDragObject* volatile ScUserDragObject;
+EXTERN_C FN_ScUserDragObject* volatile ScUserDragObject;
 
 typedef
 BOOL
@@ -5957,7 +5957,7 @@ FN_ScUserDrawAnimatedRects(
     _In_ const RECT* lprcFrom,
     _In_ const RECT* lprcTo
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserDrawAnimatedRects* volatile ScUserDrawAnimatedRects;
+EXTERN_C FN_ScUserDrawAnimatedRects* volatile ScUserDrawAnimatedRects;
 
 typedef
 BOOL
@@ -5965,7 +5965,7 @@ NTAPI
 FN_ScUserEndMenu(
     VOID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserEndMenu* volatile ScUserEndMenu;
+EXTERN_C FN_ScUserEndMenu* volatile ScUserEndMenu;
 
 typedef
 BOOL
@@ -5974,7 +5974,7 @@ FN_ScUserEndPaint(
     _In_ HWND WindowHandle,
     _Inout_ const PAINTSTRUCT* lpPaint
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserEndPaint* volatile ScUserEndPaint;
+EXTERN_C FN_ScUserEndPaint* volatile ScUserEndPaint;
 
 typedef
 BOOL
@@ -5985,7 +5985,7 @@ FN_ScUserEnumDisplayMonitors(
     _In_ MONITORENUMPROC lpfnEnum,
     _In_ LPARAM dwData
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserEnumDisplayMonitors* volatile ScUserEnumDisplayMonitors;
+EXTERN_C FN_ScUserEnumDisplayMonitors* volatile ScUserEnumDisplayMonitors;
 
 typedef
 HRGN
@@ -5994,7 +5994,7 @@ FN_ScUserExcludeUpdateRgn(
     _In_ HDC hDC,
     _In_ HWND WindowHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserExcludeUpdateRgn* volatile ScUserExcludeUpdateRgn;
+EXTERN_C FN_ScUserExcludeUpdateRgn* volatile ScUserExcludeUpdateRgn;
 
 typedef
 BOOL
@@ -6002,7 +6002,7 @@ NTAPI
 FN_ScUserFlashWindowEx(
     _In_ PFLASHWINFO pfwi
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserFlashWindowEx* volatile ScUserFlashWindowEx;
+EXTERN_C FN_ScUserFlashWindowEx* volatile ScUserFlashWindowEx;
 
 typedef
 HWND
@@ -6011,7 +6011,7 @@ FN_ScUserGetAncestor(
     _In_ HWND WindowHandle,
     _In_ ULONG gaFlags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetAncestor* volatile ScUserGetAncestor;
+EXTERN_C FN_ScUserGetAncestor* volatile ScUserGetAncestor;
 
 typedef
 ULONG
@@ -6019,7 +6019,7 @@ NTAPI
 FN_ScUserGetCaretBlinkTime(
     VOID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetCaretBlinkTime* volatile ScUserGetCaretBlinkTime;
+EXTERN_C FN_ScUserGetCaretBlinkTime* volatile ScUserGetCaretBlinkTime;
 
 typedef
 BOOL
@@ -6027,7 +6027,7 @@ NTAPI
 FN_ScUserGetCaretPos(
     _In_ LPPOINT lpPoint
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetCaretPos* volatile ScUserGetCaretPos;
+EXTERN_C FN_ScUserGetCaretPos* volatile ScUserGetCaretPos;
 
 typedef
 BOOL
@@ -6035,7 +6035,7 @@ NTAPI
 FN_ScUserGetClipCursor(
     _In_ LPRECT lpRect
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetClipCursor* volatile ScUserGetClipCursor;
+EXTERN_C FN_ScUserGetClipCursor* volatile ScUserGetClipCursor;
 
 typedef
 BOOL
@@ -6044,7 +6044,7 @@ FN_ScUserGetComboBoxInfo(
     _In_ HWND WindowHandleCombo,
     _Inout_ PCOMBOBOXINFO pcbi
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetComboBoxInfo* volatile ScUserGetComboBoxInfo;
+EXTERN_C FN_ScUserGetComboBoxInfo* volatile ScUserGetComboBoxInfo;
 
 typedef
 BOOL
@@ -6052,7 +6052,7 @@ NTAPI
 FN_ScUserGetCurrentInputMessageSource(
     _Inout_ INPUT_MESSAGE_SOURCE* InputMessageSource
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetCurrentInputMessageSource* volatile ScUserGetCurrentInputMessageSource;
+EXTERN_C FN_ScUserGetCurrentInputMessageSource* volatile ScUserGetCurrentInputMessageSource;
 
 typedef
 HCURSOR
@@ -6060,7 +6060,7 @@ NTAPI
 FN_ScUserGetCursor(
     VOID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetCursor* volatile ScUserGetCursor;
+EXTERN_C FN_ScUserGetCursor* volatile ScUserGetCursor;
 
 typedef
 BOOL
@@ -6068,7 +6068,7 @@ NTAPI
 FN_ScUserGetCursorInfo(
     _In_ PCURSORINFO pci
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetCursorInfo* volatile ScUserGetCursorInfo;
+EXTERN_C FN_ScUserGetCursorInfo* volatile ScUserGetCursorInfo;
 
 typedef
 HDC
@@ -6078,7 +6078,7 @@ FN_ScUserGetDCEx(
     _In_ HRGN hrgnClip,
     _In_ ULONG flags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetDCEx* volatile ScUserGetDCEx;
+EXTERN_C FN_ScUserGetDCEx* volatile ScUserGetDCEx;
 
 typedef
 BOOL
@@ -6086,7 +6086,7 @@ NTAPI
 FN_ScUserGetDisplayAutoRotationPreferences(
     _In_ ORIENTATION_PREFERENCE* pOrientation
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetDisplayAutoRotationPreferences* volatile ScUserGetDisplayAutoRotationPreferences;
+EXTERN_C FN_ScUserGetDisplayAutoRotationPreferences* volatile ScUserGetDisplayAutoRotationPreferences;
 
 typedef
 ULONG
@@ -6094,7 +6094,7 @@ NTAPI
 FN_ScUserGetDoubleClickTime(
     VOID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetDoubleClickTime* volatile ScUserGetDoubleClickTime;
+EXTERN_C FN_ScUserGetDoubleClickTime* volatile ScUserGetDoubleClickTime;
 
 typedef
 BOOL
@@ -6103,7 +6103,7 @@ FN_ScUserGetGUIThreadInfo(
     _In_ ULONG idThread,
     _In_ PGUITHREADINFO pgui
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetGUIThreadInfo* volatile ScUserGetGUIThreadInfo;
+EXTERN_C FN_ScUserGetGUIThreadInfo* volatile ScUserGetGUIThreadInfo;
 
 typedef
 ULONG
@@ -6112,7 +6112,7 @@ FN_ScUserGetGuiResources(
     _In_ HANDLE ProcessHandle,
     _In_ ULONG uiFlags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetGuiResources* volatile ScUserGetGuiResources;
+EXTERN_C FN_ScUserGetGuiResources* volatile ScUserGetGuiResources;
 
 typedef
 BOOL
@@ -6123,7 +6123,7 @@ FN_ScUserGetLayeredWindowAttributes(
     _In_ BYTE* pbAlpha,
     _In_ ULONG pdwFlags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetLayeredWindowAttributes* volatile ScUserGetLayeredWindowAttributes;
+EXTERN_C FN_ScUserGetLayeredWindowAttributes* volatile ScUserGetLayeredWindowAttributes;
 
 typedef
 ULONG
@@ -6131,7 +6131,7 @@ NTAPI
 FN_ScUserGetListBoxInfo(
     _In_ HWND WindowHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetListBoxInfo* volatile ScUserGetListBoxInfo;
+EXTERN_C FN_ScUserGetListBoxInfo* volatile ScUserGetListBoxInfo;
 
 typedef
 BOOL
@@ -6142,7 +6142,7 @@ FN_ScUserGetMenuBarInfo(
     _In_ LONG idItem,
     _In_ PMENUBARINFO pmbi
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetMenuBarInfo* volatile ScUserGetMenuBarInfo;
+EXTERN_C FN_ScUserGetMenuBarInfo* volatile ScUserGetMenuBarInfo;
 
 typedef
 BOOL
@@ -6153,7 +6153,7 @@ FN_ScUserGetMenuItemRect(
     _In_ ULONG MenuIndex,
     _In_ PRECT MenuRect
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetMenuItemRect* volatile ScUserGetMenuItemRect;
+EXTERN_C FN_ScUserGetMenuItemRect* volatile ScUserGetMenuItemRect;
 
 typedef
 LONG
@@ -6165,7 +6165,7 @@ FN_ScUserGetMouseMovePointsEx(
     _In_ LONG OutputBufferCount,
     _In_ ULONG Resolution
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetMouseMovePointsEx* volatile ScUserGetMouseMovePointsEx;
+EXTERN_C FN_ScUserGetMouseMovePointsEx* volatile ScUserGetMouseMovePointsEx;
 
 typedef
 ULONG
@@ -6177,7 +6177,7 @@ FN_ScUserGetRawInputData(
     _Inout_ PULONG RawInputBufferSize,
     _In_ ULONG RawInputHeaderSize
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetRawInputData* volatile ScUserGetRawInputData;
+EXTERN_C FN_ScUserGetRawInputData* volatile ScUserGetRawInputData;
 
 typedef
 ULONG
@@ -6187,7 +6187,7 @@ FN_ScUserGetRawInputDeviceList(
     _Inout_ PULONG RawInputDeviceCount,
     _In_ ULONG RawInputDeviceSize
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetRawInputDeviceList* volatile ScUserGetRawInputDeviceList;
+EXTERN_C FN_ScUserGetRawInputDeviceList* volatile ScUserGetRawInputDeviceList;
 
 typedef
 ULONG
@@ -6197,7 +6197,7 @@ FN_ScUserGetRegisteredRawInputDevices(
     _Inout_ PULONG RawInputDeviceCount,
     _In_ ULONG RawInputDeviceSize
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetRegisteredRawInputDevices* volatile ScUserGetRegisteredRawInputDevices;
+EXTERN_C FN_ScUserGetRegisteredRawInputDevices* volatile ScUserGetRegisteredRawInputDevices;
 
 typedef
 HMENU
@@ -6205,7 +6205,7 @@ NTAPI
 FN_ScUserGetSendMessageReceiver(
     _In_ HANDLE ThreadId
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetSendMessageReceiver* volatile ScUserGetSendMessageReceiver;
+EXTERN_C FN_ScUserGetSendMessageReceiver* volatile ScUserGetSendMessageReceiver;
 
 typedef
 HMENU
@@ -6214,7 +6214,7 @@ FN_ScUserGetSystemMenu(
     _In_ HWND WindowHandle,
     _In_ BOOL Revert
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetSystemMenu* volatile ScUserGetSystemMenu;
+EXTERN_C FN_ScUserGetSystemMenu* volatile ScUserGetSystemMenu;
 
 typedef
 HDESK
@@ -6222,7 +6222,7 @@ NTAPI
 FN_ScUserGetThreadDesktop(
     _In_ ULONG ThreadId
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetThreadDesktop* volatile ScUserGetThreadDesktop;
+EXTERN_C FN_ScUserGetThreadDesktop* volatile ScUserGetThreadDesktop;
 
 typedef
 BOOL
@@ -6231,7 +6231,7 @@ FN_ScUserGetTitleBarInfo(
     _In_ HWND WindowHandle,
     _In_ PTITLEBARINFO pti
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetTitleBarInfo* volatile ScUserGetTitleBarInfo;
+EXTERN_C FN_ScUserGetTitleBarInfo* volatile ScUserGetTitleBarInfo;
 
 typedef
 BOOL
@@ -6243,7 +6243,7 @@ FN_ScUserGetObjectInformation(
     _In_ ULONG Length,
     _In_ PULONG LengthNeeded
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetObjectInformation* volatile ScUserGetObjectInformation;
+EXTERN_C FN_ScUserGetObjectInformation* volatile ScUserGetObjectInformation;
 
 typedef
 HDC
@@ -6251,7 +6251,7 @@ NTAPI
 FN_ScUserGetWindowDC(
     _In_ HWND WindowHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetWindowDC* volatile ScUserGetWindowDC;
+EXTERN_C FN_ScUserGetWindowDC* volatile ScUserGetWindowDC;
 
 typedef
 BOOL
@@ -6260,7 +6260,7 @@ FN_ScUserGetWindowPlacement(
     _In_ HWND WindowHandle,
     _Inout_ PWINDOWPLACEMENT WindowPlacement
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserGetWindowPlacement* volatile ScUserGetWindowPlacement;
+EXTERN_C FN_ScUserGetWindowPlacement* volatile ScUserGetWindowPlacement;
 
 typedef
 BOOL
@@ -6271,7 +6271,7 @@ FN_ScUserHiliteMenuItem(
     _In_ ULONG IDHiliteItem,
     _In_ ULONG Hilite
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserHiliteMenuItem* volatile ScUserHiliteMenuItem;
+EXTERN_C FN_ScUserHiliteMenuItem* volatile ScUserHiliteMenuItem;
 
 typedef
 BOOL
@@ -6281,7 +6281,7 @@ FN_ScUserInvalidateRect(
     _In_ const RECT* Rect,
     _In_ BOOL Erase
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserInvalidateRect* volatile ScUserInvalidateRect;
+EXTERN_C FN_ScUserInvalidateRect* volatile ScUserInvalidateRect;
 
 typedef
 BOOL
@@ -6291,7 +6291,7 @@ FN_ScUserInvalidateRgn(
     _In_ HRGN hRgn,
     _In_ BOOL Erase
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserInvalidateRgn* volatile ScUserInvalidateRgn;
+EXTERN_C FN_ScUserInvalidateRgn* volatile ScUserInvalidateRgn;
 
 typedef
 BOOL
@@ -6300,7 +6300,7 @@ FN_ScUserIsTouchWindow(
     _In_ HWND WindowHandle,
     _In_ PULONG Flags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserIsTouchWindow* volatile ScUserIsTouchWindow;
+EXTERN_C FN_ScUserIsTouchWindow* volatile ScUserIsTouchWindow;
 
 typedef
 BOOL
@@ -6309,7 +6309,7 @@ FN_ScUserKillTimer(
     _In_ HWND WindowHandle,
     _In_ ULONG_PTR IDEvent
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserKillTimer* volatile ScUserKillTimer;
+EXTERN_C FN_ScUserKillTimer* volatile ScUserKillTimer;
 
 typedef
 BOOL
@@ -6317,7 +6317,7 @@ NTAPI
 FN_ScUserLockWorkStation(
     VOID
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserLockWorkStation* volatile ScUserLockWorkStation;
+EXTERN_C FN_ScUserLockWorkStation* volatile ScUserLockWorkStation;
 
 typedef
 BOOL
@@ -6326,7 +6326,7 @@ FN_ScUserLogicalToPhysicalPoint(
     _In_ HWND WindowHandle,
     _In_ LPPOINT lpPoint
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserLogicalToPhysicalPoint* volatile ScUserLogicalToPhysicalPoint;
+EXTERN_C FN_ScUserLogicalToPhysicalPoint* volatile ScUserLogicalToPhysicalPoint;
 
 typedef
 LONG
@@ -6336,7 +6336,7 @@ FN_ScUserMenuItemFromPoint(
     _In_ HMENU MenuHandle,
     _In_ POINT ptScreen
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserMenuItemFromPoint* volatile ScUserMenuItemFromPoint;
+EXTERN_C FN_ScUserMenuItemFromPoint* volatile ScUserMenuItemFromPoint;
 
 typedef
 BOOL
@@ -6349,7 +6349,7 @@ FN_ScUserMoveWindow(
     _In_ LONG Height,
     _In_ BOOL Repaint
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserMoveWindow* volatile ScUserMoveWindow;
+EXTERN_C FN_ScUserMoveWindow* volatile ScUserMoveWindow;
 
 typedef
 HDESK
@@ -6359,7 +6359,7 @@ FN_ScUserOpenInputDesktop(
     _In_ BOOL Inherit,
     _In_ ACCESS_MASK DesiredAccess
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserOpenInputDesktop* volatile ScUserOpenInputDesktop;
+EXTERN_C FN_ScUserOpenInputDesktop* volatile ScUserOpenInputDesktop;
 
 typedef
 BOOL
@@ -6368,7 +6368,7 @@ FN_ScUserPhysicalToLogicalPoint(
     _In_ HWND WindowHandle,
     _In_ LPPOINT lpPoint
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserPhysicalToLogicalPoint* volatile ScUserPhysicalToLogicalPoint;
+EXTERN_C FN_ScUserPhysicalToLogicalPoint* volatile ScUserPhysicalToLogicalPoint;
 
 typedef
 BOOL
@@ -6378,7 +6378,7 @@ FN_ScUserPrintWindow(
     _In_ HDC hdcBlt,
     _In_ ULONG nFlags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserPrintWindow* volatile ScUserPrintWindow;
+EXTERN_C FN_ScUserPrintWindow* volatile ScUserPrintWindow;
 
 typedef
 NTSTATUS
@@ -6389,7 +6389,7 @@ FN_ScUserQueryInformationThread(
     _Out_writes_bytes_(*ThreadInformationLength) PVOID ThreadInformation,
     _Out_opt_ PULONG ThreadInformationLength
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserQueryInformationThread* volatile ScUserQueryInformationThread;
+EXTERN_C FN_ScUserQueryInformationThread* volatile ScUserQueryInformationThread;
 
 typedef
 NTSTATUS
@@ -6398,7 +6398,7 @@ FN_ScUserRaiseLowerShellWindow(
     _In_ HWND WindowHandle,
     _In_ BOOLEAN SetWithOptions
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserRaiseLowerShellWindow* volatile ScUserRaiseLowerShellWindow;
+EXTERN_C FN_ScUserRaiseLowerShellWindow* volatile ScUserRaiseLowerShellWindow;
 
 typedef
 BOOL
@@ -6409,7 +6409,7 @@ FN_ScUserRedrawWindow(
     _In_ HRGN hrgnUpdate,
     _In_ ULONG flags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserRedrawWindow* volatile ScUserRedrawWindow;
+EXTERN_C FN_ScUserRedrawWindow* volatile ScUserRedrawWindow;
 
 typedef
 HWND
@@ -6418,7 +6418,7 @@ FN_ScUserRealChildWindowFromPoint(
     _In_ HWND WindowHandleParent,
     _In_ POINT ptParentClientCoords
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserRealChildWindowFromPoint* volatile ScUserRealChildWindowFromPoint;
+EXTERN_C FN_ScUserRealChildWindowFromPoint* volatile ScUserRealChildWindowFromPoint;
 
 typedef
 BOOL
@@ -6429,7 +6429,7 @@ FN_ScUserRegisterHotKey(
     _In_ ULONG fsModifiers,
     _In_ ULONG vk
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserRegisterHotKey* volatile ScUserRegisterHotKey;
+EXTERN_C FN_ScUserRegisterHotKey* volatile ScUserRegisterHotKey;
 
 typedef
 BOOL
@@ -6439,7 +6439,7 @@ FN_ScUserRemoveMenu(
     _In_ ULONG uPosition,
     _In_ ULONG uFlags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserRemoveMenu* volatile ScUserRemoveMenu;
+EXTERN_C FN_ScUserRemoveMenu* volatile ScUserRemoveMenu;
 
 typedef
 ULONG
@@ -6449,7 +6449,7 @@ FN_ScUserSendInput(
     _In_ LPINPUT pInputs,
     _In_ LONG cbSize
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserSendInput* volatile ScUserSendInput;
+EXTERN_C FN_ScUserSendInput* volatile ScUserSendInput;
 
 typedef
 HWND
@@ -6457,7 +6457,7 @@ NTAPI
 FN_ScUserSetCapture(
     _In_ HWND WindowHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserSetCapture* volatile ScUserSetCapture;
+EXTERN_C FN_ScUserSetCapture* volatile ScUserSetCapture;
 
 typedef
 ULONG_PTR
@@ -6469,7 +6469,7 @@ FN_ScUserSetTimer(
     _In_ TIMERPROC lpTimerFunc,
     _In_ ULONG uToleranceDelay
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserSetTimer* volatile ScUserSetTimer;
+EXTERN_C FN_ScUserSetTimer* volatile ScUserSetTimer;
 
 typedef
 WORD
@@ -6479,7 +6479,7 @@ FN_ScUserSetClassWord(
     _In_ LONG nIndex,
     _In_ WORD wNewWord
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserSetClassWord* volatile ScUserSetClassWord;
+EXTERN_C FN_ScUserSetClassWord* volatile ScUserSetClassWord;
 
 typedef
 BOOL
@@ -6488,7 +6488,7 @@ FN_ScUserSetCursorPos(
     _In_ LONG X,
     _In_ LONG Y
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserSetCursorPos* volatile ScUserSetCursorPos;
+EXTERN_C FN_ScUserSetCursorPos* volatile ScUserSetCursorPos;
 
 typedef
 BOOL
@@ -6499,7 +6499,7 @@ FN_ScUserSetLayeredWindowAttributes(
     _In_ BYTE bAlpha,
     _In_ DWORD dwFlags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserSetLayeredWindowAttributes* volatile ScUserSetLayeredWindowAttributes;
+EXTERN_C FN_ScUserSetLayeredWindowAttributes* volatile ScUserSetLayeredWindowAttributes;
 
 typedef
 BOOL
@@ -6507,7 +6507,7 @@ NTAPI
 FN_ScUserSetProcessRestrictionExemption(
     _In_ BOOL EnableExemption
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserSetProcessRestrictionExemption* volatile ScUserSetProcessRestrictionExemption;
+EXTERN_C FN_ScUserSetProcessRestrictionExemption* volatile ScUserSetProcessRestrictionExemption;
 
 typedef
 BOOL
@@ -6521,7 +6521,7 @@ FN_ScUserSetWindowPos(
     _In_ LONG cy,
     _In_ ULONG uFlags
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserSetWindowPos* volatile ScUserSetWindowPos;
+EXTERN_C FN_ScUserSetWindowPos* volatile ScUserSetWindowPos;
 
 typedef
 WORD
@@ -6531,7 +6531,7 @@ FN_ScUserSetWindowWord(
     _In_ LONG nIndex,
     _In_ WORD wNewWord
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserSetWindowWord* volatile ScUserSetWindowWord;
+EXTERN_C FN_ScUserSetWindowWord* volatile ScUserSetWindowWord;
 
 typedef
 NTSTATUS
@@ -6539,7 +6539,7 @@ NTAPI
 FN_ScUserSetForegroundWindowForApplication(
     _In_ HWND WindowHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserSetForegroundWindowForApplication* volatile ScUserSetForegroundWindowForApplication;
+EXTERN_C FN_ScUserSetForegroundWindowForApplication* volatile ScUserSetForegroundWindowForApplication;
 
 typedef
 HWND
@@ -6548,7 +6548,7 @@ FN_ScUserShellForegroundBoostProcess(
     _In_ HANDLE ProcessHandle,
     _In_ HWND WindowHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserShellForegroundBoostProcess* volatile ScUserShellForegroundBoostProcess;
+EXTERN_C FN_ScUserShellForegroundBoostProcess* volatile ScUserShellForegroundBoostProcess;
 
 typedef
 ULONG
@@ -6556,7 +6556,7 @@ NTAPI
 FN_ScUserSetAdditionalForegroundBoostProcesses(
     _In_ HWND WindowHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserSetAdditionalForegroundBoostProcesses* volatile ScUserSetAdditionalForegroundBoostProcesses;
+EXTERN_C FN_ScUserSetAdditionalForegroundBoostProcesses* volatile ScUserSetAdditionalForegroundBoostProcesses;
 
 typedef
 ULONG
@@ -6564,7 +6564,7 @@ NTAPI
 FN_ScUserSetAdditionalPowerThrottlingProcess(
     _In_ HWND WindowHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserSetAdditionalPowerThrottlingProcess* volatile ScUserSetAdditionalPowerThrottlingProcess;
+EXTERN_C FN_ScUserSetAdditionalPowerThrottlingProcess* volatile ScUserSetAdditionalPowerThrottlingProcess;
 
 typedef
 LONG
@@ -6572,7 +6572,7 @@ NTAPI
 FN_ScUserShowCursor(
     _In_ BOOL bShow
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserShowCursor* volatile ScUserShowCursor;
+EXTERN_C FN_ScUserShowCursor* volatile ScUserShowCursor;
 
 typedef
 BOOL
@@ -6581,7 +6581,7 @@ FN_ScUserShowWindow(
     _In_ HWND WindowHandle,
     _In_ LONG nCmdShow
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserShowWindow* volatile ScUserShowWindow;
+EXTERN_C FN_ScUserShowWindow* volatile ScUserShowWindow;
 
 typedef
 BOOL
@@ -6590,7 +6590,7 @@ FN_ScUserShowWindowAsync(
     _In_ HWND WindowHandle,
     _In_ LONG nCmdShow
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserShowWindowAsync* volatile ScUserShowWindowAsync;
+EXTERN_C FN_ScUserShowWindowAsync* volatile ScUserShowWindowAsync;
 
 typedef
 BOOL
@@ -6600,7 +6600,7 @@ FN_ScUserShutdownBlockReasonQuery(
     _Out_ PWSTR Buffer,
     _Inout_ PULONG BufferCount
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserShutdownBlockReasonQuery* volatile ScUserShutdownBlockReasonQuery;
+EXTERN_C FN_ScUserShutdownBlockReasonQuery* volatile ScUserShutdownBlockReasonQuery;
 
 typedef
 BOOL
@@ -6608,7 +6608,7 @@ NTAPI
 FN_ScUserShutdownReasonDestroy(
     _In_ HWND WindowHandle
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserShutdownReasonDestroy* volatile ScUserShutdownReasonDestroy;
+EXTERN_C FN_ScUserShutdownReasonDestroy* volatile ScUserShutdownReasonDestroy;
 
 typedef
 BOOL
@@ -6616,7 +6616,7 @@ NTAPI
 FN_ScUserTrackMouseEvent(
     _In_ LPTRACKMOUSEEVENT lpEventTrack
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserTrackMouseEvent* volatile ScUserTrackMouseEvent;
+EXTERN_C FN_ScUserTrackMouseEvent* volatile ScUserTrackMouseEvent;
 
 typedef
 BOOL
@@ -6629,7 +6629,7 @@ FN_ScUserTrackPopupMenuEx(
     _In_ HWND WindowHandle,
     _In_ LPTPMPARAMS lptpm
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserTrackPopupMenuEx* volatile ScUserTrackPopupMenuEx;
+EXTERN_C FN_ScUserTrackPopupMenuEx* volatile ScUserTrackPopupMenuEx;
 
 typedef
 BOOL
@@ -6637,7 +6637,7 @@ NTAPI
 FN_ScUserUnhookWinEvent(
     _In_ HWINEVENTHOOK hWinEventHook
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserUnhookWinEvent* volatile ScUserUnhookWinEvent;
+EXTERN_C FN_ScUserUnhookWinEvent* volatile ScUserUnhookWinEvent;
 
 typedef
 BOOL
@@ -6646,7 +6646,7 @@ FN_ScUserUnregisterHotKey(
     _In_ HWND WindowHandle,
     _In_ LONG id
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserUnregisterHotKey* volatile ScUserUnregisterHotKey;
+EXTERN_C FN_ScUserUnregisterHotKey* volatile ScUserUnregisterHotKey;
 
 typedef
 BOOL
@@ -6656,7 +6656,7 @@ FN_ScUserUserHandleGrantAccess(
     _In_ HANDLE Job,
     _In_ BOOL Grant
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserUserHandleGrantAccess* volatile ScUserUserHandleGrantAccess;
+EXTERN_C FN_ScUserUserHandleGrantAccess* volatile ScUserUserHandleGrantAccess;
 
 typedef
 BOOL
@@ -6665,7 +6665,7 @@ FN_ScUserValidateRect(
     _In_ HWND WindowHandle,
     _In_ const RECT* Rect
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserValidateRect* volatile ScUserValidateRect;
+EXTERN_C FN_ScUserValidateRect* volatile ScUserValidateRect;
 
 typedef
 HWND
@@ -6673,7 +6673,7 @@ NTAPI
 FN_ScUserWindowFromDC(
     _In_ HDC hDC
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserWindowFromDC* volatile ScUserWindowFromDC;
+EXTERN_C FN_ScUserWindowFromDC* volatile ScUserWindowFromDC;
 
 typedef
 HWND
@@ -6681,7 +6681,7 @@ NTAPI
 FN_ScUserWindowFromPhysicalPoint(
     _In_ POINT Point
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserWindowFromPhysicalPoint* volatile ScUserWindowFromPhysicalPoint;
+EXTERN_C FN_ScUserWindowFromPhysicalPoint* volatile ScUserWindowFromPhysicalPoint;
 
 typedef
 HWND
@@ -6689,6 +6689,6 @@ NTAPI
 FN_ScUserWindowFromPoint(
     _In_ POINT Point
     );
-EXTERN_C DECLSPEC_POINTERALIGN FN_ScUserWindowFromPoint* volatile ScUserWindowFromPoint;
+EXTERN_C FN_ScUserWindowFromPoint* volatile ScUserWindowFromPoint;
 
 EXTERN_C_END

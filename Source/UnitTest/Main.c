@@ -1,20 +1,26 @@
 ﻿#include <KNSoft/NDK/NDK.h>
-#include <KNSoft/NDK/Package/UnitTest.inl>
+
+#include "UnitTest.h"
 
 #pragma comment (lib, "KNSoft.Syscall.lib")
 
-TEST_DECL_FUNC(Test);
+extern FN_TEST_PROC NotFound;
+extern FN_TEST_PROC MemPageAlloc;
 
-CONST UNITTEST_ENTRY UnitTestList[] = {
-    TEST_DECL_ENTRY(Test),
-    { 0 }
-};
+#define RUN_TEST(x) if (!x()) return 1;
 
 int
 _cdecl
-wmain(
-    _In_ int argc,
-    _In_reads_(argc) _Pre_z_ wchar_t** argv)
+mainCRTStartup(void)
 {
-    return UnitTest_Main(argc, argv);
+    HRESULT hr = Syscall_Init();
+    if (FAILED(hr))
+    {
+        return hr;
+    }
+
+    RUN_TEST(NotFound);
+    RUN_TEST(MemPageAlloc);
+
+    return 0;
 }
