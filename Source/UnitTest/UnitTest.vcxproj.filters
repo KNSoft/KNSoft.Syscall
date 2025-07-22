@@ -4,11 +4,12 @@
     <ClCompile Include="Main.c" />
     <ClCompile Include="MemPageAlloc.c" />
     <ClCompile Include="NotFound.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <ClCompile Include="NoImport.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UnitTest.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

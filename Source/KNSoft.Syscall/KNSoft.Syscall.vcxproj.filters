@@ -3,13 +3,12 @@
   <ItemGroup>
     <None Include="Syscall.inl" />
     <None Include="Syscall.inc" />
-    <None Include="packages.config" />
     <None Include="Syscall.x86.asm" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Arch.c" />
-    <ClCompile Include="Initializer.c" />
-    <ClCompile Include="Log.c" />
+    <ClCompile Include="Main.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Syscall.h" />

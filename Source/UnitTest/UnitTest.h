@@ -9,3 +9,4 @@ _Function_class_(FN_TEST_PROC)
 _Success_(return != FALSE)
 LOGICAL
 FN_TEST_PROC(VOID);
+typedef FN_TEST_PROC* PFN_TEST_PROC;

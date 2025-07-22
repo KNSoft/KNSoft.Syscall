@@ -5,20 +5,19 @@
 EXTERN_C_START
 
 typedef
-_Function_class_(FN_Syscall_Log)
-VOID
+_Function_class_(FN_SYSCALL_FAIL_CALLBACK)
+BOOL
 __cdecl
-FN_Syscall_Log(
-    _In_ ULONG Level, // DPFLTR_*
-    _In_z_ _Printf_format_string_ PCSTR Format,
-    ...);
-typedef FN_Syscall_Log* PFN_Syscall_Log;
-
-EXTERN_C PFN_Syscall_Log Syscall_Log;
+FN_SYSCALL_FAIL_CALLBACK(
+    _In_ PVOID Thunk,
+    _In_opt_ PCANSI_STRING Name,
+    _In_ NTSTATUS Status);
+typedef FN_SYSCALL_FAIL_CALLBACK* PFN_SYSCALL_FAIL_CALLBACK;
 
 HRESULT
 NTAPI
-Syscall_Init(VOID);
+Syscall_Init(
+    _In_opt_ PFN_SYSCALL_FAIL_CALLBACK Callback);
 
 EXTERN_C PVOID* Syscall_FastSystemCall;
 

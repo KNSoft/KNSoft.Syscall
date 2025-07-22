@@ -1,15 +1,6 @@
 ﻿#include "Syscall.inl"
 
-#if defined(_M_X64)
-#define SYSCALL_PROC_STUB(Proc, ArgCount) ((PVOID)Proc)
-#elif defined(_M_IX86)
-#define SYSCALL_PROC_STUB(Proc, ArgCount) Add2Ptr(Proc, ArgCount * 8);
-#endif
-
 #define SYSCALL_WIN32U_STRING L"win32u.dll"
-
-EXTERN_C PVOID Syscall_Proc_Not_Found;
-EXTERN_C PVOID Syscall_Proc_Not_Supported;
 
 #pragma section(".ScThunk$AAA", long, read, write)
 #pragma section(".ScThunk$ZZZ", long, read, write)
@@ -17,47 +8,8 @@ EXTERN_C PVOID Syscall_Proc_Not_Supported;
 static __declspec(allocate(".ScThunk$AAA")) PSYSCALL_THUNK_DATA Syscall_Thunk_First[] = { NULL };
 static __declspec(allocate(".ScThunk$ZZZ")) PSYSCALL_THUNK_DATA Syscall_Thunk_Last[] = { NULL };
 
-static const UNICODE_STRING g_usWin32u = RTL_CONSTANT_STRING(SYSCALL_WIN32U_STRING);
 static SYSCALL_DLL Ntdll = { 0 }, Win32u = { 0 };
 static NTSTATUS Win32uStatus = STATUS_SUCCESS;
-
-static
-FORCEINLINE
-PVOID
-Syscall_GetWin32uBase(VOID)
-{
-    PLDR_DATA_TABLE_ENTRY pHead, pNode;
-    PWCHAR pChar;
-
-    /* Skip the first entry (ntdll.dll) */
-    pHead = CONTAINING_RECORD(NtCurrentPeb()->Ldr->InLoadOrderModuleList.Flink, LDR_DATA_TABLE_ENTRY, InLoadOrderLinks);
-    pNode = pHead;
-    do
-    {
-        pNode = CONTAINING_RECORD(pNode->InLoadOrderLinks.Flink, LDR_DATA_TABLE_ENTRY, InLoadOrderLinks);
-        if (pNode->BaseDllName.Length != g_usWin32u.Length)
-        {
-            continue;
-        }
-        pChar = pNode->BaseDllName.Buffer;
-        if ((pChar[0] != L'w' && pChar[0] != L'W') ||
-            (pChar[1] != L'i' && pChar[1] != L'I') ||
-            (pChar[2] != L'n' && pChar[2] != L'N') ||
-            pChar[3] != L'3' ||
-            pChar[4] != L'2' ||
-            (pChar[5] != L'u' && pChar[5] != L'U') ||
-            pChar[6] != L'.' ||
-            (pChar[7] != L'd' && pChar[7] != L'D') ||
-            (pChar[8] != L'l' && pChar[8] != L'L') ||
-            (pChar[9] != L'l' && pChar[9] != L'L'))
-        {
-            continue;
-        }
-        return pNode->DllBase;
-    } while (pNode != pHead);
-
-    return NULL;
-}
 
 static
 FORCEINLINE
@@ -103,13 +55,18 @@ static
 FORCEINLINE
 NTSTATUS
 Syscall_InitThunk(
-    _Inout_ PSYSCALL_THUNK_DATA* Thunk)
+    _Inout_ PSYSCALL_THUNK_DATA* Thunk,
+    _In_opt_ PFN_SYSCALL_FAIL_CALLBACK Callback)
 {
+    NTSTATUS Status;
+    PLDR_DATA_TABLE_ENTRY pHead, pNode;
+    PWCHAR pChar;
     PSYSCALL_DLL SyscallDll;
     PCSTR Symbol;
     CHAR DecodedName[128 + 1];
-    ULONG Cch, uTemp;
+    ULONG Cch = 0, uTemp;
     BYTE Ch, ByteRemain;
+    ANSI_STRING AnsiName;
     PSYSCALL_THUNK_DATA ThunkData = *Thunk;
 
     /* Initialize Syscall Dlls lazily */
@@ -127,16 +84,43 @@ Syscall_InitThunk(
         {
             if (!NT_SUCCESS(Win32uStatus))
             {
-                goto _Not_Found;
+                Status = Win32uStatus;
+                goto _Fail;
             }
-            /* FIXME: Load from system directory only */
-            /* TODO: Use NtCreateSection instead? */
-            Win32uStatus = LdrLoadDll(NULL, NULL, (PUNICODE_STRING)&g_usWin32u, &Win32u.DllBase);
-            if (!NT_SUCCESS(Win32uStatus))
+
+            /* Skip the first entry (ntdll.dll) */
+            pHead = CONTAINING_RECORD(NtCurrentPeb()->Ldr->InLoadOrderModuleList.Flink, LDR_DATA_TABLE_ENTRY, InLoadOrderLinks);
+            pNode = pHead;
+            do
             {
-                goto _Not_Found;
+                pNode = CONTAINING_RECORD(pNode->InLoadOrderLinks.Flink, LDR_DATA_TABLE_ENTRY, InLoadOrderLinks);
+                if (pNode->BaseDllName.Length != _STR_SIZE(SYSCALL_WIN32U_STRING))
+                {
+                    continue;
+                }
+                pChar = pNode->BaseDllName.Buffer;
+                if ((pChar[0] != L'w' && pChar[0] != L'W') ||
+                    (pChar[1] != L'i' && pChar[1] != L'I') ||
+                    (pChar[2] != L'n' && pChar[2] != L'N') ||
+                    pChar[3] != L'3' ||
+                    pChar[4] != L'2' ||
+                    (pChar[5] != L'u' && pChar[5] != L'U') ||
+                    pChar[6] != L'.' ||
+                    (pChar[7] != L'd' && pChar[7] != L'D') ||
+                    (pChar[8] != L'l' && pChar[8] != L'L') ||
+                    (pChar[9] != L'l' && pChar[9] != L'L'))
+                {
+                    continue;
+                }
+                Win32u.DllBase = pNode->DllBase;
+                Syscall_InitDll(TRUE, &Win32u);
+                break;
+            } while (pNode != pHead);
+            if (pNode == pHead)
+            {
+                Status = Win32uStatus = STATUS_DLL_NOT_FOUND;
+                goto _Fail;
             }
-            Syscall_InitDll(TRUE, &Win32u);
         }
         SyscallDll = &Win32u;
     }
@@ -195,20 +179,31 @@ _Write_Char:
                                                 SyscallDll->FuncRVAs[SyscallDll->NameOrdinals[i - 1]]),
                                         &uTemp))
         {
-            *Thunk = (PSYSCALL_THUNK_DATA)SYSCALL_PROC_STUB(&Syscall_Proc_Not_Supported, ThunkData->Header.ArgCount);
-            Syscall_Log(DPFLTR_ERROR_LEVEL, "[KNSoft.Syscall] Error: Initialize %hs failed\n", Symbol);
-            return STATUS_NOT_SUPPORTED;
+            Status = STATUS_NOT_SUPPORTED;
+            goto _Fail;
         }
 
         *Thunk = (PSYSCALL_THUNK_DATA)ThunkData->Header.Proc;
         ThunkData->SSN = uTemp;
         return STATUS_SUCCESS;
     }
+    Status = STATUS_PROCEDURE_NOT_FOUND;
 
-_Not_Found:
-    *Thunk = (PSYSCALL_THUNK_DATA)SYSCALL_PROC_STUB(&Syscall_Proc_Not_Found, ThunkData->Header.ArgCount);
-    Syscall_Log(DPFLTR_ERROR_LEVEL, "[KNSoft.Syscall] Error: Symbol %hs not found\n", DecodedName);
-    return STATUS_PROCEDURE_NOT_FOUND;
+_Fail:
+    ThunkData->SSN = MAXULONG;
+    if (Callback != NULL)
+    {
+        if (Cch != 0)
+        {
+            AnsiName.Buffer = DecodedName;
+            AnsiName.Length = AnsiName.MaximumLength = (USHORT)Cch * sizeof(CHAR);
+        }
+        if (!Callback(*Thunk, Cch != 0 ? &AnsiName : NULL, Status))
+        {
+            return STATUS_REQUEST_ABORTED;
+        }
+    }
+    return Status;
 }
 
 static HRESULT g_hrInitState = E_FAIL;
@@ -216,8 +211,11 @@ static BOOL g_bInitialized = FALSE;
 
 HRESULT
 NTAPI
-Syscall_Init(VOID)
+Syscall_Init(
+    _In_opt_ PFN_SYSCALL_FAIL_CALLBACK Callback)
 {
+    NTSTATUS Status;
+
     if (g_bInitialized)
     {
         return g_hrInitState;
@@ -228,10 +226,18 @@ Syscall_Init(VOID)
         g_hrInitState = S_OK;
         for (PSYSCALL_THUNK_DATA* Thunk = Syscall_Thunk_First + 1; Thunk != Syscall_Thunk_Last; Thunk++)
         {
-            if (*Thunk != NULL && !NT_SUCCESS(Syscall_InitThunk(Thunk)))
+            if (*Thunk != NULL)
             {
-                /* Not all thunks initialized successfully */
-                g_hrInitState = S_FALSE;
+                Status = Syscall_InitThunk(Thunk, Callback);
+                if (!NT_SUCCESS(Status))
+                {
+                    if (Status == STATUS_REQUEST_ABORTED)
+                    {
+                        g_hrInitState = E_ABORT;
+                        break;
+                    }
+                    g_hrInitState = S_FALSE;
+                }
             }
         }
     } else
