@@ -4,12 +4,12 @@ include KNSoft\NDK\Assembly\NDK.inc
 OPTION PROLOGUE:NONE
 OPTION EPILOGUE:NONE
 
-EXTERN Syscall_FastSystemCall:SIZE_T
-
 $SYSCALL_FUNCNAME TEXTEQU <>
 $SYSCALL_THUNKNAME TEXTEQU <>
 
 IFDEF _M_X64
+
+EXTERN Syscall_FastSystemCall:SIZE_T
 
 $SYSCALL_FUNC MACRO Name:REQ, ArgCount
 
@@ -24,6 +24,8 @@ ENDM
 
 ELSEIFDEF _M_IX86
 
+EXTERN _Syscall_FastSystemCall:SIZE_T
+
 $SYSCALL_FUNC MACRO Name:REQ, ArgCount:REQ
 
     LOCAL ArgSize
@@ -33,7 +35,7 @@ $SYSCALL_FUNC MACRO Name:REQ, ArgCount:REQ
     $SYSCALL_FUNCNAME LABEL PROC
     ALIGN 16
     mov eax, dword ptr $SYSCALL_THUNKNAME
-    call [Syscall_FastSystemCall]
+    call [_Syscall_FastSystemCall]
     ret ArgSize
 
 ENDM
@@ -63,8 +65,15 @@ ScData SEGMENT DWORD READ WRITE ALIAS(".ScData")
 ScData ENDS
 
 ScThunk SEGMENT ALIGN(SIZEOF SIZE_T) READ WRITE ALIAS(".ScThunk$THK")
+
+IFDEF _M_X64
     PUBLIC Name
     Name SIZE_T offset $SYSCALL_THUNKNAME
+ELSEIFDEF _M_IX86
+    PUBLIC @CatStr(<_>, <Name>)
+    @CatStr(<_>, <Name>) SIZE_T offset $SYSCALL_THUNKNAME
+ENDIF
+
 ScThunk ENDS
 
 ENDM

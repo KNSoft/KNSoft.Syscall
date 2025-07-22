@@ -4,13 +4,13 @@ INCLUDE Syscall.inc
 
 ASSUME fs:NOTHING
 
-$PUBLIC_LABEL Syscall_Proc_Fast
+$PUBLIC_LABEL _Syscall_Proc_Fast
     ALIGN 16
     mov edx, esp
     sysenter
     retn
 
-$PUBLIC_LABEL Syscall_Proc_LE_Win7_WowTransition_X86
+$PUBLIC_LABEL _Syscall_Proc_LE_Win7_WowTransition_X86
     ALIGN 16
     xor ecx, ecx
     lea edx, [esp + 8]
