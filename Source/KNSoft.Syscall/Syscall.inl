@@ -6,34 +6,25 @@ EXTERN_C_START
 
 #pragma pack(push, 1)
 
-typedef struct _SYSCALL_THUNK_DATA_HEADER
+typedef struct _SYSCALL_THUNK_DATA
 {
     struct
     {
-        USHORT NtUser : 1;      // 0: ntdll, 1: win32u
-        USHORT BlobSize : 6;    // Size of Blob in bytes - 1, 0-63
-        USHORT ArgCount : 5;    // Number of arguments, 0-31
-        USHORT NotUsed : 4;     // Reserved
+        BYTE NtUser : 1;    // 0: ntdll, 1: win32u
+        BYTE BlobSize : 6;  // Size of Blob in bytes - 1, 0-63
+        BYTE NotUsed : 1;   // Reserved
     };
-    PVOID Proc;
-} SYSCALL_THUNK_DATA_HEADER, *PSYSCALL_THUNK_DATA_HEADER;
-
-typedef union _SYSCALL_THUNK_DATA
-{
-    struct
-    {
-        SYSCALL_THUNK_DATA_HEADER Header;
-        _Field_size_bytes_(Header.BlobSize + 1) BYTE Blob[];
-    };
-    ULONG SSN;
+    _Field_size_bytes_(BlobSize + 1) BYTE Blob[];
 } SYSCALL_THUNK_DATA, *PSYSCALL_THUNK_DATA;
+_STATIC_ASSERT(UFIELD_OFFSET(SYSCALL_THUNK_DATA, Blob) == 1);
+
+typedef union _SYSCALL_THUNK
+{
+    PSYSCALL_THUNK_DATA Data;
+    ULONG SSN;
+} SYSCALL_THUNK, *PSYSCALL_THUNK;
 
 #pragma pack(pop)
-
-_STATIC_ASSERT(UFIELD_OFFSET(SYSCALL_THUNK_DATA, SSN) == 0);
-_STATIC_ASSERT(UFIELD_OFFSET(SYSCALL_THUNK_DATA, Header.Proc) == 2);
-_STATIC_ASSERT(sizeof(SYSCALL_THUNK_DATA_HEADER) == sizeof(USHORT) + sizeof(PVOID));
-_STATIC_ASSERT(sizeof(SYSCALL_THUNK_DATA) == sizeof(SYSCALL_THUNK_DATA_HEADER));
 
 LOGICAL
 Syscall_InitArch(VOID);

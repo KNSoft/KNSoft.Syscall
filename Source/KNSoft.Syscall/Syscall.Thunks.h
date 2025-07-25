@@ -4,10 +4,10 @@
 
 EXTERN_C_START
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAcceptConnectPort(
+ScAcceptConnectPort(
     _Out_ PHANDLE PortHandle,
     _In_opt_ PVOID PortContext,
     _In_ PPORT_MESSAGE ConnectionRequest,
@@ -15,12 +15,11 @@ FN_ScAcceptConnectPort(
     _Inout_opt_ PPORT_VIEW ServerView,
     _Out_opt_ PREMOTE_PORT_VIEW ClientView
     );
-EXTERN_C FN_ScAcceptConnectPort* volatile ScAcceptConnectPort;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAccessCheck(
+ScAccessCheck(
     _In_ PSECURITY_DESCRIPTOR SecurityDescriptor,
     _In_ HANDLE ClientToken,
     _In_ ACCESS_MASK DesiredAccess,
@@ -30,12 +29,11 @@ FN_ScAccessCheck(
     _Out_ PACCESS_MASK GrantedAccess,
     _Out_ PNTSTATUS AccessStatus
     );
-EXTERN_C FN_ScAccessCheck* volatile ScAccessCheck;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAccessCheckAndAuditAlarm(
+ScAccessCheckAndAuditAlarm(
     _In_ PUNICODE_STRING SubsystemName,
     _In_opt_ PVOID HandleId,
     _In_ PUNICODE_STRING ObjectTypeName,
@@ -48,12 +46,11 @@ FN_ScAccessCheckAndAuditAlarm(
     _Out_ PNTSTATUS AccessStatus,
     _Out_ PBOOLEAN GenerateOnClose
     );
-EXTERN_C FN_ScAccessCheckAndAuditAlarm* volatile ScAccessCheckAndAuditAlarm;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAccessCheckByType(
+ScAccessCheckByType(
     _In_ PSECURITY_DESCRIPTOR SecurityDescriptor,
     _In_opt_ PSID PrincipalSelfSid,
     _In_ HANDLE ClientToken,
@@ -66,12 +63,11 @@ FN_ScAccessCheckByType(
     _Out_ PACCESS_MASK GrantedAccess,
     _Out_ PNTSTATUS AccessStatus
     );
-EXTERN_C FN_ScAccessCheckByType* volatile ScAccessCheckByType;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAccessCheckByTypeAndAuditAlarm(
+ScAccessCheckByTypeAndAuditAlarm(
     _In_ PUNICODE_STRING SubsystemName,
     _In_opt_ PVOID HandleId,
     _In_ PUNICODE_STRING ObjectTypeName,
@@ -89,12 +85,11 @@ FN_ScAccessCheckByTypeAndAuditAlarm(
     _Out_ PNTSTATUS AccessStatus,
     _Out_ PBOOLEAN GenerateOnClose
     );
-EXTERN_C FN_ScAccessCheckByTypeAndAuditAlarm* volatile ScAccessCheckByTypeAndAuditAlarm;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAccessCheckByTypeResultList(
+ScAccessCheckByTypeResultList(
     _In_ PSECURITY_DESCRIPTOR SecurityDescriptor,
     _In_opt_ PSID PrincipalSelfSid,
     _In_ HANDLE ClientToken,
@@ -107,12 +102,11 @@ FN_ScAccessCheckByTypeResultList(
     _Out_writes_(ObjectTypeListLength) PACCESS_MASK GrantedAccess,
     _Out_writes_(ObjectTypeListLength) PNTSTATUS AccessStatus
     );
-EXTERN_C FN_ScAccessCheckByTypeResultList* volatile ScAccessCheckByTypeResultList;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAccessCheckByTypeResultListAndAuditAlarm(
+ScAccessCheckByTypeResultListAndAuditAlarm(
     _In_ PUNICODE_STRING SubsystemName,
     _In_opt_ PVOID HandleId,
     _In_ PUNICODE_STRING ObjectTypeName,
@@ -130,12 +124,11 @@ FN_ScAccessCheckByTypeResultListAndAuditAlarm(
     _Out_writes_(ObjectTypeListLength) PNTSTATUS AccessStatus,
     _Out_ PBOOLEAN GenerateOnClose
     );
-EXTERN_C FN_ScAccessCheckByTypeResultListAndAuditAlarm* volatile ScAccessCheckByTypeResultListAndAuditAlarm;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAccessCheckByTypeResultListAndAuditAlarmByHandle(
+ScAccessCheckByTypeResultListAndAuditAlarmByHandle(
     _In_ PUNICODE_STRING SubsystemName,
     _In_opt_ PVOID HandleId,
     _In_ HANDLE ClientToken,
@@ -154,70 +147,63 @@ FN_ScAccessCheckByTypeResultListAndAuditAlarmByHandle(
     _Out_writes_(ObjectTypeListLength) PNTSTATUS AccessStatus,
     _Out_ PBOOLEAN GenerateOnClose
     );
-EXTERN_C FN_ScAccessCheckByTypeResultListAndAuditAlarmByHandle* volatile ScAccessCheckByTypeResultListAndAuditAlarmByHandle;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAcquireCrossVmMutant(
+ScAcquireCrossVmMutant(
     _In_ HANDLE CrossVmMutant,
     _In_ PLARGE_INTEGER Timeout
     );
-EXTERN_C FN_ScAcquireCrossVmMutant* volatile ScAcquireCrossVmMutant;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAcquireProcessActivityReference(
+ScAcquireProcessActivityReference(
     _Out_ PHANDLE ActivityReferenceHandle,
     _In_ HANDLE ParentProcessHandle,
     _In_ PROCESS_ACTIVITY_TYPE ProcessActivityType
     );
-EXTERN_C FN_ScAcquireProcessActivityReference* volatile ScAcquireProcessActivityReference;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAddAtom(
+ScAddAtom(
     _In_reads_bytes_opt_(Length) PCWSTR AtomName,
     _In_ ULONG Length,
     _Out_opt_ PRTL_ATOM Atom
     );
-EXTERN_C FN_ScAddAtom* volatile ScAddAtom;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAddAtomEx(
+ScAddAtomEx(
     _In_reads_bytes_opt_(Length) PCWSTR AtomName,
     _In_ ULONG Length,
     _Out_opt_ PRTL_ATOM Atom,
     _In_ ULONG Flags
     );
-EXTERN_C FN_ScAddAtomEx* volatile ScAddAtomEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAddBootEntry(
+ScAddBootEntry(
     _In_ PBOOT_ENTRY BootEntry,
     _Out_opt_ PULONG Id
     );
-EXTERN_C FN_ScAddBootEntry* volatile ScAddBootEntry;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAddDriverEntry(
+ScAddDriverEntry(
     _In_ PEFI_DRIVER_ENTRY DriverEntry,
     _Out_opt_ PULONG Id
     );
-EXTERN_C FN_ScAddDriverEntry* volatile ScAddDriverEntry;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAdjustGroupsToken(
+ScAdjustGroupsToken(
     _In_ HANDLE TokenHandle,
     _In_ BOOLEAN ResetToDefault,
     _In_opt_ PTOKEN_GROUPS NewState,
@@ -225,12 +211,11 @@ FN_ScAdjustGroupsToken(
     _Out_writes_bytes_to_opt_(BufferLength, *ReturnLength) PTOKEN_GROUPS PreviousState,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScAdjustGroupsToken* volatile ScAdjustGroupsToken;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAdjustPrivilegesToken(
+ScAdjustPrivilegesToken(
     _In_ HANDLE TokenHandle,
     _In_ BOOLEAN DisableAllPrivileges,
     _In_opt_ PTOKEN_PRIVILEGES NewState,
@@ -238,12 +223,11 @@ FN_ScAdjustPrivilegesToken(
     _Out_writes_bytes_to_opt_(BufferLength, *ReturnLength) PTOKEN_PRIVILEGES PreviousState,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScAdjustPrivilegesToken* volatile ScAdjustPrivilegesToken;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAdjustTokenClaimsAndDeviceGroups(
+ScAdjustTokenClaimsAndDeviceGroups(
     _In_ HANDLE TokenHandle,
     _In_ BOOLEAN UserResetToDefault,
     _In_ BOOLEAN DeviceResetToDefault,
@@ -261,97 +245,87 @@ FN_ScAdjustTokenClaimsAndDeviceGroups(
     _Out_opt_ PULONG DeviceReturnLength,
     _Out_opt_ PULONG DeviceGroupsReturnBufferLength
     );
-EXTERN_C FN_ScAdjustTokenClaimsAndDeviceGroups* volatile ScAdjustTokenClaimsAndDeviceGroups;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlertResumeThread(
+ScAlertResumeThread(
     _In_ HANDLE ThreadHandle,
     _Out_opt_ PULONG PreviousSuspendCount
     );
-EXTERN_C FN_ScAlertResumeThread* volatile ScAlertResumeThread;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlertThread(
+ScAlertThread(
     _In_ HANDLE ThreadHandle
     );
-EXTERN_C FN_ScAlertThread* volatile ScAlertThread;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlertThreadByThreadId(
+ScAlertThreadByThreadId(
     _In_ HANDLE ThreadId
     );
-EXTERN_C FN_ScAlertThreadByThreadId* volatile ScAlertThreadByThreadId;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlertThreadByThreadIdEx(
+ScAlertThreadByThreadIdEx(
     _In_ HANDLE ThreadId,
     _In_opt_ PRTL_SRWLOCK Lock
     );
-EXTERN_C FN_ScAlertThreadByThreadIdEx* volatile ScAlertThreadByThreadIdEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAllocateLocallyUniqueId(
+ScAllocateLocallyUniqueId(
     _Out_ PLUID Luid
     );
-EXTERN_C FN_ScAllocateLocallyUniqueId* volatile ScAllocateLocallyUniqueId;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAllocateReserveObject(
+ScAllocateReserveObject(
     _Out_ PHANDLE MemoryReserveHandle,
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes,
     _In_ MEMORY_RESERVE_TYPE Type
     );
-EXTERN_C FN_ScAllocateReserveObject* volatile ScAllocateReserveObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAllocateUserPhysicalPages(
+ScAllocateUserPhysicalPages(
     _In_ HANDLE ProcessHandle,
     _Inout_ PSIZE_T NumberOfPages,
     _Out_writes_(*NumberOfPages) PULONG_PTR UserPfnArray
     );
-EXTERN_C FN_ScAllocateUserPhysicalPages* volatile ScAllocateUserPhysicalPages;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAllocateUserPhysicalPagesEx(
+ScAllocateUserPhysicalPagesEx(
     _In_ HANDLE ProcessHandle,
     _Inout_ PULONG_PTR NumberOfPages,
     _Out_writes_(*NumberOfPages) PULONG_PTR UserPfnArray,
     _Inout_updates_opt_(ExtendedParameterCount) PMEM_EXTENDED_PARAMETER ExtendedParameters,
     _In_ ULONG ExtendedParameterCount
     );
-EXTERN_C FN_ScAllocateUserPhysicalPagesEx* volatile ScAllocateUserPhysicalPagesEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAllocateUuids(
+ScAllocateUuids(
     _Out_ PULARGE_INTEGER Time,
     _Out_ PULONG Range,
     _Out_ PULONG Sequence,
     _Out_ PCHAR Seed
     );
-EXTERN_C FN_ScAllocateUuids* volatile ScAllocateUuids;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAllocateVirtualMemory(
+ScAllocateVirtualMemory(
     _In_ HANDLE ProcessHandle,
     _Inout_ _At_(*BaseAddress, _Readable_bytes_(*RegionSize) _Writable_bytes_(*RegionSize) _Post_readable_byte_size_(*RegionSize)) PVOID *BaseAddress,
     _In_ ULONG_PTR ZeroBits,
@@ -359,12 +333,11 @@ FN_ScAllocateVirtualMemory(
     _In_ ULONG AllocationType,
     _In_ ULONG PageProtection
     );
-EXTERN_C FN_ScAllocateVirtualMemory* volatile ScAllocateVirtualMemory;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAllocateVirtualMemoryEx(
+ScAllocateVirtualMemoryEx(
     _In_ HANDLE ProcessHandle,
     _Inout_ _At_(*BaseAddress, _Readable_bytes_(*RegionSize) _Writable_bytes_(*RegionSize) _Post_readable_byte_size_(*RegionSize)) PVOID *BaseAddress,
     _Inout_ PSIZE_T RegionSize,
@@ -373,12 +346,11 @@ FN_ScAllocateVirtualMemoryEx(
     _Inout_updates_opt_(ExtendedParameterCount) PMEM_EXTENDED_PARAMETER ExtendedParameters,
     _In_ ULONG ExtendedParameterCount
     );
-EXTERN_C FN_ScAllocateVirtualMemoryEx* volatile ScAllocateVirtualMemoryEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlpcAcceptConnectPort(
+ScAlpcAcceptConnectPort(
     _Out_ PHANDLE PortHandle,
     _In_ HANDLE ConnectionPortHandle,
     _In_ ULONG Flags,
@@ -389,22 +361,20 @@ FN_ScAlpcAcceptConnectPort(
     _Inout_opt_ PALPC_MESSAGE_ATTRIBUTES ConnectionMessageAttributes,
     _In_ BOOLEAN AcceptConnection
     );
-EXTERN_C FN_ScAlpcAcceptConnectPort* volatile ScAlpcAcceptConnectPort;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlpcCancelMessage(
+ScAlpcCancelMessage(
     _In_ HANDLE PortHandle,
     _In_ ULONG Flags,
     _In_ PALPC_CONTEXT_ATTR MessageContext
     );
-EXTERN_C FN_ScAlpcCancelMessage* volatile ScAlpcCancelMessage;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlpcConnectPort(
+ScAlpcConnectPort(
     _Out_ PHANDLE PortHandle,
     _In_ PUNICODE_STRING PortName,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
@@ -417,12 +387,11 @@ FN_ScAlpcConnectPort(
     _Inout_opt_ PALPC_MESSAGE_ATTRIBUTES InMessageAttributes,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C FN_ScAlpcConnectPort* volatile ScAlpcConnectPort;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlpcConnectPortEx(
+ScAlpcConnectPortEx(
     _Out_ PHANDLE PortHandle,
     _In_ POBJECT_ATTRIBUTES ConnectionPortObjectAttributes,
     _In_opt_ POBJECT_ATTRIBUTES ClientPortObjectAttributes,
@@ -435,22 +404,20 @@ FN_ScAlpcConnectPortEx(
     _Inout_opt_ PALPC_MESSAGE_ATTRIBUTES InMessageAttributes,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C FN_ScAlpcConnectPortEx* volatile ScAlpcConnectPortEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlpcCreatePort(
+ScAlpcCreatePort(
     _Out_ PHANDLE PortHandle,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_opt_ PALPC_PORT_ATTRIBUTES PortAttributes
     );
-EXTERN_C FN_ScAlpcCreatePort* volatile ScAlpcCreatePort;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlpcCreatePortSection(
+ScAlpcCreatePortSection(
     _In_ HANDLE PortHandle,
     _In_ ULONG Flags,
     _In_opt_ HANDLE SectionHandle,
@@ -458,112 +425,101 @@ FN_ScAlpcCreatePortSection(
     _Out_ PALPC_HANDLE AlpcSectionHandle,
     _Out_ PSIZE_T ActualSectionSize
     );
-EXTERN_C FN_ScAlpcCreatePortSection* volatile ScAlpcCreatePortSection;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlpcCreateResourceReserve(
+ScAlpcCreateResourceReserve(
     _In_ HANDLE PortHandle,
     _Reserved_ ULONG Flags,
     _In_ SIZE_T MessageSize,
     _Out_ PALPC_HANDLE ResourceId
     );
-EXTERN_C FN_ScAlpcCreateResourceReserve* volatile ScAlpcCreateResourceReserve;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlpcCreateSectionView(
+ScAlpcCreateSectionView(
     _In_ HANDLE PortHandle,
     _Reserved_ ULONG Flags,
     _Inout_ PALPC_DATA_VIEW_ATTR ViewAttributes
     );
-EXTERN_C FN_ScAlpcCreateSectionView* volatile ScAlpcCreateSectionView;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlpcCreateSecurityContext(
+ScAlpcCreateSecurityContext(
     _In_ HANDLE PortHandle,
     _Reserved_ ULONG Flags,
     _Inout_ PALPC_SECURITY_ATTR SecurityAttribute
     );
-EXTERN_C FN_ScAlpcCreateSecurityContext* volatile ScAlpcCreateSecurityContext;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlpcDeletePortSection(
+ScAlpcDeletePortSection(
     _In_ HANDLE PortHandle,
     _Reserved_ ULONG Flags,
     _In_ ALPC_HANDLE SectionHandle
     );
-EXTERN_C FN_ScAlpcDeletePortSection* volatile ScAlpcDeletePortSection;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlpcDeleteResourceReserve(
+ScAlpcDeleteResourceReserve(
     _In_ HANDLE PortHandle,
     _Reserved_ ULONG Flags,
     _In_ ALPC_HANDLE ResourceId
     );
-EXTERN_C FN_ScAlpcDeleteResourceReserve* volatile ScAlpcDeleteResourceReserve;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlpcDeleteSectionView(
+ScAlpcDeleteSectionView(
     _In_ HANDLE PortHandle,
     _Reserved_ ULONG Flags,
     _In_ PVOID ViewBase
     );
-EXTERN_C FN_ScAlpcDeleteSectionView* volatile ScAlpcDeleteSectionView;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlpcDeleteSecurityContext(
+ScAlpcDeleteSecurityContext(
     _In_ HANDLE PortHandle,
     _Reserved_ ULONG Flags,
     _In_ ALPC_HANDLE ContextHandle
     );
-EXTERN_C FN_ScAlpcDeleteSecurityContext* volatile ScAlpcDeleteSecurityContext;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlpcDisconnectPort(
+ScAlpcDisconnectPort(
     _In_ HANDLE PortHandle,
     _In_ ULONG Flags
     );
-EXTERN_C FN_ScAlpcDisconnectPort* volatile ScAlpcDisconnectPort;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlpcImpersonateClientContainerOfPort(
+ScAlpcImpersonateClientContainerOfPort(
     _In_ HANDLE PortHandle,
     _In_ PPORT_MESSAGE Message,
     _Reserved_ ULONG Flags
     );
-EXTERN_C FN_ScAlpcImpersonateClientContainerOfPort* volatile ScAlpcImpersonateClientContainerOfPort;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlpcImpersonateClientOfPort(
+ScAlpcImpersonateClientOfPort(
     _In_ HANDLE PortHandle,
     _In_ PPORT_MESSAGE Message,
     _In_ PVOID Flags
     );
-EXTERN_C FN_ScAlpcImpersonateClientOfPort* volatile ScAlpcImpersonateClientOfPort;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlpcOpenSenderProcess(
+ScAlpcOpenSenderProcess(
     _Out_ PHANDLE ProcessHandle,
     _In_ HANDLE PortHandle,
     _In_ PPORT_MESSAGE PortMessage,
@@ -571,12 +527,11 @@ FN_ScAlpcOpenSenderProcess(
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C FN_ScAlpcOpenSenderProcess* volatile ScAlpcOpenSenderProcess;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlpcOpenSenderThread(
+ScAlpcOpenSenderThread(
     _Out_ PHANDLE ThreadHandle,
     _In_ HANDLE PortHandle,
     _In_ PPORT_MESSAGE PortMessage,
@@ -584,24 +539,22 @@ FN_ScAlpcOpenSenderThread(
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C FN_ScAlpcOpenSenderThread* volatile ScAlpcOpenSenderThread;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlpcQueryInformation(
+ScAlpcQueryInformation(
     _In_opt_ HANDLE PortHandle,
     _In_ ALPC_PORT_INFORMATION_CLASS PortInformationClass,
     _Inout_updates_bytes_to_(Length, *ReturnLength) PVOID PortInformation,
     _In_ ULONG Length,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScAlpcQueryInformation* volatile ScAlpcQueryInformation;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlpcQueryInformationMessage(
+ScAlpcQueryInformationMessage(
     _In_ HANDLE PortHandle,
     _In_ PPORT_MESSAGE PortMessage,
     _In_ ALPC_MESSAGE_INFORMATION_CLASS MessageInformationClass,
@@ -609,22 +562,20 @@ FN_ScAlpcQueryInformationMessage(
     _In_ ULONG Length,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScAlpcQueryInformationMessage* volatile ScAlpcQueryInformationMessage;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlpcRevokeSecurityContext(
+ScAlpcRevokeSecurityContext(
     _In_ HANDLE PortHandle,
     _Reserved_ ULONG Flags,
     _In_ ALPC_HANDLE ContextHandle
     );
-EXTERN_C FN_ScAlpcRevokeSecurityContext* volatile ScAlpcRevokeSecurityContext;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlpcSendWaitReceivePort(
+ScAlpcSendWaitReceivePort(
     _In_ HANDLE PortHandle,
     _In_ ULONG Flags,
     _In_reads_bytes_opt_(SendMessage->u1.s1.TotalLength) PPORT_MESSAGE SendMessage,
@@ -634,50 +585,45 @@ FN_ScAlpcSendWaitReceivePort(
     _Inout_opt_ PALPC_MESSAGE_ATTRIBUTES ReceiveMessageAttributes,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C FN_ScAlpcSendWaitReceivePort* volatile ScAlpcSendWaitReceivePort;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAlpcSetInformation(
+ScAlpcSetInformation(
     _In_ HANDLE PortHandle,
     _In_ ALPC_PORT_INFORMATION_CLASS PortInformationClass,
     _In_reads_bytes_opt_(Length) PVOID PortInformation,
     _In_ ULONG Length
     );
-EXTERN_C FN_ScAlpcSetInformation* volatile ScAlpcSetInformation;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScApphelpCacheControl(
+ScApphelpCacheControl(
     _In_ ULONG ServiceClass,
     _Inout_opt_ PVOID ServiceContext // AHC_SERVICE_DATA
     );
-EXTERN_C FN_ScApphelpCacheControl* volatile ScApphelpCacheControl;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAreMappedFilesTheSame(
+ScAreMappedFilesTheSame(
     _In_ PVOID File1MappedAsAnImage,
     _In_ PVOID File2MappedAsFile
     );
-EXTERN_C FN_ScAreMappedFilesTheSame* volatile ScAreMappedFilesTheSame;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAssignProcessToJobObject(
+ScAssignProcessToJobObject(
     _In_ HANDLE JobHandle,
     _In_ HANDLE ProcessHandle
     );
-EXTERN_C FN_ScAssignProcessToJobObject* volatile ScAssignProcessToJobObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScAssociateWaitCompletionPacket(
+ScAssociateWaitCompletionPacket(
     _In_ HANDLE WaitCompletionPacketHandle,
     _In_ HANDLE IoCompletionHandle,
     _In_ HANDLE TargetObjectHandle,
@@ -687,89 +633,80 @@ FN_ScAssociateWaitCompletionPacket(
     _In_ ULONG_PTR IoStatusInformation,
     _Out_opt_ PBOOLEAN AlreadySignaled
     );
-EXTERN_C FN_ScAssociateWaitCompletionPacket* volatile ScAssociateWaitCompletionPacket;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCallbackReturn(
+ScCallbackReturn(
     _In_reads_bytes_opt_(OutputLength) PVOID OutputBuffer,
     _In_ ULONG OutputLength,
     _In_ NTSTATUS Status
     );
-EXTERN_C FN_ScCallbackReturn* volatile ScCallbackReturn;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCallEnclave(
+ScCallEnclave(
     _In_ PENCLAVE_ROUTINE Routine,
     _In_ PVOID Reserved,              // SelectVsmEnclaveByNumber > 0 // reserved for dispatch (RtlEnclaveCallDispatch)
     _In_ ULONG Flags,                 // ENCLAVE_CALL_FLAG_*
     _Inout_ PVOID* RoutineParamReturn // input routine parameter, output routine return value
     );
-EXTERN_C FN_ScCallEnclave* volatile ScCallEnclave;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCancelIoFile(
+ScCancelIoFile(
     _In_ HANDLE FileHandle,
     _Out_ PIO_STATUS_BLOCK IoStatusBlock
     );
-EXTERN_C FN_ScCancelIoFile* volatile ScCancelIoFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCancelIoFileEx(
+ScCancelIoFileEx(
     _In_ HANDLE FileHandle,
     _In_opt_ PIO_STATUS_BLOCK IoRequestToCancel,
     _Out_ PIO_STATUS_BLOCK IoStatusBlock
     );
-EXTERN_C FN_ScCancelIoFileEx* volatile ScCancelIoFileEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCancelSynchronousIoFile(
+ScCancelSynchronousIoFile(
     _In_ HANDLE ThreadHandle,
     _In_opt_ PIO_STATUS_BLOCK IoRequestToCancel,
     _Out_ PIO_STATUS_BLOCK IoStatusBlock
     );
-EXTERN_C FN_ScCancelSynchronousIoFile* volatile ScCancelSynchronousIoFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCancelTimer(
+ScCancelTimer(
     _In_ HANDLE TimerHandle,
     _Out_opt_ PBOOLEAN CurrentState
     );
-EXTERN_C FN_ScCancelTimer* volatile ScCancelTimer;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCancelTimer2(
+ScCancelTimer2(
     _In_ HANDLE TimerHandle,
     _In_ PT2_CANCEL_PARAMETERS Parameters
     );
-EXTERN_C FN_ScCancelTimer2* volatile ScCancelTimer2;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCancelWaitCompletionPacket(
+ScCancelWaitCompletionPacket(
     _In_ HANDLE WaitCompletionPacketHandle,
     _In_ BOOLEAN RemoveSignaledPacket
     );
-EXTERN_C FN_ScCancelWaitCompletionPacket* volatile ScCancelWaitCompletionPacket;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScChangeProcessState(
+ScChangeProcessState(
     _In_ HANDLE ProcessStateChangeHandle,
     _In_ HANDLE ProcessHandle,
     _In_ PROCESS_STATE_CHANGE_TYPE StateChangeType,
@@ -777,12 +714,11 @@ FN_ScChangeProcessState(
     _In_opt_ _Reserved_ SIZE_T ExtendedInformationLength,
     _In_opt_ _Reserved_ ULONG Reserved
     );
-EXTERN_C FN_ScChangeProcessState* volatile ScChangeProcessState;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScChangeThreadState(
+ScChangeThreadState(
     _In_ HANDLE ThreadStateChangeHandle,
     _In_ HANDLE ThreadHandle,
     _In_ THREAD_STATE_CHANGE_TYPE StateChangeType,
@@ -790,127 +726,113 @@ FN_ScChangeThreadState(
     _In_opt_ SIZE_T ExtendedInformationLength,
     _In_opt_ ULONG Reserved
     );
-EXTERN_C FN_ScChangeThreadState* volatile ScChangeThreadState;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScClearEvent(
+ScClearEvent(
     _In_ HANDLE EventHandle
     );
-EXTERN_C FN_ScClearEvent* volatile ScClearEvent;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScClose(
+ScClose(
     _In_ _Post_ptr_invalid_ HANDLE Handle
     );
-EXTERN_C FN_ScClose* volatile ScClose;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCloseObjectAuditAlarm(
+ScCloseObjectAuditAlarm(
     _In_ PUNICODE_STRING SubsystemName,
     _In_opt_ PVOID HandleId,
     _In_ BOOLEAN GenerateOnClose
     );
-EXTERN_C FN_ScCloseObjectAuditAlarm* volatile ScCloseObjectAuditAlarm;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCommitComplete(
+ScCommitComplete(
     _In_ HANDLE EnlistmentHandle,
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
-EXTERN_C FN_ScCommitComplete* volatile ScCommitComplete;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCommitEnlistment(
+ScCommitEnlistment(
     _In_ HANDLE EnlistmentHandle,
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
-EXTERN_C FN_ScCommitEnlistment* volatile ScCommitEnlistment;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCommitRegistryTransaction(
+ScCommitRegistryTransaction(
     _In_ HANDLE RegistryTransactionHandle,
     _Reserved_ ULONG Flags
     );
-EXTERN_C FN_ScCommitRegistryTransaction* volatile ScCommitRegistryTransaction;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCommitTransaction(
+ScCommitTransaction(
     _In_ HANDLE TransactionHandle,
     _In_ BOOLEAN Wait
     );
-EXTERN_C FN_ScCommitTransaction* volatile ScCommitTransaction;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCompactKeys(
+ScCompactKeys(
     _In_ ULONG Count,
     _In_reads_(Count) HANDLE KeyArray[]
     );
-EXTERN_C FN_ScCompactKeys* volatile ScCompactKeys;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCompareObjects(
+ScCompareObjects(
     _In_ HANDLE FirstObjectHandle,
     _In_ HANDLE SecondObjectHandle
     );
-EXTERN_C FN_ScCompareObjects* volatile ScCompareObjects;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCompareSigningLevels(
+ScCompareSigningLevels(
     _In_ SE_SIGNING_LEVEL FirstSigningLevel,
     _In_ SE_SIGNING_LEVEL SecondSigningLevel
     );
-EXTERN_C FN_ScCompareSigningLevels* volatile ScCompareSigningLevels;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCompareTokens(
+ScCompareTokens(
     _In_ HANDLE FirstTokenHandle,
     _In_ HANDLE SecondTokenHandle,
     _Out_ PBOOLEAN Equal
     );
-EXTERN_C FN_ScCompareTokens* volatile ScCompareTokens;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCompleteConnectPort(
+ScCompleteConnectPort(
     _In_ HANDLE PortHandle
     );
-EXTERN_C FN_ScCompleteConnectPort* volatile ScCompleteConnectPort;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCompressKey(
+ScCompressKey(
     _In_ HANDLE KeyHandle
     );
-EXTERN_C FN_ScCompressKey* volatile ScCompressKey;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScConnectPort(
+ScConnectPort(
     _Out_ PHANDLE PortHandle,
     _In_ PUNICODE_STRING PortName,
     _In_ PSECURITY_QUALITY_OF_SERVICE SecurityQos,
@@ -920,41 +842,37 @@ FN_ScConnectPort(
     _Inout_updates_bytes_to_opt_(*ConnectionInformationLength, *ConnectionInformationLength) PVOID ConnectionInformation,
     _Inout_opt_ PULONG ConnectionInformationLength
     );
-EXTERN_C FN_ScConnectPort* volatile ScConnectPort;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScContinue(
+ScContinue(
     _In_ PCONTEXT ContextRecord,
     _In_ BOOLEAN TestAlert
     );
-EXTERN_C FN_ScContinue* volatile ScContinue;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScContinueEx(
+ScContinueEx(
     _In_ PCONTEXT ContextRecord,
     _In_ PVOID ContinueArgument // PKCONTINUE_ARGUMENT and BOOLEAN are valid
     );
-EXTERN_C FN_ScContinueEx* volatile ScContinueEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScConvertBetweenAuxiliaryCounterAndPerformanceCounter(
+ScConvertBetweenAuxiliaryCounterAndPerformanceCounter(
     _In_ BOOLEAN ConvertAuxiliaryToPerformanceCounter,
     _In_ PULONG64 PerformanceOrAuxiliaryCounterValue,
     _Out_ PULONG64 ConvertedValue,
     _Out_opt_ PULONG64 ConversionError
     );
-EXTERN_C FN_ScConvertBetweenAuxiliaryCounterAndPerformanceCounter* volatile ScConvertBetweenAuxiliaryCounterAndPerformanceCounter;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCopyFileChunk(
+ScCopyFileChunk(
     _In_ HANDLE SourceHandle,
     _In_ HANDLE DestinationHandle,
     _In_opt_ HANDLE EventHandle,
@@ -966,12 +884,11 @@ FN_ScCopyFileChunk(
     _In_opt_ PULONG DestKey,
     _In_ ULONG Flags
     );
-EXTERN_C FN_ScCopyFileChunk* volatile ScCopyFileChunk;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateCrossVmEvent(
+ScCreateCrossVmEvent(
     _Out_ PHANDLE CrossVmEvent,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
@@ -979,12 +896,11 @@ FN_ScCreateCrossVmEvent(
     _In_ LPCGUID VMID,
     _In_ LPCGUID ServiceID
     );
-EXTERN_C FN_ScCreateCrossVmEvent* volatile ScCreateCrossVmEvent;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateCrossVmMutant(
+ScCreateCrossVmMutant(
     _Out_ PHANDLE EventHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
@@ -992,45 +908,41 @@ FN_ScCreateCrossVmMutant(
     _In_ LPCGUID VMID,
     _In_ LPCGUID ServiceID
     );
-EXTERN_C FN_ScCreateCrossVmMutant* volatile ScCreateCrossVmMutant;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateDebugObject(
+ScCreateDebugObject(
     _Out_ PHANDLE DebugObjectHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_ ULONG Flags
     );
-EXTERN_C FN_ScCreateDebugObject* volatile ScCreateDebugObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateDirectoryObject(
+ScCreateDirectoryObject(
     _Out_ PHANDLE DirectoryHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C FN_ScCreateDirectoryObject* volatile ScCreateDirectoryObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateDirectoryObjectEx(
+ScCreateDirectoryObjectEx(
     _Out_ PHANDLE DirectoryHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_ HANDLE ShadowDirectoryHandle,
     _In_ ULONG Flags
     );
-EXTERN_C FN_ScCreateDirectoryObjectEx* volatile ScCreateDirectoryObjectEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateEnclave(
+ScCreateEnclave(
     _In_ HANDLE ProcessHandle,
     _Inout_ PVOID* BaseAddress,
     _In_ ULONG_PTR ZeroBits,
@@ -1041,12 +953,11 @@ FN_ScCreateEnclave(
     _In_ ULONG EnclaveInformationLength,
     _Out_opt_ PULONG EnclaveError
     );
-EXTERN_C FN_ScCreateEnclave* volatile ScCreateEnclave;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateEnlistment(
+ScCreateEnlistment(
     _Out_ PHANDLE EnlistmentHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ HANDLE ResourceManagerHandle,
@@ -1056,34 +967,31 @@ FN_ScCreateEnlistment(
     _In_ NOTIFICATION_MASK NotificationMask,
     _In_opt_ PVOID EnlistmentKey
     );
-EXTERN_C FN_ScCreateEnlistment* volatile ScCreateEnlistment;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateEvent(
+ScCreateEvent(
     _Out_ PHANDLE EventHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_ EVENT_TYPE EventType,
     _In_ BOOLEAN InitialState
     );
-EXTERN_C FN_ScCreateEvent* volatile ScCreateEvent;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateEventPair(
+ScCreateEventPair(
     _Out_ PHANDLE EventPairHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C FN_ScCreateEventPair* volatile ScCreateEventPair;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateFile(
+ScCreateFile(
     _Out_ PHANDLE FileHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes,
@@ -1096,65 +1004,59 @@ FN_ScCreateFile(
     _In_reads_bytes_opt_(EaLength) PVOID EaBuffer,
     _In_ ULONG EaLength
     );
-EXTERN_C FN_ScCreateFile* volatile ScCreateFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateIoCompletion(
+ScCreateIoCompletion(
     _Out_ PHANDLE IoCompletionHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_opt_ ULONG Count
     );
-EXTERN_C FN_ScCreateIoCompletion* volatile ScCreateIoCompletion;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateIoRing(
+ScCreateIoRing(
     _Out_ PHANDLE IoRingHandle,
     _In_ ULONG CreateParametersLength,
     _In_ PVOID CreateParameters,
     _In_ ULONG OutputParametersLength,
     _Out_ PVOID OutputParameters
     );
-EXTERN_C FN_ScCreateIoRing* volatile ScCreateIoRing;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateIRTimer(
+ScCreateIRTimer(
     _Out_ PHANDLE TimerHandle,
     _In_ PVOID Reserved,
     _In_ ACCESS_MASK DesiredAccess
     );
-EXTERN_C FN_ScCreateIRTimer* volatile ScCreateIRTimer;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateJobObject(
+ScCreateJobObject(
     _Out_ PHANDLE JobHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C FN_ScCreateJobObject* volatile ScCreateJobObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateJobSet(
+ScCreateJobSet(
     _In_ ULONG NumJob,
     _In_reads_(NumJob) PJOB_SET_ARRAY UserJobSet,
     _In_ ULONG Flags
     );
-EXTERN_C FN_ScCreateJobSet* volatile ScCreateJobSet;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateKey(
+ScCreateKey(
     _Out_ PHANDLE KeyHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes,
@@ -1163,23 +1065,21 @@ FN_ScCreateKey(
     _In_ ULONG CreateOptions,
     _Out_opt_ PULONG Disposition
     );
-EXTERN_C FN_ScCreateKey* volatile ScCreateKey;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateKeyedEvent(
+ScCreateKeyedEvent(
     _Out_ PHANDLE KeyedEventHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes,
     _Reserved_ ULONG Flags
     );
-EXTERN_C FN_ScCreateKeyedEvent* volatile ScCreateKeyedEvent;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateKeyTransacted(
+ScCreateKeyTransacted(
     _Out_ PHANDLE KeyHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes,
@@ -1189,12 +1089,11 @@ FN_ScCreateKeyTransacted(
     _In_ HANDLE TransactionHandle,
     _Out_opt_ PULONG Disposition
     );
-EXTERN_C FN_ScCreateKeyTransacted* volatile ScCreateKeyTransacted;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateLowBoxToken(
+ScCreateLowBoxToken(
     _Out_ PHANDLE TokenHandle,
     _In_ HANDLE ExistingTokenHandle,
     _In_ ACCESS_MASK DesiredAccess,
@@ -1205,12 +1104,11 @@ FN_ScCreateLowBoxToken(
     _In_ ULONG HandleCount,
     _In_reads_opt_(HandleCount) HANDLE *Handles
     );
-EXTERN_C FN_ScCreateLowBoxToken* volatile ScCreateLowBoxToken;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateMailslotFile(
+ScCreateMailslotFile(
     _Out_ PHANDLE FileHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes,
@@ -1220,23 +1118,21 @@ FN_ScCreateMailslotFile(
     _In_ ULONG MaximumMessageSize,
     _In_ PLARGE_INTEGER ReadTimeout
     );
-EXTERN_C FN_ScCreateMailslotFile* volatile ScCreateMailslotFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateMutant(
+ScCreateMutant(
     _Out_ PHANDLE MutantHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes,
     _In_ BOOLEAN InitialOwner
     );
-EXTERN_C FN_ScCreateMutant* volatile ScCreateMutant;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateNamedPipeFile(
+ScCreateNamedPipeFile(
     _Out_ PHANDLE FileHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes,
@@ -1252,58 +1148,53 @@ FN_ScCreateNamedPipeFile(
     _In_ ULONG OutboundQuota,
     _In_ PLARGE_INTEGER DefaultTimeout
     );
-EXTERN_C FN_ScCreateNamedPipeFile* volatile ScCreateNamedPipeFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreatePagingFile(
+ScCreatePagingFile(
     _In_ PUNICODE_STRING PageFileName,
     _In_ PLARGE_INTEGER MinimumSize,
     _In_ PLARGE_INTEGER MaximumSize,
     _In_ ULONG Priority
     );
-EXTERN_C FN_ScCreatePagingFile* volatile ScCreatePagingFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreatePartition(
+ScCreatePartition(
     _In_opt_ HANDLE ParentPartitionHandle,
     _Out_ PHANDLE PartitionHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes,
     _In_ ULONG PreferredNode
     );
-EXTERN_C FN_ScCreatePartition* volatile ScCreatePartition;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreatePort(
+ScCreatePort(
     _Out_ PHANDLE PortHandle,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_ ULONG MaxConnectionInfoLength,
     _In_ ULONG MaxMessageLength,
     _In_opt_ ULONG MaxPoolUsage
     );
-EXTERN_C FN_ScCreatePort* volatile ScCreatePort;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreatePrivateNamespace(
+ScCreatePrivateNamespace(
     _Out_ PHANDLE NamespaceHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_ POBJECT_BOUNDARY_DESCRIPTOR BoundaryDescriptor
     );
-EXTERN_C FN_ScCreatePrivateNamespace* volatile ScCreatePrivateNamespace;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateProcess(
+ScCreateProcess(
     _Out_ PHANDLE ProcessHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes,
@@ -1313,12 +1204,11 @@ FN_ScCreateProcess(
     _In_opt_ HANDLE DebugPort,
     _In_opt_ HANDLE TokenHandle
     );
-EXTERN_C FN_ScCreateProcess* volatile ScCreateProcess;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateProcessEx(
+ScCreateProcessEx(
     _Out_ PHANDLE ProcessHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes,
@@ -1329,24 +1219,22 @@ FN_ScCreateProcessEx(
     _In_opt_ HANDLE TokenHandle,
     _Reserved_ ULONG Reserved // JobMemberLevel
     );
-EXTERN_C FN_ScCreateProcessEx* volatile ScCreateProcessEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateProcessStateChange(
+ScCreateProcessStateChange(
     _Out_ PHANDLE ProcessStateChangeHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes,
     _In_ HANDLE ProcessHandle,
     _In_opt_ _Reserved_ ULONG Reserved
     );
-EXTERN_C FN_ScCreateProcessStateChange* volatile ScCreateProcessStateChange;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateProfile(
+ScCreateProfile(
     _Out_ PHANDLE ProfileHandle,
     _In_opt_ HANDLE Process,
     _In_ PVOID ProfileBase,
@@ -1357,12 +1245,11 @@ FN_ScCreateProfile(
     _In_ KPROFILE_SOURCE ProfileSource,
     _In_ KAFFINITY Affinity
     );
-EXTERN_C FN_ScCreateProfile* volatile ScCreateProfile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateProfileEx(
+ScCreateProfileEx(
     _Out_ PHANDLE ProfileHandle,
     _In_opt_ HANDLE Process,
     _In_ PVOID ProfileBase,
@@ -1374,23 +1261,21 @@ FN_ScCreateProfileEx(
     _In_ USHORT GroupCount,
     _In_reads_(GroupCount) PGROUP_AFFINITY GroupAffinity
     );
-EXTERN_C FN_ScCreateProfileEx* volatile ScCreateProfileEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateRegistryTransaction(
+ScCreateRegistryTransaction(
     _Out_ PHANDLE RegistryTransactionHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ POBJECT_ATTRIBUTES ObjAttributes,
     _Reserved_ ULONG CreateOptions
     );
-EXTERN_C FN_ScCreateRegistryTransaction* volatile ScCreateRegistryTransaction;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateResourceManager(
+ScCreateResourceManager(
     _Out_ PHANDLE ResourceManagerHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ HANDLE TmHandle,
@@ -1399,12 +1284,11 @@ FN_ScCreateResourceManager(
     _In_opt_ ULONG CreateOptions,
     _In_opt_ PUNICODE_STRING Description
     );
-EXTERN_C FN_ScCreateResourceManager* volatile ScCreateResourceManager;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateSection(
+ScCreateSection(
     _Out_ PHANDLE SectionHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes,
@@ -1413,12 +1297,11 @@ FN_ScCreateSection(
     _In_ ULONG AllocationAttributes,
     _In_opt_ HANDLE FileHandle
     );
-EXTERN_C FN_ScCreateSection* volatile ScCreateSection;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateSectionEx(
+ScCreateSectionEx(
     _Out_ PHANDLE SectionHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes,
@@ -1429,35 +1312,32 @@ FN_ScCreateSectionEx(
     _Inout_updates_opt_(ExtendedParameterCount) PMEM_EXTENDED_PARAMETER ExtendedParameters,
     _In_ ULONG ExtendedParameterCount
     );
-EXTERN_C FN_ScCreateSectionEx* volatile ScCreateSectionEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateSemaphore(
+ScCreateSemaphore(
     _Out_ PHANDLE SemaphoreHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes,
     _In_ LONG InitialCount,
     _In_ LONG MaximumCount
     );
-EXTERN_C FN_ScCreateSemaphore* volatile ScCreateSemaphore;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateSymbolicLinkObject(
+ScCreateSymbolicLinkObject(
     _Out_ PHANDLE LinkHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_ PUNICODE_STRING LinkTarget
     );
-EXTERN_C FN_ScCreateSymbolicLinkObject* volatile ScCreateSymbolicLinkObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateThread(
+ScCreateThread(
     _Out_ PHANDLE ThreadHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes,
@@ -1467,12 +1347,11 @@ FN_ScCreateThread(
     _In_ PINITIAL_TEB InitialTeb,
     _In_ BOOLEAN CreateSuspended
     );
-EXTERN_C FN_ScCreateThread* volatile ScCreateThread;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateThreadEx(
+ScCreateThreadEx(
     _Out_ PHANDLE ThreadHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes,
@@ -1485,47 +1364,43 @@ FN_ScCreateThreadEx(
     _In_ SIZE_T MaximumStackSize,
     _In_opt_ PPS_ATTRIBUTE_LIST AttributeList
     );
-EXTERN_C FN_ScCreateThreadEx* volatile ScCreateThreadEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateThreadStateChange(
+ScCreateThreadStateChange(
     _Out_ PHANDLE ThreadStateChangeHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes,
     _In_ HANDLE ThreadHandle,
     _In_opt_ _Reserved_ ULONG Reserved
     );
-EXTERN_C FN_ScCreateThreadStateChange* volatile ScCreateThreadStateChange;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateTimer(
+ScCreateTimer(
     _Out_ PHANDLE TimerHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes,
     _In_ TIMER_TYPE TimerType
     );
-EXTERN_C FN_ScCreateTimer* volatile ScCreateTimer;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateTimer2(
+ScCreateTimer2(
     _Out_ PHANDLE TimerHandle,
     _In_opt_ PVOID Reserved1,
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes,
     _In_ ULONG Attributes, // TIMER_TYPE
     _In_ ACCESS_MASK DesiredAccess
     );
-EXTERN_C FN_ScCreateTimer2* volatile ScCreateTimer2;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateToken(
+ScCreateToken(
     _Out_ PHANDLE TokenHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
@@ -1540,12 +1415,11 @@ FN_ScCreateToken(
     _In_opt_ PTOKEN_DEFAULT_DACL DefaultDacl,
     _In_ PTOKEN_SOURCE Source
     );
-EXTERN_C FN_ScCreateToken* volatile ScCreateToken;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateTokenEx(
+ScCreateTokenEx(
     _Out_ PHANDLE TokenHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
@@ -1564,12 +1438,11 @@ FN_ScCreateTokenEx(
     _In_opt_ PTOKEN_DEFAULT_DACL DefaultDacl,
     _In_ PTOKEN_SOURCE Source
     );
-EXTERN_C FN_ScCreateTokenEx* volatile ScCreateTokenEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateTransaction(
+ScCreateTransaction(
     _Out_ PHANDLE TransactionHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
@@ -1581,12 +1454,11 @@ FN_ScCreateTransaction(
     _In_opt_ PLARGE_INTEGER Timeout,
     _In_opt_ PUNICODE_STRING Description
     );
-EXTERN_C FN_ScCreateTransaction* volatile ScCreateTransaction;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateTransactionManager(
+ScCreateTransactionManager(
     _Out_ PHANDLE TmHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
@@ -1594,12 +1466,11 @@ FN_ScCreateTransactionManager(
     _In_opt_ ULONG CreateOptions,
     _In_opt_ ULONG CommitStrength
     );
-EXTERN_C FN_ScCreateTransactionManager* volatile ScCreateTransactionManager;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateUserProcess(
+ScCreateUserProcess(
     _Out_ PHANDLE ProcessHandle,
     _Out_ PHANDLE ThreadHandle,
     _In_ ACCESS_MASK ProcessDesiredAccess,
@@ -1612,34 +1483,31 @@ FN_ScCreateUserProcess(
     _Inout_ PPS_CREATE_INFO CreateInfo,
     _In_opt_ PPS_ATTRIBUTE_LIST AttributeList
     );
-EXTERN_C FN_ScCreateUserProcess* volatile ScCreateUserProcess;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateWaitablePort(
+ScCreateWaitablePort(
     _Out_ PHANDLE PortHandle,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_ ULONG MaxConnectionInfoLength,
     _In_ ULONG MaxMessageLength,
     _In_opt_ ULONG MaxPoolUsage
     );
-EXTERN_C FN_ScCreateWaitablePort* volatile ScCreateWaitablePort;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateWaitCompletionPacket(
+ScCreateWaitCompletionPacket(
     _Out_ PHANDLE WaitCompletionPacketHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C FN_ScCreateWaitCompletionPacket* volatile ScCreateWaitCompletionPacket;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateWnfStateName(
+ScCreateWnfStateName(
     _Out_ PWNF_STATE_NAME StateName,
     _In_ WNF_STATE_NAME_LIFETIME NameLifetime,
     _In_ WNF_DATA_SCOPE DataScope,
@@ -1648,12 +1516,11 @@ FN_ScCreateWnfStateName(
     _In_ ULONG MaximumStateSize,
     _In_ PSECURITY_DESCRIPTOR SecurityDescriptor
     );
-EXTERN_C FN_ScCreateWnfStateName* volatile ScCreateWnfStateName;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScCreateWorkerFactory(
+ScCreateWorkerFactory(
     _Out_ PHANDLE WorkerFactoryHandleReturn,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes,
@@ -1665,124 +1532,110 @@ FN_ScCreateWorkerFactory(
     _In_opt_ SIZE_T StackReserve,
     _In_opt_ SIZE_T StackCommit
     );
-EXTERN_C FN_ScCreateWorkerFactory* volatile ScCreateWorkerFactory;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScDebugActiveProcess(
+ScDebugActiveProcess(
     _In_ HANDLE ProcessHandle,
     _In_ HANDLE DebugObjectHandle
     );
-EXTERN_C FN_ScDebugActiveProcess* volatile ScDebugActiveProcess;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScDebugContinue(
+ScDebugContinue(
     _In_ HANDLE DebugObjectHandle,
     _In_ PCLIENT_ID ClientId,
     _In_ NTSTATUS ContinueStatus
     );
-EXTERN_C FN_ScDebugContinue* volatile ScDebugContinue;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScDelayExecution(
+ScDelayExecution(
     _In_ BOOLEAN Alertable,
     _In_ PLARGE_INTEGER DelayInterval
     );
-EXTERN_C FN_ScDelayExecution* volatile ScDelayExecution;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScDeleteAtom(
+ScDeleteAtom(
     _In_ RTL_ATOM Atom
     );
-EXTERN_C FN_ScDeleteAtom* volatile ScDeleteAtom;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScDeleteBootEntry(
+ScDeleteBootEntry(
     _In_ ULONG Id
     );
-EXTERN_C FN_ScDeleteBootEntry* volatile ScDeleteBootEntry;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScDeleteDriverEntry(
+ScDeleteDriverEntry(
     _In_ ULONG Id
     );
-EXTERN_C FN_ScDeleteDriverEntry* volatile ScDeleteDriverEntry;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScDeleteFile(
+ScDeleteFile(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C FN_ScDeleteFile* volatile ScDeleteFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScDeleteKey(
+ScDeleteKey(
     _In_ HANDLE KeyHandle
     );
-EXTERN_C FN_ScDeleteKey* volatile ScDeleteKey;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScDeleteObjectAuditAlarm(
+ScDeleteObjectAuditAlarm(
     _In_ PUNICODE_STRING SubsystemName,
     _In_opt_ PVOID HandleId,
     _In_ BOOLEAN GenerateOnClose
     );
-EXTERN_C FN_ScDeleteObjectAuditAlarm* volatile ScDeleteObjectAuditAlarm;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScDeletePrivateNamespace(
+ScDeletePrivateNamespace(
     _In_ HANDLE NamespaceHandle
     );
-EXTERN_C FN_ScDeletePrivateNamespace* volatile ScDeletePrivateNamespace;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScDeleteValueKey(
+ScDeleteValueKey(
     _In_ HANDLE KeyHandle,
     _In_ PUNICODE_STRING ValueName
     );
-EXTERN_C FN_ScDeleteValueKey* volatile ScDeleteValueKey;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScDeleteWnfStateData(
+ScDeleteWnfStateData(
     _In_ PCWNF_STATE_NAME StateName,
     _In_opt_ const VOID* ExplicitScope
     );
-EXTERN_C FN_ScDeleteWnfStateData* volatile ScDeleteWnfStateData;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScDeleteWnfStateName(
+ScDeleteWnfStateName(
     _In_ PCWNF_STATE_NAME StateName
     );
-EXTERN_C FN_ScDeleteWnfStateName* volatile ScDeleteWnfStateName;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScDeviceIoControlFile(
+ScDeviceIoControlFile(
     _In_ HANDLE FileHandle,
     _In_opt_ HANDLE Event,
     _In_opt_ PIO_APC_ROUTINE ApcRoutine,
@@ -1794,36 +1647,32 @@ FN_ScDeviceIoControlFile(
     _Out_writes_bytes_opt_(OutputBufferLength) PVOID OutputBuffer,
     _In_ ULONG OutputBufferLength
     );
-EXTERN_C FN_ScDeviceIoControlFile* volatile ScDeviceIoControlFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScDisableLastKnownGood(
+ScDisableLastKnownGood(
     VOID
     );
-EXTERN_C FN_ScDisableLastKnownGood* volatile ScDisableLastKnownGood;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScDisplayString(
+ScDisplayString(
     _In_ PUNICODE_STRING String
     );
-EXTERN_C FN_ScDisplayString* volatile ScDisplayString;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScDrawText(
+ScDrawText(
     _In_ PUNICODE_STRING Text
     );
-EXTERN_C FN_ScDrawText* volatile ScDrawText;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScDuplicateObject(
+ScDuplicateObject(
     _In_ HANDLE SourceProcessHandle,
     _In_ HANDLE SourceHandle,
     _In_opt_ HANDLE TargetProcessHandle,
@@ -1832,12 +1681,11 @@ FN_ScDuplicateObject(
     _In_ ULONG HandleAttributes,
     _In_ ULONG Options
     );
-EXTERN_C FN_ScDuplicateObject* volatile ScDuplicateObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScDuplicateToken(
+ScDuplicateToken(
     _In_ HANDLE ExistingTokenHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
@@ -1845,38 +1693,34 @@ FN_ScDuplicateToken(
     _In_ TOKEN_TYPE Type,
     _Out_ PHANDLE NewTokenHandle
     );
-EXTERN_C FN_ScDuplicateToken* volatile ScDuplicateToken;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScEnableLastKnownGood(
+ScEnableLastKnownGood(
     VOID
     );
-EXTERN_C FN_ScEnableLastKnownGood* volatile ScEnableLastKnownGood;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScEnumerateBootEntries(
+ScEnumerateBootEntries(
     _Out_writes_bytes_opt_(*BufferLength) PVOID Buffer,
     _Inout_ PULONG BufferLength
     );
-EXTERN_C FN_ScEnumerateBootEntries* volatile ScEnumerateBootEntries;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScEnumerateDriverEntries(
+ScEnumerateDriverEntries(
     _Out_writes_bytes_opt_(*BufferLength) PVOID Buffer,
     _Inout_ PULONG BufferLength
     );
-EXTERN_C FN_ScEnumerateDriverEntries* volatile ScEnumerateDriverEntries;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScEnumerateKey(
+ScEnumerateKey(
     _In_ HANDLE KeyHandle,
     _In_ ULONG Index,
     _In_ KEY_INFORMATION_CLASS KeyInformationClass,
@@ -1884,34 +1728,31 @@ FN_ScEnumerateKey(
     _In_ ULONG Length,
     _Out_ PULONG ResultLength
     );
-EXTERN_C FN_ScEnumerateKey* volatile ScEnumerateKey;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScEnumerateSystemEnvironmentValuesEx(
+ScEnumerateSystemEnvironmentValuesEx(
     _In_ ULONG InformationClass, // SYSTEM_ENVIRONMENT_INFORMATION_CLASS
     _Out_ PVOID Buffer,
     _Inout_ PULONG BufferLength
     );
-EXTERN_C FN_ScEnumerateSystemEnvironmentValuesEx* volatile ScEnumerateSystemEnvironmentValuesEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScEnumerateTransactionObject(
+ScEnumerateTransactionObject(
     _In_opt_ HANDLE RootObjectHandle,
     _In_ KTMOBJECT_TYPE QueryType,
     _Inout_updates_bytes_(ObjectCursorLength) PKTMOBJECT_CURSOR ObjectCursor,
     _In_ ULONG ObjectCursorLength,
     _Out_ PULONG ReturnLength
     );
-EXTERN_C FN_ScEnumerateTransactionObject* volatile ScEnumerateTransactionObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScEnumerateValueKey(
+ScEnumerateValueKey(
     _In_ HANDLE KeyHandle,
     _In_ ULONG Index,
     _In_ KEY_VALUE_INFORMATION_CLASS KeyValueInformationClass,
@@ -1919,33 +1760,30 @@ FN_ScEnumerateValueKey(
     _In_ ULONG Length,
     _Out_ PULONG ResultLength
     );
-EXTERN_C FN_ScEnumerateValueKey* volatile ScEnumerateValueKey;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScExtendSection(
+ScExtendSection(
     _In_ HANDLE SectionHandle,
     _Inout_ PLARGE_INTEGER NewSectionSize
     );
-EXTERN_C FN_ScExtendSection* volatile ScExtendSection;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScFilterBootOption(
+ScFilterBootOption(
     _In_ FILTER_BOOT_OPTION_OPERATION FilterOperation,
     _In_ ULONG ObjectType,
     _In_ ULONG ElementType,
     _In_reads_bytes_opt_(DataSize) PVOID Data,
     _In_ ULONG DataSize
     );
-EXTERN_C FN_ScFilterBootOption* volatile ScFilterBootOption;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScFilterToken(
+ScFilterToken(
     _In_ HANDLE ExistingTokenHandle,
     _In_ ULONG Flags,
     _In_opt_ PTOKEN_GROUPS SidsToDisable,
@@ -1953,12 +1791,11 @@ FN_ScFilterToken(
     _In_opt_ PTOKEN_GROUPS RestrictedSids,
     _Out_ PHANDLE NewTokenHandle
     );
-EXTERN_C FN_ScFilterToken* volatile ScFilterToken;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScFilterTokenEx(
+ScFilterTokenEx(
     _In_ HANDLE ExistingTokenHandle,
     _In_ ULONG Flags,
     _In_opt_ PTOKEN_GROUPS SidsToDisable,
@@ -1974,135 +1811,121 @@ FN_ScFilterTokenEx(
     _In_opt_ PTOKEN_GROUPS RestrictedDeviceGroups,
     _Out_ PHANDLE NewTokenHandle
     );
-EXTERN_C FN_ScFilterTokenEx* volatile ScFilterTokenEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScFindAtom(
+ScFindAtom(
     _In_reads_bytes_opt_(Length) PCWSTR AtomName,
     _In_ ULONG Length,
     _Out_opt_ PRTL_ATOM Atom
     );
-EXTERN_C FN_ScFindAtom* volatile ScFindAtom;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScFlushBuffersFile(
+ScFlushBuffersFile(
     _In_ HANDLE FileHandle,
     _Out_ PIO_STATUS_BLOCK IoStatusBlock
     );
-EXTERN_C FN_ScFlushBuffersFile* volatile ScFlushBuffersFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScFlushBuffersFileEx(
+ScFlushBuffersFileEx(
     _In_ HANDLE FileHandle,
     _In_ ULONG Flags,
     _In_reads_bytes_(ParametersSize) PVOID Parameters,
     _In_ ULONG ParametersSize,
     _Out_ PIO_STATUS_BLOCK IoStatusBlock
     );
-EXTERN_C FN_ScFlushBuffersFileEx* volatile ScFlushBuffersFileEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScFlushInstallUILanguage(
+ScFlushInstallUILanguage(
     _In_ LANGID InstallUILanguage,
     _In_ ULONG SetComittedFlag
     );
-EXTERN_C FN_ScFlushInstallUILanguage* volatile ScFlushInstallUILanguage;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScFlushInstructionCache(
+ScFlushInstructionCache(
     _In_ HANDLE ProcessHandle,
     _In_opt_ PVOID BaseAddress,
     _In_ SIZE_T RegionSize
     );
-EXTERN_C FN_ScFlushInstructionCache* volatile ScFlushInstructionCache;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScFlushKey(
+ScFlushKey(
     _In_ HANDLE KeyHandle
     );
-EXTERN_C FN_ScFlushKey* volatile ScFlushKey;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScFlushProcessWriteBuffers(
+ScFlushProcessWriteBuffers(
     VOID
     );
-EXTERN_C FN_ScFlushProcessWriteBuffers* volatile ScFlushProcessWriteBuffers;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScFlushVirtualMemory(
+ScFlushVirtualMemory(
     _In_ HANDLE ProcessHandle,
     _Inout_ PVOID *BaseAddress,
     _Inout_ PSIZE_T RegionSize,
     _Out_ PIO_STATUS_BLOCK IoStatus
     );
-EXTERN_C FN_ScFlushVirtualMemory* volatile ScFlushVirtualMemory;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScFlushWriteBuffer(
+ScFlushWriteBuffer(
     VOID
     );
-EXTERN_C FN_ScFlushWriteBuffer* volatile ScFlushWriteBuffer;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScFreeUserPhysicalPages(
+ScFreeUserPhysicalPages(
     _In_ HANDLE ProcessHandle,
     _Inout_ PULONG_PTR NumberOfPages,
     _In_reads_(*NumberOfPages) PULONG_PTR UserPfnArray
     );
-EXTERN_C FN_ScFreeUserPhysicalPages* volatile ScFreeUserPhysicalPages;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScFreeVirtualMemory(
+ScFreeVirtualMemory(
     _In_ HANDLE ProcessHandle,
     _Inout_ __drv_freesMem(Mem) PVOID* BaseAddress,
     _Inout_ PSIZE_T RegionSize,
     _In_ ULONG FreeType
     );
-EXTERN_C FN_ScFreeVirtualMemory* volatile ScFreeVirtualMemory;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScFreezeRegistry(
+ScFreezeRegistry(
     _In_ ULONG TimeOutInSeconds
     );
-EXTERN_C FN_ScFreezeRegistry* volatile ScFreezeRegistry;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScFreezeTransactions(
+ScFreezeTransactions(
     _In_ PLARGE_INTEGER FreezeTimeout,
     _In_ PLARGE_INTEGER ThawTimeout
     );
-EXTERN_C FN_ScFreezeTransactions* volatile ScFreezeTransactions;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScFsControlFile(
+ScFsControlFile(
     _In_ HANDLE FileHandle,
     _In_opt_ HANDLE Event,
     _In_opt_ PIO_APC_ROUTINE ApcRoutine,
@@ -2114,12 +1937,11 @@ FN_ScFsControlFile(
     _Out_writes_bytes_opt_(OutputBufferLength) PVOID OutputBuffer,
     _In_ ULONG OutputBufferLength
     );
-EXTERN_C FN_ScFsControlFile* volatile ScFsControlFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScGetCachedSigningLevel(
+ScGetCachedSigningLevel(
     _In_ HANDLE File,
     _Out_ PULONG Flags,
     _Out_ PSE_SIGNING_LEVEL SigningLevel,
@@ -2127,12 +1949,11 @@ FN_ScGetCachedSigningLevel(
     _Inout_opt_ PULONG ThumbprintSize,
     _Out_opt_ PULONG ThumbprintAlgorithm
     );
-EXTERN_C FN_ScGetCachedSigningLevel* volatile ScGetCachedSigningLevel;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScGetCompleteWnfStateSubscription(
+ScGetCompleteWnfStateSubscription(
     _In_opt_ PWNF_STATE_NAME OldDescriptorStateName,
     _In_opt_ ULONG64 *OldSubscriptionId,
     _In_opt_ ULONG OldDescriptorEventMask,
@@ -2140,68 +1961,61 @@ FN_ScGetCompleteWnfStateSubscription(
     _Out_writes_bytes_(DescriptorSize) PWNF_DELIVERY_DESCRIPTOR NewDeliveryDescriptor,
     _In_ ULONG DescriptorSize
     );
-EXTERN_C FN_ScGetCompleteWnfStateSubscription* volatile ScGetCompleteWnfStateSubscription;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScGetContextThread(
+ScGetContextThread(
     _In_ HANDLE ThreadHandle,
     _Inout_ PCONTEXT ThreadContext
     );
-EXTERN_C FN_ScGetContextThread* volatile ScGetContextThread;
 
-typedef
+EXTERN_C
 ULONG
 NTAPI
-FN_ScGetCurrentProcessorNumber(
+ScGetCurrentProcessorNumber(
     VOID
     );
-EXTERN_C FN_ScGetCurrentProcessorNumber* volatile ScGetCurrentProcessorNumber;
 
-typedef
+EXTERN_C
 ULONG
 NTAPI
-FN_ScGetCurrentProcessorNumberEx(
+ScGetCurrentProcessorNumberEx(
     _Out_opt_ PPROCESSOR_NUMBER ProcessorNumber
     );
-EXTERN_C FN_ScGetCurrentProcessorNumberEx* volatile ScGetCurrentProcessorNumberEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScGetDevicePowerState(
+ScGetDevicePowerState(
     _In_ HANDLE Device,
     _Out_ PDEVICE_POWER_STATE State
     );
-EXTERN_C FN_ScGetDevicePowerState* volatile ScGetDevicePowerState;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScGetMUIRegistryInfo(
+ScGetMUIRegistryInfo(
     _In_ ULONG Flags,
     _Inout_ PULONG DataSize,
     _Out_ PVOID Data
     );
-EXTERN_C FN_ScGetMUIRegistryInfo* volatile ScGetMUIRegistryInfo;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScGetNextProcess(
+ScGetNextProcess(
     _In_opt_ HANDLE ProcessHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ ULONG HandleAttributes,
     _In_ ULONG Flags,
     _Out_ PHANDLE NewProcessHandle
     );
-EXTERN_C FN_ScGetNextProcess* volatile ScGetNextProcess;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScGetNextThread(
+ScGetNextThread(
     _In_ HANDLE ProcessHandle,
     _In_opt_ HANDLE ThreadHandle,
     _In_ ACCESS_MASK DesiredAccess,
@@ -2209,24 +2023,22 @@ FN_ScGetNextThread(
     _In_ ULONG Flags,
     _Out_ PHANDLE NewThreadHandle
     );
-EXTERN_C FN_ScGetNextThread* volatile ScGetNextThread;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScGetNlsSectionPtr(
+ScGetNlsSectionPtr(
     _In_ ULONG SectionType,
     _In_ ULONG SectionData,
     _In_ PVOID ContextData,
     _Out_ PVOID *SectionPointer,
     _Out_ PULONG SectionSize
     );
-EXTERN_C FN_ScGetNlsSectionPtr* volatile ScGetNlsSectionPtr;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScGetNotificationResourceManager(
+ScGetNotificationResourceManager(
     _In_ HANDLE ResourceManagerHandle,
     _Out_ PTRANSACTION_NOTIFICATION TransactionNotification,
     _In_ ULONG NotificationLength,
@@ -2235,23 +2047,21 @@ FN_ScGetNotificationResourceManager(
     _In_ ULONG Asynchronous,
     _In_opt_ ULONG_PTR AsynchronousContext
     );
-EXTERN_C FN_ScGetNotificationResourceManager* volatile ScGetNotificationResourceManager;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScGetPlugPlayEvent(
+ScGetPlugPlayEvent(
     _In_ HANDLE EventHandle,
     _In_opt_ PVOID Context,
     _Out_writes_bytes_(EventBufferSize) PPLUGPLAY_EVENT_BLOCK EventBlock,
     _In_ ULONG EventBufferSize
     );
-EXTERN_C FN_ScGetPlugPlayEvent* volatile ScGetPlugPlayEvent;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScGetWriteWatch(
+ScGetWriteWatch(
     _In_ HANDLE ProcessHandle,
     _In_ ULONG Flags,
     _In_ PVOID BaseAddress,
@@ -2260,123 +2070,110 @@ FN_ScGetWriteWatch(
     _Inout_ PULONG_PTR EntriesInUserAddressArray,
     _Out_ PULONG Granularity
     );
-EXTERN_C FN_ScGetWriteWatch* volatile ScGetWriteWatch;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScImpersonateAnonymousToken(
+ScImpersonateAnonymousToken(
     _In_ HANDLE ThreadHandle
     );
-EXTERN_C FN_ScImpersonateAnonymousToken* volatile ScImpersonateAnonymousToken;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScImpersonateClientOfPort(
+ScImpersonateClientOfPort(
     _In_ HANDLE PortHandle,
     _In_ PPORT_MESSAGE Message
     );
-EXTERN_C FN_ScImpersonateClientOfPort* volatile ScImpersonateClientOfPort;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScImpersonateThread(
+ScImpersonateThread(
     _In_ HANDLE ServerThreadHandle,
     _In_ HANDLE ClientThreadHandle,
     _In_ PSECURITY_QUALITY_OF_SERVICE SecurityQos
     );
-EXTERN_C FN_ScImpersonateThread* volatile ScImpersonateThread;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScInitializeEnclave(
+ScInitializeEnclave(
     _In_ HANDLE ProcessHandle,
     _In_ PVOID BaseAddress,
     _In_reads_bytes_(EnclaveInformationLength) PVOID EnclaveInformation,
     _In_ ULONG EnclaveInformationLength,
     _Out_opt_ PULONG EnclaveError
     );
-EXTERN_C FN_ScInitializeEnclave* volatile ScInitializeEnclave;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScInitializeNlsFiles(
+ScInitializeNlsFiles(
     _Out_ PVOID *BaseAddress,
     _Out_ PLCID DefaultLocaleId,
     _Out_ PLARGE_INTEGER DefaultCasingTableSize,
     _Out_opt_ PULONG CurrentNLSVersion
     );
-EXTERN_C FN_ScInitializeNlsFiles* volatile ScInitializeNlsFiles;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScInitializeRegistry(
+ScInitializeRegistry(
     _In_ USHORT BootCondition
     );
-EXTERN_C FN_ScInitializeRegistry* volatile ScInitializeRegistry;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScInitiatePowerAction(
+ScInitiatePowerAction(
     _In_ POWER_ACTION SystemAction,
     _In_ SYSTEM_POWER_STATE LightestSystemState,
     _In_ ULONG Flags, // POWER_ACTION_* flags
     _In_ BOOLEAN Asynchronous
     );
-EXTERN_C FN_ScInitiatePowerAction* volatile ScInitiatePowerAction;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScIsProcessInJob(
+ScIsProcessInJob(
     _In_ HANDLE ProcessHandle,
     _In_opt_ HANDLE JobHandle
     );
-EXTERN_C FN_ScIsProcessInJob* volatile ScIsProcessInJob;
 
-typedef
+EXTERN_C
 BOOLEAN
 NTAPI
-FN_ScIsSystemResumeAutomatic(
+ScIsSystemResumeAutomatic(
     VOID
     );
-EXTERN_C FN_ScIsSystemResumeAutomatic* volatile ScIsSystemResumeAutomatic;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScIsUILanguageComitted(
+ScIsUILanguageComitted(
     VOID
     );
-EXTERN_C FN_ScIsUILanguageComitted* volatile ScIsUILanguageComitted;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScListenPort(
+ScListenPort(
     _In_ HANDLE PortHandle,
     _Out_ PPORT_MESSAGE ConnectionRequest
     );
-EXTERN_C FN_ScListenPort* volatile ScListenPort;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScLoadDriver(
+ScLoadDriver(
     _In_ PUNICODE_STRING DriverServiceName
     );
-EXTERN_C FN_ScLoadDriver* volatile ScLoadDriver;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScLoadEnclaveData(
+ScLoadEnclaveData(
     _In_ HANDLE ProcessHandle,
     _In_ PVOID BaseAddress,
     _In_reads_bytes_(BufferSize) PVOID Buffer,
@@ -2387,31 +2184,28 @@ FN_ScLoadEnclaveData(
     _Out_opt_ PSIZE_T NumberOfBytesWritten,
     _Out_opt_ PULONG EnclaveError
     );
-EXTERN_C FN_ScLoadEnclaveData* volatile ScLoadEnclaveData;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScLoadKey(
+ScLoadKey(
     _In_ POBJECT_ATTRIBUTES TargetKey,
     _In_ POBJECT_ATTRIBUTES SourceFile
     );
-EXTERN_C FN_ScLoadKey* volatile ScLoadKey;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScLoadKey2(
+ScLoadKey2(
     _In_ POBJECT_ATTRIBUTES TargetKey,
     _In_ POBJECT_ATTRIBUTES SourceFile,
     _In_ ULONG Flags
     );
-EXTERN_C FN_ScLoadKey2* volatile ScLoadKey2;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScLoadKey3(
+ScLoadKey3(
     _In_ POBJECT_ATTRIBUTES TargetKey,
     _In_ POBJECT_ATTRIBUTES SourceFile,
     _In_ ULONG Flags,
@@ -2421,12 +2215,11 @@ FN_ScLoadKey3(
     _Out_opt_ PHANDLE RootHandle,
     _Reserved_ PVOID Reserved
     );
-EXTERN_C FN_ScLoadKey3* volatile ScLoadKey3;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScLoadKeyEx(
+ScLoadKeyEx(
     _In_ POBJECT_ATTRIBUTES TargetKey,
     _In_ POBJECT_ATTRIBUTES SourceFile,
     _In_ ULONG Flags,
@@ -2436,12 +2229,11 @@ FN_ScLoadKeyEx(
     _Out_opt_ PHANDLE RootHandle,
     _Reserved_ PVOID Reserved // previously PIO_STATUS_BLOCK
     );
-EXTERN_C FN_ScLoadKeyEx* volatile ScLoadKeyEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScLockFile(
+ScLockFile(
     _In_ HANDLE FileHandle,
     _In_opt_ HANDLE Event,
     _In_opt_ PIO_APC_ROUTINE ApcRoutine,
@@ -2453,68 +2245,61 @@ FN_ScLockFile(
     _In_ BOOLEAN FailImmediately,
     _In_ BOOLEAN ExclusiveLock
     );
-EXTERN_C FN_ScLockFile* volatile ScLockFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScLockProductActivationKeys(
+ScLockProductActivationKeys(
     _Inout_opt_ ULONG *pPrivateVer,
     _Out_opt_ ULONG *pSafeMode
     );
-EXTERN_C FN_ScLockProductActivationKeys* volatile ScLockProductActivationKeys;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScLockRegistryKey(
+ScLockRegistryKey(
     _In_ HANDLE KeyHandle
     );
-EXTERN_C FN_ScLockRegistryKey* volatile ScLockRegistryKey;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScLockVirtualMemory(
+ScLockVirtualMemory(
     _In_ HANDLE ProcessHandle,
     _Inout_ PVOID *BaseAddress,
     _Inout_ PSIZE_T RegionSize,
     _In_ ULONG MapType
     );
-EXTERN_C FN_ScLockVirtualMemory* volatile ScLockVirtualMemory;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScMakePermanentObject(
+ScMakePermanentObject(
     _In_ HANDLE Handle
     );
-EXTERN_C FN_ScMakePermanentObject* volatile ScMakePermanentObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScMakeTemporaryObject(
+ScMakeTemporaryObject(
     _In_ HANDLE Handle
     );
-EXTERN_C FN_ScMakeTemporaryObject* volatile ScMakeTemporaryObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScManagePartition(
+ScManagePartition(
     _In_ HANDLE TargetHandle,
     _In_opt_ HANDLE SourceHandle,
     _In_ PARTITION_INFORMATION_CLASS PartitionInformationClass,
     _Inout_updates_bytes_(PartitionInformationLength) PVOID PartitionInformation,
     _In_ ULONG PartitionInformationLength
     );
-EXTERN_C FN_ScManagePartition* volatile ScManagePartition;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScMapCMFModule(
+ScMapCMFModule(
     _In_ ULONG What,
     _In_ ULONG Index,
     _Out_opt_ PULONG CacheIndexOut,
@@ -2522,32 +2307,29 @@ FN_ScMapCMFModule(
     _Out_opt_ PULONG ViewSizeOut,
     _Out_opt_ PVOID *BaseAddress
     );
-EXTERN_C FN_ScMapCMFModule* volatile ScMapCMFModule;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScMapUserPhysicalPages(
+ScMapUserPhysicalPages(
     _In_ PVOID VirtualAddress,
     _In_ SIZE_T NumberOfPages,
     _In_reads_opt_(NumberOfPages) PULONG_PTR UserPfnArray
     );
-EXTERN_C FN_ScMapUserPhysicalPages* volatile ScMapUserPhysicalPages;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScMapUserPhysicalPagesScatter(
+ScMapUserPhysicalPagesScatter(
     _In_reads_(NumberOfPages) PVOID *VirtualAddresses,
     _In_ SIZE_T NumberOfPages,
     _In_reads_opt_(NumberOfPages) PULONG_PTR UserPfnArray
     );
-EXTERN_C FN_ScMapUserPhysicalPagesScatter* volatile ScMapUserPhysicalPagesScatter;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScMapViewOfSection(
+ScMapViewOfSection(
     _In_ HANDLE SectionHandle,
     _In_ HANDLE ProcessHandle,
     _Inout_ _At_(*BaseAddress, _Readable_bytes_(*ViewSize) _Writable_bytes_(*ViewSize) _Post_readable_byte_size_(*ViewSize)) PVOID *BaseAddress,
@@ -2559,12 +2341,11 @@ FN_ScMapViewOfSection(
     _In_ ULONG AllocationType,
     _In_ ULONG PageProtection
     );
-EXTERN_C FN_ScMapViewOfSection* volatile ScMapViewOfSection;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScMapViewOfSectionEx(
+ScMapViewOfSectionEx(
     _In_ HANDLE SectionHandle,
     _In_ HANDLE ProcessHandle,
     _Inout_ _At_(*BaseAddress, _Readable_bytes_(*ViewSize) _Writable_bytes_(*ViewSize) _Post_readable_byte_size_(*ViewSize)) PVOID *BaseAddress,
@@ -2575,28 +2356,25 @@ FN_ScMapViewOfSectionEx(
     _Inout_updates_opt_(ExtendedParameterCount) PMEM_EXTENDED_PARAMETER ExtendedParameters,
     _In_ ULONG ExtendedParameterCount
     );
-EXTERN_C FN_ScMapViewOfSectionEx* volatile ScMapViewOfSectionEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScModifyBootEntry(
+ScModifyBootEntry(
     _In_ PBOOT_ENTRY BootEntry
     );
-EXTERN_C FN_ScModifyBootEntry* volatile ScModifyBootEntry;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScModifyDriverEntry(
+ScModifyDriverEntry(
     _In_ PEFI_DRIVER_ENTRY DriverEntry
     );
-EXTERN_C FN_ScModifyDriverEntry* volatile ScModifyDriverEntry;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScNotifyChangeDirectoryFile(
+ScNotifyChangeDirectoryFile(
     _In_ HANDLE FileHandle,
     _In_opt_ HANDLE Event,
     _In_opt_ PIO_APC_ROUTINE ApcRoutine,
@@ -2607,12 +2385,11 @@ FN_ScNotifyChangeDirectoryFile(
     _In_ ULONG CompletionFilter,
     _In_ BOOLEAN WatchTree
     );
-EXTERN_C FN_ScNotifyChangeDirectoryFile* volatile ScNotifyChangeDirectoryFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScNotifyChangeDirectoryFileEx(
+ScNotifyChangeDirectoryFileEx(
     _In_ HANDLE FileHandle,
     _In_opt_ HANDLE Event,
     _In_opt_ PIO_APC_ROUTINE ApcRoutine,
@@ -2624,12 +2401,11 @@ FN_ScNotifyChangeDirectoryFileEx(
     _In_ BOOLEAN WatchTree,
     _In_opt_ DIRECTORY_NOTIFY_INFORMATION_CLASS DirectoryNotifyInformationClass
     );
-EXTERN_C FN_ScNotifyChangeDirectoryFileEx* volatile ScNotifyChangeDirectoryFileEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScNotifyChangeKey(
+ScNotifyChangeKey(
     _In_ HANDLE KeyHandle,
     _In_opt_ HANDLE Event,
     _In_opt_ PIO_APC_ROUTINE ApcRoutine,
@@ -2641,12 +2417,11 @@ FN_ScNotifyChangeKey(
     _In_ ULONG BufferSize,
     _In_ BOOLEAN Asynchronous
     );
-EXTERN_C FN_ScNotifyChangeKey* volatile ScNotifyChangeKey;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScNotifyChangeMultipleKeys(
+ScNotifyChangeMultipleKeys(
     _In_ HANDLE MasterKeyHandle,
     _In_opt_ ULONG Count,
     _In_reads_opt_(Count) OBJECT_ATTRIBUTES SubordinateObjects[],
@@ -2660,12 +2435,11 @@ FN_ScNotifyChangeMultipleKeys(
     _In_ ULONG BufferSize,
     _In_ BOOLEAN Asynchronous
     );
-EXTERN_C FN_ScNotifyChangeMultipleKeys* volatile ScNotifyChangeMultipleKeys;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScNotifyChangeSession(
+ScNotifyChangeSession(
     _In_ HANDLE SessionHandle,
     _In_ ULONG ChangeSequenceNumber,
     _In_ PLARGE_INTEGER ChangeTimeStamp,
@@ -2675,54 +2449,49 @@ FN_ScNotifyChangeSession(
     _In_reads_bytes_opt_(PayloadSize) PVOID Payload,
     _In_ ULONG PayloadSize
     );
-EXTERN_C FN_ScNotifyChangeSession* volatile ScNotifyChangeSession;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenDirectoryObject(
+ScOpenDirectoryObject(
     _Out_ PHANDLE DirectoryHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C FN_ScOpenDirectoryObject* volatile ScOpenDirectoryObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenEnlistment(
+ScOpenEnlistment(
     _Out_ PHANDLE EnlistmentHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ HANDLE ResourceManagerHandle,
     _In_ LPGUID EnlistmentGuid,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C FN_ScOpenEnlistment* volatile ScOpenEnlistment;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenEvent(
+ScOpenEvent(
     _Out_ PHANDLE EventHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C FN_ScOpenEvent* volatile ScOpenEvent;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenEventPair(
+ScOpenEventPair(
     _Out_ PHANDLE EventPairHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C FN_ScOpenEventPair* volatile ScOpenEventPair;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenFile(
+ScOpenFile(
     _Out_ PHANDLE FileHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes,
@@ -2730,96 +2499,87 @@ FN_ScOpenFile(
     _In_ ULONG ShareAccess,
     _In_ ULONG OpenOptions
     );
-EXTERN_C FN_ScOpenFile* volatile ScOpenFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenIoCompletion(
+ScOpenIoCompletion(
     _Out_ PHANDLE IoCompletionHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C FN_ScOpenIoCompletion* volatile ScOpenIoCompletion;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenJobObject(
+ScOpenJobObject(
     _Out_ PHANDLE JobHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C FN_ScOpenJobObject* volatile ScOpenJobObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenKey(
+ScOpenKey(
     _Out_ PHANDLE KeyHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C FN_ScOpenKey* volatile ScOpenKey;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenKeyedEvent(
+ScOpenKeyedEvent(
     _Out_ PHANDLE KeyedEventHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C FN_ScOpenKeyedEvent* volatile ScOpenKeyedEvent;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenKeyEx(
+ScOpenKeyEx(
     _Out_ PHANDLE KeyHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_ ULONG OpenOptions
     );
-EXTERN_C FN_ScOpenKeyEx* volatile ScOpenKeyEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenKeyTransacted(
+ScOpenKeyTransacted(
     _Out_ PHANDLE KeyHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_ HANDLE TransactionHandle
     );
-EXTERN_C FN_ScOpenKeyTransacted* volatile ScOpenKeyTransacted;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenKeyTransactedEx(
+ScOpenKeyTransactedEx(
     _Out_ PHANDLE KeyHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_ ULONG OpenOptions,
     _In_ HANDLE TransactionHandle
     );
-EXTERN_C FN_ScOpenKeyTransactedEx* volatile ScOpenKeyTransactedEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenMutant(
+ScOpenMutant(
     _Out_ PHANDLE MutantHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C FN_ScOpenMutant* volatile ScOpenMutant;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenObjectAuditAlarm(
+ScOpenObjectAuditAlarm(
     _In_ PUNICODE_STRING SubsystemName,
     _In_opt_ PVOID HandleId,
     _In_ PUNICODE_STRING ObjectTypeName,
@@ -2833,183 +2593,166 @@ FN_ScOpenObjectAuditAlarm(
     _In_ BOOLEAN AccessGranted,
     _Out_ PBOOLEAN GenerateOnClose
     );
-EXTERN_C FN_ScOpenObjectAuditAlarm* volatile ScOpenObjectAuditAlarm;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenPartition(
+ScOpenPartition(
     _Out_ PHANDLE PartitionHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C FN_ScOpenPartition* volatile ScOpenPartition;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenPrivateNamespace(
+ScOpenPrivateNamespace(
     _Out_ PHANDLE NamespaceHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_ POBJECT_BOUNDARY_DESCRIPTOR BoundaryDescriptor
     );
-EXTERN_C FN_ScOpenPrivateNamespace* volatile ScOpenPrivateNamespace;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenProcess(
+ScOpenProcess(
     _Out_ PHANDLE ProcessHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes,
     _In_opt_ PCLIENT_ID ClientId
     );
-EXTERN_C FN_ScOpenProcess* volatile ScOpenProcess;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenProcessToken(
+ScOpenProcessToken(
     _In_ HANDLE ProcessHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _Out_ PHANDLE TokenHandle
     );
-EXTERN_C FN_ScOpenProcessToken* volatile ScOpenProcessToken;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenProcessTokenEx(
+ScOpenProcessTokenEx(
     _In_ HANDLE ProcessHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ ULONG HandleAttributes,
     _Out_ PHANDLE TokenHandle
     );
-EXTERN_C FN_ScOpenProcessTokenEx* volatile ScOpenProcessTokenEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenRegistryTransaction(
+ScOpenRegistryTransaction(
     _Out_ PHANDLE RegistryTransactionHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjAttributes
     );
-EXTERN_C FN_ScOpenRegistryTransaction* volatile ScOpenRegistryTransaction;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenResourceManager(
+ScOpenResourceManager(
     _Out_ PHANDLE ResourceManagerHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ HANDLE TmHandle,
     _In_opt_ LPGUID ResourceManagerGuid,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C FN_ScOpenResourceManager* volatile ScOpenResourceManager;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenSection(
+ScOpenSection(
     _Out_ PHANDLE SectionHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C FN_ScOpenSection* volatile ScOpenSection;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenSemaphore(
+ScOpenSemaphore(
     _Out_ PHANDLE SemaphoreHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C FN_ScOpenSemaphore* volatile ScOpenSemaphore;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenSession(
+ScOpenSession(
     _Out_ PHANDLE SessionHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C FN_ScOpenSession* volatile ScOpenSession;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenSymbolicLinkObject(
+ScOpenSymbolicLinkObject(
     _Out_ PHANDLE LinkHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C FN_ScOpenSymbolicLinkObject* volatile ScOpenSymbolicLinkObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenThread(
+ScOpenThread(
     _Out_ PHANDLE ThreadHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes,
     _In_opt_ PCLIENT_ID ClientId
     );
-EXTERN_C FN_ScOpenThread* volatile ScOpenThread;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenThreadToken(
+ScOpenThreadToken(
     _In_ HANDLE ThreadHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ BOOLEAN OpenAsSelf,
     _Out_ PHANDLE TokenHandle
     );
-EXTERN_C FN_ScOpenThreadToken* volatile ScOpenThreadToken;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenThreadTokenEx(
+ScOpenThreadTokenEx(
     _In_ HANDLE ThreadHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ BOOLEAN OpenAsSelf,
     _In_ ULONG HandleAttributes,
     _Out_ PHANDLE TokenHandle
     );
-EXTERN_C FN_ScOpenThreadTokenEx* volatile ScOpenThreadTokenEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenTimer(
+ScOpenTimer(
     _Out_ PHANDLE TimerHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
-EXTERN_C FN_ScOpenTimer* volatile ScOpenTimer;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenTransaction(
+ScOpenTransaction(
     _Out_ PHANDLE TransactionHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_ LPGUID Uow,
     _In_opt_ HANDLE TmHandle
     );
-EXTERN_C FN_ScOpenTransaction* volatile ScOpenTransaction;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScOpenTransactionManager(
+ScOpenTransactionManager(
     _Out_ PHANDLE TmHandle,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes,
@@ -3017,92 +2760,83 @@ FN_ScOpenTransactionManager(
     _In_opt_ LPGUID TmIdentity,
     _In_opt_ ULONG OpenOptions
     );
-EXTERN_C FN_ScOpenTransactionManager* volatile ScOpenTransactionManager;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScPlugPlayControl(
+ScPlugPlayControl(
     _In_ PLUGPLAY_CONTROL_CLASS PnPControlClass,
     _Inout_updates_bytes_(PnPControlDataLength) PVOID PnPControlData,
     _In_ ULONG PnPControlDataLength
     );
-EXTERN_C FN_ScPlugPlayControl* volatile ScPlugPlayControl;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScPowerInformation(
+ScPowerInformation(
     _In_ POWER_INFORMATION_LEVEL InformationLevel,
     _In_reads_bytes_opt_(InputBufferLength) PVOID InputBuffer,
     _In_ ULONG InputBufferLength,
     _Out_writes_bytes_opt_(OutputBufferLength) PVOID OutputBuffer,
     _In_ ULONG OutputBufferLength
     );
-EXTERN_C FN_ScPowerInformation* volatile ScPowerInformation;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScPrepareComplete(
+ScPrepareComplete(
     _In_ HANDLE EnlistmentHandle,
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
-EXTERN_C FN_ScPrepareComplete* volatile ScPrepareComplete;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScPrepareEnlistment(
+ScPrepareEnlistment(
     _In_ HANDLE EnlistmentHandle,
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
-EXTERN_C FN_ScPrepareEnlistment* volatile ScPrepareEnlistment;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScPrePrepareComplete(
+ScPrePrepareComplete(
     _In_ HANDLE EnlistmentHandle,
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
-EXTERN_C FN_ScPrePrepareComplete* volatile ScPrePrepareComplete;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScPrePrepareEnlistment(
+ScPrePrepareEnlistment(
     _In_ HANDLE EnlistmentHandle,
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
-EXTERN_C FN_ScPrePrepareEnlistment* volatile ScPrePrepareEnlistment;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScPrivilegeCheck(
+ScPrivilegeCheck(
     _In_ HANDLE ClientToken,
     _Inout_ PPRIVILEGE_SET RequiredPrivileges,
     _Out_ PBOOLEAN Result
     );
-EXTERN_C FN_ScPrivilegeCheck* volatile ScPrivilegeCheck;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScPrivilegedServiceAuditAlarm(
+ScPrivilegedServiceAuditAlarm(
     _In_ PUNICODE_STRING SubsystemName,
     _In_ PUNICODE_STRING ServiceName,
     _In_ HANDLE ClientToken,
     _In_ PPRIVILEGE_SET Privileges,
     _In_ BOOLEAN AccessGranted
     );
-EXTERN_C FN_ScPrivilegedServiceAuditAlarm* volatile ScPrivilegedServiceAuditAlarm;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScPrivilegeObjectAuditAlarm(
+ScPrivilegeObjectAuditAlarm(
     _In_ PUNICODE_STRING SubsystemName,
     _In_opt_ PVOID HandleId,
     _In_ HANDLE ClientToken,
@@ -3110,127 +2844,114 @@ FN_ScPrivilegeObjectAuditAlarm(
     _In_ PPRIVILEGE_SET Privileges,
     _In_ BOOLEAN AccessGranted
     );
-EXTERN_C FN_ScPrivilegeObjectAuditAlarm* volatile ScPrivilegeObjectAuditAlarm;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScPropagationComplete(
+ScPropagationComplete(
     _In_ HANDLE ResourceManagerHandle,
     _In_ ULONG RequestCookie,
     _In_ ULONG BufferLength,
     _In_ PVOID Buffer
     );
-EXTERN_C FN_ScPropagationComplete* volatile ScPropagationComplete;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScPropagationFailed(
+ScPropagationFailed(
     _In_ HANDLE ResourceManagerHandle,
     _In_ ULONG RequestCookie,
     _In_ NTSTATUS PropStatus
     );
-EXTERN_C FN_ScPropagationFailed* volatile ScPropagationFailed;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScProtectVirtualMemory(
+ScProtectVirtualMemory(
     _In_ HANDLE ProcessHandle,
     _Inout_ PVOID *BaseAddress,
     _Inout_ PSIZE_T RegionSize,
     _In_ ULONG NewProtection,
     _Out_ PULONG OldProtection
     );
-EXTERN_C FN_ScProtectVirtualMemory* volatile ScProtectVirtualMemory;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScPssCaptureVaSpaceBulk(
+ScPssCaptureVaSpaceBulk(
     _In_ HANDLE ProcessHandle,
     _In_opt_ PVOID BaseAddress,
     _In_ PNTPSS_MEMORY_BULK_INFORMATION BulkInformation,
     _In_ SIZE_T BulkInformationLength,
     _Out_opt_ PSIZE_T ReturnLength
     );
-EXTERN_C FN_ScPssCaptureVaSpaceBulk* volatile ScPssCaptureVaSpaceBulk;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScPulseEvent(
+ScPulseEvent(
     _In_ HANDLE EventHandle,
     _Out_opt_ PLONG PreviousState
     );
-EXTERN_C FN_ScPulseEvent* volatile ScPulseEvent;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryAttributesFile(
+ScQueryAttributesFile(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes,
     _Out_ PFILE_BASIC_INFORMATION FileInformation
     );
-EXTERN_C FN_ScQueryAttributesFile* volatile ScQueryAttributesFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryAuxiliaryCounterFrequency(
+ScQueryAuxiliaryCounterFrequency(
     _Out_ PULONG64 AuxiliaryCounterFrequency
     );
-EXTERN_C FN_ScQueryAuxiliaryCounterFrequency* volatile ScQueryAuxiliaryCounterFrequency;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryBootEntryOrder(
+ScQueryBootEntryOrder(
     _Out_writes_opt_(*Count) PULONG Ids,
     _Inout_ PULONG Count
     );
-EXTERN_C FN_ScQueryBootEntryOrder* volatile ScQueryBootEntryOrder;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryBootOptions(
+ScQueryBootOptions(
     _Out_writes_bytes_opt_(*BootOptionsLength) PBOOT_OPTIONS BootOptions,
     _Inout_ PULONG BootOptionsLength
     );
-EXTERN_C FN_ScQueryBootOptions* volatile ScQueryBootOptions;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryDebugFilterState(
+ScQueryDebugFilterState(
     _In_ ULONG ComponentId,
     _In_ ULONG Level
     );
-EXTERN_C FN_ScQueryDebugFilterState* volatile ScQueryDebugFilterState;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryDefaultLocale(
+ScQueryDefaultLocale(
     _In_ BOOLEAN UserProfile,
     _Out_ PLCID DefaultLocaleId
     );
-EXTERN_C FN_ScQueryDefaultLocale* volatile ScQueryDefaultLocale;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryDefaultUILanguage(
+ScQueryDefaultUILanguage(
     _Out_ LANGID *DefaultUILanguageId
     );
-EXTERN_C FN_ScQueryDefaultUILanguage* volatile ScQueryDefaultUILanguage;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryDirectoryFile(
+ScQueryDirectoryFile(
     _In_ HANDLE FileHandle,
     _In_opt_ HANDLE Event,
     _In_opt_ PIO_APC_ROUTINE ApcRoutine,
@@ -3243,12 +2964,11 @@ FN_ScQueryDirectoryFile(
     _In_opt_ PUNICODE_STRING FileName,
     _In_ BOOLEAN RestartScan
     );
-EXTERN_C FN_ScQueryDirectoryFile* volatile ScQueryDirectoryFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryDirectoryFileEx(
+ScQueryDirectoryFileEx(
     _In_ HANDLE FileHandle,
     _In_opt_ HANDLE Event,
     _In_opt_ PIO_APC_ROUTINE ApcRoutine,
@@ -3260,12 +2980,11 @@ FN_ScQueryDirectoryFileEx(
     _In_ ULONG QueryFlags,
     _In_opt_ PUNICODE_STRING FileName
     );
-EXTERN_C FN_ScQueryDirectoryFileEx* volatile ScQueryDirectoryFileEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryDirectoryObject(
+ScQueryDirectoryObject(
     _In_ HANDLE DirectoryHandle,
     _Out_writes_bytes_opt_(Length) PVOID Buffer,
     _In_ ULONG Length,
@@ -3274,21 +2993,19 @@ FN_ScQueryDirectoryObject(
     _Inout_ PULONG Context,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScQueryDirectoryObject* volatile ScQueryDirectoryObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryDriverEntryOrder(
+ScQueryDriverEntryOrder(
     _Out_writes_opt_(*Count) PULONG Ids,
     _Inout_ PULONG Count
     );
-EXTERN_C FN_ScQueryDriverEntryOrder* volatile ScQueryDriverEntryOrder;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryEaFile(
+ScQueryEaFile(
     _In_ HANDLE FileHandle,
     _Out_ PIO_STATUS_BLOCK IoStatusBlock,
     _Out_writes_bytes_(Length) PVOID Buffer,
@@ -3299,263 +3016,240 @@ FN_ScQueryEaFile(
     _In_opt_ PULONG EaIndex,
     _In_ BOOLEAN RestartScan
     );
-EXTERN_C FN_ScQueryEaFile* volatile ScQueryEaFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryEvent(
+ScQueryEvent(
     _In_ HANDLE EventHandle,
     _In_ EVENT_INFORMATION_CLASS EventInformationClass,
     _Out_writes_bytes_(EventInformationLength) PVOID EventInformation,
     _In_ ULONG EventInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScQueryEvent* volatile ScQueryEvent;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryFullAttributesFile(
+ScQueryFullAttributesFile(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes,
     _Out_ PFILE_NETWORK_OPEN_INFORMATION FileInformation
     );
-EXTERN_C FN_ScQueryFullAttributesFile* volatile ScQueryFullAttributesFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryInformationAtom(
+ScQueryInformationAtom(
     _In_ RTL_ATOM Atom,
     _In_ ATOM_INFORMATION_CLASS AtomInformationClass,
     _Out_writes_bytes_(AtomInformationLength) PVOID AtomInformation,
     _In_ ULONG AtomInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScQueryInformationAtom* volatile ScQueryInformationAtom;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryInformationByName(
+ScQueryInformationByName(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes,
     _Out_ PIO_STATUS_BLOCK IoStatusBlock,
     _Out_writes_bytes_(Length) PVOID FileInformation,
     _In_ ULONG Length,
     _In_ FILE_INFORMATION_CLASS FileInformationClass
     );
-EXTERN_C FN_ScQueryInformationByName* volatile ScQueryInformationByName;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryInformationCpuPartition(
+ScQueryInformationCpuPartition(
     _In_ HANDLE CpuPartitionHandle,
     _In_ ULONG CpuPartitionInformationClass,
     _Out_writes_bytes_opt_(CpuPartitionInformationLength) PVOID CpuPartitionInformation,
     _In_ ULONG CpuPartitionInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScQueryInformationCpuPartition* volatile ScQueryInformationCpuPartition;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryInformationEnlistment(
+ScQueryInformationEnlistment(
     _In_ HANDLE EnlistmentHandle,
     _In_ ENLISTMENT_INFORMATION_CLASS EnlistmentInformationClass,
     _Out_writes_bytes_(EnlistmentInformationLength) PVOID EnlistmentInformation,
     _In_ ULONG EnlistmentInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScQueryInformationEnlistment* volatile ScQueryInformationEnlistment;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryInformationFile(
+ScQueryInformationFile(
     _In_ HANDLE FileHandle,
     _Out_ PIO_STATUS_BLOCK IoStatusBlock,
     _Out_writes_bytes_(Length) PVOID FileInformation,
     _In_ ULONG Length,
     _In_ FILE_INFORMATION_CLASS FileInformationClass
     );
-EXTERN_C FN_ScQueryInformationFile* volatile ScQueryInformationFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryInformationJobObject(
+ScQueryInformationJobObject(
     _In_opt_ HANDLE JobHandle,
     _In_ JOBOBJECTINFOCLASS JobObjectInformationClass,
     _Out_writes_bytes_(JobObjectInformationLength) PVOID JobObjectInformation,
     _In_ ULONG JobObjectInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScQueryInformationJobObject* volatile ScQueryInformationJobObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryInformationPort(
+ScQueryInformationPort(
     _In_ HANDLE PortHandle,
     _In_ PORT_INFORMATION_CLASS PortInformationClass,
     _Out_writes_bytes_to_(Length, *ReturnLength) PVOID PortInformation,
     _In_ ULONG Length,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScQueryInformationPort* volatile ScQueryInformationPort;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryInformationProcess(
+ScQueryInformationProcess(
     _In_ HANDLE ProcessHandle,
     _In_ PROCESSINFOCLASS ProcessInformationClass,
     _Out_writes_bytes_(ProcessInformationLength) PVOID ProcessInformation,
     _In_ ULONG ProcessInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScQueryInformationProcess* volatile ScQueryInformationProcess;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryInformationResourceManager(
+ScQueryInformationResourceManager(
     _In_ HANDLE ResourceManagerHandle,
     _In_ RESOURCEMANAGER_INFORMATION_CLASS ResourceManagerInformationClass,
     _Out_writes_bytes_(ResourceManagerInformationLength) PVOID ResourceManagerInformation,
     _In_ ULONG ResourceManagerInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScQueryInformationResourceManager* volatile ScQueryInformationResourceManager;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryInformationThread(
+ScQueryInformationThread(
     _In_ HANDLE ThreadHandle,
     _In_ THREADINFOCLASS ThreadInformationClass,
     _Out_writes_bytes_(ThreadInformationLength) PVOID ThreadInformation,
     _In_ ULONG ThreadInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScQueryInformationThread* volatile ScQueryInformationThread;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryInformationToken(
+ScQueryInformationToken(
     _In_ HANDLE TokenHandle,
     _In_ TOKEN_INFORMATION_CLASS TokenInformationClass,
     _Out_writes_bytes_to_opt_(TokenInformationLength, *ReturnLength) PVOID TokenInformation,
     _In_ ULONG TokenInformationLength,
     _Out_ PULONG ReturnLength
     );
-EXTERN_C FN_ScQueryInformationToken* volatile ScQueryInformationToken;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryInformationTransaction(
+ScQueryInformationTransaction(
     _In_ HANDLE TransactionHandle,
     _In_ TRANSACTION_INFORMATION_CLASS TransactionInformationClass,
     _Out_writes_bytes_(TransactionInformationLength) PVOID TransactionInformation,
     _In_ ULONG TransactionInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScQueryInformationTransaction* volatile ScQueryInformationTransaction;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryInformationTransactionManager(
+ScQueryInformationTransactionManager(
     _In_ HANDLE TransactionManagerHandle,
     _In_ TRANSACTIONMANAGER_INFORMATION_CLASS TransactionManagerInformationClass,
     _Out_writes_bytes_(TransactionManagerInformationLength) PVOID TransactionManagerInformation,
     _In_ ULONG TransactionManagerInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScQueryInformationTransactionManager* volatile ScQueryInformationTransactionManager;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryInformationWorkerFactory(
+ScQueryInformationWorkerFactory(
     _In_ HANDLE WorkerFactoryHandle,
     _In_ WORKERFACTORYINFOCLASS WorkerFactoryInformationClass,
     _Out_writes_bytes_(WorkerFactoryInformationLength) PVOID WorkerFactoryInformation,
     _In_ ULONG WorkerFactoryInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScQueryInformationWorkerFactory* volatile ScQueryInformationWorkerFactory;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryInstallUILanguage(
+ScQueryInstallUILanguage(
     _Out_ LANGID *InstallUILanguageId
     );
-EXTERN_C FN_ScQueryInstallUILanguage* volatile ScQueryInstallUILanguage;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryIntervalProfile(
+ScQueryIntervalProfile(
     _In_ KPROFILE_SOURCE ProfileSource,
     _Out_ PULONG Interval
     );
-EXTERN_C FN_ScQueryIntervalProfile* volatile ScQueryIntervalProfile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryIoCompletion(
+ScQueryIoCompletion(
     _In_ HANDLE IoCompletionHandle,
     _In_ IO_COMPLETION_INFORMATION_CLASS IoCompletionInformationClass,
     _Out_writes_bytes_(IoCompletionInformationLength) PVOID IoCompletionInformation,
     _In_ ULONG IoCompletionInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScQueryIoCompletion* volatile ScQueryIoCompletion;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryIoRingCapabilities(
+ScQueryIoRingCapabilities(
     _In_ SIZE_T IoRingCapabilitiesLength,
     _Out_ PVOID IoRingCapabilities
     );
-EXTERN_C FN_ScQueryIoRingCapabilities* volatile ScQueryIoRingCapabilities;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryKey(
+ScQueryKey(
     _In_ HANDLE KeyHandle,
     _In_ KEY_INFORMATION_CLASS KeyInformationClass,
     _Out_writes_bytes_to_opt_(Length, *ResultLength) PVOID KeyInformation,
     _In_ ULONG Length,
     _Out_ PULONG ResultLength
     );
-EXTERN_C FN_ScQueryKey* volatile ScQueryKey;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryLicenseValue(
+ScQueryLicenseValue(
     _In_ PUNICODE_STRING ValueName,
     _Out_opt_ PULONG Type,
     _Out_writes_bytes_to_opt_(DataSize, *ResultDataSize) PVOID Data,
     _In_ ULONG DataSize,
     _Out_ PULONG ResultDataSize
     );
-EXTERN_C FN_ScQueryLicenseValue* volatile ScQueryLicenseValue;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryMultipleValueKey(
+ScQueryMultipleValueKey(
     _In_ HANDLE KeyHandle,
     _Inout_updates_(EntryCount) PKEY_VALUE_ENTRY ValueEntries,
     _In_ ULONG EntryCount,
@@ -3563,73 +3257,66 @@ FN_ScQueryMultipleValueKey(
     _Inout_ PULONG BufferLength,
     _Out_opt_ PULONG RequiredBufferLength
     );
-EXTERN_C FN_ScQueryMultipleValueKey* volatile ScQueryMultipleValueKey;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryMutant(
+ScQueryMutant(
     _In_ HANDLE MutantHandle,
     _In_ MUTANT_INFORMATION_CLASS MutantInformationClass,
     _Out_writes_bytes_(MutantInformationLength) PVOID MutantInformation,
     _In_ ULONG MutantInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScQueryMutant* volatile ScQueryMutant;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryObject(
+ScQueryObject(
     _In_opt_ HANDLE Handle,
     _In_ OBJECT_INFORMATION_CLASS ObjectInformationClass,
     _Out_writes_bytes_opt_(ObjectInformationLength) PVOID ObjectInformation,
     _In_ ULONG ObjectInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScQueryObject* volatile ScQueryObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryOpenSubKeys(
+ScQueryOpenSubKeys(
     _In_ POBJECT_ATTRIBUTES TargetKey,
     _Out_ PULONG HandleCount
     );
-EXTERN_C FN_ScQueryOpenSubKeys* volatile ScQueryOpenSubKeys;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryOpenSubKeysEx(
+ScQueryOpenSubKeysEx(
     _In_ POBJECT_ATTRIBUTES TargetKey,
     _In_ ULONG BufferLength,
     _Out_writes_bytes_opt_(BufferLength) PVOID Buffer,
     _Out_ PULONG RequiredSize
     );
-EXTERN_C FN_ScQueryOpenSubKeysEx* volatile ScQueryOpenSubKeysEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryPerformanceCounter(
+ScQueryPerformanceCounter(
     _Out_ PLARGE_INTEGER PerformanceCounter,
     _Out_opt_ PLARGE_INTEGER PerformanceFrequency
     );
-EXTERN_C FN_ScQueryPerformanceCounter* volatile ScQueryPerformanceCounter;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryPortInformationProcess(
+ScQueryPortInformationProcess(
     VOID
     );
-EXTERN_C FN_ScQueryPortInformationProcess* volatile ScQueryPortInformationProcess;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryQuotaInformationFile(
+ScQueryQuotaInformationFile(
     _In_ HANDLE FileHandle,
     _Out_ PIO_STATUS_BLOCK IoStatusBlock,
     _Out_writes_bytes_(Length) PVOID Buffer,
@@ -3640,24 +3327,22 @@ FN_ScQueryQuotaInformationFile(
     _In_opt_ PSID StartSid,
     _In_ BOOLEAN RestartScan
     );
-EXTERN_C FN_ScQueryQuotaInformationFile* volatile ScQueryQuotaInformationFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQuerySection(
+ScQuerySection(
     _In_ HANDLE SectionHandle,
     _In_ SECTION_INFORMATION_CLASS SectionInformationClass,
     _Out_writes_bytes_(SectionInformationLength) PVOID SectionInformation,
     _In_ SIZE_T SectionInformationLength,
     _Out_opt_ PSIZE_T ReturnLength
     );
-EXTERN_C FN_ScQuerySection* volatile ScQuerySection;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQuerySecurityAttributesToken(
+ScQuerySecurityAttributesToken(
     _In_ HANDLE TokenHandle,
     _In_reads_opt_(NumberOfAttributes) PUNICODE_STRING Attributes,
     _In_ ULONG NumberOfAttributes,
@@ -3665,24 +3350,22 @@ FN_ScQuerySecurityAttributesToken(
     _In_ ULONG Length,
     _Out_ PULONG ReturnLength
     );
-EXTERN_C FN_ScQuerySecurityAttributesToken* volatile ScQuerySecurityAttributesToken;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQuerySecurityObject(
+ScQuerySecurityObject(
     _In_ HANDLE Handle,
     _In_ SECURITY_INFORMATION SecurityInformation,
     _Out_writes_bytes_to_opt_(Length, *LengthNeeded) PSECURITY_DESCRIPTOR SecurityDescriptor,
     _In_ ULONG Length,
     _Out_ PULONG LengthNeeded
     );
-EXTERN_C FN_ScQuerySecurityObject* volatile ScQuerySecurityObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQuerySecurityPolicy(
+ScQuerySecurityPolicy(
     _In_ PCUNICODE_STRING Policy, 
     _In_ PCUNICODE_STRING KeyName,
     _In_ PCUNICODE_STRING ValueName,
@@ -3690,68 +3373,62 @@ FN_ScQuerySecurityPolicy(
     _Out_writes_bytes_opt_(*ValueSize) PVOID Value,
     _Inout_ PULONG ValueSize
     );
-EXTERN_C FN_ScQuerySecurityPolicy* volatile ScQuerySecurityPolicy;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQuerySemaphore(
+ScQuerySemaphore(
     _In_ HANDLE SemaphoreHandle,
     _In_ SEMAPHORE_INFORMATION_CLASS SemaphoreInformationClass,
     _Out_writes_bytes_(SemaphoreInformationLength) PVOID SemaphoreInformation,
     _In_ ULONG SemaphoreInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScQuerySemaphore* volatile ScQuerySemaphore;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQuerySymbolicLinkObject(
+ScQuerySymbolicLinkObject(
     _In_ HANDLE LinkHandle,
     _Inout_ PUNICODE_STRING LinkTarget,
     _Out_opt_ PULONG ReturnedLength
     );
-EXTERN_C FN_ScQuerySymbolicLinkObject* volatile ScQuerySymbolicLinkObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQuerySystemEnvironmentValue(
+ScQuerySystemEnvironmentValue(
     _In_ PUNICODE_STRING VariableName,
     _Out_writes_bytes_(ValueLength) PWSTR VariableValue,
     _In_ USHORT ValueLength,
     _Out_opt_ PUSHORT ReturnLength
     );
-EXTERN_C FN_ScQuerySystemEnvironmentValue* volatile ScQuerySystemEnvironmentValue;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQuerySystemEnvironmentValueEx(
+ScQuerySystemEnvironmentValueEx(
     _In_ PUNICODE_STRING VariableName,
     _In_ PCGUID VendorGuid,
     _Out_writes_bytes_opt_(*BufferLength) PVOID Buffer,
     _Inout_ PULONG BufferLength,
     _Out_opt_ PULONG Attributes // EFI_VARIABLE_*
     );
-EXTERN_C FN_ScQuerySystemEnvironmentValueEx* volatile ScQuerySystemEnvironmentValueEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQuerySystemInformation(
+ScQuerySystemInformation(
     _In_ SYSTEM_INFORMATION_CLASS SystemInformationClass,
     _Out_writes_bytes_opt_(SystemInformationLength) PVOID SystemInformation,
     _In_ ULONG SystemInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScQuerySystemInformation* volatile ScQuerySystemInformation;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQuerySystemInformationEx(
+ScQuerySystemInformationEx(
     _In_ SYSTEM_INFORMATION_CLASS SystemInformationClass,
     _In_reads_bytes_(InputBufferLength) PVOID InputBuffer,
     _In_ ULONG InputBufferLength,
@@ -3759,42 +3436,38 @@ FN_ScQuerySystemInformationEx(
     _In_ ULONG SystemInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScQuerySystemInformationEx* volatile ScQuerySystemInformationEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQuerySystemTime(
+ScQuerySystemTime(
     _Out_ PLARGE_INTEGER SystemTime
     );
-EXTERN_C FN_ScQuerySystemTime* volatile ScQuerySystemTime;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryTimer(
+ScQueryTimer(
     _In_ HANDLE TimerHandle,
     _In_ TIMER_INFORMATION_CLASS TimerInformationClass,
     _Out_writes_bytes_(TimerInformationLength) PVOID TimerInformation,
     _In_ ULONG TimerInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScQueryTimer* volatile ScQueryTimer;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryTimerResolution(
+ScQueryTimerResolution(
     _Out_ PULONG MaximumTime,
     _Out_ PULONG MinimumTime,
     _Out_ PULONG CurrentTime
     );
-EXTERN_C FN_ScQueryTimerResolution* volatile ScQueryTimerResolution;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryValueKey(
+ScQueryValueKey(
     _In_ HANDLE KeyHandle,
     _In_ PUNICODE_STRING ValueName,
     _In_ KEY_VALUE_INFORMATION_CLASS KeyValueInformationClass,
@@ -3802,12 +3475,11 @@ FN_ScQueryValueKey(
     _In_ ULONG Length,
     _Out_ PULONG ResultLength
     );
-EXTERN_C FN_ScQueryValueKey* volatile ScQueryValueKey;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryVirtualMemory(
+ScQueryVirtualMemory(
     _In_ HANDLE ProcessHandle,
     _In_opt_ PVOID BaseAddress,
     _In_ MEMORY_INFORMATION_CLASS MemoryInformationClass,
@@ -3815,24 +3487,22 @@ FN_ScQueryVirtualMemory(
     _In_ SIZE_T MemoryInformationLength,
     _Out_opt_ PSIZE_T ReturnLength
     );
-EXTERN_C FN_ScQueryVirtualMemory* volatile ScQueryVirtualMemory;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryVolumeInformationFile(
+ScQueryVolumeInformationFile(
     _In_ HANDLE FileHandle,
     _Out_ PIO_STATUS_BLOCK IoStatusBlock,
     _Out_writes_bytes_(Length) PVOID FsInformation,
     _In_ ULONG Length,
     _In_ FSINFOCLASS FsInformationClass
     );
-EXTERN_C FN_ScQueryVolumeInformationFile* volatile ScQueryVolumeInformationFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryWnfStateData(
+ScQueryWnfStateData(
     _In_ PCWNF_STATE_NAME StateName,
     _In_opt_ PCWNF_TYPE_ID TypeId,
     _In_opt_ const VOID* ExplicitScope,
@@ -3840,36 +3510,33 @@ FN_ScQueryWnfStateData(
     _Out_writes_bytes_opt_(*BufferLength) PVOID Buffer,
     _Inout_ PULONG BufferLength
     );
-EXTERN_C FN_ScQueryWnfStateData* volatile ScQueryWnfStateData;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueryWnfStateNameInformation(
+ScQueryWnfStateNameInformation(
     _In_ PCWNF_STATE_NAME StateName,
     _In_ WNF_STATE_NAME_INFORMATION NameInfoClass,
     _In_opt_ const VOID* ExplicitScope,
     _Out_writes_bytes_(BufferLength) PVOID Buffer,
     _In_ ULONG BufferLength
     );
-EXTERN_C FN_ScQueryWnfStateNameInformation* volatile ScQueryWnfStateNameInformation;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueueApcThread(
+ScQueueApcThread(
     _In_ HANDLE ThreadHandle,
     _In_ PPS_APC_ROUTINE ApcRoutine,
     _In_opt_ PVOID ApcArgument1,
     _In_opt_ PVOID ApcArgument2,
     _In_opt_ PVOID ApcArgument3
     );
-EXTERN_C FN_ScQueueApcThread* volatile ScQueueApcThread;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueueApcThreadEx(
+ScQueueApcThreadEx(
     _In_ HANDLE ThreadHandle,
     _In_opt_ HANDLE ReserveHandle, // NtAllocateReserveObject // SPECIAL_USER_APC
     _In_ PPS_APC_ROUTINE ApcRoutine,
@@ -3877,12 +3544,11 @@ FN_ScQueueApcThreadEx(
     _In_opt_ PVOID ApcArgument2,
     _In_opt_ PVOID ApcArgument3
     );
-EXTERN_C FN_ScQueueApcThreadEx* volatile ScQueueApcThreadEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScQueueApcThreadEx2(
+ScQueueApcThreadEx2(
     _In_ HANDLE ThreadHandle,
     _In_opt_ HANDLE ReserveHandle, // NtAllocateReserveObject
     _In_ ULONG ApcFlags, // QUEUE_USER_APC_FLAGS
@@ -3891,22 +3557,20 @@ FN_ScQueueApcThreadEx2(
     _In_opt_ PVOID ApcArgument2,
     _In_opt_ PVOID ApcArgument3
     );
-EXTERN_C FN_ScQueueApcThreadEx2* volatile ScQueueApcThreadEx2;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScRaiseException(
+ScRaiseException(
     _In_ PEXCEPTION_RECORD ExceptionRecord,
     _In_ PCONTEXT ContextRecord,
     _In_ BOOLEAN FirstChance
     );
-EXTERN_C FN_ScRaiseException* volatile ScRaiseException;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScRaiseHardError(
+ScRaiseHardError(
     _In_ NTSTATUS ErrorStatus,
     _In_ ULONG NumberOfParameters,
     _In_ ULONG UnicodeStringParameterMask,
@@ -3914,12 +3578,11 @@ FN_ScRaiseHardError(
     _In_ ULONG ValidResponseOptions,
     _Out_ PULONG Response
     );
-EXTERN_C FN_ScRaiseHardError* volatile ScRaiseHardError;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScReadFile(
+ScReadFile(
     _In_ HANDLE FileHandle,
     _In_opt_ HANDLE Event,
     _In_opt_ PIO_APC_ROUTINE ApcRoutine,
@@ -3930,12 +3593,11 @@ FN_ScReadFile(
     _In_opt_ PLARGE_INTEGER ByteOffset,
     _In_opt_ PULONG Key
     );
-EXTERN_C FN_ScReadFile* volatile ScReadFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScReadFileScatter(
+ScReadFileScatter(
     _In_ HANDLE FileHandle,
     _In_opt_ HANDLE Event,
     _In_opt_ PIO_APC_ROUTINE ApcRoutine,
@@ -3946,21 +3608,19 @@ FN_ScReadFileScatter(
     _In_opt_ PLARGE_INTEGER ByteOffset,
     _In_opt_ PULONG Key
     );
-EXTERN_C FN_ScReadFileScatter* volatile ScReadFileScatter;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScReadOnlyEnlistment(
+ScReadOnlyEnlistment(
     _In_ HANDLE EnlistmentHandle,
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
-EXTERN_C FN_ScReadOnlyEnlistment* volatile ScReadOnlyEnlistment;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScReadRequestData(
+ScReadRequestData(
     _In_ HANDLE PortHandle,
     _In_ PPORT_MESSAGE Message,
     _In_ ULONG DataEntryIndex,
@@ -3968,24 +3628,22 @@ FN_ScReadRequestData(
     _In_ SIZE_T BufferSize,
     _Out_opt_ PSIZE_T NumberOfBytesRead
     );
-EXTERN_C FN_ScReadRequestData* volatile ScReadRequestData;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScReadVirtualMemory(
+ScReadVirtualMemory(
     _In_ HANDLE ProcessHandle,
     _In_ PVOID BaseAddress,
     _Out_writes_bytes_(NumberOfBytesToRead) PVOID Buffer,
     _In_ SIZE_T NumberOfBytesToRead,
     _Out_opt_ PSIZE_T NumberOfBytesRead
     );
-EXTERN_C FN_ScReadVirtualMemory* volatile ScReadVirtualMemory;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScReadVirtualMemoryEx(
+ScReadVirtualMemoryEx(
     _In_ HANDLE ProcessHandle,
     _In_ PVOID BaseAddress,
     _Out_writes_bytes_(NumberOfBytesToRead) PVOID Buffer,
@@ -3993,107 +3651,96 @@ FN_ScReadVirtualMemoryEx(
     _Out_opt_ PSIZE_T NumberOfBytesRead,
     _In_ ULONG Flags
     );
-EXTERN_C FN_ScReadVirtualMemoryEx* volatile ScReadVirtualMemoryEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScRecoverEnlistment(
+ScRecoverEnlistment(
     _In_ HANDLE EnlistmentHandle,
     _In_opt_ PVOID EnlistmentKey
     );
-EXTERN_C FN_ScRecoverEnlistment* volatile ScRecoverEnlistment;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScRecoverResourceManager(
+ScRecoverResourceManager(
     _In_ HANDLE ResourceManagerHandle
     );
-EXTERN_C FN_ScRecoverResourceManager* volatile ScRecoverResourceManager;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScRecoverTransactionManager(
+ScRecoverTransactionManager(
     _In_ HANDLE TransactionManagerHandle
     );
-EXTERN_C FN_ScRecoverTransactionManager* volatile ScRecoverTransactionManager;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScRegisterProtocolAddressInformation(
+ScRegisterProtocolAddressInformation(
     _In_ HANDLE ResourceManager,
     _In_ PCRM_PROTOCOL_ID ProtocolId,
     _In_ ULONG ProtocolInformationSize,
     _In_ PVOID ProtocolInformation,
     _In_opt_ ULONG CreateOptions
     );
-EXTERN_C FN_ScRegisterProtocolAddressInformation* volatile ScRegisterProtocolAddressInformation;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScRegisterThreadTerminatePort(
+ScRegisterThreadTerminatePort(
     _In_ HANDLE PortHandle
     );
-EXTERN_C FN_ScRegisterThreadTerminatePort* volatile ScRegisterThreadTerminatePort;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScReleaseKeyedEvent(
+ScReleaseKeyedEvent(
     _In_opt_ HANDLE KeyedEventHandle,
     _In_ PVOID KeyValue,
     _In_ BOOLEAN Alertable,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C FN_ScReleaseKeyedEvent* volatile ScReleaseKeyedEvent;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScReleaseMutant(
+ScReleaseMutant(
     _In_ HANDLE MutantHandle,
     _Out_opt_ PLONG PreviousCount
     );
-EXTERN_C FN_ScReleaseMutant* volatile ScReleaseMutant;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScReleaseSemaphore(
+ScReleaseSemaphore(
     _In_ HANDLE SemaphoreHandle,
     _In_ LONG ReleaseCount,
     _Out_opt_ PLONG PreviousCount
     );
-EXTERN_C FN_ScReleaseSemaphore* volatile ScReleaseSemaphore;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScReleaseWorkerFactoryWorker(
+ScReleaseWorkerFactoryWorker(
     _In_ HANDLE WorkerFactoryHandle
     );
-EXTERN_C FN_ScReleaseWorkerFactoryWorker* volatile ScReleaseWorkerFactoryWorker;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScRemoveIoCompletion(
+ScRemoveIoCompletion(
     _In_ HANDLE IoCompletionHandle,
     _Out_ PVOID *KeyContext,
     _Out_ PVOID *ApcContext,
     _Out_ PIO_STATUS_BLOCK IoStatusBlock,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C FN_ScRemoveIoCompletion* volatile ScRemoveIoCompletion;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScRemoveIoCompletionEx(
+ScRemoveIoCompletionEx(
     _In_ HANDLE IoCompletionHandle,
     _Out_writes_to_(Count, *NumEntriesRemoved) PFILE_IO_COMPLETION_INFORMATION IoCompletionInformation,
     _In_ ULONG Count,
@@ -4101,247 +3748,221 @@ FN_ScRemoveIoCompletionEx(
     _In_opt_ PLARGE_INTEGER Timeout,
     _In_ BOOLEAN Alertable
     );
-EXTERN_C FN_ScRemoveIoCompletionEx* volatile ScRemoveIoCompletionEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScRemoveProcessDebug(
+ScRemoveProcessDebug(
     _In_ HANDLE ProcessHandle,
     _In_ HANDLE DebugObjectHandle
     );
-EXTERN_C FN_ScRemoveProcessDebug* volatile ScRemoveProcessDebug;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScRenameKey(
+ScRenameKey(
     _In_ HANDLE KeyHandle,
     _In_ PUNICODE_STRING NewName
     );
-EXTERN_C FN_ScRenameKey* volatile ScRenameKey;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScRenameTransactionManager(
+ScRenameTransactionManager(
     _In_ PUNICODE_STRING LogFileName,
     _In_ LPGUID ExistingTransactionManagerGuid
     );
-EXTERN_C FN_ScRenameTransactionManager* volatile ScRenameTransactionManager;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScReplaceKey(
+ScReplaceKey(
     _In_ POBJECT_ATTRIBUTES NewFile,
     _In_ HANDLE TargetHandle,
     _In_ POBJECT_ATTRIBUTES OldFile
     );
-EXTERN_C FN_ScReplaceKey* volatile ScReplaceKey;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScReplacePartitionUnit(
+ScReplacePartitionUnit(
     _In_ PUNICODE_STRING TargetInstancePath,
     _In_ PUNICODE_STRING SpareInstancePath,
     _In_ ULONG Flags
     );
-EXTERN_C FN_ScReplacePartitionUnit* volatile ScReplacePartitionUnit;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScReplyPort(
+ScReplyPort(
     _In_ HANDLE PortHandle,
     _In_reads_bytes_(ReplyMessage->u1.s1.TotalLength) PPORT_MESSAGE ReplyMessage
     );
-EXTERN_C FN_ScReplyPort* volatile ScReplyPort;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScReplyWaitReceivePort(
+ScReplyWaitReceivePort(
     _In_ HANDLE PortHandle,
     _Out_opt_ PVOID *PortContext,
     _In_reads_bytes_opt_(ReplyMessage->u1.s1.TotalLength) PPORT_MESSAGE ReplyMessage,
     _Out_ PPORT_MESSAGE ReceiveMessage
     );
-EXTERN_C FN_ScReplyWaitReceivePort* volatile ScReplyWaitReceivePort;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScReplyWaitReceivePortEx(
+ScReplyWaitReceivePortEx(
     _In_ HANDLE PortHandle,
     _Out_opt_ PVOID *PortContext,
     _In_reads_bytes_opt_(ReplyMessage->u1.s1.TotalLength) PPORT_MESSAGE ReplyMessage,
     _Out_ PPORT_MESSAGE ReceiveMessage,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C FN_ScReplyWaitReceivePortEx* volatile ScReplyWaitReceivePortEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScReplyWaitReplyPort(
+ScReplyWaitReplyPort(
     _In_ HANDLE PortHandle,
     _Inout_ PPORT_MESSAGE ReplyMessage
     );
-EXTERN_C FN_ScReplyWaitReplyPort* volatile ScReplyWaitReplyPort;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScRequestPort(
+ScRequestPort(
     _In_ HANDLE PortHandle,
     _In_reads_bytes_(RequestMessage->u1.s1.TotalLength) PPORT_MESSAGE RequestMessage
     );
-EXTERN_C FN_ScRequestPort* volatile ScRequestPort;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScRequestWaitReplyPort(
+ScRequestWaitReplyPort(
     _In_ HANDLE PortHandle,
     _In_reads_bytes_(RequestMessage->u1.s1.TotalLength) PPORT_MESSAGE RequestMessage,
     _Out_ PPORT_MESSAGE ReplyMessage
     );
-EXTERN_C FN_ScRequestWaitReplyPort* volatile ScRequestWaitReplyPort;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScResetEvent(
+ScResetEvent(
     _In_ HANDLE EventHandle,
     _Out_opt_ PLONG PreviousState
     );
-EXTERN_C FN_ScResetEvent* volatile ScResetEvent;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScResetWriteWatch(
+ScResetWriteWatch(
     _In_ HANDLE ProcessHandle,
     _In_ PVOID BaseAddress,
     _In_ SIZE_T RegionSize
     );
-EXTERN_C FN_ScResetWriteWatch* volatile ScResetWriteWatch;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScRestoreKey(
+ScRestoreKey(
     _In_ HANDLE KeyHandle,
     _In_ HANDLE FileHandle,
     _In_ ULONG Flags
     );
-EXTERN_C FN_ScRestoreKey* volatile ScRestoreKey;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScResumeProcess(
+ScResumeProcess(
     _In_ HANDLE ProcessHandle
     );
-EXTERN_C FN_ScResumeProcess* volatile ScResumeProcess;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScResumeThread(
+ScResumeThread(
     _In_ HANDLE ThreadHandle,
     _Out_opt_ PULONG PreviousSuspendCount
     );
-EXTERN_C FN_ScResumeThread* volatile ScResumeThread;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScRevertContainerImpersonation(
+ScRevertContainerImpersonation(
     VOID
     );
-EXTERN_C FN_ScRevertContainerImpersonation* volatile ScRevertContainerImpersonation;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScRollbackComplete(
+ScRollbackComplete(
     _In_ HANDLE EnlistmentHandle,
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
-EXTERN_C FN_ScRollbackComplete* volatile ScRollbackComplete;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScRollbackEnlistment(
+ScRollbackEnlistment(
     _In_ HANDLE EnlistmentHandle,
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
-EXTERN_C FN_ScRollbackEnlistment* volatile ScRollbackEnlistment;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScRollbackRegistryTransaction(
+ScRollbackRegistryTransaction(
     _In_ HANDLE RegistryTransactionHandle,
     _Reserved_ ULONG Flags
     );
-EXTERN_C FN_ScRollbackRegistryTransaction* volatile ScRollbackRegistryTransaction;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScRollbackTransaction(
+ScRollbackTransaction(
     _In_ HANDLE TransactionHandle,
     _In_ BOOLEAN Wait
     );
-EXTERN_C FN_ScRollbackTransaction* volatile ScRollbackTransaction;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScRollforwardTransactionManager(
+ScRollforwardTransactionManager(
     _In_ HANDLE TransactionManagerHandle,
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
-EXTERN_C FN_ScRollforwardTransactionManager* volatile ScRollforwardTransactionManager;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSaveKey(
+ScSaveKey(
     _In_ HANDLE KeyHandle,
     _In_ HANDLE FileHandle
     );
-EXTERN_C FN_ScSaveKey* volatile ScSaveKey;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSaveKeyEx(
+ScSaveKeyEx(
     _In_ HANDLE KeyHandle,
     _In_ HANDLE FileHandle,
     _In_ ULONG Format
     );
-EXTERN_C FN_ScSaveKeyEx* volatile ScSaveKeyEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSaveMergedKeys(
+ScSaveMergedKeys(
     _In_ HANDLE HighPrecedenceKeyHandle,
     _In_ HANDLE LowPrecedenceKeyHandle,
     _In_ HANDLE FileHandle
     );
-EXTERN_C FN_ScSaveMergedKeys* volatile ScSaveMergedKeys;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSecureConnectPort(
+ScSecureConnectPort(
     _Out_ PHANDLE PortHandle,
     _In_ PUNICODE_STRING PortName,
     _In_ PSECURITY_QUALITY_OF_SERVICE SecurityQos,
@@ -4352,50 +3973,45 @@ FN_ScSecureConnectPort(
     _Inout_updates_bytes_to_opt_(*ConnectionInformationLength, *ConnectionInformationLength) PVOID ConnectionInformation,
     _Inout_opt_ PULONG ConnectionInformationLength
     );
-EXTERN_C FN_ScSecureConnectPort* volatile ScSecureConnectPort;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSerializeBoot(
+ScSerializeBoot(
     VOID
     );
-EXTERN_C FN_ScSerializeBoot* volatile ScSerializeBoot;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetBootEntryOrder(
+ScSetBootEntryOrder(
     _In_reads_(Count) PULONG Ids,
     _In_ ULONG Count
     );
-EXTERN_C FN_ScSetBootEntryOrder* volatile ScSetBootEntryOrder;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetBootOptions(
+ScSetBootOptions(
     _In_ PBOOT_OPTIONS BootOptions,
     _In_ ULONG FieldsToChange
     );
-EXTERN_C FN_ScSetBootOptions* volatile ScSetBootOptions;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetCachedSigningLevel(
+ScSetCachedSigningLevel(
     _In_ ULONG Flags,
     _In_ SE_SIGNING_LEVEL InputSigningLevel,
     _In_reads_(SourceFileCount) PHANDLE SourceFiles,
     _In_ ULONG SourceFileCount,
     _In_opt_ HANDLE TargetFile
     );
-EXTERN_C FN_ScSetCachedSigningLevel* volatile ScSetCachedSigningLevel;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetCachedSigningLevel2(
+ScSetCachedSigningLevel2(
     _In_ ULONG Flags,
     _In_ SE_SIGNING_LEVEL InputSigningLevel,
     _In_reads_(SourceFileCount) PHANDLE SourceFiles,
@@ -4403,274 +4019,247 @@ FN_ScSetCachedSigningLevel2(
     _In_opt_ HANDLE TargetFile,
     _In_opt_ SE_SET_FILE_CACHE_INFORMATION* CacheInformation
     );
-EXTERN_C FN_ScSetCachedSigningLevel2* volatile ScSetCachedSigningLevel2;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetContextThread(
+ScSetContextThread(
     _In_ HANDLE ThreadHandle,
     _In_ PCONTEXT ThreadContext
     );
-EXTERN_C FN_ScSetContextThread* volatile ScSetContextThread;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetDebugFilterState(
+ScSetDebugFilterState(
     _In_ ULONG ComponentId,
     _In_ ULONG Level,
     _In_ BOOLEAN State
     );
-EXTERN_C FN_ScSetDebugFilterState* volatile ScSetDebugFilterState;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetDefaultHardErrorPort(
+ScSetDefaultHardErrorPort(
     _In_ HANDLE DefaultHardErrorPort
     );
-EXTERN_C FN_ScSetDefaultHardErrorPort* volatile ScSetDefaultHardErrorPort;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetDefaultLocale(
+ScSetDefaultLocale(
     _In_ BOOLEAN UserProfile,
     _In_ LCID DefaultLocaleId
     );
-EXTERN_C FN_ScSetDefaultLocale* volatile ScSetDefaultLocale;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetDefaultUILanguage(
+ScSetDefaultUILanguage(
     _In_ LANGID DefaultUILanguageId
     );
-EXTERN_C FN_ScSetDefaultUILanguage* volatile ScSetDefaultUILanguage;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetDriverEntryOrder(
+ScSetDriverEntryOrder(
     _In_reads_(Count) PULONG Ids,
     _In_ ULONG Count
     );
-EXTERN_C FN_ScSetDriverEntryOrder* volatile ScSetDriverEntryOrder;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetEaFile(
+ScSetEaFile(
     _In_ HANDLE FileHandle,
     _Out_ PIO_STATUS_BLOCK IoStatusBlock,
     _In_reads_bytes_(Length) PVOID Buffer,
     _In_ ULONG Length
     );
-EXTERN_C FN_ScSetEaFile* volatile ScSetEaFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetEvent(
+ScSetEvent(
     _In_ HANDLE EventHandle,
     _Out_opt_ PLONG PreviousState
     );
-EXTERN_C FN_ScSetEvent* volatile ScSetEvent;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetEventEx(
+ScSetEventEx(
     _In_ HANDLE ThreadId,
     _In_opt_ PRTL_SRWLOCK Lock
     );
-EXTERN_C FN_ScSetEventEx* volatile ScSetEventEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetEventBoostPriority(
+ScSetEventBoostPriority(
     _In_ HANDLE EventHandle
     );
-EXTERN_C FN_ScSetEventBoostPriority* volatile ScSetEventBoostPriority;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetHighEventPair(
+ScSetHighEventPair(
     _In_ HANDLE EventPairHandle
     );
-EXTERN_C FN_ScSetHighEventPair* volatile ScSetHighEventPair;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetHighWaitLowEventPair(
+ScSetHighWaitLowEventPair(
     _In_ HANDLE EventPairHandle
     );
-EXTERN_C FN_ScSetHighWaitLowEventPair* volatile ScSetHighWaitLowEventPair;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetInformationDebugObject(
+ScSetInformationDebugObject(
     _In_ HANDLE DebugObjectHandle,
     _In_ DEBUGOBJECTINFOCLASS DebugObjectInformationClass,
     _In_reads_bytes_(DebugInformationLength) PVOID DebugInformation,
     _In_ ULONG DebugInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScSetInformationDebugObject* volatile ScSetInformationDebugObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetInformationEnlistment(
+ScSetInformationEnlistment(
     _In_opt_ HANDLE EnlistmentHandle,
     _In_ ENLISTMENT_INFORMATION_CLASS EnlistmentInformationClass,
     _In_reads_bytes_(EnlistmentInformationLength) PVOID EnlistmentInformation,
     _In_ ULONG EnlistmentInformationLength
     );
-EXTERN_C FN_ScSetInformationEnlistment* volatile ScSetInformationEnlistment;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetInformationFile(
+ScSetInformationFile(
     _In_ HANDLE FileHandle,
     _Out_ PIO_STATUS_BLOCK IoStatusBlock,
     _In_reads_bytes_(Length) PVOID FileInformation,
     _In_ ULONG Length,
     _In_ FILE_INFORMATION_CLASS FileInformationClass
     );
-EXTERN_C FN_ScSetInformationFile* volatile ScSetInformationFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetInformationIoRing(
+ScSetInformationIoRing(
     _In_ HANDLE IoRingHandle,
     _In_ ULONG IoRingInformationClass,
     _In_ ULONG IoRingInformationLength,
     _In_ PVOID IoRingInformation
     );
-EXTERN_C FN_ScSetInformationIoRing* volatile ScSetInformationIoRing;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetInformationJobObject(
+ScSetInformationJobObject(
     _In_ HANDLE JobHandle,
     _In_ JOBOBJECTINFOCLASS JobObjectInformationClass,
     _In_reads_bytes_(JobObjectInformationLength) PVOID JobObjectInformation,
     _In_ ULONG JobObjectInformationLength
     );
-EXTERN_C FN_ScSetInformationJobObject* volatile ScSetInformationJobObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetInformationKey(
+ScSetInformationKey(
     _In_ HANDLE KeyHandle,
     _In_ KEY_SET_INFORMATION_CLASS KeySetInformationClass,
     _In_reads_bytes_(KeySetInformationLength) PVOID KeySetInformation,
     _In_ ULONG KeySetInformationLength
     );
-EXTERN_C FN_ScSetInformationKey* volatile ScSetInformationKey;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetInformationObject(
+ScSetInformationObject(
     _In_ HANDLE Handle,
     _In_ OBJECT_INFORMATION_CLASS ObjectInformationClass,
     _In_reads_bytes_(ObjectInformationLength) PVOID ObjectInformation,
     _In_ ULONG ObjectInformationLength
     );
-EXTERN_C FN_ScSetInformationObject* volatile ScSetInformationObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetInformationProcess(
+ScSetInformationProcess(
     _In_ HANDLE ProcessHandle,
     _In_ PROCESSINFOCLASS ProcessInformationClass,
     _In_reads_bytes_(ProcessInformationLength) PVOID ProcessInformation,
     _In_ ULONG ProcessInformationLength
     );
-EXTERN_C FN_ScSetInformationProcess* volatile ScSetInformationProcess;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetInformationResourceManager(
+ScSetInformationResourceManager(
     _In_ HANDLE ResourceManagerHandle,
     _In_ RESOURCEMANAGER_INFORMATION_CLASS ResourceManagerInformationClass,
     _In_reads_bytes_(ResourceManagerInformationLength) PVOID ResourceManagerInformation,
     _In_ ULONG ResourceManagerInformationLength
     );
-EXTERN_C FN_ScSetInformationResourceManager* volatile ScSetInformationResourceManager;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetInformationSymbolicLink(
+ScSetInformationSymbolicLink(
     _In_ HANDLE LinkHandle,
     _In_ SYMBOLIC_LINK_INFO_CLASS SymbolicLinkInformationClass,
     _In_reads_bytes_(SymbolicLinkInformationLength) PVOID SymbolicLinkInformation,
     _In_ ULONG SymbolicLinkInformationLength
     );
-EXTERN_C FN_ScSetInformationSymbolicLink* volatile ScSetInformationSymbolicLink;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetInformationThread(
+ScSetInformationThread(
     _In_ HANDLE ThreadHandle,
     _In_ THREADINFOCLASS ThreadInformationClass,
     _In_reads_bytes_(ThreadInformationLength) PVOID ThreadInformation,
     _In_ ULONG ThreadInformationLength
     );
-EXTERN_C FN_ScSetInformationThread* volatile ScSetInformationThread;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetInformationToken(
+ScSetInformationToken(
     _In_ HANDLE TokenHandle,
     _In_ TOKEN_INFORMATION_CLASS TokenInformationClass,
     _In_reads_bytes_(TokenInformationLength) PVOID TokenInformation,
     _In_ ULONG TokenInformationLength
     );
-EXTERN_C FN_ScSetInformationToken* volatile ScSetInformationToken;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetInformationTransaction(
+ScSetInformationTransaction(
     _In_ HANDLE TransactionHandle,
     _In_ TRANSACTION_INFORMATION_CLASS TransactionInformationClass,
     _In_reads_bytes_(TransactionInformationLength) PVOID TransactionInformation,
     _In_ ULONG TransactionInformationLength
     );
-EXTERN_C FN_ScSetInformationTransaction* volatile ScSetInformationTransaction;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetInformationTransactionManager(
+ScSetInformationTransactionManager(
     _In_opt_ HANDLE TmHandle,
     _In_ TRANSACTIONMANAGER_INFORMATION_CLASS TransactionManagerInformationClass,
     _In_reads_bytes_(TransactionManagerInformationLength) PVOID TransactionManagerInformation,
     _In_ ULONG TransactionManagerInformationLength
     );
-EXTERN_C FN_ScSetInformationTransactionManager* volatile ScSetInformationTransactionManager;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetInformationVirtualMemory(
+ScSetInformationVirtualMemory(
     _In_ HANDLE ProcessHandle,
     _In_ VIRTUAL_MEMORY_INFORMATION_CLASS VmInformationClass,
     _In_ SIZE_T NumberOfEntries,
@@ -4678,44 +4267,40 @@ FN_ScSetInformationVirtualMemory(
     _In_reads_bytes_(VmInformationLength) PVOID VmInformation,
     _In_ ULONG VmInformationLength
     );
-EXTERN_C FN_ScSetInformationVirtualMemory* volatile ScSetInformationVirtualMemory;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetInformationWorkerFactory(
+ScSetInformationWorkerFactory(
     _In_ HANDLE WorkerFactoryHandle,
     _In_ WORKERFACTORYINFOCLASS WorkerFactoryInformationClass,
     _In_reads_bytes_(WorkerFactoryInformationLength) PVOID WorkerFactoryInformation,
     _In_ ULONG WorkerFactoryInformationLength
     );
-EXTERN_C FN_ScSetInformationWorkerFactory* volatile ScSetInformationWorkerFactory;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetIntervalProfile(
+ScSetIntervalProfile(
     _In_ ULONG Interval,
     _In_ KPROFILE_SOURCE Source
     );
-EXTERN_C FN_ScSetIntervalProfile* volatile ScSetIntervalProfile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetIoCompletion(
+ScSetIoCompletion(
     _In_ HANDLE IoCompletionHandle,
     _In_opt_ PVOID KeyContext,
     _In_opt_ PVOID ApcContext,
     _In_ NTSTATUS IoStatus,
     _In_ ULONG_PTR IoStatusInformation
     );
-EXTERN_C FN_ScSetIoCompletion* volatile ScSetIoCompletion;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetIoCompletionEx(
+ScSetIoCompletionEx(
     _In_ HANDLE IoCompletionHandle,
     _In_ HANDLE IoCompletionPacketHandle,
     _In_opt_ PVOID KeyContext,
@@ -4723,21 +4308,19 @@ FN_ScSetIoCompletionEx(
     _In_ NTSTATUS IoStatus,
     _In_ ULONG_PTR IoStatusInformation
     );
-EXTERN_C FN_ScSetIoCompletionEx* volatile ScSetIoCompletionEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetIRTimer(
+ScSetIRTimer(
     _In_ HANDLE TimerHandle,
     _In_opt_ PLARGE_INTEGER DueTime
     );
-EXTERN_C FN_ScSetIRTimer* volatile ScSetIRTimer;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetLdtEntries(
+ScSetLdtEntries(
     _In_ ULONG Selector0,
     _In_ ULONG Entry0Low,
     _In_ ULONG Entry0Hi,
@@ -4745,108 +4328,97 @@ FN_ScSetLdtEntries(
     _In_ ULONG Entry1Low,
     _In_ ULONG Entry1Hi
     );
-EXTERN_C FN_ScSetLdtEntries* volatile ScSetLdtEntries;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetLowEventPair(
+ScSetLowEventPair(
     _In_ HANDLE EventPairHandle
     );
-EXTERN_C FN_ScSetLowEventPair* volatile ScSetLowEventPair;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetLowWaitHighEventPair(
+ScSetLowWaitHighEventPair(
     _In_ HANDLE EventPairHandle
     );
-EXTERN_C FN_ScSetLowWaitHighEventPair* volatile ScSetLowWaitHighEventPair;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetQuotaInformationFile(
+ScSetQuotaInformationFile(
     _In_ HANDLE FileHandle,
     _Out_ PIO_STATUS_BLOCK IoStatusBlock,
     _In_reads_bytes_(Length) PVOID Buffer,
     _In_ ULONG Length
     );
-EXTERN_C FN_ScSetQuotaInformationFile* volatile ScSetQuotaInformationFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetSecurityObject(
+ScSetSecurityObject(
     _In_ HANDLE Handle,
     _In_ SECURITY_INFORMATION SecurityInformation,
     _In_ PSECURITY_DESCRIPTOR SecurityDescriptor
     );
-EXTERN_C FN_ScSetSecurityObject* volatile ScSetSecurityObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetSystemEnvironmentValue(
+ScSetSystemEnvironmentValue(
     _In_ PUNICODE_STRING VariableName,
     _In_ PUNICODE_STRING VariableValue
     );
-EXTERN_C FN_ScSetSystemEnvironmentValue* volatile ScSetSystemEnvironmentValue;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetSystemEnvironmentValueEx(
+ScSetSystemEnvironmentValueEx(
     _In_ PUNICODE_STRING VariableName,
     _In_ PCGUID VendorGuid,
     _In_reads_bytes_opt_(BufferLength) PVOID Buffer,
     _In_ ULONG BufferLength, // 0 = delete variable
     _In_ ULONG Attributes // EFI_VARIABLE_*
     );
-EXTERN_C FN_ScSetSystemEnvironmentValueEx* volatile ScSetSystemEnvironmentValueEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetSystemInformation(
+ScSetSystemInformation(
     _In_ SYSTEM_INFORMATION_CLASS SystemInformationClass,
     _In_reads_bytes_opt_(SystemInformationLength) PVOID SystemInformation,
     _In_ ULONG SystemInformationLength
     );
-EXTERN_C FN_ScSetSystemInformation* volatile ScSetSystemInformation;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetSystemPowerState(
+ScSetSystemPowerState(
     _In_ POWER_ACTION SystemAction,
     _In_ SYSTEM_POWER_STATE LightestSystemState,
     _In_ ULONG Flags // POWER_ACTION_* flags
     );
-EXTERN_C FN_ScSetSystemPowerState* volatile ScSetSystemPowerState;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetSystemTime(
+ScSetSystemTime(
     _In_opt_ PLARGE_INTEGER SystemTime,
     _Out_opt_ PLARGE_INTEGER PreviousTime
     );
-EXTERN_C FN_ScSetSystemTime* volatile ScSetSystemTime;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetThreadExecutionState(
+ScSetThreadExecutionState(
     _In_ EXECUTION_STATE NewFlags, // ES_* flags
     _Out_ EXECUTION_STATE *PreviousFlags
     );
-EXTERN_C FN_ScSetThreadExecutionState* volatile ScSetThreadExecutionState;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetTimer(
+ScSetTimer(
     _In_ HANDLE TimerHandle,
     _In_ PLARGE_INTEGER DueTime,
     _In_opt_ PTIMER_APC_ROUTINE TimerApcRoutine,
@@ -4855,52 +4427,47 @@ FN_ScSetTimer(
     _In_opt_ LONG Period,
     _Out_opt_ PBOOLEAN PreviousState
     );
-EXTERN_C FN_ScSetTimer* volatile ScSetTimer;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetTimer2(
+ScSetTimer2(
     _In_ HANDLE TimerHandle,
     _In_ PLARGE_INTEGER DueTime,
     _In_opt_ PLARGE_INTEGER Period,
     _In_ PT2_SET_PARAMETERS Parameters
     );
-EXTERN_C FN_ScSetTimer2* volatile ScSetTimer2;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetTimerEx(
+ScSetTimerEx(
     _In_ HANDLE TimerHandle,
     _In_ TIMER_SET_INFORMATION_CLASS TimerSetInformationClass,
     _Inout_updates_bytes_opt_(TimerSetInformationLength) PVOID TimerSetInformation,
     _In_ ULONG TimerSetInformationLength
     );
-EXTERN_C FN_ScSetTimerEx* volatile ScSetTimerEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetTimerResolution(
+ScSetTimerResolution(
     _In_ ULONG DesiredTime,
     _In_ BOOLEAN SetResolution,
     _Out_ PULONG ActualTime
     );
-EXTERN_C FN_ScSetTimerResolution* volatile ScSetTimerResolution;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetUuidSeed(
+ScSetUuidSeed(
     _In_ PCHAR Seed
     );
-EXTERN_C FN_ScSetUuidSeed* volatile ScSetUuidSeed;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetValueKey(
+ScSetValueKey(
     _In_ HANDLE KeyHandle,
     _In_ PUNICODE_STRING ValueName,
     _In_opt_ ULONG TitleIndex,
@@ -4908,124 +4475,111 @@ FN_ScSetValueKey(
     _In_reads_bytes_opt_(DataSize) PVOID Data,
     _In_ ULONG DataSize
     );
-EXTERN_C FN_ScSetValueKey* volatile ScSetValueKey;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetVolumeInformationFile(
+ScSetVolumeInformationFile(
     _In_ HANDLE FileHandle,
     _Out_ PIO_STATUS_BLOCK IoStatusBlock,
     _In_reads_bytes_(Length) PVOID FsInformation,
     _In_ ULONG Length,
     _In_ FSINFOCLASS FsInformationClass
     );
-EXTERN_C FN_ScSetVolumeInformationFile* volatile ScSetVolumeInformationFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSetWnfProcessNotificationEvent(
+ScSetWnfProcessNotificationEvent(
     _In_ HANDLE NotificationEvent
     );
-EXTERN_C FN_ScSetWnfProcessNotificationEvent* volatile ScSetWnfProcessNotificationEvent;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScShutdownSystem(
+ScShutdownSystem(
     _In_ SHUTDOWN_ACTION Action
     );
-EXTERN_C FN_ScShutdownSystem* volatile ScShutdownSystem;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScShutdownWorkerFactory(
+ScShutdownWorkerFactory(
     _In_ HANDLE WorkerFactoryHandle,
     _Inout_ volatile LONG *PendingWorkerCount
     );
-EXTERN_C FN_ScShutdownWorkerFactory* volatile ScShutdownWorkerFactory;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSignalAndWaitForSingleObject(
+ScSignalAndWaitForSingleObject(
     _In_ HANDLE SignalHandle,
     _In_ HANDLE WaitHandle,
     _In_ BOOLEAN Alertable,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C FN_ScSignalAndWaitForSingleObject* volatile ScSignalAndWaitForSingleObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSinglePhaseReject(
+ScSinglePhaseReject(
     _In_ HANDLE EnlistmentHandle,
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
-EXTERN_C FN_ScSinglePhaseReject* volatile ScSinglePhaseReject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScStartProfile(
+ScStartProfile(
     _In_ HANDLE ProfileHandle
     );
-EXTERN_C FN_ScStartProfile* volatile ScStartProfile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScStopProfile(
+ScStopProfile(
     _In_ HANDLE ProfileHandle
     );
-EXTERN_C FN_ScStopProfile* volatile ScStopProfile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSubmitIoRing(
+ScSubmitIoRing(
     _In_ HANDLE IoRingHandle,
     _In_ ULONG Flags,
     _In_opt_ ULONG WaitOperations,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C FN_ScSubmitIoRing* volatile ScSubmitIoRing;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSubscribeWnfStateChange(
+ScSubscribeWnfStateChange(
     _In_ PCWNF_STATE_NAME StateName,
     _In_opt_ WNF_CHANGE_STAMP ChangeStamp,
     _In_ ULONG EventMask,
     _Out_opt_ PULONG64 SubscriptionId
     );
-EXTERN_C FN_ScSubscribeWnfStateChange* volatile ScSubscribeWnfStateChange;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSuspendProcess(
+ScSuspendProcess(
     _In_ HANDLE ProcessHandle
     );
-EXTERN_C FN_ScSuspendProcess* volatile ScSuspendProcess;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSuspendThread(
+ScSuspendThread(
     _In_ HANDLE ThreadHandle,
     _Out_opt_ PULONG PreviousSuspendCount
     );
-EXTERN_C FN_ScSuspendThread* volatile ScSuspendThread;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScSystemDebugControl(
+ScSystemDebugControl(
     _In_ SYSDBG_COMMAND Command,
     _Inout_updates_bytes_opt_(InputBufferLength) PVOID InputBuffer,
     _In_ ULONG InputBufferLength,
@@ -5033,72 +4587,64 @@ FN_ScSystemDebugControl(
     _In_ ULONG OutputBufferLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScSystemDebugControl* volatile ScSystemDebugControl;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScTerminateEnclave(
+ScTerminateEnclave(
     _In_ PVOID BaseAddress,
     _In_ ULONG Flags // TERMINATE_ENCLAVE_FLAG_*
     );
-EXTERN_C FN_ScTerminateEnclave* volatile ScTerminateEnclave;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScTerminateJobObject(
+ScTerminateJobObject(
     _In_ HANDLE JobHandle,
     _In_ NTSTATUS ExitStatus
     );
-EXTERN_C FN_ScTerminateJobObject* volatile ScTerminateJobObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScTerminateProcess(
+ScTerminateProcess(
     _In_opt_ HANDLE ProcessHandle,
     _In_ NTSTATUS ExitStatus
     );
-EXTERN_C FN_ScTerminateProcess* volatile ScTerminateProcess;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScTerminateThread(
+ScTerminateThread(
     _In_opt_ HANDLE ThreadHandle,
     _In_ NTSTATUS ExitStatus
     );
-EXTERN_C FN_ScTerminateThread* volatile ScTerminateThread;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScTestAlert(
+ScTestAlert(
     VOID
     );
-EXTERN_C FN_ScTestAlert* volatile ScTestAlert;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScThawRegistry(
+ScThawRegistry(
     VOID
     );
-EXTERN_C FN_ScThawRegistry* volatile ScThawRegistry;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScThawTransactions(
+ScThawTransactions(
     VOID
     );
-EXTERN_C FN_ScThawTransactions* volatile ScThawTransactions;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScTraceControl(
+ScTraceControl(
     _In_ ETWTRACECONTROLCODE TraceControlCode,
     _In_reads_bytes_opt_(InputBufferLength) PVOID InputBuffer,
     _In_ ULONG InputBufferLength,
@@ -5106,126 +4652,113 @@ FN_ScTraceControl(
     _In_ ULONG OutputBufferLength,
     _Out_ PULONG ReturnLength
     );
-EXTERN_C FN_ScTraceControl* volatile ScTraceControl;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScTraceEvent(
+ScTraceEvent(
     _In_ HANDLE TraceHandle,
     _In_ ULONG Flags,
     _In_ ULONG FieldSize,
     _In_ PVOID Fields
     );
-EXTERN_C FN_ScTraceEvent* volatile ScTraceEvent;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScTranslateFilePath(
+ScTranslateFilePath(
     _In_ PFILE_PATH InputFilePath,
     _In_ ULONG OutputType,
     _Out_writes_bytes_opt_(*OutputFilePathLength) PFILE_PATH OutputFilePath,
     _Inout_opt_ PULONG OutputFilePathLength
     );
-EXTERN_C FN_ScTranslateFilePath* volatile ScTranslateFilePath;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUmsThreadYield(
+ScUmsThreadYield(
     _In_ PVOID SchedulerParam
     );
-EXTERN_C FN_ScUmsThreadYield* volatile ScUmsThreadYield;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUnloadDriver(
+ScUnloadDriver(
     _In_ PUNICODE_STRING DriverServiceName
     );
-EXTERN_C FN_ScUnloadDriver* volatile ScUnloadDriver;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUnloadKey(
+ScUnloadKey(
     _In_ POBJECT_ATTRIBUTES TargetKey
     );
-EXTERN_C FN_ScUnloadKey* volatile ScUnloadKey;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUnloadKey2(
+ScUnloadKey2(
     _In_ POBJECT_ATTRIBUTES TargetKey,
     _In_ ULONG Flags
     );
-EXTERN_C FN_ScUnloadKey2* volatile ScUnloadKey2;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUnloadKeyEx(
+ScUnloadKeyEx(
     _In_ POBJECT_ATTRIBUTES TargetKey,
     _In_opt_ HANDLE Event
     );
-EXTERN_C FN_ScUnloadKeyEx* volatile ScUnloadKeyEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUnlockFile(
+ScUnlockFile(
     _In_ HANDLE FileHandle,
     _Out_ PIO_STATUS_BLOCK IoStatusBlock,
     _In_ PLARGE_INTEGER ByteOffset,
     _In_ PLARGE_INTEGER Length,
     _In_ ULONG Key
     );
-EXTERN_C FN_ScUnlockFile* volatile ScUnlockFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUnlockVirtualMemory(
+ScUnlockVirtualMemory(
     _In_ HANDLE ProcessHandle,
     _Inout_ PVOID *BaseAddress,
     _Inout_ PSIZE_T RegionSize,
     _In_ ULONG MapType
     );
-EXTERN_C FN_ScUnlockVirtualMemory* volatile ScUnlockVirtualMemory;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUnmapViewOfSection(
+ScUnmapViewOfSection(
     _In_ HANDLE ProcessHandle,
     _In_opt_ PVOID BaseAddress
     );
-EXTERN_C FN_ScUnmapViewOfSection* volatile ScUnmapViewOfSection;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUnmapViewOfSectionEx(
+ScUnmapViewOfSectionEx(
     _In_ HANDLE ProcessHandle,
     _In_opt_ PVOID BaseAddress,
     _In_ ULONG Flags
     );
-EXTERN_C FN_ScUnmapViewOfSectionEx* volatile ScUnmapViewOfSectionEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUnsubscribeWnfStateChange(
+ScUnsubscribeWnfStateChange(
     _In_ PCWNF_STATE_NAME StateName
     );
-EXTERN_C FN_ScUnsubscribeWnfStateChange* volatile ScUnsubscribeWnfStateChange;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUpdateWnfStateData(
+ScUpdateWnfStateData(
     _In_ PCWNF_STATE_NAME StateName,
     _In_reads_bytes_opt_(Length) const VOID* Buffer,
     _In_opt_ ULONG Length,
@@ -5234,122 +4767,110 @@ FN_ScUpdateWnfStateData(
     _In_ WNF_CHANGE_STAMP MatchingChangeStamp,
     _In_ LOGICAL CheckStamp
     );
-EXTERN_C FN_ScUpdateWnfStateData* volatile ScUpdateWnfStateData;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScVdmControl(
+ScVdmControl(
     _In_ VDMSERVICECLASS Service,
     _Inout_ PVOID ServiceData
     );
-EXTERN_C FN_ScVdmControl* volatile ScVdmControl;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScWaitForAlertByThreadId(
+ScWaitForAlertByThreadId(
     _In_opt_ PVOID Address,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C FN_ScWaitForAlertByThreadId* volatile ScWaitForAlertByThreadId;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScWaitForDebugEvent(
+ScWaitForDebugEvent(
     _In_ HANDLE DebugObjectHandle,
     _In_ BOOLEAN Alertable,
     _In_opt_ PLARGE_INTEGER Timeout,
     _Out_ PDBGUI_WAIT_STATE_CHANGE WaitStateChange
     );
-EXTERN_C FN_ScWaitForDebugEvent* volatile ScWaitForDebugEvent;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScWaitForKeyedEvent(
+ScWaitForKeyedEvent(
     _In_opt_ HANDLE KeyedEventHandle,
     _In_ PVOID KeyValue,
     _In_ BOOLEAN Alertable,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C FN_ScWaitForKeyedEvent* volatile ScWaitForKeyedEvent;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScWaitForMultipleObjects(
+ScWaitForMultipleObjects(
     _In_ ULONG Count,
     _In_reads_(Count) HANDLE Handles[],
     _In_ WAIT_TYPE WaitType,
     _In_ BOOLEAN Alertable,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C FN_ScWaitForMultipleObjects* volatile ScWaitForMultipleObjects;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScWaitForMultipleObjects32(
+ScWaitForMultipleObjects32(
     _In_ ULONG Count,
     _In_reads_(Count) LONG Handles[],
     _In_ WAIT_TYPE WaitType,
     _In_ BOOLEAN Alertable,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C FN_ScWaitForMultipleObjects32* volatile ScWaitForMultipleObjects32;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScWaitForSingleObject(
+ScWaitForSingleObject(
     _In_ HANDLE Handle,
     _In_ BOOLEAN Alertable,
     _In_opt_ PLARGE_INTEGER Timeout
     );
-EXTERN_C FN_ScWaitForSingleObject* volatile ScWaitForSingleObject;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScWaitForWorkViaWorkerFactory(
+ScWaitForWorkViaWorkerFactory(
     _In_ HANDLE WorkerFactoryHandle,
     _Out_writes_to_(Count, *PacketsReturned) PFILE_IO_COMPLETION_INFORMATION MiniPackets,
     _In_ ULONG Count,
     _Out_ PULONG PacketsReturned,
     _In_ PWORKER_FACTORY_DEFERRED_WORK DeferredWork
     );
-EXTERN_C FN_ScWaitForWorkViaWorkerFactory* volatile ScWaitForWorkViaWorkerFactory;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScWaitHighEventPair(
+ScWaitHighEventPair(
     _In_ HANDLE EventPairHandle
     );
-EXTERN_C FN_ScWaitHighEventPair* volatile ScWaitHighEventPair;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScWaitLowEventPair(
+ScWaitLowEventPair(
     _In_ HANDLE EventPairHandle
     );
-EXTERN_C FN_ScWaitLowEventPair* volatile ScWaitLowEventPair;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScWorkerFactoryWorkerReady(
+ScWorkerFactoryWorkerReady(
     _In_ HANDLE WorkerFactoryHandle
     );
-EXTERN_C FN_ScWorkerFactoryWorkerReady* volatile ScWorkerFactoryWorkerReady;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScWow64AllocateVirtualMemory64(
+ScWow64AllocateVirtualMemory64(
     _In_ HANDLE ProcessHandle,
     _Inout_ _At_(*BaseAddress,
                  _Readable_bytes_(*RegionSize)
@@ -5360,67 +4881,61 @@ FN_ScWow64AllocateVirtualMemory64(
     _In_ ULONG AllocationType,
     _In_ ULONG Protect
     );
-EXTERN_C FN_ScWow64AllocateVirtualMemory64* volatile ScWow64AllocateVirtualMemory64;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScWow64GetNativeSystemInformation(
+ScWow64GetNativeSystemInformation(
     _In_ SYSTEM_INFORMATION_CLASS SystemInformationClass,
     _In_ PVOID NativeSystemInformation,
     _In_ ULONG InformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScWow64GetNativeSystemInformation* volatile ScWow64GetNativeSystemInformation;
 
-typedef
+EXTERN_C
 BOOLEAN
 NTAPI
-FN_ScWow64IsProcessorFeaturePresent(
+ScWow64IsProcessorFeaturePresent(
     _In_ ULONG ProcessorFeature
     );
-EXTERN_C FN_ScWow64IsProcessorFeaturePresent* volatile ScWow64IsProcessorFeaturePresent;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScWow64QueryInformationProcess64(
+ScWow64QueryInformationProcess64(
     _In_ HANDLE ProcessHandle,
     _In_ PROCESSINFOCLASS ProcessInformationClass,
     _Out_writes_bytes_to_(ProcessInformationLength, *ReturnLength) PVOID ProcessInformation,
     _In_ ULONG ProcessInformationLength,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScWow64QueryInformationProcess64* volatile ScWow64QueryInformationProcess64;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScWow64ReadVirtualMemory64(
+ScWow64ReadVirtualMemory64(
     _In_ HANDLE ProcessHandle,
     _In_ ULONGLONG BaseAddress,
     _Out_writes_bytes_to_(NumberOfBytesToRead, *NumberOfBytesRead) PVOID Buffer,
     _In_ ULONGLONG NumberOfBytesToRead,
     _Out_opt_ PULONGLONG NumberOfBytesRead
     );
-EXTERN_C FN_ScWow64ReadVirtualMemory64* volatile ScWow64ReadVirtualMemory64;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScWow64WriteVirtualMemory64(
+ScWow64WriteVirtualMemory64(
     _In_ HANDLE ProcessHandle,
     _In_ ULONGLONG BaseAddress,
     _In_reads_bytes_(NumberOfBytesToWrite) PVOID Buffer,
     _In_ ULONGLONG NumberOfBytesToWrite,
     _Out_opt_ PULONGLONG NumberOfBytesWritten
     );
-EXTERN_C FN_ScWow64WriteVirtualMemory64* volatile ScWow64WriteVirtualMemory64;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScWriteFile(
+ScWriteFile(
     _In_ HANDLE FileHandle,
     _In_opt_ HANDLE Event,
     _In_opt_ PIO_APC_ROUTINE ApcRoutine,
@@ -5431,12 +4946,11 @@ FN_ScWriteFile(
     _In_opt_ PLARGE_INTEGER ByteOffset,
     _In_opt_ PULONG Key
     );
-EXTERN_C FN_ScWriteFile* volatile ScWriteFile;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScWriteFileGather(
+ScWriteFileGather(
     _In_ HANDLE FileHandle,
     _In_opt_ HANDLE Event,
     _In_opt_ PIO_APC_ROUTINE ApcRoutine,
@@ -5447,12 +4961,11 @@ FN_ScWriteFileGather(
     _In_opt_ PLARGE_INTEGER ByteOffset,
     _In_opt_ PULONG Key
     );
-EXTERN_C FN_ScWriteFileGather* volatile ScWriteFileGather;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScWriteRequestData(
+ScWriteRequestData(
     _In_ HANDLE PortHandle,
     _In_ PPORT_MESSAGE Message,
     _In_ ULONG DataEntryIndex,
@@ -5460,71 +4973,64 @@ FN_ScWriteRequestData(
     _In_ SIZE_T BufferSize,
     _Out_opt_ PSIZE_T NumberOfBytesWritten
     );
-EXTERN_C FN_ScWriteRequestData* volatile ScWriteRequestData;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScWriteVirtualMemory(
+ScWriteVirtualMemory(
     _In_ HANDLE ProcessHandle,
     _In_ PVOID BaseAddress,
     _In_reads_bytes_(NumberOfBytesToWrite) PVOID Buffer,
     _In_ SIZE_T NumberOfBytesToWrite,
     _Out_opt_ PSIZE_T NumberOfBytesWritten
     );
-EXTERN_C FN_ScWriteVirtualMemory* volatile ScWriteVirtualMemory;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScYieldExecution(
+ScYieldExecution(
     VOID
     );
-EXTERN_C FN_ScYieldExecution* volatile ScYieldExecution;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUserAttachThreadInput(
+ScUserAttachThreadInput(
     _In_ ULONG IdAttach,
     _In_ ULONG IdAttachTo,
     _In_ BOOL Attach
     );
-EXTERN_C FN_ScUserAttachThreadInput* volatile ScUserAttachThreadInput;
 
-typedef
+EXTERN_C
 HDC
 NTAPI
-FN_ScUserBeginPaint(
+ScUserBeginPaint(
     _In_ HWND WindowHandle,
     _Inout_ LPPAINTSTRUCT lpPaint
     );
-EXTERN_C FN_ScUserBeginPaint* volatile ScUserBeginPaint;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserBlockInput(
+ScUserBlockInput(
     _In_ BOOL BlockInput
     );
-EXTERN_C FN_ScUserBlockInput* volatile ScUserBlockInput;
 
-typedef
+EXTERN_C
 HWND
 NTAPI
-FN_ScUserFindWindowEx(
+ScUserFindWindowEx(
     _In_opt_ HWND hwndParent,
     _In_opt_ HWND hwndChild,
     _In_ PCUNICODE_STRING ClassName,
     _In_ PCUNICODE_STRING WindowName,
     _In_ ULONG Type // FW_*
     );
-EXTERN_C FN_ScUserFindWindowEx* volatile ScUserFindWindowEx;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUserBuildHwndList(
+ScUserBuildHwndList(
     _In_opt_ HANDLE DesktopHandle,
     _In_opt_ HWND StartWindowHandle,
     _In_opt_ LOGICAL IncludeChildren,
@@ -5534,99 +5040,89 @@ FN_ScUserBuildHwndList(
     _Out_writes_bytes_(HwndListInformationLength) PVOID HwndListInformation,
     _Out_ PULONG ReturnLength
     );
-EXTERN_C FN_ScUserBuildHwndList* volatile ScUserBuildHwndList;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUserBuildNameList(
+ScUserBuildNameList(
     _In_ HWINSTA WindowStationHandle, // GetProcessWindowStation
     _In_ ULONG NameListInformationLength,
     _Out_writes_bytes_(NameListInformationLength) PVOID NameListInformation,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScUserBuildNameList* volatile ScUserBuildNameList;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUserBuildPropList(
+ScUserBuildPropList(
     _In_ HWINSTA WindowStationHandle,
     _In_ ULONG PropListInformationLength,
     _Out_writes_bytes_(PropListInformationLength) PVOID PropListInformation,
     _Out_opt_ PULONG ReturnLength
     );
-EXTERN_C FN_ScUserBuildPropList* volatile ScUserBuildPropList;
 
-typedef
+EXTERN_C
 LOGICAL
 NTAPI
-FN_ScUserCanCurrentThreadChangeForeground(
+ScUserCanCurrentThreadChangeForeground(
     VOID
     );
-EXTERN_C FN_ScUserCanCurrentThreadChangeForeground* volatile ScUserCanCurrentThreadChangeForeground;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserCalculatePopupWindowPosition(
+ScUserCalculatePopupWindowPosition(
     _In_ const POINT* anchorPoint,
     _In_ const SIZE* windowSize,
     _In_ ULONG flags,
     _Inout_ RECT* excludeRect,
     _Inout_ RECT* popupWindowPosition
     );
-EXTERN_C FN_ScUserCalculatePopupWindowPosition* volatile ScUserCalculatePopupWindowPosition;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUserCheckAccessForIntegrityLevel(
+ScUserCheckAccessForIntegrityLevel(
     _In_ ULONG ProcessIdFirst,
     _In_ ULONG ProcessIdSecond,
     _Out_ PBOOLEAN GrantedAccess
     );
-EXTERN_C FN_ScUserCheckAccessForIntegrityLevel* volatile ScUserCheckAccessForIntegrityLevel;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUserCheckProcessForClipboardAccess(
+ScUserCheckProcessForClipboardAccess(
     _In_ ULONG ProcessId,
     _Out_ PULONG GrantedAccess
     );
-EXTERN_C FN_ScUserCheckProcessForClipboardAccess* volatile ScUserCheckProcessForClipboardAccess;
 
-typedef
+EXTERN_C
 LOGICAL
 NTAPI
-FN_ScUserCloseWindowStation(
+ScUserCloseWindowStation(
     _In_ HWINSTA WindowStationHandle
     );
-EXTERN_C FN_ScUserCloseWindowStation* volatile ScUserCloseWindowStation;
 
-typedef
+EXTERN_C
 LOGICAL
 NTAPI
-FN_ScUserDisableProcessWindowsGhosting(
+ScUserDisableProcessWindowsGhosting(
     VOID
     );
-EXTERN_C FN_ScUserDisableProcessWindowsGhosting* volatile ScUserDisableProcessWindowsGhosting;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUserConsoleControl(
+ScUserConsoleControl(
     _In_ CONSOLECONTROL Command,
     _In_reads_bytes_(ConsoleInformationLength) PVOID ConsoleInformation,
     _In_ ULONG ConsoleInformationLength
     );
-EXTERN_C FN_ScUserConsoleControl* volatile ScUserConsoleControl;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUserCreateWindowStation(
+ScUserCreateWindowStation(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_ ACCESS_MASK DesiredAccess,
     _In_opt_ HANDLE KeyboardLayoutHandle,
@@ -5636,30 +5132,27 @@ FN_ScUserCreateWindowStation(
     _In_opt_ PUNICODE_STRING LanguageIdString,
     _In_opt_ ULONG KeyboardLocale
     );
-EXTERN_C FN_ScUserCreateWindowStation* volatile ScUserCreateWindowStation;
 
-typedef
+EXTERN_C
 HWND
 NTAPI
-FN_ScUserGetClassName(
+ScUserGetClassName(
     _In_ HWND WindowHandle,
     _In_ BOOL Real,
     _Out_ PUNICODE_STRING ClassName
     );
-EXTERN_C FN_ScUserGetClassName* volatile ScUserGetClassName;
 
-typedef
+EXTERN_C
 HWND
 NTAPI
-FN_ScUserGetForegroundWindow(
+ScUserGetForegroundWindow(
     VOID
     );
-EXTERN_C FN_ScUserGetForegroundWindow* volatile ScUserGetForegroundWindow;
 
-typedef
+EXTERN_C
 LOGICAL
 NTAPI
-FN_ScUserGetIconInfo(
+ScUserGetIconInfo(
     _In_ HICON IconOrCursorHandle,
     _Out_ PICONINFO Iconinfo,
     _Inout_opt_ PUNICODE_STRING Name,
@@ -5667,681 +5160,607 @@ FN_ScUserGetIconInfo(
     _Out_opt_ PULONG ColorBits,
     _In_ LOGICAL IsCursorHandle
     );
-EXTERN_C FN_ScUserGetIconInfo* volatile ScUserGetIconInfo;
 
-typedef
+EXTERN_C
 LOGICAL
 NTAPI
-FN_ScUserGetIconSize(
+ScUserGetIconSize(
     _In_ HGDIOBJ IconOrCursorHandle,
     _In_ LOGICAL IsCursorHandle,
     _Out_ PULONG XX,
     _Out_ PULONG YY
     );
-EXTERN_C FN_ScUserGetIconSize* volatile ScUserGetIconSize;
 
-typedef
+EXTERN_C
 HWND
 NTAPI
-FN_ScUserGetProcessWindowStation(
+ScUserGetProcessWindowStation(
     VOID
     );
-EXTERN_C FN_ScUserGetProcessWindowStation* volatile ScUserGetProcessWindowStation;
 
-typedef
+EXTERN_C
 ULONG_PTR
 NTAPI
-FN_ScUserGetThreadState(
+ScUserGetThreadState(
     _In_ ULONG UserThreadState
     );
-EXTERN_C FN_ScUserGetThreadState* volatile ScUserGetThreadState;
 
-typedef
+EXTERN_C
 HWND
 NTAPI
-FN_ScUserGhostWindowFromHungWindow(
+ScUserGhostWindowFromHungWindow(
     _In_ HWND WindowHandle
     );
-EXTERN_C FN_ScUserGhostWindowFromHungWindow* volatile ScUserGhostWindowFromHungWindow;
 
-typedef
+EXTERN_C
 HWND
 NTAPI
-FN_ScUserHungWindowFromGhostWindow(
+ScUserHungWindowFromGhostWindow(
     _In_ HWND WindowHandle
     );
-EXTERN_C FN_ScUserHungWindowFromGhostWindow* volatile ScUserHungWindowFromGhostWindow;
 
-typedef
+EXTERN_C
 ULONG
 NTAPI
-FN_ScUserInternalGetWindowText(
+ScUserInternalGetWindowText(
     _In_ HWND WindowHandle,
     _Out_writes_to_(cchMaxCount, return + 1) LPWSTR pString,
     _In_ ULONG cchMaxCount
     );
-EXTERN_C FN_ScUserInternalGetWindowText* volatile ScUserInternalGetWindowText;
 
-typedef
+EXTERN_C
 HICON
 NTAPI
-FN_ScUserInternalGetWindowIcon(
+ScUserInternalGetWindowIcon(
     _In_ HWND WindowHandle,
     _In_ ULONG IconType
     );
-EXTERN_C FN_ScUserInternalGetWindowIcon* volatile ScUserInternalGetWindowIcon;
 
-typedef
+EXTERN_C
 HANDLE
 NTAPI
-FN_ScUserOpenDesktop(
+ScUserOpenDesktop(
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes,
     _In_ ULONG Flags,
     _In_ ACCESS_MASK DesiredAccess
     );
-EXTERN_C FN_ScUserOpenDesktop* volatile ScUserOpenDesktop;
 
-typedef
+EXTERN_C
 HWINSTA
 NTAPI
-FN_ScUserOpenWindowStation(
+ScUserOpenWindowStation(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes,
     _In_ ACCESS_MASK DesiredAccess
     );
-EXTERN_C FN_ScUserOpenWindowStation* volatile ScUserOpenWindowStation;
 
-typedef
+EXTERN_C
 ULONG_PTR
 NTAPI
-FN_ScUserQueryWindow(
+ScUserQueryWindow(
     _In_ HWND WindowHandle,
     _In_ WINDOWINFOCLASS WindowInfo
     );
-EXTERN_C FN_ScUserQueryWindow* volatile ScUserQueryWindow;
 
-typedef
+EXTERN_C
 HWND
 NTAPI
-FN_ScUserSetActiveWindow(
+ScUserSetActiveWindow(
     _In_ HWND WindowHandle
     );
-EXTERN_C FN_ScUserSetActiveWindow* volatile ScUserSetActiveWindow;
 
-typedef
+EXTERN_C
 LPARAM
 NTAPI
-FN_ScUserSetMessageExtraInfo(
+ScUserSetMessageExtraInfo(
     _In_ LPARAM lParam
     );
-EXTERN_C FN_ScUserSetMessageExtraInfo* volatile ScUserSetMessageExtraInfo;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUserSetChildWindowNoActivate(
+ScUserSetChildWindowNoActivate(
     _In_ HWND WindowHandle
     );
-EXTERN_C FN_ScUserSetChildWindowNoActivate* volatile ScUserSetChildWindowNoActivate;
 
-typedef
+EXTERN_C
 HWND
 NTAPI
-FN_ScUserSetFocus(
+ScUserSetFocus(
     _In_ HWND WindowHandle
     );
-EXTERN_C FN_ScUserSetFocus* volatile ScUserSetFocus;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUserSetInformationThread(
+ScUserSetInformationThread(
     _In_ HANDLE ThreadHandle,
     _In_ USERTHREADINFOCLASS ThreadInformationClass,
     _In_reads_bytes_(ThreadInformationLength) PVOID ThreadInformation,
     _In_ ULONG ThreadInformationLength
     );
-EXTERN_C FN_ScUserSetInformationThread* volatile ScUserSetInformationThread;
 
-typedef
+EXTERN_C
 LOGICAL
 NTAPI
-FN_ScUserSetProcessWindowStation(
+ScUserSetProcessWindowStation(
     _In_ HWINSTA WindowStationHandle
     );
-EXTERN_C FN_ScUserSetProcessWindowStation* volatile ScUserSetProcessWindowStation;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserSetWindowPlacement(
+ScUserSetWindowPlacement(
     _In_  HWND WindowHandle,
     _Inout_ const WINDOWPLACEMENT* lpwndpl
     );
-EXTERN_C FN_ScUserSetWindowPlacement* volatile ScUserSetWindowPlacement;
 
-typedef
+EXTERN_C
 LOGICAL
 NTAPI
-FN_ScUserSetWindowStationUser(
+ScUserSetWindowStationUser(
     _In_ HWINSTA WindowStationHandle,
     _In_ PLUID UserLogonId,
     _In_ PSID UserSid,
     _In_ ULONG UserSidLength
     );
-EXTERN_C FN_ScUserSetWindowStationUser* volatile ScUserSetWindowStationUser;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUserTestForInteractiveUser(
+ScUserTestForInteractiveUser(
     _In_ PLUID AuthenticationId
     );
-EXTERN_C FN_ScUserTestForInteractiveUser* volatile ScUserTestForInteractiveUser;
 
-typedef
+EXTERN_C
 LOGICAL
 NTAPI
-FN_ScUserSwitchDesktop(
+ScUserSwitchDesktop(
     _In_ HDESK DesktopHandle,
     _In_opt_ ULONG Flags,
     _In_opt_ ULONG FadeTime
     );
-EXTERN_C FN_ScUserSwitchDesktop* volatile ScUserSwitchDesktop;
 
-typedef
+EXTERN_C
 LOGICAL
 NTAPI
-FN_ScUserSetThreadDesktop(
+ScUserSetThreadDesktop(
     _In_ HDESK DesktopHandle
     );
-EXTERN_C FN_ScUserSetThreadDesktop* volatile ScUserSetThreadDesktop;
 
-typedef
+EXTERN_C
 HWND
 NTAPI
-FN_ScUserChildWindowFromPointEx(
+ScUserChildWindowFromPointEx(
     _In_ HWND WindowHandle,
     _In_ POINT pt,
     _In_ ULONG flags
     );
-EXTERN_C FN_ScUserChildWindowFromPointEx* volatile ScUserChildWindowFromPointEx;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserClipCursor(
+ScUserClipCursor(
     _In_ const RECT* lpRect
     );
-EXTERN_C FN_ScUserClipCursor* volatile ScUserClipCursor;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserCloseDesktop(
+ScUserCloseDesktop(
     _In_ HDESK DesktopHandle
     );
-EXTERN_C FN_ScUserCloseDesktop* volatile ScUserCloseDesktop;
 
-typedef
+EXTERN_C
 LONG
 NTAPI
-FN_ScUserCopyAcceleratorTable(
+ScUserCopyAcceleratorTable(
     _In_ HACCEL hAccelSrc,
     _In_ LPACCEL lpAccelDst,
     _In_ LONG cAccelEntries
     );
-EXTERN_C FN_ScUserCopyAcceleratorTable* volatile ScUserCopyAcceleratorTable;
 
-typedef
+EXTERN_C
 HACCEL
 NTAPI
-FN_ScUserCreateAcceleratorTable(
+ScUserCreateAcceleratorTable(
     _In_ LPACCEL paccel,
     _In_ LONG cAccel
     );
-EXTERN_C FN_ScUserCreateAcceleratorTable* volatile ScUserCreateAcceleratorTable;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserDeleteMenu(
+ScUserDeleteMenu(
     _In_ HMENU MenuHandle,
     _In_ ULONG Position,
     _In_ ULONG Flags
     );
-EXTERN_C FN_ScUserDeleteMenu* volatile ScUserDeleteMenu;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserDestroyMenu(
+ScUserDestroyMenu(
     _In_ HMENU MenuHandle
     );
-EXTERN_C FN_ScUserDestroyMenu* volatile ScUserDestroyMenu;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserDestroyWindow(
+ScUserDestroyWindow(
     _In_ HWND WindowHandle
     );
-EXTERN_C FN_ScUserDestroyWindow* volatile ScUserDestroyWindow;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserDragDetect(
+ScUserDragDetect(
     _In_ HWND WindowHandle,
     _In_ POINT pt
     );
-EXTERN_C FN_ScUserDragDetect* volatile ScUserDragDetect;
 
-typedef
+EXTERN_C
 ULONG
 NTAPI
-FN_ScUserDragObject(
+ScUserDragObject(
     _In_ HWND WindowHandleParent,
     _In_ HWND WindowHandleFrom,
     _In_ ULONG fmt,
     _In_ ULONG_PTR data,
     _In_ HCURSOR hcur
     );
-EXTERN_C FN_ScUserDragObject* volatile ScUserDragObject;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserDrawAnimatedRects(
+ScUserDrawAnimatedRects(
     _In_ HWND WindowHandle,
     _In_ int idAni,
     _In_ const RECT* lprcFrom,
     _In_ const RECT* lprcTo
     );
-EXTERN_C FN_ScUserDrawAnimatedRects* volatile ScUserDrawAnimatedRects;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserEndMenu(
+ScUserEndMenu(
     VOID
     );
-EXTERN_C FN_ScUserEndMenu* volatile ScUserEndMenu;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserEndPaint(
+ScUserEndPaint(
     _In_ HWND WindowHandle,
     _Inout_ const PAINTSTRUCT* lpPaint
     );
-EXTERN_C FN_ScUserEndPaint* volatile ScUserEndPaint;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserEnumDisplayMonitors(
+ScUserEnumDisplayMonitors(
     _In_ HDC hdc,
     _In_ LPCRECT lprcClip,
     _In_ MONITORENUMPROC lpfnEnum,
     _In_ LPARAM dwData
     );
-EXTERN_C FN_ScUserEnumDisplayMonitors* volatile ScUserEnumDisplayMonitors;
 
-typedef
+EXTERN_C
 HRGN
 NTAPI
-FN_ScUserExcludeUpdateRgn(
+ScUserExcludeUpdateRgn(
     _In_ HDC hDC,
     _In_ HWND WindowHandle
     );
-EXTERN_C FN_ScUserExcludeUpdateRgn* volatile ScUserExcludeUpdateRgn;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserFlashWindowEx(
+ScUserFlashWindowEx(
     _In_ PFLASHWINFO pfwi
     );
-EXTERN_C FN_ScUserFlashWindowEx* volatile ScUserFlashWindowEx;
 
-typedef
+EXTERN_C
 HWND
 NTAPI
-FN_ScUserGetAncestor(
+ScUserGetAncestor(
     _In_ HWND WindowHandle,
     _In_ ULONG gaFlags
     );
-EXTERN_C FN_ScUserGetAncestor* volatile ScUserGetAncestor;
 
-typedef
+EXTERN_C
 ULONG
 NTAPI
-FN_ScUserGetCaretBlinkTime(
+ScUserGetCaretBlinkTime(
     VOID
     );
-EXTERN_C FN_ScUserGetCaretBlinkTime* volatile ScUserGetCaretBlinkTime;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserGetCaretPos(
+ScUserGetCaretPos(
     _In_ LPPOINT lpPoint
     );
-EXTERN_C FN_ScUserGetCaretPos* volatile ScUserGetCaretPos;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserGetClipCursor(
+ScUserGetClipCursor(
     _In_ LPRECT lpRect
     );
-EXTERN_C FN_ScUserGetClipCursor* volatile ScUserGetClipCursor;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserGetComboBoxInfo(
+ScUserGetComboBoxInfo(
     _In_ HWND WindowHandleCombo,
     _Inout_ PCOMBOBOXINFO pcbi
     );
-EXTERN_C FN_ScUserGetComboBoxInfo* volatile ScUserGetComboBoxInfo;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserGetCurrentInputMessageSource(
+ScUserGetCurrentInputMessageSource(
     _Inout_ INPUT_MESSAGE_SOURCE* InputMessageSource
     );
-EXTERN_C FN_ScUserGetCurrentInputMessageSource* volatile ScUserGetCurrentInputMessageSource;
 
-typedef
+EXTERN_C
 HCURSOR
 NTAPI
-FN_ScUserGetCursor(
+ScUserGetCursor(
     VOID
     );
-EXTERN_C FN_ScUserGetCursor* volatile ScUserGetCursor;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserGetCursorInfo(
+ScUserGetCursorInfo(
     _In_ PCURSORINFO pci
     );
-EXTERN_C FN_ScUserGetCursorInfo* volatile ScUserGetCursorInfo;
 
-typedef
+EXTERN_C
 HDC
 NTAPI
-FN_ScUserGetDCEx(
+ScUserGetDCEx(
     _In_ HWND WindowHandle,
     _In_ HRGN hrgnClip,
     _In_ ULONG flags
     );
-EXTERN_C FN_ScUserGetDCEx* volatile ScUserGetDCEx;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserGetDisplayAutoRotationPreferences(
+ScUserGetDisplayAutoRotationPreferences(
     _In_ ORIENTATION_PREFERENCE* pOrientation
     );
-EXTERN_C FN_ScUserGetDisplayAutoRotationPreferences* volatile ScUserGetDisplayAutoRotationPreferences;
 
-typedef
+EXTERN_C
 ULONG
 NTAPI
-FN_ScUserGetDoubleClickTime(
+ScUserGetDoubleClickTime(
     VOID
     );
-EXTERN_C FN_ScUserGetDoubleClickTime* volatile ScUserGetDoubleClickTime;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserGetGUIThreadInfo(
+ScUserGetGUIThreadInfo(
     _In_ ULONG idThread,
     _In_ PGUITHREADINFO pgui
     );
-EXTERN_C FN_ScUserGetGUIThreadInfo* volatile ScUserGetGUIThreadInfo;
 
-typedef
+EXTERN_C
 ULONG
 NTAPI
-FN_ScUserGetGuiResources(
+ScUserGetGuiResources(
     _In_ HANDLE ProcessHandle,
     _In_ ULONG uiFlags
     );
-EXTERN_C FN_ScUserGetGuiResources* volatile ScUserGetGuiResources;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserGetLayeredWindowAttributes(
+ScUserGetLayeredWindowAttributes(
     _In_ HWND WindowHandle,
     _In_ COLORREF* pcrKey,
     _In_ BYTE* pbAlpha,
     _In_ ULONG pdwFlags
     );
-EXTERN_C FN_ScUserGetLayeredWindowAttributes* volatile ScUserGetLayeredWindowAttributes;
 
-typedef
+EXTERN_C
 ULONG
 NTAPI
-FN_ScUserGetListBoxInfo(
+ScUserGetListBoxInfo(
     _In_ HWND WindowHandle
     );
-EXTERN_C FN_ScUserGetListBoxInfo* volatile ScUserGetListBoxInfo;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserGetMenuBarInfo(
+ScUserGetMenuBarInfo(
     _In_ HWND WindowHandle,
     _In_ LONG idObject,
     _In_ LONG idItem,
     _In_ PMENUBARINFO pmbi
     );
-EXTERN_C FN_ScUserGetMenuBarInfo* volatile ScUserGetMenuBarInfo;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserGetMenuItemRect(
+ScUserGetMenuItemRect(
     _In_ HWND WindowHandle,
     _In_ HMENU MenuHandle,
     _In_ ULONG MenuIndex,
     _In_ PRECT MenuRect
     );
-EXTERN_C FN_ScUserGetMenuItemRect* volatile ScUserGetMenuItemRect;
 
-typedef
+EXTERN_C
 LONG
 NTAPI
-FN_ScUserGetMouseMovePointsEx(
+ScUserGetMouseMovePointsEx(
     _In_ ULONG MouseMovePointsSize,
     _In_ LPMOUSEMOVEPOINT InputBuffer,
     _Out_ LPMOUSEMOVEPOINT OutputBuffer,
     _In_ LONG OutputBufferCount,
     _In_ ULONG Resolution
     );
-EXTERN_C FN_ScUserGetMouseMovePointsEx* volatile ScUserGetMouseMovePointsEx;
 
-typedef
+EXTERN_C
 ULONG
 NTAPI
-FN_ScUserGetRawInputData(
+ScUserGetRawInputData(
     _In_ HRAWINPUT RawInputData,
     _In_ ULONG RawInputCommand,
     _Out_opt_ PVOID RawInputBuffer,
     _Inout_ PULONG RawInputBufferSize,
     _In_ ULONG RawInputHeaderSize
     );
-EXTERN_C FN_ScUserGetRawInputData* volatile ScUserGetRawInputData;
 
-typedef
+EXTERN_C
 ULONG
 NTAPI
-FN_ScUserGetRawInputDeviceList(
+ScUserGetRawInputDeviceList(
     _In_ PRAWINPUTDEVICELIST RawInputDeviceList,
     _Inout_ PULONG RawInputDeviceCount,
     _In_ ULONG RawInputDeviceSize
     );
-EXTERN_C FN_ScUserGetRawInputDeviceList* volatile ScUserGetRawInputDeviceList;
 
-typedef
+EXTERN_C
 ULONG
 NTAPI
-FN_ScUserGetRegisteredRawInputDevices(
+ScUserGetRegisteredRawInputDevices(
     _Out_opt_ PRAWINPUTDEVICE RawInputDevices,
     _Inout_ PULONG RawInputDeviceCount,
     _In_ ULONG RawInputDeviceSize
     );
-EXTERN_C FN_ScUserGetRegisteredRawInputDevices* volatile ScUserGetRegisteredRawInputDevices;
 
-typedef
+EXTERN_C
 HMENU
 NTAPI
-FN_ScUserGetSendMessageReceiver(
+ScUserGetSendMessageReceiver(
     _In_ HANDLE ThreadId
     );
-EXTERN_C FN_ScUserGetSendMessageReceiver* volatile ScUserGetSendMessageReceiver;
 
-typedef
+EXTERN_C
 HMENU
 NTAPI
-FN_ScUserGetSystemMenu(
+ScUserGetSystemMenu(
     _In_ HWND WindowHandle,
     _In_ BOOL Revert
     );
-EXTERN_C FN_ScUserGetSystemMenu* volatile ScUserGetSystemMenu;
 
-typedef
+EXTERN_C
 HDESK
 NTAPI
-FN_ScUserGetThreadDesktop(
+ScUserGetThreadDesktop(
     _In_ ULONG ThreadId
     );
-EXTERN_C FN_ScUserGetThreadDesktop* volatile ScUserGetThreadDesktop;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserGetTitleBarInfo(
+ScUserGetTitleBarInfo(
     _In_ HWND WindowHandle,
     _In_ PTITLEBARINFO pti
     );
-EXTERN_C FN_ScUserGetTitleBarInfo* volatile ScUserGetTitleBarInfo;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserGetObjectInformation(
+ScUserGetObjectInformation(
     _In_ HANDLE ObjectHandle,
     _In_ LONG Index,
     _In_ PVOID vInfo,
     _In_ ULONG Length,
     _In_ PULONG LengthNeeded
     );
-EXTERN_C FN_ScUserGetObjectInformation* volatile ScUserGetObjectInformation;
 
-typedef
+EXTERN_C
 HDC
 NTAPI
-FN_ScUserGetWindowDC(
+ScUserGetWindowDC(
     _In_ HWND WindowHandle
     );
-EXTERN_C FN_ScUserGetWindowDC* volatile ScUserGetWindowDC;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserGetWindowPlacement(
+ScUserGetWindowPlacement(
     _In_ HWND WindowHandle,
     _Inout_ PWINDOWPLACEMENT WindowPlacement
     );
-EXTERN_C FN_ScUserGetWindowPlacement* volatile ScUserGetWindowPlacement;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserHiliteMenuItem(
+ScUserHiliteMenuItem(
     _In_ HWND WindowHandle,
     _In_ HMENU MenuHandle,
     _In_ ULONG IDHiliteItem,
     _In_ ULONG Hilite
     );
-EXTERN_C FN_ScUserHiliteMenuItem* volatile ScUserHiliteMenuItem;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserInvalidateRect(
+ScUserInvalidateRect(
     _In_ HWND WindowHandle,
     _In_ const RECT* Rect,
     _In_ BOOL Erase
     );
-EXTERN_C FN_ScUserInvalidateRect* volatile ScUserInvalidateRect;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserInvalidateRgn(
+ScUserInvalidateRgn(
     _In_ HWND WindowHandle,
     _In_ HRGN hRgn,
     _In_ BOOL Erase
     );
-EXTERN_C FN_ScUserInvalidateRgn* volatile ScUserInvalidateRgn;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserIsTouchWindow(
+ScUserIsTouchWindow(
     _In_ HWND WindowHandle,
     _In_ PULONG Flags
     );
-EXTERN_C FN_ScUserIsTouchWindow* volatile ScUserIsTouchWindow;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserKillTimer(
+ScUserKillTimer(
     _In_ HWND WindowHandle,
     _In_ ULONG_PTR IDEvent
     );
-EXTERN_C FN_ScUserKillTimer* volatile ScUserKillTimer;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserLockWorkStation(
+ScUserLockWorkStation(
     VOID
     );
-EXTERN_C FN_ScUserLockWorkStation* volatile ScUserLockWorkStation;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserLogicalToPhysicalPoint(
+ScUserLogicalToPhysicalPoint(
     _In_ HWND WindowHandle,
     _In_ LPPOINT lpPoint
     );
-EXTERN_C FN_ScUserLogicalToPhysicalPoint* volatile ScUserLogicalToPhysicalPoint;
 
-typedef
+EXTERN_C
 LONG
 NTAPI
-FN_ScUserMenuItemFromPoint(
+ScUserMenuItemFromPoint(
     _In_ HWND WindowHandle,
     _In_ HMENU MenuHandle,
     _In_ POINT ptScreen
     );
-EXTERN_C FN_ScUserMenuItemFromPoint* volatile ScUserMenuItemFromPoint;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserMoveWindow(
+ScUserMoveWindow(
     _In_ HWND WindowHandle,
     _In_ LONG X,
     _In_ LONG Y,
@@ -6349,170 +5768,153 @@ FN_ScUserMoveWindow(
     _In_ LONG Height,
     _In_ BOOL Repaint
     );
-EXTERN_C FN_ScUserMoveWindow* volatile ScUserMoveWindow;
 
-typedef
+EXTERN_C
 HDESK
 NTAPI
-FN_ScUserOpenInputDesktop(
+ScUserOpenInputDesktop(
     _In_ ULONG Flags,
     _In_ BOOL Inherit,
     _In_ ACCESS_MASK DesiredAccess
     );
-EXTERN_C FN_ScUserOpenInputDesktop* volatile ScUserOpenInputDesktop;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserPhysicalToLogicalPoint(
+ScUserPhysicalToLogicalPoint(
     _In_ HWND WindowHandle,
     _In_ LPPOINT lpPoint
     );
-EXTERN_C FN_ScUserPhysicalToLogicalPoint* volatile ScUserPhysicalToLogicalPoint;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserPrintWindow(
+ScUserPrintWindow(
     _In_ HWND WindowHandle,
     _In_ HDC hdcBlt,
     _In_ ULONG nFlags
     );
-EXTERN_C FN_ScUserPrintWindow* volatile ScUserPrintWindow;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUserQueryInformationThread(
+ScUserQueryInformationThread(
     _In_ HANDLE ThreadHandle,
     _In_ USERTHREADINFOCLASS ThreadInformationClass,
     _Out_writes_bytes_(*ThreadInformationLength) PVOID ThreadInformation,
     _Out_opt_ PULONG ThreadInformationLength
     );
-EXTERN_C FN_ScUserQueryInformationThread* volatile ScUserQueryInformationThread;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUserRaiseLowerShellWindow(
+ScUserRaiseLowerShellWindow(
     _In_ HWND WindowHandle,
     _In_ BOOLEAN SetWithOptions
     );
-EXTERN_C FN_ScUserRaiseLowerShellWindow* volatile ScUserRaiseLowerShellWindow;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserRedrawWindow(
+ScUserRedrawWindow(
     _In_ HWND WindowHandle,
     _In_ const PRECT lprcUpdate,
     _In_ HRGN hrgnUpdate,
     _In_ ULONG flags
     );
-EXTERN_C FN_ScUserRedrawWindow* volatile ScUserRedrawWindow;
 
-typedef
+EXTERN_C
 HWND
 NTAPI
-FN_ScUserRealChildWindowFromPoint(
+ScUserRealChildWindowFromPoint(
     _In_ HWND WindowHandleParent,
     _In_ POINT ptParentClientCoords
     );
-EXTERN_C FN_ScUserRealChildWindowFromPoint* volatile ScUserRealChildWindowFromPoint;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserRegisterHotKey(
+ScUserRegisterHotKey(
     _In_ HWND WindowHandle,
     _In_ LONG id,
     _In_ ULONG fsModifiers,
     _In_ ULONG vk
     );
-EXTERN_C FN_ScUserRegisterHotKey* volatile ScUserRegisterHotKey;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserRemoveMenu(
+ScUserRemoveMenu(
     _In_ HMENU MenuHandle,
     _In_ ULONG uPosition,
     _In_ ULONG uFlags
     );
-EXTERN_C FN_ScUserRemoveMenu* volatile ScUserRemoveMenu;
 
-typedef
+EXTERN_C
 ULONG
 NTAPI
-FN_ScUserSendInput(
+ScUserSendInput(
     _In_ ULONG cInputs,
     _In_ LPINPUT pInputs,
     _In_ LONG cbSize
     );
-EXTERN_C FN_ScUserSendInput* volatile ScUserSendInput;
 
-typedef
+EXTERN_C
 HWND
 NTAPI
-FN_ScUserSetCapture(
+ScUserSetCapture(
     _In_ HWND WindowHandle
     );
-EXTERN_C FN_ScUserSetCapture* volatile ScUserSetCapture;
 
-typedef
+EXTERN_C
 ULONG_PTR
 NTAPI
-FN_ScUserSetTimer(
+ScUserSetTimer(
     _In_ HWND WindowHandle,
     _In_ ULONG_PTR nIDEvent,
     _In_ ULONG uElapse,
     _In_ TIMERPROC lpTimerFunc,
     _In_ ULONG uToleranceDelay
     );
-EXTERN_C FN_ScUserSetTimer* volatile ScUserSetTimer;
 
-typedef
+EXTERN_C
 WORD
 NTAPI
-FN_ScUserSetClassWord(
+ScUserSetClassWord(
     _In_ HWND WindowHandle,
     _In_ LONG nIndex,
     _In_ WORD wNewWord
     );
-EXTERN_C FN_ScUserSetClassWord* volatile ScUserSetClassWord;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserSetCursorPos(
+ScUserSetCursorPos(
     _In_ LONG X,
     _In_ LONG Y
     );
-EXTERN_C FN_ScUserSetCursorPos* volatile ScUserSetCursorPos;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserSetLayeredWindowAttributes(
+ScUserSetLayeredWindowAttributes(
     _In_ HWND WindowHandle,
     _In_ COLORREF crKey,
     _In_ BYTE bAlpha,
     _In_ DWORD dwFlags
     );
-EXTERN_C FN_ScUserSetLayeredWindowAttributes* volatile ScUserSetLayeredWindowAttributes;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserSetProcessRestrictionExemption(
+ScUserSetProcessRestrictionExemption(
     _In_ BOOL EnableExemption
     );
-EXTERN_C FN_ScUserSetProcessRestrictionExemption* volatile ScUserSetProcessRestrictionExemption;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserSetWindowPos(
+ScUserSetWindowPos(
     _In_ HWND WindowHandle,
     _In_ HWND WindowHandleInsertAfter,
     _In_ LONG X,
@@ -6521,107 +5923,95 @@ FN_ScUserSetWindowPos(
     _In_ LONG cy,
     _In_ ULONG uFlags
     );
-EXTERN_C FN_ScUserSetWindowPos* volatile ScUserSetWindowPos;
 
-typedef
+EXTERN_C
 WORD
 NTAPI
-FN_ScUserSetWindowWord(
+ScUserSetWindowWord(
     _In_ HWND WindowHandle,
     _In_ LONG nIndex,
     _In_ WORD wNewWord
     );
-EXTERN_C FN_ScUserSetWindowWord* volatile ScUserSetWindowWord;
 
-typedef
+EXTERN_C
 NTSTATUS
 NTAPI
-FN_ScUserSetForegroundWindowForApplication(
+ScUserSetForegroundWindowForApplication(
     _In_ HWND WindowHandle
     );
-EXTERN_C FN_ScUserSetForegroundWindowForApplication* volatile ScUserSetForegroundWindowForApplication;
 
-typedef
+EXTERN_C
 HWND
 NTAPI
-FN_ScUserShellForegroundBoostProcess(
+ScUserShellForegroundBoostProcess(
     _In_ HANDLE ProcessHandle,
     _In_ HWND WindowHandle
     );
-EXTERN_C FN_ScUserShellForegroundBoostProcess* volatile ScUserShellForegroundBoostProcess;
 
-typedef
+EXTERN_C
 ULONG
 NTAPI
-FN_ScUserSetAdditionalForegroundBoostProcesses(
+ScUserSetAdditionalForegroundBoostProcesses(
     _In_ HWND WindowHandle
     );
-EXTERN_C FN_ScUserSetAdditionalForegroundBoostProcesses* volatile ScUserSetAdditionalForegroundBoostProcesses;
 
-typedef
+EXTERN_C
 ULONG
 NTAPI
-FN_ScUserSetAdditionalPowerThrottlingProcess(
+ScUserSetAdditionalPowerThrottlingProcess(
     _In_ HWND WindowHandle
     );
-EXTERN_C FN_ScUserSetAdditionalPowerThrottlingProcess* volatile ScUserSetAdditionalPowerThrottlingProcess;
 
-typedef
+EXTERN_C
 LONG
 NTAPI
-FN_ScUserShowCursor(
+ScUserShowCursor(
     _In_ BOOL bShow
     );
-EXTERN_C FN_ScUserShowCursor* volatile ScUserShowCursor;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserShowWindow(
+ScUserShowWindow(
     _In_ HWND WindowHandle,
     _In_ LONG nCmdShow
     );
-EXTERN_C FN_ScUserShowWindow* volatile ScUserShowWindow;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserShowWindowAsync(
+ScUserShowWindowAsync(
     _In_ HWND WindowHandle,
     _In_ LONG nCmdShow
     );
-EXTERN_C FN_ScUserShowWindowAsync* volatile ScUserShowWindowAsync;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserShutdownBlockReasonQuery(
+ScUserShutdownBlockReasonQuery(
     _In_ HWND WindowHandle,
     _Out_ PWSTR Buffer,
     _Inout_ PULONG BufferCount
     );
-EXTERN_C FN_ScUserShutdownBlockReasonQuery* volatile ScUserShutdownBlockReasonQuery;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserShutdownReasonDestroy(
+ScUserShutdownReasonDestroy(
     _In_ HWND WindowHandle
     );
-EXTERN_C FN_ScUserShutdownReasonDestroy* volatile ScUserShutdownReasonDestroy;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserTrackMouseEvent(
+ScUserTrackMouseEvent(
     _In_ LPTRACKMOUSEEVENT lpEventTrack
     );
-EXTERN_C FN_ScUserTrackMouseEvent* volatile ScUserTrackMouseEvent;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserTrackPopupMenuEx(
+ScUserTrackPopupMenuEx(
     _In_ HMENU MenuHandle,
     _In_ ULONG uFlags,
     _In_ LONG x,
@@ -6629,66 +6019,58 @@ FN_ScUserTrackPopupMenuEx(
     _In_ HWND WindowHandle,
     _In_ LPTPMPARAMS lptpm
     );
-EXTERN_C FN_ScUserTrackPopupMenuEx* volatile ScUserTrackPopupMenuEx;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserUnhookWinEvent(
+ScUserUnhookWinEvent(
     _In_ HWINEVENTHOOK hWinEventHook
     );
-EXTERN_C FN_ScUserUnhookWinEvent* volatile ScUserUnhookWinEvent;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserUnregisterHotKey(
+ScUserUnregisterHotKey(
     _In_ HWND WindowHandle,
     _In_ LONG id
     );
-EXTERN_C FN_ScUserUnregisterHotKey* volatile ScUserUnregisterHotKey;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserUserHandleGrantAccess(
+ScUserUserHandleGrantAccess(
     _In_ HANDLE UserHandle,
     _In_ HANDLE Job,
     _In_ BOOL Grant
     );
-EXTERN_C FN_ScUserUserHandleGrantAccess* volatile ScUserUserHandleGrantAccess;
 
-typedef
+EXTERN_C
 BOOL
 NTAPI
-FN_ScUserValidateRect(
+ScUserValidateRect(
     _In_ HWND WindowHandle,
     _In_ const RECT* Rect
     );
-EXTERN_C FN_ScUserValidateRect* volatile ScUserValidateRect;
 
-typedef
+EXTERN_C
 HWND
 NTAPI
-FN_ScUserWindowFromDC(
+ScUserWindowFromDC(
     _In_ HDC hDC
     );
-EXTERN_C FN_ScUserWindowFromDC* volatile ScUserWindowFromDC;
 
-typedef
+EXTERN_C
 HWND
 NTAPI
-FN_ScUserWindowFromPhysicalPoint(
+ScUserWindowFromPhysicalPoint(
     _In_ POINT Point
     );
-EXTERN_C FN_ScUserWindowFromPhysicalPoint* volatile ScUserWindowFromPhysicalPoint;
 
-typedef
+EXTERN_C
 HWND
 NTAPI
-FN_ScUserWindowFromPoint(
+ScUserWindowFromPoint(
     _In_ POINT Point
     );
-EXTERN_C FN_ScUserWindowFromPoint* volatile ScUserWindowFromPoint;
 
 EXTERN_C_END

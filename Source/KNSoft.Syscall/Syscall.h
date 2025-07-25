@@ -9,8 +9,7 @@ _Function_class_(FN_SYSCALL_FAIL_CALLBACK)
 BOOL
 __cdecl
 FN_SYSCALL_FAIL_CALLBACK(
-    _In_ PVOID Thunk,
-    _In_opt_ PCANSI_STRING Name,
+    _In_ PANSI_STRING Name,
     _In_ NTSTATUS Status);
 typedef FN_SYSCALL_FAIL_CALLBACK* PFN_SYSCALL_FAIL_CALLBACK;
 

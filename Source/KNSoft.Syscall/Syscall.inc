@@ -5,36 +5,24 @@ $STACKFRAME FALSE
 
 EXTERN $SYMBOLNAME(Syscall_FastSystemCall):SIZE_T
 
-$SYSCALL_FUNCNAME TEXTEQU <>
-$SYSCALL_THUNKNAME TEXTEQU <>
+$SYSCALL_THUNKDATA TEXTEQU <>
+$SYSCALL_THUNK TEXTEQU <>
 
 IFDEF _M_X64
 
 $SYSCALL_FUNC MACRO Name:REQ, ArgCount
-
-    $SYSCALL_FUNCNAME CATSTR <Syscall_>, <Name>
-
-    $SYSCALL_FUNCNAME LABEL PROC
-    ALIGN 16
-    mov eax, dword ptr $SYSCALL_THUNKNAME
+    $PUBLIC_LABEL Name, PROC
+    mov eax, dword ptr $SYSCALL_THUNK
     jmp [Syscall_FastSystemCall]
-
 ENDM
 
 ELSEIFDEF _M_IX86
 
 $SYSCALL_FUNC MACRO Name:REQ, ArgCount:REQ
-
-    LOCAL ArgSize
-    ArgSize = ArgCount * 4
-    $SYSCALL_FUNCNAME CATSTR <Syscall_>, $SYMBOLNAME(Name, ArgSize)
-
-    $SYSCALL_FUNCNAME LABEL PROC
-    ALIGN 16
-    mov eax, dword ptr $SYSCALL_THUNKNAME
+    $PUBLIC_LABEL $SYMBOLNAME(Name, ArgCount * 4), PROC
+    mov eax, dword ptr $SYSCALL_THUNK
     call [$SYMBOLNAME(Syscall_FastSystemCall)]
-    ret ArgSize
-
+    ret ArgCount * 4
 ENDM
 
 ENDIF
@@ -48,22 +36,20 @@ $SYSCALL MACRO Name:REQ, NtUser:REQ, ArgCount:REQ, Blob:VARARG
         BlobArray CATSTR BlobArray, <p, >
         BlobSize = BlobSize + 1
     ENDM
-    $SYSCALL_THUNKNAME CATSTR <Syscall_ThunkData_>, <Name>
+    $SYSCALL_THUNKDATA CATSTR <Syscall_ThunkData_>, <Name>
+    $SYSCALL_THUNK CATSTR <Syscall_Thunk_>, <Name>
 
 ScCode SEGMENT PARA READ EXECUTE ALIAS(".ScCode")
     $SYSCALL_FUNC Name, ArgCount
 ScCode ENDS
 
 ScData SEGMENT DWORD READ WRITE ALIAS(".ScData")
-    ALIGN 4
-    $SYSCALL_THUNKNAME dw ((ArgCount AND 011111b) SHL 7) OR ((BlobSize AND 0111111b) SHL 1) OR (NtUser AND 01b)
-    SIZE_T offset $SYSCALL_FUNCNAME
+    $SYSCALL_THUNKDATA db ((BlobSize AND 0111111b) SHL 1) OR (NtUser AND 01b)
     db @SubStr(<%BlobArray>, 1, @SizeStr(<%BlobArray>) - 2)
 ScData ENDS
 
 ScThunk SEGMENT ALIGN(SIZEOF SIZE_T) READ WRITE ALIAS(".ScThunk$THK")
-    PUBLIC $SYMBOLNAME(Name)
-    $SYMBOLNAME(Name) SIZE_T offset $SYSCALL_THUNKNAME
+    $SYSCALL_THUNK SIZE_T offset $SYSCALL_THUNKDATA
 ScThunk ENDS
 
 ENDM

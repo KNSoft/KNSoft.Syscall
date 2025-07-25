@@ -9,27 +9,28 @@ extern FN_TEST_PROC NoImport;
 extern FN_TEST_PROC NotFound;
 
 static PFN_TEST_PROC TestList[] = {
-    MemPageAlloc,
-    NoImport,
-    NotFound
+    &MemPageAlloc,
+    &NoImport,
+    &NotFound
 };
 
 extern FN_SYSCALL_FAIL_CALLBACK NotFound_FailCallback;
 
-static PFN_SYSCALL_FAIL_CALLBACK FailCallbackList[] = { NotFound_FailCallback };
+static PFN_SYSCALL_FAIL_CALLBACK FailCallbackList[] = {
+    &NotFound_FailCallback
+};
 
 static
 _Function_class_(FN_SYSCALL_FAIL_CALLBACK)
 BOOL
 __cdecl
 FailCallbackCenter(
-    _In_ PVOID Thunk,
-    _In_opt_ PCANSI_STRING Name,
+    _In_ PANSI_STRING Name,
     _In_ NTSTATUS Status)
 {
     for (ULONG i = 0; i < ARRAYSIZE(FailCallbackList); i++)
     {
-        if (!FailCallbackList[i](Thunk, Name, Status))
+        if (!FailCallbackList[i](Name, Status))
         {
             return FALSE;
         }

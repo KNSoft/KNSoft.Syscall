@@ -87,18 +87,17 @@ void ResolveFile(String Path, Boolean IsWin32u)
         Name = Name[2..^1];
 
         /* Rewrite to Syscall.Thunk.h with "Sc" prefix and remove "NTSYSCALLAPI" */
-        ThunksH.WriteLine("typedef");
+        ThunksH.WriteLine("EXTERN_C");
         for (Int32 j = iStart + 1; j <= iEnd; j++)
         {
             if (j == iStart + 3)
             {
-                ThunksH.WriteLine("FN_Sc" + Name + "(");
+                ThunksH.WriteLine("Sc" + Name + "(");
             } else
             {
                 ThunksH.WriteLine(FileContent[j]);
             }
         }
-        ThunksH.WriteLine("EXTERN_C FN_Sc" + Name + "* volatile Sc" + Name + ";");
         ThunksH.WriteLine();
 
         /* Prepare thunk data */

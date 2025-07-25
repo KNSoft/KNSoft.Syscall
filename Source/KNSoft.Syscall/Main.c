@@ -5,8 +5,8 @@
 #pragma section(".ScThunk$AAA", long, read, write)
 #pragma section(".ScThunk$ZZZ", long, read, write)
 
-static __declspec(allocate(".ScThunk$AAA")) PSYSCALL_THUNK_DATA Syscall_Thunk_First[] = { NULL };
-static __declspec(allocate(".ScThunk$ZZZ")) PSYSCALL_THUNK_DATA Syscall_Thunk_Last[] = { NULL };
+static __declspec(allocate(".ScThunk$AAA")) SYSCALL_THUNK Syscall_Thunk_First[] = { NULL };
+static __declspec(allocate(".ScThunk$ZZZ")) SYSCALL_THUNK Syscall_Thunk_Last[] = { NULL };
 
 static SYSCALL_DLL Ntdll = { 0 }, Win32u = { 0 };
 static NTSTATUS Win32uStatus = STATUS_SUCCESS;
@@ -55,7 +55,7 @@ static
 FORCEINLINE
 NTSTATUS
 Syscall_InitThunk(
-    _Inout_ PSYSCALL_THUNK_DATA* Thunk,
+    _Inout_ PSYSCALL_THUNK Thunk,
     _In_opt_ PFN_SYSCALL_FAIL_CALLBACK Callback)
 {
     NTSTATUS Status;
@@ -67,10 +67,10 @@ Syscall_InitThunk(
     ULONG Cch = 0, uTemp;
     BYTE Ch, ByteRemain;
     ANSI_STRING AnsiName;
-    PSYSCALL_THUNK_DATA ThunkData = *Thunk;
+    PSYSCALL_THUNK_DATA ThunkData = Thunk->Data;
 
     /* Initialize Syscall Dlls lazily */
-    if (!ThunkData->Header.NtUser)
+    if (!ThunkData->NtUser)
     {
         if (Ntdll.DllBase == NULL)
         {
@@ -126,9 +126,8 @@ Syscall_InitThunk(
     }
 
     /* Decode thunk data */
-    Cch = 0;
     ByteRemain = 0;
-    for (UINT i = 0; i <= ThunkData->Header.BlobSize; i++)
+    for (ULONG i = 0; i <= ThunkData->BlobSize; i++)
     {
         if (i % 3 == 0)
         {
@@ -159,15 +158,15 @@ _Write_Char:
     }
 
     /* Lookup export table */
-    for (DWORD i = SyscallDll->SearchBegin; i > 0; i--)
+    for (ULONG i = SyscallDll->SearchBegin; i > 0; i--)
     {
         Symbol = Add2Ptr(SyscallDll->DllBase, SyscallDll->NameRVAs[i - 1]);
-        uTemp = Syscall_GetName(ThunkData->Header.NtUser, Symbol);
+        uTemp = Syscall_GetName(ThunkData->NtUser, Symbol);
         if (uTemp == 0)
         {
             break;
         } else if (
-            /* Name has 5 characters at least */
+            /* Name has 5 characters at least, encoded data at least 4 bytes */
             *(PULONG)(Symbol + uTemp) != *(PULONG)DecodedName ||
             !Syscall_CompareThunkName(Symbol + uTemp + sizeof(ULONG), DecodedName + sizeof(ULONG), Cch - sizeof(ULONG)))
         {
@@ -183,22 +182,19 @@ _Write_Char:
             goto _Fail;
         }
 
-        *Thunk = (PSYSCALL_THUNK_DATA)ThunkData->Header.Proc;
-        ThunkData->SSN = uTemp;
+        Thunk->SSN = uTemp;
         return STATUS_SUCCESS;
     }
     Status = STATUS_PROCEDURE_NOT_FOUND;
 
 _Fail:
-    ThunkData->SSN = MAXULONG;
-    if (Callback != NULL)
+    Thunk->SSN = MAXULONG;
+    if (Cch != 0 && Callback != NULL)
     {
-        if (Cch != 0)
-        {
-            AnsiName.Buffer = DecodedName;
-            AnsiName.Length = AnsiName.MaximumLength = (USHORT)Cch * sizeof(CHAR);
-        }
-        if (!Callback(*Thunk, Cch != 0 ? &AnsiName : NULL, Status))
+        AnsiName.Length = (USHORT)Cch * sizeof(CHAR);
+        AnsiName.MaximumLength = sizeof(DecodedName);
+        AnsiName.Buffer = DecodedName;
+        if (!Callback(&AnsiName, Status))
         {
             return STATUS_REQUEST_ABORTED;
         }
@@ -224,9 +220,9 @@ Syscall_Init(
     if (Syscall_InitArch())
     {
         g_hrInitState = S_OK;
-        for (PSYSCALL_THUNK_DATA* Thunk = Syscall_Thunk_First + 1; Thunk != Syscall_Thunk_Last; Thunk++)
+        for (PSYSCALL_THUNK Thunk = Syscall_Thunk_First + 1; Thunk != Syscall_Thunk_Last; Thunk++)
         {
-            if (*Thunk != NULL)
+            if (Thunk->Data != NULL)
             {
                 Status = Syscall_InitThunk(Thunk, Callback);
                 if (!NT_SUCCESS(Status))
