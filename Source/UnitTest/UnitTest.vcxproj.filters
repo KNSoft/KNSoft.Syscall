@@ -5,11 +5,13 @@
     <ClCompile Include="MemPageAlloc.c" />
     <ClCompile Include="NotFound.c" />
     <ClCompile Include="NoImport.c" />
+    <ClCompile Include="AllThunks.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UnitTest.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="AllThunks.inl" />
   </ItemGroup>
 </Project>

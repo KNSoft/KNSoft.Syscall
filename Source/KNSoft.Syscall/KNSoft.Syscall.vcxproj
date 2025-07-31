@@ -748,6 +748,12 @@
     <MASM Include="Thunks\ScWaitHighEventPair.asm" />
     <MASM Include="Thunks\ScWaitLowEventPair.asm" />
     <MASM Include="Thunks\ScWorkerFactoryWorkerReady.asm" />
+    <MASM Include="Thunks\ScWow64AllocateVirtualMemory64.asm" />
+    <MASM Include="Thunks\ScWow64GetNativeSystemInformation.asm" />
+    <MASM Include="Thunks\ScWow64IsProcessorFeaturePresent.asm" />
+    <MASM Include="Thunks\ScWow64QueryInformationProcess64.asm" />
+    <MASM Include="Thunks\ScWow64ReadVirtualMemory64.asm" />
+    <MASM Include="Thunks\ScWow64WriteVirtualMemory64.asm" />
     <MASM Include="Thunks\ScWriteFile.asm" />
     <MASM Include="Thunks\ScWriteFileGather.asm" />
     <MASM Include="Thunks\ScWriteRequestData.asm" />

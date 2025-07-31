@@ -4,20 +4,26 @@
 
 EXTERN_C_START
 
-typedef
-_Function_class_(FN_SYSCALL_FAIL_CALLBACK)
-BOOL
-__cdecl
-FN_SYSCALL_FAIL_CALLBACK(
-    _In_ PANSI_STRING Name,
-    _In_ NTSTATUS Status);
-typedef FN_SYSCALL_FAIL_CALLBACK* PFN_SYSCALL_FAIL_CALLBACK;
-
 HRESULT
 NTAPI
-Syscall_Init(
-    _In_opt_ PFN_SYSCALL_FAIL_CALLBACK Callback);
+Syscall_Init(VOID);
 
-EXTERN_C PVOID* Syscall_FastSystemCall;
+/* Return SSN or error status (>0xC0000000) */
+static
+FORCEINLINE
+ULONG
+Syscall_GetData(
+    _In_ PVOID ScFunction)
+{
+    PULONG pData;
+
+#if defined(_M_X64)
+    pData = Add2Ptr(ScFunction, *(PINT)Add2Ptr(ScFunction, 2) + 6);
+#elif defined(_M_IX86)
+    pData = *(PULONG*)Add2Ptr(ScFunction, 1);
+#endif
+
+    return *pData;
+}
 
 EXTERN_C_END

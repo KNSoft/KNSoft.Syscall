@@ -9,4 +9,8 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="KNSoft.NDK" Version="1.2.34-beta" />
+  </ItemGroup>
+
 </Project>

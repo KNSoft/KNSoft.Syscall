@@ -125,6 +125,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AllThunks.c" />
     <ClCompile Include="Main.c" />
     <ClCompile Include="NoImport.c" />
     <ClCompile Include="NotFound.c" />
@@ -134,6 +135,7 @@
     <ClInclude Include="UnitTest.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="AllThunks.inl" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

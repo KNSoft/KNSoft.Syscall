@@ -55,8 +55,7 @@ static
 FORCEINLINE
 NTSTATUS
 Syscall_InitThunk(
-    _Inout_ PSYSCALL_THUNK Thunk,
-    _In_opt_ PFN_SYSCALL_FAIL_CALLBACK Callback)
+    _Inout_ PSYSCALL_THUNK Thunk)
 {
     NTSTATUS Status;
     PLDR_DATA_TABLE_ENTRY pHead, pNode;
@@ -66,7 +65,6 @@ Syscall_InitThunk(
     CHAR DecodedName[128 + 1];
     ULONG Cch = 0, uTemp;
     BYTE Ch, ByteRemain;
-    ANSI_STRING AnsiName;
     PSYSCALL_THUNK_DATA ThunkData = Thunk->Data;
 
     /* Initialize Syscall Dlls lazily */
@@ -182,23 +180,18 @@ _Write_Char:
             goto _Fail;
         }
 
+        if (NT_ERROR(uTemp))
+        {
+            Status = STATUS_ASSERTION_FAILURE;
+            goto _Fail;
+        }
         Thunk->SSN = uTemp;
         return STATUS_SUCCESS;
     }
     Status = STATUS_PROCEDURE_NOT_FOUND;
 
 _Fail:
-    Thunk->SSN = MAXULONG;
-    if (Cch != 0 && Callback != NULL)
-    {
-        AnsiName.Length = (USHORT)Cch * sizeof(CHAR);
-        AnsiName.MaximumLength = sizeof(DecodedName);
-        AnsiName.Buffer = DecodedName;
-        if (!Callback(&AnsiName, Status))
-        {
-            return STATUS_REQUEST_ABORTED;
-        }
-    }
+    Thunk->SSN = Status;
     return Status;
 }
 
@@ -207,8 +200,7 @@ static BOOL g_bInitialized = FALSE;
 
 HRESULT
 NTAPI
-Syscall_Init(
-    _In_opt_ PFN_SYSCALL_FAIL_CALLBACK Callback)
+Syscall_Init(VOID)
 {
     NTSTATUS Status;
 
@@ -224,7 +216,7 @@ Syscall_Init(
         {
             if (Thunk->Data != NULL)
             {
-                Status = Syscall_InitThunk(Thunk, Callback);
+                Status = Syscall_InitThunk(Thunk);
                 if (!NT_SUCCESS(Status))
                 {
                     if (Status == STATUS_REQUEST_ABORTED)

@@ -1852,6 +1852,24 @@
     <MASM Include="Thunks\ScYieldExecution.asm">
       <Filter>Thunks</Filter>
     </MASM>
+    <MASM Include="Thunks\ScWow64AllocateVirtualMemory64.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScWow64GetNativeSystemInformation.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScWow64IsProcessorFeaturePresent.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScWow64QueryInformationProcess64.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScWow64ReadVirtualMemory64.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScWow64WriteVirtualMemory64.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Thunks">
