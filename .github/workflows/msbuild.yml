@@ -27,6 +27,8 @@ jobs:
           submodules: recursive
     - name: Prepare MSBuild
       uses: microsoft/setup-msbuild@main
+    - name: Generate Thunk Data
+      run: dotnet run .\Source --no-launch-profile --project .\Source\ThunkGenerator\ThunkGenerator.csproj
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: msbuild ${{env.SOLUTION_FILE_PATH}} /restore /m /p:Configuration=${{matrix.config}} /p:Platform=${{matrix.platform}} /p:RestorePackagesConfig=true

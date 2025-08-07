@@ -129,7 +129,10 @@ void ResolveFile(String Path, Boolean IsWin32u)
             }
         }
         ThunksH.WriteLine();
-        AllThunks.Write("    DEFINE_THUNK(" + "Sc" + Name + "),\r\n");
+        if (!IsWin32u)
+        {
+            AllThunks.Write("    DEFINE_THUNK(" + "Sc" + Name + "),\r\n");
+        }
 
         /* Prepare thunk data */
         if (IsWin32u)
@@ -151,9 +154,9 @@ void ResolveFile(String Path, Boolean IsWin32u)
         {
             for (Int32 j = iStart + 4; j < iEnd; j++)
             {
-                if (FileContent[j].Contains(" POINT "))
+                if (FileContent[j].Contains(" POINT ") || FileContent[j].Contains(" ULONGLONG "))
                 {
-                    ArgCount += 1;
+                    ArgCount++;
                 }
                 ArgCount++;
             }
@@ -217,7 +220,6 @@ void ResolveFile(String Path, Boolean IsWin32u)
             Name = "User" + Name;
         }
         Name = "Sc" + Name;
-
         File.WriteAllText(ThunkDir + @"\" + Name + ".asm",
                           CodeAsmBegin +
                           "$SYSCALL " + Name + ", " +

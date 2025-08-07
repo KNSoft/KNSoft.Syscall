@@ -11,7 +11,7 @@
     <ClInclude Include="UnitTest.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="AllThunks.inl" />
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
