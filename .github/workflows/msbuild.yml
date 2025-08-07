@@ -28,7 +28,7 @@ jobs:
     - name: Prepare MSBuild
       uses: microsoft/setup-msbuild@main
     - name: Restore nuget packages
-      run: msbuild ${{env.SOLUTION_FILE_PATH}} -t:Restore
+      run: msbuild ${{env.SOLUTION_FILE_PATH}} -t:Restore -p:RestorePackagesConfig=true
     - name: Generate thunk data
       run: dotnet run .\Source --no-launch-profile --project .\Source\ThunkGenerator\ThunkGenerator.csproj
     - name: Build
