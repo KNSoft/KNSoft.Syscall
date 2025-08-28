@@ -4,6 +4,23 @@
 
 EXTERN_C_START
 
+EXTERN_C PVOID Syscall_Win32uBase;
+EXTERN_C NTSTATUS Syscall_Win32uStatus;
+
+static
+FORCEINLINE
+NTSTATUS
+Syscall_LoadWin32u(VOID)
+{
+    UNICODE_STRING Win32uName = RTL_CONSTANT_STRING(L"win32u.dll");
+
+    Syscall_Win32uStatus = LdrLoadDll((PCWSTR)(LDR_PATH_IS_FLAGS | LDR_PATH_SEARCH_SYSTEM32),
+                                      NULL,
+                                      &Win32uName,
+                                      &Syscall_Win32uBase);
+    return Syscall_Win32uStatus;
+}
+
 HRESULT
 NTAPI
 Syscall_Init(VOID);

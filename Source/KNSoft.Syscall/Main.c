@@ -1,15 +1,14 @@
 ﻿#include "Syscall.inl"
 
-#define SYSCALL_WIN32U_STRING L"win32u.dll"
-
 #pragma section(".ScThunk$AAA", long, read, write)
 #pragma section(".ScThunk$ZZZ", long, read, write)
 
 static __declspec(allocate(".ScThunk$AAA")) SYSCALL_THUNK Syscall_Thunk_First[] = { NULL };
 static __declspec(allocate(".ScThunk$ZZZ")) SYSCALL_THUNK Syscall_Thunk_Last[] = { NULL };
 
+PVOID Syscall_Win32uBase = NULL;
+NTSTATUS Syscall_Win32uStatus = STATUS_UNSUCCESSFUL;
 static SYSCALL_DLL Ntdll = { 0 }, Win32u = { 0 };
-static NTSTATUS Win32uStatus = STATUS_SUCCESS;
 
 static
 FORCEINLINE
@@ -58,8 +57,6 @@ Syscall_InitThunk(
     _Inout_ PSYSCALL_THUNK Thunk)
 {
     NTSTATUS Status;
-    PLDR_DATA_TABLE_ENTRY pHead, pNode;
-    PWCHAR pChar;
     PSYSCALL_DLL SyscallDll;
     PCSTR Symbol;
     CHAR DecodedName[128 + 1];
@@ -80,45 +77,12 @@ Syscall_InitThunk(
     {
         if (Win32u.DllBase == NULL)
         {
-            if (!NT_SUCCESS(Win32uStatus))
+            if (!NT_SUCCESS(Syscall_Win32uStatus))
             {
-                Status = Win32uStatus;
+                Status = Syscall_Win32uStatus;
                 goto _Fail;
             }
-
-            /* Skip the first entry (ntdll.dll) */
-            pHead = CONTAINING_RECORD(NtCurrentPeb()->Ldr->InLoadOrderModuleList.Flink, LDR_DATA_TABLE_ENTRY, InLoadOrderLinks);
-            pNode = pHead;
-            do
-            {
-                pNode = CONTAINING_RECORD(pNode->InLoadOrderLinks.Flink, LDR_DATA_TABLE_ENTRY, InLoadOrderLinks);
-                if (pNode->BaseDllName.Length != _STR_SIZE(SYSCALL_WIN32U_STRING))
-                {
-                    continue;
-                }
-                pChar = pNode->BaseDllName.Buffer;
-                if ((pChar[0] != L'w' && pChar[0] != L'W') ||
-                    (pChar[1] != L'i' && pChar[1] != L'I') ||
-                    (pChar[2] != L'n' && pChar[2] != L'N') ||
-                    pChar[3] != L'3' ||
-                    pChar[4] != L'2' ||
-                    (pChar[5] != L'u' && pChar[5] != L'U') ||
-                    pChar[6] != L'.' ||
-                    (pChar[7] != L'd' && pChar[7] != L'D') ||
-                    (pChar[8] != L'l' && pChar[8] != L'L') ||
-                    (pChar[9] != L'l' && pChar[9] != L'L'))
-                {
-                    continue;
-                }
-                Win32u.DllBase = pNode->DllBase;
-                Syscall_InitDll(TRUE, &Win32u);
-                break;
-            } while (pNode != pHead);
-            if (pNode == pHead)
-            {
-                Status = Win32uStatus = STATUS_DLL_NOT_FOUND;
-                goto _Fail;
-            }
+            Win32u.DllBase = Syscall_Win32uBase;
         }
         SyscallDll = &Win32u;
     }

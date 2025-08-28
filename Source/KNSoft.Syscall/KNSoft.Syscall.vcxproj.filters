@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="Syscall.inl" />
     <None Include="Syscall.inc" />
-    <None Include="Syscall.x86.asm" />
+    <None Include="Syscall.x64.asm" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -15,7 +15,6 @@
     <ClInclude Include="Syscall.Thunks.h" />
   </ItemGroup>
   <ItemGroup>
-    <MASM Include="Syscall.x64.asm" />
     <MASM Include="Thunks\ScAcceptConnectPort.asm">
       <Filter>Thunks</Filter>
     </MASM>
@@ -1870,6 +1869,7 @@
     <MASM Include="Thunks\ScWow64WriteVirtualMemory64.asm">
       <Filter>Thunks</Filter>
     </MASM>
+    <MASM Include="Syscall.x86.asm" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Thunks">

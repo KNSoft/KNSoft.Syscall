@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="KNSoft.NDK" Version="1.2.35-beta" />
+    <PackageReference Include="KNSoft.NDK" Version="1.2.37-beta" />
   </ItemGroup>
 
 </Project>
