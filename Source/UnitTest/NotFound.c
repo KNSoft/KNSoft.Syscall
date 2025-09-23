@@ -8,7 +8,6 @@ _Function_class_(FN_TEST_PROC)
 LOGICAL
 NotFound(VOID)
 {
-
     if ((SharedUserData->NtMajorVersion > 6 ||
          SharedUserData->NtMajorVersion == 6 && SharedUserData->NtMinorVersion >= 2))
     {

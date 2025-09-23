@@ -1,6 +1,10 @@
 INCLUDE KNSoft\NDK\Assembly\Header.inc
 INCLUDE KNSoft\NDK\Assembly\NDK.inc
 
+IFDEF _M_IX86
+.MODEL FLAT
+ENDIF
+
 $STACKFRAME FALSE
 
 EXTERN $SYMBOLNAME(Syscall_FastSystemCall):SIZE_T

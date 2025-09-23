@@ -1,6 +1,6 @@
 ﻿#include "Syscall.inl"
 
-#define SYSCALL_NT_VER(Major, Minor, Build) ((ULONG)((((Major) & 0xFF) << 24) | (((Major) & 0xFF) << 16) | ((Build) & 0xFFFF)))
+#define SYSCALL_NT_VER(Major, Minor, Build) ((ULONG)((((Major) & 0xFF) << 24) | (((Minor) & 0xFF) << 16) | ((Build) & 0xFFFF)))
 
 EXTERN_C PVOID Syscall_Proc_Fast;
 #if defined(_M_X64)
@@ -25,6 +25,7 @@ Syscall_InitArch(VOID)
     if (g_Wow64Transition == NULL)
     {
         Syscall_FastSystemCall = &Syscall_Proc_Fast;
+        /* Win11 and above, int 2E can be enabled */
 #if defined(_M_X64)
         if (g_NTVer >= SYSCALL_NT_VER(10, 0, 22000) && SharedUserData->SystemCall)
         {

@@ -5838,6 +5838,14 @@ ScUserRealChildWindowFromPoint(
 EXTERN_C
 BOOL
 NTAPI
+ScUserRegisterCloakedNotification(
+    _In_ HWND WindowHandle,
+    _In_ BOOL Register
+    );
+
+EXTERN_C
+BOOL
+NTAPI
 ScUserRegisterHotKey(
     _In_ HWND WindowHandle,
     _In_ LONG id,
@@ -5920,7 +5928,7 @@ BOOL
 NTAPI
 ScUserSetWindowPos(
     _In_ HWND WindowHandle,
-    _In_ HWND WindowHandleInsertAfter,
+    _In_opt_ HWND WindowHandleInsertAfter,
     _In_ LONG X,
     _In_ LONG Y,
     _In_ LONG cx,
