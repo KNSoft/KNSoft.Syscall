@@ -2,17 +2,17 @@
 
 #define SYSCALL_NT_VER(Major, Minor, Build) ((ULONG)((((Major) & 0xFF) << 24) | (((Minor) & 0xFF) << 16) | ((Build) & 0xFFFF)))
 
-EXTERN_C PVOID Syscall_Proc_Fast;
+EXTERN_C VOID Syscall_Proc_Fast(VOID);
 #if defined(_M_X64)
-EXTERN_C PVOID Syscall_Proc_Int2E;
+EXTERN_C VOID Syscall_Proc_Int2E(VOID);
 #elif defined(_M_IX86)
-EXTERN_C PVOID Syscall_Proc_LE_Win7_WowTransition_X86;
+EXTERN_C VOID Syscall_Proc_LE_Win7_WowTransition_X86(VOID);
 #endif
 
-PVOID* Syscall_FastSystemCall = NULL; // aka KiFastSystemCall or Wow64SystemServiceCall
+PVOID Syscall_FastSystemCall = NULL; // aka KiFastSystemCall or Wow64SystemServiceCall
 
 static ULONG g_NTVer = 0;
-static PVOID* g_Wow64Transition = NULL;
+static PVOID g_Wow64Transition = NULL;
 
 LOGICAL
 Syscall_InitArch(VOID)

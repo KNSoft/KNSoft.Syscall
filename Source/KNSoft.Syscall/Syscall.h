@@ -38,6 +38,8 @@ Syscall_GetData(
     pData = Add2Ptr(ScFunction, *(PINT)Add2Ptr(ScFunction, 2) + 6);
 #elif defined(_M_IX86)
     pData = *(PULONG*)Add2Ptr(ScFunction, 1);
+#else
+#error
 #endif
 
     return *pData;
