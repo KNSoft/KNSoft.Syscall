@@ -7,10 +7,15 @@
     <Nullable>enable</Nullable>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="KNSoft.NDK" Version="1.2.42-beta" />
+    <Compile Include="..\packages\KNSoft.NDK.*\build\SDK\SDK.cs" Link="SDK.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="KNSoft.NDK" Version="1.2.44-beta" />
   </ItemGroup>
 
 </Project>

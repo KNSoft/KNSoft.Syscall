@@ -158,6 +158,7 @@
     <MASM Include="Thunks\ScAdjustGroupsToken.asm" />
     <MASM Include="Thunks\ScAdjustPrivilegesToken.asm" />
     <MASM Include="Thunks\ScAdjustTokenClaimsAndDeviceGroups.asm" />
+    <MASM Include="Thunks\ScAlertMultipleThreadByThreadId.asm" />
     <MASM Include="Thunks\ScAlertResumeThread.asm" />
     <MASM Include="Thunks\ScAlertThread.asm" />
     <MASM Include="Thunks\ScAlertThreadByThreadId.asm" />
@@ -224,6 +225,7 @@
     <MASM Include="Thunks\ScContinueEx.asm" />
     <MASM Include="Thunks\ScConvertBetweenAuxiliaryCounterAndPerformanceCounter.asm" />
     <MASM Include="Thunks\ScCopyFileChunk.asm" />
+    <MASM Include="Thunks\ScCreateCpuPartition.asm" />
     <MASM Include="Thunks\ScCreateCrossVmEvent.asm" />
     <MASM Include="Thunks\ScCreateCrossVmMutant.asm" />
     <MASM Include="Thunks\ScCreateDebugObject.asm" />
@@ -289,6 +291,7 @@
     <MASM Include="Thunks\ScDeleteWnfStateData.asm" />
     <MASM Include="Thunks\ScDeleteWnfStateName.asm" />
     <MASM Include="Thunks\ScDeviceIoControlFile.asm" />
+    <MASM Include="Thunks\ScDirectGraphicsCall.asm" />
     <MASM Include="Thunks\ScDisableLastKnownGood.asm" />
     <MASM Include="Thunks\ScDisplayString.asm" />
     <MASM Include="Thunks\ScDrawText.asm" />
@@ -355,6 +358,7 @@
     <MASM Include="Thunks\ScLockVirtualMemory.asm" />
     <MASM Include="Thunks\ScMakePermanentObject.asm" />
     <MASM Include="Thunks\ScMakeTemporaryObject.asm" />
+    <MASM Include="Thunks\ScManageHotPatch.asm" />
     <MASM Include="Thunks\ScManagePartition.asm" />
     <MASM Include="Thunks\ScMapCMFModule.asm" />
     <MASM Include="Thunks\ScMapUserPhysicalPages.asm" />
@@ -368,6 +372,7 @@
     <MASM Include="Thunks\ScNotifyChangeKey.asm" />
     <MASM Include="Thunks\ScNotifyChangeMultipleKeys.asm" />
     <MASM Include="Thunks\ScNotifyChangeSession.asm" />
+    <MASM Include="Thunks\ScOpenCpuPartition.asm" />
     <MASM Include="Thunks\ScOpenDirectoryObject.asm" />
     <MASM Include="Thunks\ScOpenEnlistment.asm" />
     <MASM Include="Thunks\ScOpenEvent.asm" />
@@ -538,6 +543,7 @@
     <MASM Include="Thunks\ScSetEventEx.asm" />
     <MASM Include="Thunks\ScSetHighEventPair.asm" />
     <MASM Include="Thunks\ScSetHighWaitLowEventPair.asm" />
+    <MASM Include="Thunks\ScSetInformationCpuPartition.asm" />
     <MASM Include="Thunks\ScSetInformationDebugObject.asm" />
     <MASM Include="Thunks\ScSetInformationEnlistment.asm" />
     <MASM Include="Thunks\ScSetInformationFile.asm" />
@@ -697,6 +703,7 @@
     <MASM Include="Thunks\ScUserRaiseLowerShellWindow.asm" />
     <MASM Include="Thunks\ScUserRealChildWindowFromPoint.asm" />
     <MASM Include="Thunks\ScUserRedrawWindow.asm" />
+    <MASM Include="Thunks\ScUserRegisterCloakedNotification.asm" />
     <MASM Include="Thunks\ScUserRegisterHotKey.asm" />
     <MASM Include="Thunks\ScUserRemoveMenu.asm" />
     <MASM Include="Thunks\ScUserSendInput.asm" />
@@ -763,12 +770,12 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
-    <Import Project="..\packages\KNSoft.NDK.1.2.42-beta\build\KNSoft.NDK.targets" Condition="Exists('..\packages\KNSoft.NDK.1.2.42-beta\build\KNSoft.NDK.targets')" />
+    <Import Project="..\packages\KNSoft.NDK.1.2.44-beta\build\KNSoft.NDK.targets" Condition="Exists('..\packages\KNSoft.NDK.1.2.44-beta\build\KNSoft.NDK.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\KNSoft.NDK.1.2.42-beta\build\KNSoft.NDK.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\KNSoft.NDK.1.2.42-beta\build\KNSoft.NDK.targets'))" />
+    <Error Condition="!Exists('..\packages\KNSoft.NDK.1.2.44-beta\build\KNSoft.NDK.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\KNSoft.NDK.1.2.44-beta\build\KNSoft.NDK.targets'))" />
   </Target>
 </Project>

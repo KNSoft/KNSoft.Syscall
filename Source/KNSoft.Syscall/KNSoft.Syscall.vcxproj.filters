@@ -1870,6 +1870,27 @@
       <Filter>Thunks</Filter>
     </MASM>
     <MASM Include="Syscall.x86.asm" />
+    <MASM Include="Thunks\ScAlertMultipleThreadByThreadId.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScCreateCpuPartition.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScDirectGraphicsCall.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScManageHotPatch.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScOpenCpuPartition.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScSetInformationCpuPartition.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserRegisterCloakedNotification.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Thunks">
