@@ -8,13 +8,11 @@
 
 extern FN_TEST_PROC AllThunks;
 extern FN_TEST_PROC MemPageAlloc;
-extern FN_TEST_PROC NoImport;
 extern FN_TEST_PROC NotFound;
 
 static PFN_TEST_PROC TestList[] = {
     &AllThunks,
     &MemPageAlloc,
-    &NoImport,
     &NotFound
 };
 

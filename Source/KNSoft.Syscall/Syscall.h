@@ -25,8 +25,9 @@ HRESULT
 NTAPI
 Syscall_Init(VOID);
 
-/* Return SSN or error status (>0xC0000000) */
+/* Return SSN or error status (>0xC0000000 / NT_ERROR) */
 static
+_Success_(!NT_ERROR(return))
 FORCEINLINE
 ULONG
 Syscall_GetData(

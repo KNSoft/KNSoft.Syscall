@@ -52,6 +52,43 @@ Syscall_CompareThunkName(
 
 static
 FORCEINLINE
+PVOID
+Syscall_GetNtdllBase(VOID)
+{
+    PLDR_DATA_TABLE_ENTRY HeadEntry, Entry;
+
+    Entry = HeadEntry = CONTAINING_RECORD(NtCurrentPeb()->Ldr->InInitializationOrderModuleList.Flink,
+                                          LDR_DATA_TABLE_ENTRY,
+                                          InInitializationOrderLinks);
+    do
+    {
+        /*
+         * The first initialized node may be replaced by honey pot by very few tamper security softwares,
+         * here we walk the list without a lock should be safe, unless that security software is really hacky.
+         */
+        if (Entry->BaseDllName.Length == _STR_SIZE(L"ntdll.dll") &&
+            (Entry->BaseDllName.Buffer[0] & ~ASCII_CASE_MASK) == L'N' &&
+            (Entry->BaseDllName.Buffer[1] & ~ASCII_CASE_MASK) == L'T' &&
+            (Entry->BaseDllName.Buffer[2] & ~ASCII_CASE_MASK) == L'D' &&
+            (Entry->BaseDllName.Buffer[3] & ~ASCII_CASE_MASK) == L'L' &&
+            (Entry->BaseDllName.Buffer[4] & ~ASCII_CASE_MASK) == L'L' &&
+            Entry->BaseDllName.Buffer[5] == L'.' &&
+            (Entry->BaseDllName.Buffer[6] & ~ASCII_CASE_MASK) == L'D' &&
+            (Entry->BaseDllName.Buffer[7] & ~ASCII_CASE_MASK) == L'L' &&
+            (Entry->BaseDllName.Buffer[8] & ~ASCII_CASE_MASK) == L'L')
+        {
+            return Entry->DllBase;
+        }
+        Entry = CONTAINING_RECORD(Entry->InInitializationOrderLinks.Flink,
+                                  LDR_DATA_TABLE_ENTRY,
+                                  InInitializationOrderLinks);
+    } while (Entry != HeadEntry);
+
+    return NULL;
+}
+
+static
+FORCEINLINE
 NTSTATUS
 Syscall_InitThunk(
     _Inout_ PSYSCALL_THUNK Thunk)
@@ -69,7 +106,12 @@ Syscall_InitThunk(
     {
         if (Ntdll.DllBase == NULL)
         {
-            Ntdll.DllBase = NtGetNtdllBase();
+            Ntdll.DllBase = Syscall_GetNtdllBase();
+            if (Ntdll.DllBase == NULL)
+            {
+                Status = STATUS_DLL_NOT_FOUND;
+                goto _Fail;
+            }
             Syscall_InitDll(FALSE, &Ntdll);
         }
         SyscallDll = &Ntdll;

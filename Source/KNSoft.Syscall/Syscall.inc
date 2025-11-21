@@ -1,9 +1,9 @@
-INCLUDE KNSoft\NDK\Assembly\Header.inc
-INCLUDE KNSoft\NDK\Assembly\NDK.inc
-
 IFDEF _M_IX86
 .MODEL FLAT
 ENDIF
+
+INCLUDE KNSoft\NDK\Assembly\Header.inc
+INCLUDE KNSoft\NDK\Assembly\NDK.inc
 
 $STACKFRAME FALSE
 

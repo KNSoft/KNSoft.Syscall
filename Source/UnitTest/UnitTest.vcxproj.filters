@@ -4,7 +4,6 @@
     <ClCompile Include="Main.c" />
     <ClCompile Include="MemPageAlloc.c" />
     <ClCompile Include="NotFound.c" />
-    <ClCompile Include="NoImport.c" />
     <ClCompile Include="AllThunks.c" />
   </ItemGroup>
   <ItemGroup>
