@@ -1,7 +1,5 @@
 ﻿#include "Syscall.inl"
 
-#define SYSCALL_NT_VER(Major, Minor, Build) ((ULONG)((((Major) & 0xFF) << 24) | (((Minor) & 0xFF) << 16) | ((Build) & 0xFFFF)))
-
 EXTERN_C VOID Syscall_Proc_Fast(VOID);
 #if defined(_M_X64)
 EXTERN_C VOID Syscall_Proc_Int2E(VOID);
@@ -17,9 +15,7 @@ static PVOID g_Wow64Transition = NULL;
 LOGICAL
 Syscall_InitArch(VOID)
 {
-    g_NTVer = SYSCALL_NT_VER(SharedUserData->NtMajorVersion,
-                             SharedUserData->NtMinorVersion,
-                             SharedUserData->NtBuildNumber);
+    g_NTVer = GET_NT_VERSION();
     g_Wow64Transition = (PVOID*)NtReadTebPVOID(WOW32Reserved);
 
     if (g_Wow64Transition == NULL)
@@ -27,7 +23,7 @@ Syscall_InitArch(VOID)
         Syscall_FastSystemCall = &Syscall_Proc_Fast;
         /* Win11 and above, int 2E can be enabled */
 #if defined(_M_X64)
-        if (g_NTVer >= SYSCALL_NT_VER(10, 0, 22000) && SharedUserData->SystemCall)
+        if (g_NTVer >= NT_VERSION_WIN11 && SharedUserData->SystemCall == SYSTEM_CALL_INT_2E)
         {
             Syscall_FastSystemCall = &Syscall_Proc_Int2E;
         }
@@ -35,7 +31,7 @@ Syscall_InitArch(VOID)
     } else
     {
 #if defined(_M_IX86)
-        if (g_NTVer >= SYSCALL_NT_VER(6, 2, 0))
+        if (g_NTVer >= NT_VERSION_WIN8)
         {
             /* Win8 and above */
             Syscall_FastSystemCall = g_Wow64Transition;

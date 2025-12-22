@@ -87,7 +87,6 @@ void HandleSyscalls(List<Cpp.Function> Syscalls, Boolean IsWin32u)
         String Name = Syscall.Name[2..];
         Syscall.Name = "Sc" + Name;
         Syscall.Prefixes.Remove("NTSYSCALLAPI");
-        Syscall.Prefixes.Insert(0, "EXTERN_C");
 
         /* Write to output files */
         String[] FuncDecl = Cpp.CodeResolver.FunctionToDeclaration(Syscall);

@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="KNSoft.NDK" Version="1.2.45-beta" />
+    <PackageReference Include="KNSoft.NDK" Version="1.2.47-beta" />
   </ItemGroup>
 
 </Project>

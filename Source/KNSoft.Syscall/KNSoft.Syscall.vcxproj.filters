@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="Syscall.inl" />
     <None Include="Syscall.inc" />
-    <None Include="Syscall.x64.asm" />
+    <None Include="Syscall.x86.asm" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1869,7 +1869,6 @@
     <MASM Include="Thunks\ScWow64WriteVirtualMemory64.asm">
       <Filter>Thunks</Filter>
     </MASM>
-    <MASM Include="Syscall.x86.asm" />
     <MASM Include="Thunks\ScAlertMultipleThreadByThreadId.asm">
       <Filter>Thunks</Filter>
     </MASM>
@@ -1891,6 +1890,16 @@
     <MASM Include="Thunks\ScUserRegisterCloakedNotification.asm">
       <Filter>Thunks</Filter>
     </MASM>
+    <MASM Include="Thunks\ScUserGetWindowProcessHandle.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSetProcessUIAccessZorder.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Thunks\ScUserSetProcessWin32Capabilities.asm">
+      <Filter>Thunks</Filter>
+    </MASM>
+    <MASM Include="Syscall.x64.asm" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Thunks">

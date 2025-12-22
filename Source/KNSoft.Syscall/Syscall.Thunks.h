@@ -6,7 +6,6 @@
 
 EXTERN_C_START
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAcceptConnectPort(
@@ -18,7 +17,6 @@ ScAcceptConnectPort(
     _Out_opt_ PREMOTE_PORT_VIEW ClientView
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAccessCheck(
@@ -32,7 +30,6 @@ ScAccessCheck(
     _Out_ PNTSTATUS AccessStatus
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAccessCheckAndAuditAlarm(
@@ -49,7 +46,6 @@ ScAccessCheckAndAuditAlarm(
     _Out_ PBOOLEAN GenerateOnClose
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAccessCheckByType(
@@ -66,7 +62,6 @@ ScAccessCheckByType(
     _Out_ PNTSTATUS AccessStatus
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAccessCheckByTypeAndAuditAlarm(
@@ -88,7 +83,6 @@ ScAccessCheckByTypeAndAuditAlarm(
     _Out_ PBOOLEAN GenerateOnClose
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAccessCheckByTypeResultList(
@@ -105,7 +99,6 @@ ScAccessCheckByTypeResultList(
     _Out_writes_(ObjectTypeListLength) PNTSTATUS AccessStatus
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAccessCheckByTypeResultListAndAuditAlarm(
@@ -127,7 +120,6 @@ ScAccessCheckByTypeResultListAndAuditAlarm(
     _Out_ PBOOLEAN GenerateOnClose
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAccessCheckByTypeResultListAndAuditAlarmByHandle(
@@ -150,7 +142,6 @@ ScAccessCheckByTypeResultListAndAuditAlarmByHandle(
     _Out_ PBOOLEAN GenerateOnClose
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAcquireCrossVmMutant(
@@ -158,7 +149,6 @@ ScAcquireCrossVmMutant(
     _In_ PLARGE_INTEGER Timeout
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAcquireProcessActivityReference(
@@ -167,7 +157,6 @@ ScAcquireProcessActivityReference(
     _In_ PROCESS_ACTIVITY_TYPE ProcessActivityType
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAddAtom(
@@ -176,7 +165,6 @@ ScAddAtom(
     _Out_opt_ PRTL_ATOM Atom
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAddAtomEx(
@@ -186,7 +174,6 @@ ScAddAtomEx(
     _In_ ULONG Flags
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAddBootEntry(
@@ -194,7 +181,6 @@ ScAddBootEntry(
     _Out_opt_ PULONG Id
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAddDriverEntry(
@@ -202,7 +188,6 @@ ScAddDriverEntry(
     _Out_opt_ PULONG Id
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAdjustGroupsToken(
@@ -214,7 +199,6 @@ ScAdjustGroupsToken(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAdjustPrivilegesToken(
@@ -226,7 +210,6 @@ ScAdjustPrivilegesToken(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAdjustTokenClaimsAndDeviceGroups(
@@ -248,7 +231,6 @@ ScAdjustTokenClaimsAndDeviceGroups(
     _Out_opt_ PULONG DeviceGroupsReturnBufferLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlertMultipleThreadByThreadId(
@@ -258,7 +240,6 @@ ScAlertMultipleThreadByThreadId(
     _In_ ULONG BoostCount
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlertResumeThread(
@@ -266,21 +247,18 @@ ScAlertResumeThread(
     _Out_opt_ PULONG PreviousSuspendCount
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlertThread(
     _In_ HANDLE ThreadHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlertThreadByThreadId(
     _In_ HANDLE ThreadId
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlertThreadByThreadIdEx(
@@ -288,14 +266,12 @@ ScAlertThreadByThreadIdEx(
     _In_opt_ PRTL_SRWLOCK Lock
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAllocateLocallyUniqueId(
     _Out_ PLUID Luid
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAllocateReserveObject(
@@ -304,7 +280,6 @@ ScAllocateReserveObject(
     _In_ MEMORY_RESERVE_TYPE Type
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAllocateUserPhysicalPages(
@@ -313,7 +288,6 @@ ScAllocateUserPhysicalPages(
     _Out_writes_(*NumberOfPages) PULONG_PTR UserPfnArray
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAllocateUserPhysicalPagesEx(
@@ -324,7 +298,6 @@ ScAllocateUserPhysicalPagesEx(
     _In_ ULONG ExtendedParameterCount
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAllocateUuids(
@@ -334,7 +307,6 @@ ScAllocateUuids(
     _Out_ PCHAR Seed
     );
 
-EXTERN_C
 _Must_inspect_result_
 _When_(return == 0, __drv_allocatesMem(mem))
 NTSTATUS
@@ -348,7 +320,6 @@ ScAllocateVirtualMemory(
     _In_ ULONG PageProtection
     );
 
-EXTERN_C
 _Must_inspect_result_
 _When_(return == 0, __drv_allocatesMem(Mem))
 NTSTATUS
@@ -363,7 +334,6 @@ ScAllocateVirtualMemoryEx(
     _In_ ULONG ExtendedParameterCount
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlpcAcceptConnectPort(
@@ -378,7 +348,6 @@ ScAlpcAcceptConnectPort(
     _In_ BOOLEAN AcceptConnection
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlpcCancelMessage(
@@ -387,7 +356,6 @@ ScAlpcCancelMessage(
     _In_ PALPC_CONTEXT_ATTR MessageContext
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlpcConnectPort(
@@ -404,7 +372,6 @@ ScAlpcConnectPort(
     _In_opt_ PLARGE_INTEGER Timeout
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlpcConnectPortEx(
@@ -421,7 +388,6 @@ ScAlpcConnectPortEx(
     _In_opt_ PLARGE_INTEGER Timeout
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlpcCreatePort(
@@ -430,7 +396,6 @@ ScAlpcCreatePort(
     _In_opt_ PALPC_PORT_ATTRIBUTES PortAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlpcCreatePortSection(
@@ -442,7 +407,6 @@ ScAlpcCreatePortSection(
     _Out_ PSIZE_T ActualSectionSize
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlpcCreateResourceReserve(
@@ -452,7 +416,6 @@ ScAlpcCreateResourceReserve(
     _Out_ PULONG ResourceId
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlpcCreateSectionView(
@@ -461,7 +424,6 @@ ScAlpcCreateSectionView(
     _Inout_ PALPC_DATA_VIEW_ATTR ViewAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlpcCreateSecurityContext(
@@ -470,7 +432,6 @@ ScAlpcCreateSecurityContext(
     _Inout_ PALPC_SECURITY_ATTR SecurityAttribute
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlpcDeletePortSection(
@@ -479,7 +440,6 @@ ScAlpcDeletePortSection(
     _In_ ALPC_HANDLE SectionHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlpcDeleteResourceReserve(
@@ -488,7 +448,6 @@ ScAlpcDeleteResourceReserve(
     _In_ PULONG ResourceId
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlpcDeleteSectionView(
@@ -497,7 +456,6 @@ ScAlpcDeleteSectionView(
     _In_ PVOID ViewBase
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlpcDeleteSecurityContext(
@@ -506,7 +464,6 @@ ScAlpcDeleteSecurityContext(
     _In_ ALPC_HANDLE ContextHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlpcDisconnectPort(
@@ -514,7 +471,6 @@ ScAlpcDisconnectPort(
     _In_ ULONG Flags
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlpcImpersonateClientContainerOfPort(
@@ -523,7 +479,6 @@ ScAlpcImpersonateClientContainerOfPort(
     _Reserved_ ULONG Flags
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlpcImpersonateClientOfPort(
@@ -532,7 +487,6 @@ ScAlpcImpersonateClientOfPort(
     _In_ PVOID Flags
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlpcOpenSenderProcess(
@@ -544,7 +498,6 @@ ScAlpcOpenSenderProcess(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlpcOpenSenderThread(
@@ -556,7 +509,6 @@ ScAlpcOpenSenderThread(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlpcQueryInformation(
@@ -567,7 +519,6 @@ ScAlpcQueryInformation(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlpcQueryInformationMessage(
@@ -579,7 +530,6 @@ ScAlpcQueryInformationMessage(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlpcRevokeSecurityContext(
@@ -588,7 +538,6 @@ ScAlpcRevokeSecurityContext(
     _In_ ALPC_HANDLE ContextHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlpcSendWaitReceivePort(
@@ -602,7 +551,6 @@ ScAlpcSendWaitReceivePort(
     _In_opt_ PLARGE_INTEGER Timeout
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAlpcSetInformation(
@@ -612,7 +560,6 @@ ScAlpcSetInformation(
     _In_ ULONG Length
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScApphelpCacheControl(
@@ -620,7 +567,6 @@ ScApphelpCacheControl(
     _Inout_opt_ PVOID ServiceContext // AHC_SERVICE_DATA
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAreMappedFilesTheSame(
@@ -628,7 +574,6 @@ ScAreMappedFilesTheSame(
     _In_ PVOID File2MappedAsFile
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAssignProcessToJobObject(
@@ -636,7 +581,6 @@ ScAssignProcessToJobObject(
     _In_ HANDLE ProcessHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScAssociateWaitCompletionPacket(
@@ -650,7 +594,6 @@ ScAssociateWaitCompletionPacket(
     _Out_opt_ PBOOLEAN AlreadySignaled
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCallbackReturn(
@@ -659,7 +602,6 @@ ScCallbackReturn(
     _In_ NTSTATUS Status
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCallEnclave(
@@ -669,7 +611,6 @@ ScCallEnclave(
     _Inout_ PVOID* RoutineParamReturn // input routine parameter, output routine return value
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCancelIoFile(
@@ -677,7 +618,6 @@ ScCancelIoFile(
     _Out_ PIO_STATUS_BLOCK IoStatusBlock
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCancelIoFileEx(
@@ -686,7 +626,6 @@ ScCancelIoFileEx(
     _Out_ PIO_STATUS_BLOCK IoStatusBlock
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCancelSynchronousIoFile(
@@ -695,7 +634,6 @@ ScCancelSynchronousIoFile(
     _Out_ PIO_STATUS_BLOCK IoStatusBlock
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCancelTimer(
@@ -703,7 +641,6 @@ ScCancelTimer(
     _Out_opt_ PBOOLEAN CurrentState
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCancelTimer2(
@@ -711,7 +648,6 @@ ScCancelTimer2(
     _In_ PT2_CANCEL_PARAMETERS Parameters
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCancelWaitCompletionPacket(
@@ -719,7 +655,6 @@ ScCancelWaitCompletionPacket(
     _In_ BOOLEAN RemoveSignaledPacket
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScChangeProcessState(
@@ -731,7 +666,6 @@ ScChangeProcessState(
     _In_opt_ _Reserved_ ULONG Reserved
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScChangeThreadState(
@@ -743,21 +677,18 @@ ScChangeThreadState(
     _In_opt_ ULONG Reserved
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScClearEvent(
     _In_ HANDLE EventHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScClose(
     _In_ _Post_ptr_invalid_ HANDLE Handle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCloseObjectAuditAlarm(
@@ -766,7 +697,6 @@ ScCloseObjectAuditAlarm(
     _In_ BOOLEAN GenerateOnClose
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCommitComplete(
@@ -774,7 +704,6 @@ ScCommitComplete(
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -783,7 +712,6 @@ ScCommitEnlistment(
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCommitRegistryTransaction(
@@ -791,7 +719,6 @@ ScCommitRegistryTransaction(
     _Reserved_ ULONG Flags
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCommitTransaction(
@@ -799,7 +726,6 @@ ScCommitTransaction(
     _In_ BOOLEAN Wait
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCompactKeys(
@@ -807,7 +733,6 @@ ScCompactKeys(
     _In_reads_(Count) HANDLE KeyArray[]
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCompareObjects(
@@ -815,7 +740,6 @@ ScCompareObjects(
     _In_ HANDLE SecondObjectHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCompareSigningLevels(
@@ -823,7 +747,6 @@ ScCompareSigningLevels(
     _In_ SE_SIGNING_LEVEL SecondSigningLevel
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCompareTokens(
@@ -832,21 +755,18 @@ ScCompareTokens(
     _Out_ PBOOLEAN Equal
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCompleteConnectPort(
     _In_ HANDLE PortHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCompressKey(
     _In_ HANDLE KeyHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScConnectPort(
@@ -860,7 +780,6 @@ ScConnectPort(
     _Inout_opt_ PULONG ConnectionInformationLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScContinue(
@@ -868,7 +787,6 @@ ScContinue(
     _In_ BOOLEAN TestAlert
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScContinueEx(
@@ -876,7 +794,6 @@ ScContinueEx(
     _In_ PVOID ContinueArgument // "PKCONTINUE_ARGUMENT ContinueArgument" and "BOOLEAN TestAlert" are valid
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScConvertBetweenAuxiliaryCounterAndPerformanceCounter(
@@ -886,7 +803,6 @@ ScConvertBetweenAuxiliaryCounterAndPerformanceCounter(
     _Out_opt_ PULONG64 ConversionError
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCopyFileChunk(
@@ -902,7 +818,6 @@ ScCopyFileChunk(
     _In_ ULONG Flags
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateCpuPartition(
@@ -911,7 +826,6 @@ ScCreateCpuPartition(
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateCrossVmEvent(
@@ -923,7 +837,6 @@ ScCreateCrossVmEvent(
     _In_ LPCGUID ServiceID
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateCrossVmMutant(
@@ -935,7 +848,6 @@ ScCreateCrossVmMutant(
     _In_ LPCGUID ServiceID
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateDebugObject(
@@ -945,7 +857,6 @@ ScCreateDebugObject(
     _In_ ULONG Flags
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateDirectoryObject(
@@ -954,7 +865,6 @@ ScCreateDirectoryObject(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateDirectoryObjectEx(
@@ -965,7 +875,6 @@ ScCreateDirectoryObjectEx(
     _In_ ULONG Flags
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateEnclave(
@@ -980,7 +889,6 @@ ScCreateEnclave(
     _Out_opt_ PULONG EnclaveError
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -995,7 +903,6 @@ ScCreateEnlistment(
     _In_opt_ PVOID EnlistmentKey
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateEvent(
@@ -1006,7 +913,6 @@ ScCreateEvent(
     _In_ BOOLEAN InitialState
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateEventPair(
@@ -1015,7 +921,6 @@ ScCreateEventPair(
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateFile(
@@ -1032,7 +937,6 @@ ScCreateFile(
     _In_ ULONG EaLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateIoCompletion(
@@ -1042,7 +946,6 @@ ScCreateIoCompletion(
     _In_opt_ ULONG Count
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateIoRing(
@@ -1053,7 +956,6 @@ ScCreateIoRing(
     _Out_ PVOID OutputParameters
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateIRTimer(
@@ -1062,7 +964,6 @@ ScCreateIRTimer(
     _In_ ACCESS_MASK DesiredAccess
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateJobObject(
@@ -1071,7 +972,6 @@ ScCreateJobObject(
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateJobSet(
@@ -1080,7 +980,6 @@ ScCreateJobSet(
     _In_ ULONG Flags
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateKey(
@@ -1093,7 +992,6 @@ ScCreateKey(
     _Out_opt_ PULONG Disposition
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateKeyedEvent(
@@ -1103,7 +1001,6 @@ ScCreateKeyedEvent(
     _Reserved_ ULONG Flags
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateKeyTransacted(
@@ -1117,7 +1014,6 @@ ScCreateKeyTransacted(
     _Out_opt_ PULONG Disposition
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateLowBoxToken(
@@ -1132,7 +1028,6 @@ ScCreateLowBoxToken(
     _In_reads_opt_(HandleCount) HANDLE* Handles
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateMailslotFile(
@@ -1146,7 +1041,6 @@ ScCreateMailslotFile(
     _In_ PLARGE_INTEGER ReadTimeout
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateMutant(
@@ -1156,7 +1050,6 @@ ScCreateMutant(
     _In_ BOOLEAN InitialOwner
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateNamedPipeFile(
@@ -1176,7 +1069,6 @@ ScCreateNamedPipeFile(
     _In_ PLARGE_INTEGER DefaultTimeout
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreatePagingFile(
@@ -1186,7 +1078,6 @@ ScCreatePagingFile(
     _In_ ULONG Priority
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreatePartition(
@@ -1196,7 +1087,6 @@ ScCreatePartition(
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreatePort(
@@ -1207,7 +1097,6 @@ ScCreatePort(
     _In_opt_ ULONG MaxPoolUsage
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreatePrivateNamespace(
@@ -1217,7 +1106,6 @@ ScCreatePrivateNamespace(
     _In_ POBJECT_BOUNDARY_DESCRIPTOR BoundaryDescriptor
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateProcess(
@@ -1231,7 +1119,6 @@ ScCreateProcess(
     _In_opt_ HANDLE TokenHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateProcessEx(
@@ -1246,7 +1133,6 @@ ScCreateProcessEx(
     _Reserved_ ULONG Reserved // JobMemberLevel
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateProcessStateChange(
@@ -1257,7 +1143,6 @@ ScCreateProcessStateChange(
     _In_opt_ _Reserved_ ULONG Reserved
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateProfile(
@@ -1272,7 +1157,6 @@ ScCreateProfile(
     _In_ KAFFINITY Affinity
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateProfileEx(
@@ -1288,7 +1172,6 @@ ScCreateProfileEx(
     _In_reads_(GroupCount) PGROUP_AFFINITY GroupAffinity
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateRegistryTransaction(
@@ -1298,7 +1181,6 @@ ScCreateRegistryTransaction(
     _Reserved_ ULONG CreateOptions
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -1312,7 +1194,6 @@ ScCreateResourceManager(
     _In_opt_ PUNICODE_STRING Description
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateSection(
@@ -1325,7 +1206,6 @@ ScCreateSection(
     _In_opt_ HANDLE FileHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateSectionEx(
@@ -1340,7 +1220,6 @@ ScCreateSectionEx(
     _In_ ULONG ExtendedParameterCount
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateSemaphore(
@@ -1351,7 +1230,6 @@ ScCreateSemaphore(
     _In_ LONG MaximumCount
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateSymbolicLinkObject(
@@ -1361,7 +1239,6 @@ ScCreateSymbolicLinkObject(
     _In_ PUNICODE_STRING LinkTarget
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateThread(
@@ -1375,7 +1252,6 @@ ScCreateThread(
     _In_ BOOLEAN CreateSuspended
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateThreadEx(
@@ -1392,7 +1268,6 @@ ScCreateThreadEx(
     _In_opt_ PPS_ATTRIBUTE_LIST AttributeList
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateThreadStateChange(
@@ -1403,7 +1278,6 @@ ScCreateThreadStateChange(
     _In_opt_ _Reserved_ ULONG Reserved
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateTimer(
@@ -1413,7 +1287,6 @@ ScCreateTimer(
     _In_ TIMER_TYPE TimerType
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateTimer2(
@@ -1424,7 +1297,6 @@ ScCreateTimer2(
     _In_ ACCESS_MASK DesiredAccess
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateToken(
@@ -1443,7 +1315,6 @@ ScCreateToken(
     _In_ PTOKEN_SOURCE Source
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateTokenEx(
@@ -1466,7 +1337,6 @@ ScCreateTokenEx(
     _In_ PTOKEN_SOURCE Source
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -1483,7 +1353,6 @@ ScCreateTransaction(
     _In_opt_ PUNICODE_STRING Description
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -1496,7 +1365,6 @@ ScCreateTransactionManager(
     _In_opt_ ULONG CommitStrength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateUserProcess(
@@ -1513,7 +1381,6 @@ ScCreateUserProcess(
     _In_opt_ PPS_ATTRIBUTE_LIST AttributeList
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateWaitablePort(
@@ -1524,7 +1391,6 @@ ScCreateWaitablePort(
     _In_opt_ ULONG MaxPoolUsage
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateWaitCompletionPacket(
@@ -1533,7 +1399,6 @@ ScCreateWaitCompletionPacket(
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateWnfStateName(
@@ -1546,7 +1411,6 @@ ScCreateWnfStateName(
     _In_ PSECURITY_DESCRIPTOR SecurityDescriptor
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScCreateWorkerFactory(
@@ -1562,7 +1426,6 @@ ScCreateWorkerFactory(
     _In_opt_ SIZE_T StackCommit
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScDebugActiveProcess(
@@ -1570,7 +1433,6 @@ ScDebugActiveProcess(
     _In_ HANDLE DebugObjectHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScDebugContinue(
@@ -1579,7 +1441,6 @@ ScDebugContinue(
     _In_ NTSTATUS ContinueStatus
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScDelayExecution(
@@ -1587,42 +1448,36 @@ ScDelayExecution(
     _In_ PLARGE_INTEGER DelayInterval
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScDeleteAtom(
     _In_ RTL_ATOM Atom
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScDeleteBootEntry(
     _In_ ULONG Id
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScDeleteDriverEntry(
     _In_ ULONG Id
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScDeleteFile(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScDeleteKey(
     _In_ HANDLE KeyHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScDeleteObjectAuditAlarm(
@@ -1631,14 +1486,12 @@ ScDeleteObjectAuditAlarm(
     _In_ BOOLEAN GenerateOnClose
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScDeletePrivateNamespace(
     _In_ HANDLE NamespaceHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScDeleteValueKey(
@@ -1646,7 +1499,6 @@ ScDeleteValueKey(
     _In_ PUNICODE_STRING ValueName
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScDeleteWnfStateData(
@@ -1654,14 +1506,12 @@ ScDeleteWnfStateData(
     _In_opt_ PCSID ExplicitScope
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScDeleteWnfStateName(
     _In_ PCWNF_STATE_NAME StateName
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScDeviceIoControlFile(
@@ -1677,7 +1527,6 @@ ScDeviceIoControlFile(
     _In_ ULONG OutputBufferLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScDirectGraphicsCall(
@@ -1688,28 +1537,24 @@ ScDirectGraphicsCall(
     _Out_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScDisableLastKnownGood(
     VOID
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScDisplayString(
     _In_ PUNICODE_STRING String
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScDrawText(
     _In_ PUNICODE_STRING Text
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScDuplicateObject(
@@ -1722,7 +1567,6 @@ ScDuplicateObject(
     _In_ ULONG Options
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScDuplicateToken(
@@ -1734,14 +1578,12 @@ ScDuplicateToken(
     _Out_ PHANDLE NewTokenHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScEnableLastKnownGood(
     VOID
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScEnumerateBootEntries(
@@ -1749,7 +1591,6 @@ ScEnumerateBootEntries(
     _Inout_ PULONG BufferLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScEnumerateDriverEntries(
@@ -1757,7 +1598,6 @@ ScEnumerateDriverEntries(
     _Inout_ PULONG BufferLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScEnumerateKey(
@@ -1769,7 +1609,6 @@ ScEnumerateKey(
     _Out_ PULONG ResultLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScEnumerateSystemEnvironmentValuesEx(
@@ -1778,7 +1617,6 @@ ScEnumerateSystemEnvironmentValuesEx(
     _Inout_ PULONG BufferLength
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -1790,7 +1628,6 @@ ScEnumerateTransactionObject(
     _Out_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScEnumerateValueKey(
@@ -1802,7 +1639,6 @@ ScEnumerateValueKey(
     _Out_ PULONG ResultLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScExtendSection(
@@ -1810,7 +1646,6 @@ ScExtendSection(
     _Inout_ PLARGE_INTEGER NewSectionSize
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScFilterBootOption(
@@ -1821,7 +1656,6 @@ ScFilterBootOption(
     _In_ ULONG DataSize
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScFilterToken(
@@ -1833,7 +1667,6 @@ ScFilterToken(
     _Out_ PHANDLE NewTokenHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScFilterTokenEx(
@@ -1853,7 +1686,6 @@ ScFilterTokenEx(
     _Out_ PHANDLE NewTokenHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScFindAtom(
@@ -1862,7 +1694,6 @@ ScFindAtom(
     _Out_opt_ PRTL_ATOM Atom
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScFlushBuffersFile(
@@ -1870,7 +1701,6 @@ ScFlushBuffersFile(
     _Out_ PIO_STATUS_BLOCK IoStatusBlock
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScFlushBuffersFileEx(
@@ -1881,7 +1711,6 @@ ScFlushBuffersFileEx(
     _Out_ PIO_STATUS_BLOCK IoStatusBlock
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScFlushInstallUILanguage(
@@ -1889,7 +1718,6 @@ ScFlushInstallUILanguage(
     _In_ ULONG SetComittedFlag
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScFlushInstructionCache(
@@ -1898,21 +1726,18 @@ ScFlushInstructionCache(
     _In_ SIZE_T RegionSize
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScFlushKey(
     _In_ HANDLE KeyHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScFlushProcessWriteBuffers(
     VOID
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScFlushVirtualMemory(
@@ -1922,14 +1747,12 @@ ScFlushVirtualMemory(
     _Out_ PIO_STATUS_BLOCK IoStatus
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScFlushWriteBuffer(
     VOID
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScFreeUserPhysicalPages(
@@ -1938,7 +1761,6 @@ ScFreeUserPhysicalPages(
     _In_reads_(*NumberOfPages) PULONG_PTR UserPfnArray
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScFreeVirtualMemory(
@@ -1948,14 +1770,12 @@ ScFreeVirtualMemory(
     _In_ ULONG FreeType
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScFreezeRegistry(
     _In_ ULONG TimeOutInSeconds
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScFreezeTransactions(
@@ -1963,7 +1783,6 @@ ScFreezeTransactions(
     _In_ PLARGE_INTEGER ThawTimeout
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScFsControlFile(
@@ -1979,7 +1798,6 @@ ScFsControlFile(
     _In_ ULONG OutputBufferLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScGetCachedSigningLevel(
@@ -1991,7 +1809,6 @@ ScGetCachedSigningLevel(
     _Out_opt_ PULONG ThumbprintAlgorithm
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScGetCompleteWnfStateSubscription(
@@ -2003,7 +1820,6 @@ ScGetCompleteWnfStateSubscription(
     _In_ ULONG DescriptorSize
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScGetContextThread(
@@ -2011,21 +1827,18 @@ ScGetContextThread(
     _Inout_ PCONTEXT ThreadContext
     );
 
-EXTERN_C
 ULONG
 NTAPI
 ScGetCurrentProcessorNumber(
     VOID
     );
 
-EXTERN_C
 ULONG
 NTAPI
 ScGetCurrentProcessorNumberEx(
     _Out_opt_ PPROCESSOR_NUMBER ProcessorNumber
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScGetDevicePowerState(
@@ -2033,7 +1846,6 @@ ScGetDevicePowerState(
     _Out_ PDEVICE_POWER_STATE State
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScGetMUIRegistryInfo(
@@ -2042,7 +1854,6 @@ ScGetMUIRegistryInfo(
     _Out_ PVOID Data
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScGetNextProcess(
@@ -2053,7 +1864,6 @@ ScGetNextProcess(
     _Out_ PHANDLE NewProcessHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScGetNextThread(
@@ -2065,7 +1875,6 @@ ScGetNextThread(
     _Out_ PHANDLE NewThreadHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScGetNlsSectionPtr(
@@ -2076,7 +1885,6 @@ ScGetNlsSectionPtr(
     _Out_ PULONG SectionSize
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -2090,7 +1898,6 @@ ScGetNotificationResourceManager(
     _In_opt_ ULONG_PTR AsynchronousContext
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScGetPlugPlayEvent(
@@ -2100,7 +1907,6 @@ ScGetPlugPlayEvent(
     _In_ ULONG EventBufferSize
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScGetWriteWatch(
@@ -2113,14 +1919,12 @@ ScGetWriteWatch(
     _Out_ PULONG Granularity
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScImpersonateAnonymousToken(
     _In_ HANDLE ThreadHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScImpersonateClientOfPort(
@@ -2128,7 +1932,6 @@ ScImpersonateClientOfPort(
     _In_ PPORT_MESSAGE Message
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScImpersonateThread(
@@ -2137,7 +1940,6 @@ ScImpersonateThread(
     _In_ PSECURITY_QUALITY_OF_SERVICE SecurityQos
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScInitializeEnclave(
@@ -2148,7 +1950,6 @@ ScInitializeEnclave(
     _Out_opt_ PULONG EnclaveError
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScInitializeNlsFiles(
@@ -2158,14 +1959,12 @@ ScInitializeNlsFiles(
     _Out_opt_ PULONG CurrentNLSVersion
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScInitializeRegistry(
     _In_ USHORT BootCondition
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScInitiatePowerAction(
@@ -2175,7 +1974,6 @@ ScInitiatePowerAction(
     _In_ BOOLEAN Asynchronous
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScIsProcessInJob(
@@ -2183,21 +1981,18 @@ ScIsProcessInJob(
     _In_opt_ HANDLE JobHandle
     );
 
-EXTERN_C
 BOOLEAN
 NTAPI
 ScIsSystemResumeAutomatic(
     VOID
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScIsUILanguageComitted(
     VOID
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScListenPort(
@@ -2205,14 +2000,12 @@ ScListenPort(
     _Out_ PPORT_MESSAGE ConnectionRequest
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScLoadDriver(
     _In_ PUNICODE_STRING DriverServiceName
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScLoadEnclaveData(
@@ -2227,7 +2020,6 @@ ScLoadEnclaveData(
     _Out_opt_ PULONG EnclaveError
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScLoadKey(
@@ -2235,7 +2027,6 @@ ScLoadKey(
     _In_ POBJECT_ATTRIBUTES SourceFile
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScLoadKey2(
@@ -2244,7 +2035,6 @@ ScLoadKey2(
     _In_ ULONG Flags
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScLoadKey3(
@@ -2258,7 +2048,6 @@ ScLoadKey3(
     _Reserved_ PVOID Reserved
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScLoadKeyEx(
@@ -2272,7 +2061,6 @@ ScLoadKeyEx(
     _Reserved_ PVOID Reserved // previously PIO_STATUS_BLOCK
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScLockFile(
@@ -2288,7 +2076,6 @@ ScLockFile(
     _In_ BOOLEAN ExclusiveLock
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScLockProductActivationKeys(
@@ -2296,14 +2083,12 @@ ScLockProductActivationKeys(
     _Out_opt_ ULONG* pSafeMode
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScLockRegistryKey(
     _In_ HANDLE KeyHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScLockVirtualMemory(
@@ -2313,21 +2098,18 @@ ScLockVirtualMemory(
     _In_ ULONG MapType
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScMakePermanentObject(
     _In_ HANDLE Handle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScMakeTemporaryObject(
     _In_ HANDLE Handle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScManageHotPatch(
@@ -2337,7 +2119,6 @@ ScManageHotPatch(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScManagePartition(
@@ -2348,7 +2129,6 @@ ScManagePartition(
     _In_ ULONG PartitionInformationLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScMapCMFModule(
@@ -2360,7 +2140,6 @@ ScMapCMFModule(
     _Out_opt_ PVOID* BaseAddress
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScMapUserPhysicalPages(
@@ -2369,7 +2148,6 @@ ScMapUserPhysicalPages(
     _In_reads_opt_(NumberOfPages) PULONG_PTR UserPfnArray
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScMapUserPhysicalPagesScatter(
@@ -2378,7 +2156,6 @@ ScMapUserPhysicalPagesScatter(
     _In_reads_opt_(NumberOfPages) PULONG_PTR UserPfnArray
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScMapViewOfSection(
@@ -2394,7 +2171,6 @@ ScMapViewOfSection(
     _In_ ULONG PageProtection
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScMapViewOfSectionEx(
@@ -2409,21 +2185,18 @@ ScMapViewOfSectionEx(
     _In_ ULONG ExtendedParameterCount
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScModifyBootEntry(
     _In_ PBOOT_ENTRY BootEntry
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScModifyDriverEntry(
     _In_ PEFI_DRIVER_ENTRY DriverEntry
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScNotifyChangeDirectoryFile(
@@ -2438,7 +2211,6 @@ ScNotifyChangeDirectoryFile(
     _In_ BOOLEAN WatchTree
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScNotifyChangeDirectoryFileEx(
@@ -2454,7 +2226,6 @@ ScNotifyChangeDirectoryFileEx(
     _In_opt_ DIRECTORY_NOTIFY_INFORMATION_CLASS DirectoryNotifyInformationClass
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScNotifyChangeKey(
@@ -2470,7 +2241,6 @@ ScNotifyChangeKey(
     _In_ BOOLEAN Asynchronous
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScNotifyChangeMultipleKeys(
@@ -2488,7 +2258,6 @@ ScNotifyChangeMultipleKeys(
     _In_ BOOLEAN Asynchronous
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScNotifyChangeSession(
@@ -2502,7 +2271,6 @@ ScNotifyChangeSession(
     _In_ ULONG PayloadSize
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenCpuPartition(
@@ -2511,7 +2279,6 @@ ScOpenCpuPartition(
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenDirectoryObject(
@@ -2520,7 +2287,6 @@ ScOpenDirectoryObject(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -2532,7 +2298,6 @@ ScOpenEnlistment(
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenEvent(
@@ -2541,7 +2306,6 @@ ScOpenEvent(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenEventPair(
@@ -2550,7 +2314,6 @@ ScOpenEventPair(
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenFile(
@@ -2562,7 +2325,6 @@ ScOpenFile(
     _In_ ULONG OpenOptions
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenIoCompletion(
@@ -2571,7 +2333,6 @@ ScOpenIoCompletion(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenJobObject(
@@ -2580,7 +2341,6 @@ ScOpenJobObject(
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenKey(
@@ -2589,7 +2349,6 @@ ScOpenKey(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenKeyedEvent(
@@ -2598,7 +2357,6 @@ ScOpenKeyedEvent(
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenKeyEx(
@@ -2608,7 +2366,6 @@ ScOpenKeyEx(
     _In_ ULONG OpenOptions
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenKeyTransacted(
@@ -2618,7 +2375,6 @@ ScOpenKeyTransacted(
     _In_ HANDLE TransactionHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenKeyTransactedEx(
@@ -2629,7 +2385,6 @@ ScOpenKeyTransactedEx(
     _In_ HANDLE TransactionHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenMutant(
@@ -2638,7 +2393,6 @@ ScOpenMutant(
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenObjectAuditAlarm(
@@ -2656,7 +2410,6 @@ ScOpenObjectAuditAlarm(
     _Out_ PBOOLEAN GenerateOnClose
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenPartition(
@@ -2665,7 +2418,6 @@ ScOpenPartition(
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenPrivateNamespace(
@@ -2675,7 +2427,6 @@ ScOpenPrivateNamespace(
     _In_ POBJECT_BOUNDARY_DESCRIPTOR BoundaryDescriptor
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenProcess(
@@ -2685,7 +2436,6 @@ ScOpenProcess(
     _In_opt_ PCLIENT_ID ClientId
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenProcessToken(
@@ -2694,7 +2444,6 @@ ScOpenProcessToken(
     _Out_ PHANDLE TokenHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenProcessTokenEx(
@@ -2704,7 +2453,6 @@ ScOpenProcessTokenEx(
     _Out_ PHANDLE TokenHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenRegistryTransaction(
@@ -2713,7 +2461,6 @@ ScOpenRegistryTransaction(
     _In_ POBJECT_ATTRIBUTES ObjAttributes
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -2725,7 +2472,6 @@ ScOpenResourceManager(
     _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenSection(
@@ -2734,7 +2480,6 @@ ScOpenSection(
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenSemaphore(
@@ -2743,7 +2488,6 @@ ScOpenSemaphore(
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenSession(
@@ -2752,7 +2496,6 @@ ScOpenSession(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenSymbolicLinkObject(
@@ -2761,7 +2504,6 @@ ScOpenSymbolicLinkObject(
     _In_ POBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenThread(
@@ -2771,7 +2513,6 @@ ScOpenThread(
     _In_opt_ PCLIENT_ID ClientId
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenThreadToken(
@@ -2781,7 +2522,6 @@ ScOpenThreadToken(
     _Out_ PHANDLE TokenHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenThreadTokenEx(
@@ -2792,7 +2532,6 @@ ScOpenThreadTokenEx(
     _Out_ PHANDLE TokenHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScOpenTimer(
@@ -2801,7 +2540,6 @@ ScOpenTimer(
     _In_ PCOBJECT_ATTRIBUTES ObjectAttributes
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -2813,7 +2551,6 @@ ScOpenTransaction(
     _In_opt_ HANDLE TmHandle
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -2826,7 +2563,6 @@ ScOpenTransactionManager(
     _In_opt_ ULONG OpenOptions
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScPlugPlayControl(
@@ -2835,7 +2571,6 @@ ScPlugPlayControl(
     _In_ ULONG PnPControlDataLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScPowerInformation(
@@ -2846,7 +2581,6 @@ ScPowerInformation(
     _In_ ULONG OutputBufferLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScPrepareComplete(
@@ -2854,7 +2588,6 @@ ScPrepareComplete(
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -2863,7 +2596,6 @@ ScPrepareEnlistment(
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScPrePrepareComplete(
@@ -2871,7 +2603,6 @@ ScPrePrepareComplete(
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -2880,7 +2611,6 @@ ScPrePrepareEnlistment(
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScPrivilegeCheck(
@@ -2889,7 +2619,6 @@ ScPrivilegeCheck(
     _Out_ PBOOLEAN Result
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScPrivilegedServiceAuditAlarm(
@@ -2900,7 +2629,6 @@ ScPrivilegedServiceAuditAlarm(
     _In_ BOOLEAN AccessGranted
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScPrivilegeObjectAuditAlarm(
@@ -2912,7 +2640,6 @@ ScPrivilegeObjectAuditAlarm(
     _In_ BOOLEAN AccessGranted
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScPropagationComplete(
@@ -2922,7 +2649,6 @@ ScPropagationComplete(
     _In_ PVOID Buffer
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScPropagationFailed(
@@ -2931,7 +2657,6 @@ ScPropagationFailed(
     _In_ NTSTATUS PropStatus
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScProtectVirtualMemory(
@@ -2942,7 +2667,6 @@ ScProtectVirtualMemory(
     _Out_ PULONG OldProtection
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScPssCaptureVaSpaceBulk(
@@ -2953,7 +2677,6 @@ ScPssCaptureVaSpaceBulk(
     _Out_opt_ PSIZE_T ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScPulseEvent(
@@ -2961,7 +2684,6 @@ ScPulseEvent(
     _Out_opt_ PLONG PreviousState
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryAttributesFile(
@@ -2969,14 +2691,12 @@ ScQueryAttributesFile(
     _Out_ PFILE_BASIC_INFORMATION FileInformation
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryAuxiliaryCounterFrequency(
     _Out_ PULONG64 AuxiliaryCounterFrequency
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryBootEntryOrder(
@@ -2984,7 +2704,6 @@ ScQueryBootEntryOrder(
     _Inout_ PULONG Count
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryBootOptions(
@@ -2992,7 +2711,6 @@ ScQueryBootOptions(
     _Inout_ PULONG BootOptionsLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryDebugFilterState(
@@ -3000,7 +2718,6 @@ ScQueryDebugFilterState(
     _In_ ULONG Level
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryDefaultLocale(
@@ -3008,14 +2725,12 @@ ScQueryDefaultLocale(
     _Out_ PLCID DefaultLocaleId
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryDefaultUILanguage(
     _Out_ LANGID* DefaultUILanguageId
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryDirectoryFile(
@@ -3032,7 +2747,6 @@ ScQueryDirectoryFile(
     _In_ BOOLEAN RestartScan
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryDirectoryFileEx(
@@ -3048,7 +2762,6 @@ ScQueryDirectoryFileEx(
     _In_opt_ PUNICODE_STRING FileName
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryDirectoryObject(
@@ -3061,7 +2774,6 @@ ScQueryDirectoryObject(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryDriverEntryOrder(
@@ -3069,7 +2781,6 @@ ScQueryDriverEntryOrder(
     _Inout_ PULONG Count
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryEaFile(
@@ -3084,7 +2795,6 @@ ScQueryEaFile(
     _In_ BOOLEAN RestartScan
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryEvent(
@@ -3095,7 +2805,6 @@ ScQueryEvent(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryFullAttributesFile(
@@ -3103,7 +2812,6 @@ ScQueryFullAttributesFile(
     _Out_ PFILE_NETWORK_OPEN_INFORMATION FileInformation
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryInformationAtom(
@@ -3114,7 +2822,6 @@ ScQueryInformationAtom(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryInformationByName(
@@ -3125,7 +2832,6 @@ ScQueryInformationByName(
     _In_ FILE_INFORMATION_CLASS FileInformationClass
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryInformationCpuPartition(
@@ -3136,7 +2842,6 @@ ScQueryInformationCpuPartition(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -3148,7 +2853,6 @@ ScQueryInformationEnlistment(
     _Out_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryInformationFile(
@@ -3159,7 +2863,6 @@ ScQueryInformationFile(
     _In_ FILE_INFORMATION_CLASS FileInformationClass
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryInformationJobObject(
@@ -3170,7 +2873,6 @@ ScQueryInformationJobObject(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryInformationPort(
@@ -3181,7 +2883,6 @@ ScQueryInformationPort(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryInformationProcess(
@@ -3192,7 +2893,6 @@ ScQueryInformationProcess(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -3204,7 +2904,6 @@ ScQueryInformationResourceManager(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryInformationThread(
@@ -3215,7 +2914,6 @@ ScQueryInformationThread(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryInformationToken(
@@ -3226,7 +2924,6 @@ ScQueryInformationToken(
     _Out_ PULONG ReturnLength
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -3238,7 +2935,6 @@ ScQueryInformationTransaction(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -3250,7 +2946,6 @@ ScQueryInformationTransactionManager(
     _Out_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryInformationWorkerFactory(
@@ -3261,14 +2956,12 @@ ScQueryInformationWorkerFactory(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryInstallUILanguage(
     _Out_ LANGID* InstallUILanguageId
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryIntervalProfile(
@@ -3276,7 +2969,6 @@ ScQueryIntervalProfile(
     _Out_ PULONG Interval
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryIoCompletion(
@@ -3287,7 +2979,6 @@ ScQueryIoCompletion(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryIoRingCapabilities(
@@ -3295,7 +2986,6 @@ ScQueryIoRingCapabilities(
     _Out_ PVOID IoRingCapabilities
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryKey(
@@ -3306,7 +2996,6 @@ ScQueryKey(
     _Out_ PULONG ResultLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryLicenseValue(
@@ -3317,7 +3006,6 @@ ScQueryLicenseValue(
     _Out_ PULONG ResultDataSize
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryMultipleValueKey(
@@ -3329,7 +3017,6 @@ ScQueryMultipleValueKey(
     _Out_opt_ PULONG RequiredBufferLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryMutant(
@@ -3340,7 +3027,6 @@ ScQueryMutant(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryObject(
@@ -3351,7 +3037,6 @@ ScQueryObject(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryOpenSubKeys(
@@ -3359,7 +3044,6 @@ ScQueryOpenSubKeys(
     _Out_ PULONG HandleCount
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryOpenSubKeysEx(
@@ -3369,7 +3053,6 @@ ScQueryOpenSubKeysEx(
     _Out_ PULONG RequiredSize
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryPerformanceCounter(
@@ -3377,14 +3060,12 @@ ScQueryPerformanceCounter(
     _Out_opt_ PLARGE_INTEGER PerformanceFrequency
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryPortInformationProcess(
     VOID
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryQuotaInformationFile(
@@ -3399,7 +3080,6 @@ ScQueryQuotaInformationFile(
     _In_ BOOLEAN RestartScan
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQuerySection(
@@ -3410,7 +3090,6 @@ ScQuerySection(
     _Out_opt_ PSIZE_T ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQuerySecurityAttributesToken(
@@ -3422,7 +3101,6 @@ ScQuerySecurityAttributesToken(
     _Out_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQuerySecurityObject(
@@ -3433,7 +3111,6 @@ ScQuerySecurityObject(
     _Out_ PULONG LengthNeeded
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQuerySecurityPolicy(
@@ -3445,7 +3122,6 @@ ScQuerySecurityPolicy(
     _Inout_ PULONG ValueSize
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQuerySemaphore(
@@ -3456,7 +3132,6 @@ ScQuerySemaphore(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQuerySymbolicLinkObject(
@@ -3465,7 +3140,6 @@ ScQuerySymbolicLinkObject(
     _Out_opt_ PULONG ReturnedLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQuerySystemEnvironmentValue(
@@ -3475,7 +3149,6 @@ ScQuerySystemEnvironmentValue(
     _Out_opt_ PUSHORT ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQuerySystemEnvironmentValueEx(
@@ -3486,7 +3159,6 @@ ScQuerySystemEnvironmentValueEx(
     _Out_opt_ PULONG Attributes // EFI_VARIABLE_*
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQuerySystemInformation(
@@ -3496,7 +3168,6 @@ ScQuerySystemInformation(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQuerySystemInformationEx(
@@ -3508,14 +3179,12 @@ ScQuerySystemInformationEx(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQuerySystemTime(
     _Out_ PLARGE_INTEGER SystemTime
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryTimer(
@@ -3526,7 +3195,6 @@ ScQueryTimer(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryTimerResolution(
@@ -3535,7 +3203,6 @@ ScQueryTimerResolution(
     _Out_ PULONG CurrentTime
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryValueKey(
@@ -3547,7 +3214,6 @@ ScQueryValueKey(
     _Out_ PULONG ResultLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryVirtualMemory(
@@ -3559,7 +3225,6 @@ ScQueryVirtualMemory(
     _Out_opt_ PSIZE_T ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryVolumeInformationFile(
@@ -3570,7 +3235,6 @@ ScQueryVolumeInformationFile(
     _In_ FSINFOCLASS FsInformationClass
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryWnfStateData(
@@ -3582,7 +3246,6 @@ ScQueryWnfStateData(
     _Inout_ PULONG BufferLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueryWnfStateNameInformation(
@@ -3593,7 +3256,6 @@ ScQueryWnfStateNameInformation(
     _In_ ULONG BufferLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueueApcThread(
@@ -3604,7 +3266,6 @@ ScQueueApcThread(
     _In_opt_ PVOID ApcArgument3
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueueApcThreadEx(
@@ -3616,7 +3277,6 @@ ScQueueApcThreadEx(
     _In_opt_ PVOID ApcArgument3
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScQueueApcThreadEx2(
@@ -3629,7 +3289,6 @@ ScQueueApcThreadEx2(
     _In_opt_ PVOID ApcArgument3
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScRaiseException(
@@ -3638,7 +3297,6 @@ ScRaiseException(
     _In_ BOOLEAN FirstChance
     );
 
-EXTERN_C
 _Analysis_noreturn_
 DECLSPEC_NORETURN
 NTSTATUS
@@ -3652,7 +3310,6 @@ ScRaiseHardError(
     _Out_ PULONG Response
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScReadFile(
@@ -3667,7 +3324,6 @@ ScReadFile(
     _In_opt_ PULONG Key
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScReadFileScatter(
@@ -3682,7 +3338,6 @@ ScReadFileScatter(
     _In_opt_ PULONG Key
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScReadOnlyEnlistment(
@@ -3690,7 +3345,6 @@ ScReadOnlyEnlistment(
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScReadRequestData(
@@ -3702,7 +3356,6 @@ ScReadRequestData(
     _Out_opt_ PSIZE_T NumberOfBytesRead
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScReadVirtualMemory(
@@ -3713,7 +3366,6 @@ ScReadVirtualMemory(
     _Out_opt_ PSIZE_T NumberOfBytesRead
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScReadVirtualMemoryEx(
@@ -3725,7 +3377,6 @@ ScReadVirtualMemoryEx(
     _In_ ULONG Flags
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -3734,7 +3385,6 @@ ScRecoverEnlistment(
     _In_opt_ PVOID EnlistmentKey
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -3742,7 +3392,6 @@ ScRecoverResourceManager(
     _In_ HANDLE ResourceManagerHandle
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -3750,7 +3399,6 @@ ScRecoverTransactionManager(
     _In_ HANDLE TransactionManagerHandle
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -3762,14 +3410,12 @@ ScRegisterProtocolAddressInformation(
     _In_opt_ ULONG CreateOptions
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScRegisterThreadTerminatePort(
     _In_ HANDLE PortHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScReleaseKeyedEvent(
@@ -3779,7 +3425,6 @@ ScReleaseKeyedEvent(
     _In_opt_ PLARGE_INTEGER Timeout
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScReleaseMutant(
@@ -3787,7 +3432,6 @@ ScReleaseMutant(
     _Out_opt_ PLONG PreviousCount
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScReleaseSemaphore(
@@ -3796,14 +3440,12 @@ ScReleaseSemaphore(
     _Out_opt_ PLONG PreviousCount
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScReleaseWorkerFactoryWorker(
     _In_ HANDLE WorkerFactoryHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScRemoveIoCompletion(
@@ -3814,7 +3456,6 @@ ScRemoveIoCompletion(
     _In_opt_ PLARGE_INTEGER Timeout
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScRemoveIoCompletionEx(
@@ -3826,7 +3467,6 @@ ScRemoveIoCompletionEx(
     _In_ BOOLEAN Alertable
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScRemoveProcessDebug(
@@ -3834,7 +3474,6 @@ ScRemoveProcessDebug(
     _In_ HANDLE DebugObjectHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScRenameKey(
@@ -3842,7 +3481,6 @@ ScRenameKey(
     _In_ PUNICODE_STRING NewName
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -3851,7 +3489,6 @@ ScRenameTransactionManager(
     _In_ LPGUID ExistingTransactionManagerGuid
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScReplaceKey(
@@ -3860,7 +3497,6 @@ ScReplaceKey(
     _In_ POBJECT_ATTRIBUTES OldFile
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScReplacePartitionUnit(
@@ -3869,7 +3505,6 @@ ScReplacePartitionUnit(
     _In_ ULONG Flags
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScReplyPort(
@@ -3877,7 +3512,6 @@ ScReplyPort(
     _In_reads_bytes_(ReplyMessage->u1.s1.TotalLength) PPORT_MESSAGE ReplyMessage
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScReplyWaitReceivePort(
@@ -3887,7 +3521,6 @@ ScReplyWaitReceivePort(
     _Out_ PPORT_MESSAGE ReceiveMessage
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScReplyWaitReceivePortEx(
@@ -3898,7 +3531,6 @@ ScReplyWaitReceivePortEx(
     _In_opt_ PLARGE_INTEGER Timeout
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScReplyWaitReplyPort(
@@ -3906,7 +3538,6 @@ ScReplyWaitReplyPort(
     _Inout_ PPORT_MESSAGE ReplyMessage
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScRequestPort(
@@ -3914,7 +3545,6 @@ ScRequestPort(
     _In_reads_bytes_(RequestMessage->u1.s1.TotalLength) PPORT_MESSAGE RequestMessage
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScRequestWaitReplyPort(
@@ -3923,7 +3553,6 @@ ScRequestWaitReplyPort(
     _Out_ PPORT_MESSAGE ReplyMessage
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScResetEvent(
@@ -3931,7 +3560,6 @@ ScResetEvent(
     _Out_opt_ PLONG PreviousState
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScResetWriteWatch(
@@ -3940,7 +3568,6 @@ ScResetWriteWatch(
     _In_ SIZE_T RegionSize
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScRestoreKey(
@@ -3949,14 +3576,12 @@ ScRestoreKey(
     _In_ ULONG Flags
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScResumeProcess(
     _In_ HANDLE ProcessHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScResumeThread(
@@ -3964,14 +3589,12 @@ ScResumeThread(
     _Out_opt_ PULONG PreviousSuspendCount
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScRevertContainerImpersonation(
     VOID
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScRollbackComplete(
@@ -3979,7 +3602,6 @@ ScRollbackComplete(
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScRollbackEnlistment(
@@ -3987,7 +3609,6 @@ ScRollbackEnlistment(
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScRollbackRegistryTransaction(
@@ -3995,7 +3616,6 @@ ScRollbackRegistryTransaction(
     _Reserved_ ULONG Flags
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScRollbackTransaction(
@@ -4003,7 +3623,6 @@ ScRollbackTransaction(
     _In_ BOOLEAN Wait
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -4012,7 +3631,6 @@ ScRollforwardTransactionManager(
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSaveKey(
@@ -4020,7 +3638,6 @@ ScSaveKey(
     _In_ HANDLE FileHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSaveKeyEx(
@@ -4029,7 +3646,6 @@ ScSaveKeyEx(
     _In_ ULONG Format
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSaveMergedKeys(
@@ -4038,7 +3654,6 @@ ScSaveMergedKeys(
     _In_ HANDLE FileHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSecureConnectPort(
@@ -4053,14 +3668,12 @@ ScSecureConnectPort(
     _Inout_opt_ PULONG ConnectionInformationLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSerializeBoot(
     VOID
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetBootEntryOrder(
@@ -4068,7 +3681,6 @@ ScSetBootEntryOrder(
     _In_ ULONG Count
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetBootOptions(
@@ -4076,7 +3688,6 @@ ScSetBootOptions(
     _In_ ULONG FieldsToChange
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetCachedSigningLevel(
@@ -4087,7 +3698,6 @@ ScSetCachedSigningLevel(
     _In_opt_ HANDLE TargetFile
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetCachedSigningLevel2(
@@ -4099,7 +3709,6 @@ ScSetCachedSigningLevel2(
     _In_opt_ SE_SET_FILE_CACHE_INFORMATION* CacheInformation
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetContextThread(
@@ -4107,7 +3716,6 @@ ScSetContextThread(
     _In_ PCONTEXT ThreadContext
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetDebugFilterState(
@@ -4116,14 +3724,12 @@ ScSetDebugFilterState(
     _In_ BOOLEAN State
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetDefaultHardErrorPort(
     _In_ HANDLE DefaultHardErrorPort
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetDefaultLocale(
@@ -4131,14 +3737,12 @@ ScSetDefaultLocale(
     _In_ LCID DefaultLocaleId
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetDefaultUILanguage(
     _In_ LANGID DefaultUILanguageId
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetDriverEntryOrder(
@@ -4146,7 +3750,6 @@ ScSetDriverEntryOrder(
     _In_ ULONG Count
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetEaFile(
@@ -4156,7 +3759,6 @@ ScSetEaFile(
     _In_ ULONG Length
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetEvent(
@@ -4164,14 +3766,12 @@ ScSetEvent(
     _Out_opt_ PLONG PreviousState
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetEventBoostPriority(
     _In_ HANDLE EventHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetEventEx(
@@ -4179,21 +3779,18 @@ ScSetEventEx(
     _In_opt_ PRTL_SRWLOCK Lock
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetHighEventPair(
     _In_ HANDLE EventPairHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetHighWaitLowEventPair(
     _In_ HANDLE EventPairHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetInformationCpuPartition(
@@ -4206,7 +3803,6 @@ ScSetInformationCpuPartition(
     _Reserved_ ULONG
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetInformationDebugObject(
@@ -4217,7 +3813,6 @@ ScSetInformationDebugObject(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -4228,7 +3823,6 @@ ScSetInformationEnlistment(
     _In_ ULONG EnlistmentInformationLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetInformationFile(
@@ -4239,7 +3833,6 @@ ScSetInformationFile(
     _In_ FILE_INFORMATION_CLASS FileInformationClass
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetInformationIoRing(
@@ -4249,7 +3842,6 @@ ScSetInformationIoRing(
     _In_ PVOID IoRingInformation
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetInformationJobObject(
@@ -4259,7 +3851,6 @@ ScSetInformationJobObject(
     _In_ ULONG JobObjectInformationLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetInformationKey(
@@ -4269,7 +3860,6 @@ ScSetInformationKey(
     _In_ ULONG KeySetInformationLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetInformationObject(
@@ -4279,7 +3869,6 @@ ScSetInformationObject(
     _In_ ULONG ObjectInformationLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetInformationProcess(
@@ -4289,7 +3878,6 @@ ScSetInformationProcess(
     _In_ ULONG ProcessInformationLength
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -4300,7 +3888,6 @@ ScSetInformationResourceManager(
     _In_ ULONG ResourceManagerInformationLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetInformationSymbolicLink(
@@ -4310,7 +3897,6 @@ ScSetInformationSymbolicLink(
     _In_ ULONG SymbolicLinkInformationLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetInformationThread(
@@ -4320,7 +3906,6 @@ ScSetInformationThread(
     _In_ ULONG ThreadInformationLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetInformationToken(
@@ -4330,7 +3915,6 @@ ScSetInformationToken(
     _In_ ULONG TokenInformationLength
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -4341,7 +3925,6 @@ ScSetInformationTransaction(
     _In_ ULONG TransactionInformationLength
     );
 
-EXTERN_C
 _Must_inspect_result_
 NTSTATUS
 NTAPI
@@ -4352,7 +3935,6 @@ ScSetInformationTransactionManager(
     _In_ ULONG TransactionManagerInformationLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetInformationVirtualMemory(
@@ -4364,7 +3946,6 @@ ScSetInformationVirtualMemory(
     _In_ ULONG VmInformationLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetInformationWorkerFactory(
@@ -4374,7 +3955,6 @@ ScSetInformationWorkerFactory(
     _In_ ULONG WorkerFactoryInformationLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetIntervalProfile(
@@ -4382,7 +3962,6 @@ ScSetIntervalProfile(
     _In_ KPROFILE_SOURCE Source
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetIoCompletion(
@@ -4393,7 +3972,6 @@ ScSetIoCompletion(
     _In_ ULONG_PTR IoStatusInformation
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetIoCompletionEx(
@@ -4405,7 +3983,6 @@ ScSetIoCompletionEx(
     _In_ ULONG_PTR IoStatusInformation
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetIRTimer(
@@ -4413,7 +3990,6 @@ ScSetIRTimer(
     _In_opt_ PLARGE_INTEGER DueTime
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetLdtEntries(
@@ -4425,21 +4001,18 @@ ScSetLdtEntries(
     _In_ ULONG Entry1Hi
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetLowEventPair(
     _In_ HANDLE EventPairHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetLowWaitHighEventPair(
     _In_ HANDLE EventPairHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetQuotaInformationFile(
@@ -4449,7 +4022,6 @@ ScSetQuotaInformationFile(
     _In_ ULONG Length
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetSecurityObject(
@@ -4458,7 +4030,6 @@ ScSetSecurityObject(
     _In_ PSECURITY_DESCRIPTOR SecurityDescriptor
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetSystemEnvironmentValue(
@@ -4466,7 +4037,6 @@ ScSetSystemEnvironmentValue(
     _In_ PUNICODE_STRING VariableValue
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetSystemEnvironmentValueEx(
@@ -4477,7 +4047,6 @@ ScSetSystemEnvironmentValueEx(
     _In_ ULONG Attributes // EFI_VARIABLE_*
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetSystemInformation(
@@ -4486,7 +4055,6 @@ ScSetSystemInformation(
     _In_ ULONG SystemInformationLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetSystemPowerState(
@@ -4495,7 +4063,6 @@ ScSetSystemPowerState(
     _In_ ULONG Flags // POWER_ACTION_* flags
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetSystemTime(
@@ -4503,7 +4070,6 @@ ScSetSystemTime(
     _Out_opt_ PLARGE_INTEGER PreviousTime
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetThreadExecutionState(
@@ -4511,7 +4077,6 @@ ScSetThreadExecutionState(
     _Out_ EXECUTION_STATE* PreviousFlags
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetTimer(
@@ -4524,7 +4089,6 @@ ScSetTimer(
     _Out_opt_ PBOOLEAN PreviousState
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetTimer2(
@@ -4534,7 +4098,6 @@ ScSetTimer2(
     _In_ PT2_SET_PARAMETERS Parameters
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetTimerEx(
@@ -4544,7 +4107,6 @@ ScSetTimerEx(
     _In_ ULONG TimerSetInformationLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetTimerResolution(
@@ -4553,14 +4115,12 @@ ScSetTimerResolution(
     _Out_ PULONG ActualTime
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetUuidSeed(
     _In_ PCHAR Seed
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetValueKey(
@@ -4572,7 +4132,6 @@ ScSetValueKey(
     _In_ ULONG DataSize
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetVolumeInformationFile(
@@ -4583,21 +4142,18 @@ ScSetVolumeInformationFile(
     _In_ FSINFOCLASS FsInformationClass
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSetWnfProcessNotificationEvent(
     _In_ HANDLE NotificationEvent
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScShutdownSystem(
     _In_ SHUTDOWN_ACTION Action
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScShutdownWorkerFactory(
@@ -4605,7 +4161,6 @@ ScShutdownWorkerFactory(
     _Inout_ volatile LONG* PendingWorkerCount
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSignalAndWaitForSingleObject(
@@ -4615,7 +4170,6 @@ ScSignalAndWaitForSingleObject(
     _In_opt_ PLARGE_INTEGER Timeout
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSinglePhaseReject(
@@ -4623,21 +4177,18 @@ ScSinglePhaseReject(
     _In_opt_ PLARGE_INTEGER TmVirtualClock
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScStartProfile(
     _In_ HANDLE ProfileHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScStopProfile(
     _In_ HANDLE ProfileHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSubmitIoRing(
@@ -4647,7 +4198,6 @@ ScSubmitIoRing(
     _In_opt_ PLARGE_INTEGER Timeout
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSubscribeWnfStateChange(
@@ -4657,14 +4207,12 @@ ScSubscribeWnfStateChange(
     _Out_opt_ PULONG64 SubscriptionId
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSuspendProcess(
     _In_ HANDLE ProcessHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSuspendThread(
@@ -4672,7 +4220,6 @@ ScSuspendThread(
     _Out_opt_ PULONG PreviousSuspendCount
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScSystemDebugControl(
@@ -4684,7 +4231,6 @@ ScSystemDebugControl(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScTerminateEnclave(
@@ -4692,7 +4238,6 @@ ScTerminateEnclave(
     _In_ ULONG Flags // TERMINATE_ENCLAVE_FLAG_*
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScTerminateJobObject(
@@ -4700,7 +4245,6 @@ ScTerminateJobObject(
     _In_ NTSTATUS ExitStatus
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScTerminateProcess(
@@ -4708,7 +4252,6 @@ ScTerminateProcess(
     _In_ NTSTATUS ExitStatus
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScTerminateThread(
@@ -4716,28 +4259,24 @@ ScTerminateThread(
     _In_ NTSTATUS ExitStatus
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScTestAlert(
     VOID
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScThawRegistry(
     VOID
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScThawTransactions(
     VOID
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScTraceControl(
@@ -4749,7 +4288,6 @@ ScTraceControl(
     _Out_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScTraceEvent(
@@ -4759,7 +4297,6 @@ ScTraceEvent(
     _In_ PVOID Fields
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScTranslateFilePath(
@@ -4769,28 +4306,24 @@ ScTranslateFilePath(
     _Inout_opt_ PULONG OutputFilePathLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUmsThreadYield(
     _In_ PVOID SchedulerParam
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUnloadDriver(
     _In_ PUNICODE_STRING DriverServiceName
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUnloadKey(
     _In_ POBJECT_ATTRIBUTES TargetKey
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUnloadKey2(
@@ -4798,7 +4331,6 @@ ScUnloadKey2(
     _In_ ULONG Flags
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUnloadKeyEx(
@@ -4806,7 +4338,6 @@ ScUnloadKeyEx(
     _In_opt_ HANDLE Event
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUnlockFile(
@@ -4817,7 +4348,6 @@ ScUnlockFile(
     _In_ ULONG Key
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUnlockVirtualMemory(
@@ -4827,7 +4357,6 @@ ScUnlockVirtualMemory(
     _In_ ULONG MapType
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUnmapViewOfSection(
@@ -4835,7 +4364,6 @@ ScUnmapViewOfSection(
     _In_opt_ PVOID BaseAddress
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUnmapViewOfSectionEx(
@@ -4844,14 +4372,12 @@ ScUnmapViewOfSectionEx(
     _In_ ULONG Flags
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUnsubscribeWnfStateChange(
     _In_ PCWNF_STATE_NAME StateName
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUpdateWnfStateData(
@@ -4864,7 +4390,6 @@ ScUpdateWnfStateData(
     _In_ LOGICAL CheckStamp
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScVdmControl(
@@ -4872,7 +4397,6 @@ ScVdmControl(
     _Inout_ PVOID ServiceData
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScWaitForAlertByThreadId(
@@ -4880,7 +4404,6 @@ ScWaitForAlertByThreadId(
     _In_opt_ PLARGE_INTEGER Timeout
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScWaitForDebugEvent(
@@ -4890,7 +4413,6 @@ ScWaitForDebugEvent(
     _Out_ PDBGUI_WAIT_STATE_CHANGE WaitStateChange
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScWaitForKeyedEvent(
@@ -4900,7 +4422,6 @@ ScWaitForKeyedEvent(
     _In_opt_ PLARGE_INTEGER Timeout
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScWaitForMultipleObjects(
@@ -4911,7 +4432,6 @@ ScWaitForMultipleObjects(
     _In_opt_ PLARGE_INTEGER Timeout
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScWaitForMultipleObjects32(
@@ -4922,7 +4442,6 @@ ScWaitForMultipleObjects32(
     _In_opt_ PLARGE_INTEGER Timeout
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScWaitForSingleObject(
@@ -4931,7 +4450,6 @@ ScWaitForSingleObject(
     _In_opt_ PLARGE_INTEGER Timeout
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScWaitForWorkViaWorkerFactory(
@@ -4942,28 +4460,24 @@ ScWaitForWorkViaWorkerFactory(
     _In_ PWORKER_FACTORY_DEFERRED_WORK DeferredWork
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScWaitHighEventPair(
     _In_ HANDLE EventPairHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScWaitLowEventPair(
     _In_ HANDLE EventPairHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScWorkerFactoryWorkerReady(
     _In_ HANDLE WorkerFactoryHandle
     );
 
-EXTERN_C
 _Must_inspect_result_
 __drv_allocatesMem(Mem)
 NTSTATUS
@@ -4977,7 +4491,6 @@ ScWow64AllocateVirtualMemory64(
     _In_ ULONG Protect
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScWow64GetNativeSystemInformation(
@@ -4987,14 +4500,12 @@ ScWow64GetNativeSystemInformation(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 BOOLEAN
 NTAPI
 ScWow64IsProcessorFeaturePresent(
     _In_ ULONG ProcessorFeature
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScWow64QueryInformationProcess64(
@@ -5005,7 +4516,6 @@ ScWow64QueryInformationProcess64(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScWow64ReadVirtualMemory64(
@@ -5016,7 +4526,6 @@ ScWow64ReadVirtualMemory64(
     _Out_opt_ PULONGLONG NumberOfBytesRead
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScWow64WriteVirtualMemory64(
@@ -5027,7 +4536,6 @@ ScWow64WriteVirtualMemory64(
     _Out_opt_ PULONGLONG NumberOfBytesWritten
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScWriteFile(
@@ -5042,7 +4550,6 @@ ScWriteFile(
     _In_opt_ PULONG Key
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScWriteFileGather(
@@ -5057,7 +4564,6 @@ ScWriteFileGather(
     _In_opt_ PULONG Key
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScWriteRequestData(
@@ -5069,7 +4575,6 @@ ScWriteRequestData(
     _Out_opt_ PSIZE_T NumberOfBytesWritten
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScWriteVirtualMemory(
@@ -5080,14 +4585,12 @@ ScWriteVirtualMemory(
     _Out_opt_ PSIZE_T NumberOfBytesWritten
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScYieldExecution(
     VOID
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUserAttachThreadInput(
@@ -5096,7 +4599,6 @@ ScUserAttachThreadInput(
     _In_ BOOL Attach
     );
 
-EXTERN_C
 HDC
 NTAPI
 ScUserBeginPaint(
@@ -5104,28 +4606,25 @@ ScUserBeginPaint(
     _Inout_ LPPAINTSTRUCT lpPaint
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserBlockInput(
     _In_ BOOL BlockInput
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUserBuildHwndList(
     _In_opt_ HANDLE DesktopHandle,
-    _In_opt_ HWND StartWindowHandle,
-    _In_opt_ LOGICAL IncludeChildren,
-    _In_opt_ LOGICAL ExcludeImmersive,
+    _In_opt_ HWND ParentWindowHandle,
+    _In_opt_ BOOL IncludeChildren,
+    _In_opt_ BOOL ExcludeImmersive,
     _In_opt_ ULONG ThreadId,
     _In_ ULONG HwndListInformationLength,
     _Out_writes_bytes_(HwndListInformationLength) PVOID HwndListInformation,
     _Out_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUserBuildNameList(
@@ -5135,7 +4634,6 @@ ScUserBuildNameList(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUserBuildPropList(
@@ -5145,7 +4643,6 @@ ScUserBuildPropList(
     _Out_opt_ PULONG ReturnLength
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserCalculatePopupWindowPosition(
@@ -5156,14 +4653,12 @@ ScUserCalculatePopupWindowPosition(
     _Inout_ RECT* popupWindowPosition
     );
 
-EXTERN_C
-LOGICAL
+BOOL
 NTAPI
 ScUserCanCurrentThreadChangeForeground(
     VOID
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUserCheckAccessForIntegrityLevel(
@@ -5172,7 +4667,6 @@ ScUserCheckAccessForIntegrityLevel(
     _Out_ PBOOLEAN GrantedAccess
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUserCheckProcessForClipboardAccess(
@@ -5180,7 +4674,6 @@ ScUserCheckProcessForClipboardAccess(
     _Out_ PULONG GrantedAccess
     );
 
-EXTERN_C
 HWND
 NTAPI
 ScUserChildWindowFromPointEx(
@@ -5189,28 +4682,24 @@ ScUserChildWindowFromPointEx(
     _In_ ULONG flags
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserClipCursor(
     _In_ const RECT* lpRect
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserCloseDesktop(
     _In_ HDESK DesktopHandle
     );
 
-EXTERN_C
-LOGICAL
+BOOL
 NTAPI
 ScUserCloseWindowStation(
     _In_ HWINSTA WindowStationHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUserConsoleControl(
@@ -5219,7 +4708,6 @@ ScUserConsoleControl(
     _In_ ULONG ConsoleInformationLength
     );
 
-EXTERN_C
 LONG
 NTAPI
 ScUserCopyAcceleratorTable(
@@ -5228,7 +4716,6 @@ ScUserCopyAcceleratorTable(
     _In_ LONG cAccelEntries
     );
 
-EXTERN_C
 HACCEL
 NTAPI
 ScUserCreateAcceleratorTable(
@@ -5236,7 +4723,6 @@ ScUserCreateAcceleratorTable(
     _In_ LONG cAccel
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUserCreateWindowStation(
@@ -5250,7 +4736,6 @@ ScUserCreateWindowStation(
     _In_opt_ ULONG KeyboardLocale
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserDeleteMenu(
@@ -5259,28 +4744,24 @@ ScUserDeleteMenu(
     _In_ ULONG Flags
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserDestroyMenu(
     _In_ HMENU MenuHandle
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserDestroyWindow(
     _In_ HWND WindowHandle
     );
 
-EXTERN_C
-LOGICAL
+BOOL
 NTAPI
 ScUserDisableProcessWindowsGhosting(
     VOID
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserDragDetect(
@@ -5288,7 +4769,6 @@ ScUserDragDetect(
     _In_ POINT pt
     );
 
-EXTERN_C
 ULONG
 NTAPI
 ScUserDragObject(
@@ -5299,7 +4779,6 @@ ScUserDragObject(
     _In_ HCURSOR hcur
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserDrawAnimatedRects(
@@ -5309,14 +4788,12 @@ ScUserDrawAnimatedRects(
     _In_ const RECT* lprcTo
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserEndMenu(
     VOID
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserEndPaint(
@@ -5324,7 +4801,6 @@ ScUserEndPaint(
     _Inout_ const PAINTSTRUCT* lpPaint
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserEnumDisplayMonitors(
@@ -5334,7 +4810,6 @@ ScUserEnumDisplayMonitors(
     _In_ LPARAM dwData
     );
 
-EXTERN_C
 HRGN
 NTAPI
 ScUserExcludeUpdateRgn(
@@ -5342,7 +4817,6 @@ ScUserExcludeUpdateRgn(
     _In_ HWND WindowHandle
     );
 
-EXTERN_C
 HWND
 NTAPI
 ScUserFindWindowEx(
@@ -5353,14 +4827,12 @@ ScUserFindWindowEx(
     _In_ ULONG Type // FW_*
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserFlashWindowEx(
     _In_ PFLASHWINFO pfwi
     );
 
-EXTERN_C
 HWND
 NTAPI
 ScUserGetAncestor(
@@ -5368,21 +4840,18 @@ ScUserGetAncestor(
     _In_ ULONG gaFlags
     );
 
-EXTERN_C
 ULONG
 NTAPI
 ScUserGetCaretBlinkTime(
     VOID
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserGetCaretPos(
     _In_ LPPOINT lpPoint
     );
 
-EXTERN_C
 HWND
 NTAPI
 ScUserGetClassName(
@@ -5391,14 +4860,12 @@ ScUserGetClassName(
     _Out_ PUNICODE_STRING ClassName
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserGetClipCursor(
     _In_ LPRECT lpRect
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserGetComboBoxInfo(
@@ -5406,28 +4873,24 @@ ScUserGetComboBoxInfo(
     _Inout_ PCOMBOBOXINFO pcbi
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserGetCurrentInputMessageSource(
     _Inout_ INPUT_MESSAGE_SOURCE* InputMessageSource
     );
 
-EXTERN_C
 HCURSOR
 NTAPI
 ScUserGetCursor(
     VOID
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserGetCursorInfo(
     _In_ PCURSORINFO pci
     );
 
-EXTERN_C
 HDC
 NTAPI
 ScUserGetDCEx(
@@ -5436,28 +4899,24 @@ ScUserGetDCEx(
     _In_ ULONG flags
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserGetDisplayAutoRotationPreferences(
     _In_ ORIENTATION_PREFERENCE* pOrientation
     );
 
-EXTERN_C
 ULONG
 NTAPI
 ScUserGetDoubleClickTime(
     VOID
     );
 
-EXTERN_C
 HWND
 NTAPI
 ScUserGetForegroundWindow(
     VOID
     );
 
-EXTERN_C
 ULONG
 NTAPI
 ScUserGetGuiResources(
@@ -5465,7 +4924,6 @@ ScUserGetGuiResources(
     _In_ ULONG uiFlags
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserGetGUIThreadInfo(
@@ -5473,8 +4931,7 @@ ScUserGetGUIThreadInfo(
     _In_ PGUITHREADINFO pgui
     );
 
-EXTERN_C
-LOGICAL
+BOOL
 NTAPI
 ScUserGetIconInfo(
     _In_ HICON IconOrCursorHandle,
@@ -5485,8 +4942,7 @@ ScUserGetIconInfo(
     _In_ LOGICAL IsCursorHandle
     );
 
-EXTERN_C
-LOGICAL
+BOOL
 NTAPI
 ScUserGetIconSize(
     _In_ HGDIOBJ IconOrCursorHandle,
@@ -5495,7 +4951,6 @@ ScUserGetIconSize(
     _Out_ PULONG YY
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserGetLayeredWindowAttributes(
@@ -5505,14 +4960,12 @@ ScUserGetLayeredWindowAttributes(
     _In_ ULONG pdwFlags
     );
 
-EXTERN_C
 ULONG
 NTAPI
 ScUserGetListBoxInfo(
     _In_ HWND WindowHandle
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserGetMenuBarInfo(
@@ -5522,7 +4975,6 @@ ScUserGetMenuBarInfo(
     _In_ PMENUBARINFO pmbi
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserGetMenuItemRect(
@@ -5532,7 +4984,6 @@ ScUserGetMenuItemRect(
     _In_ PRECT MenuRect
     );
 
-EXTERN_C
 LONG
 NTAPI
 ScUserGetMouseMovePointsEx(
@@ -5543,7 +4994,6 @@ ScUserGetMouseMovePointsEx(
     _In_ ULONG Resolution
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserGetObjectInformation(
@@ -5554,14 +5004,12 @@ ScUserGetObjectInformation(
     _In_ PULONG LengthNeeded
     );
 
-EXTERN_C
 HWND
 NTAPI
 ScUserGetProcessWindowStation(
     VOID
     );
 
-EXTERN_C
 ULONG
 NTAPI
 ScUserGetRawInputData(
@@ -5572,7 +5020,6 @@ ScUserGetRawInputData(
     _In_ ULONG RawInputHeaderSize
     );
 
-EXTERN_C
 ULONG
 NTAPI
 ScUserGetRawInputDeviceList(
@@ -5581,7 +5028,6 @@ ScUserGetRawInputDeviceList(
     _In_ ULONG RawInputDeviceSize
     );
 
-EXTERN_C
 ULONG
 NTAPI
 ScUserGetRegisteredRawInputDevices(
@@ -5590,14 +5036,12 @@ ScUserGetRegisteredRawInputDevices(
     _In_ ULONG RawInputDeviceSize
     );
 
-EXTERN_C
 HMENU
 NTAPI
 ScUserGetSendMessageReceiver(
     _In_ HANDLE ThreadId
     );
 
-EXTERN_C
 HMENU
 NTAPI
 ScUserGetSystemMenu(
@@ -5605,21 +5049,18 @@ ScUserGetSystemMenu(
     _In_ BOOL Revert
     );
 
-EXTERN_C
 HDESK
 NTAPI
 ScUserGetThreadDesktop(
     _In_ ULONG ThreadId
     );
 
-EXTERN_C
 ULONG_PTR
 NTAPI
 ScUserGetThreadState(
     _In_ ULONG UserThreadState
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserGetTitleBarInfo(
@@ -5627,14 +5068,12 @@ ScUserGetTitleBarInfo(
     _In_ PTITLEBARINFO pti
     );
 
-EXTERN_C
 HDC
 NTAPI
 ScUserGetWindowDC(
     _In_ HWND WindowHandle
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserGetWindowPlacement(
@@ -5642,14 +5081,19 @@ ScUserGetWindowPlacement(
     _Inout_ PWINDOWPLACEMENT WindowPlacement
     );
 
-EXTERN_C
+HANDLE
+NTAPI
+ScUserGetWindowProcessHandle(
+    _In_ HWND WindowHandle,
+    _In_ ACCESS_MASK DesiredAccess
+    );
+
 HWND
 NTAPI
 ScUserGhostWindowFromHungWindow(
     _In_ HWND WindowHandle
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserHiliteMenuItem(
@@ -5659,14 +5103,12 @@ ScUserHiliteMenuItem(
     _In_ ULONG Hilite
     );
 
-EXTERN_C
 HWND
 NTAPI
 ScUserHungWindowFromGhostWindow(
     _In_ HWND WindowHandle
     );
 
-EXTERN_C
 HICON
 NTAPI
 ScUserInternalGetWindowIcon(
@@ -5674,7 +5116,6 @@ ScUserInternalGetWindowIcon(
     _In_ ULONG IconType
     );
 
-EXTERN_C
 ULONG
 NTAPI
 ScUserInternalGetWindowText(
@@ -5683,7 +5124,6 @@ ScUserInternalGetWindowText(
     _In_ ULONG cchMaxCount
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserInvalidateRect(
@@ -5692,7 +5132,6 @@ ScUserInvalidateRect(
     _In_ BOOL Erase
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserInvalidateRgn(
@@ -5701,7 +5140,6 @@ ScUserInvalidateRgn(
     _In_ BOOL Erase
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserIsTouchWindow(
@@ -5709,7 +5147,6 @@ ScUserIsTouchWindow(
     _In_ PULONG Flags
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserKillTimer(
@@ -5717,14 +5154,12 @@ ScUserKillTimer(
     _In_ ULONG_PTR IDEvent
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserLockWorkStation(
     VOID
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserLogicalToPhysicalPoint(
@@ -5732,7 +5167,6 @@ ScUserLogicalToPhysicalPoint(
     _In_ LPPOINT lpPoint
     );
 
-EXTERN_C
 LONG
 NTAPI
 ScUserMenuItemFromPoint(
@@ -5741,7 +5175,6 @@ ScUserMenuItemFromPoint(
     _In_ POINT ptScreen
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserMoveWindow(
@@ -5753,7 +5186,6 @@ ScUserMoveWindow(
     _In_ BOOL Repaint
     );
 
-EXTERN_C
 HANDLE
 NTAPI
 ScUserOpenDesktop(
@@ -5762,7 +5194,6 @@ ScUserOpenDesktop(
     _In_ ACCESS_MASK DesiredAccess
     );
 
-EXTERN_C
 HDESK
 NTAPI
 ScUserOpenInputDesktop(
@@ -5771,7 +5202,6 @@ ScUserOpenInputDesktop(
     _In_ ACCESS_MASK DesiredAccess
     );
 
-EXTERN_C
 HWINSTA
 NTAPI
 ScUserOpenWindowStation(
@@ -5779,7 +5209,6 @@ ScUserOpenWindowStation(
     _In_ ACCESS_MASK DesiredAccess
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserPhysicalToLogicalPoint(
@@ -5787,7 +5216,6 @@ ScUserPhysicalToLogicalPoint(
     _In_ LPPOINT lpPoint
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserPrintWindow(
@@ -5796,7 +5224,6 @@ ScUserPrintWindow(
     _In_ ULONG nFlags
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUserQueryInformationThread(
@@ -5806,7 +5233,6 @@ ScUserQueryInformationThread(
     _Out_opt_ PULONG ThreadInformationLength
     );
 
-EXTERN_C
 ULONG_PTR
 NTAPI
 ScUserQueryWindow(
@@ -5814,7 +5240,6 @@ ScUserQueryWindow(
     _In_ WINDOWINFOCLASS WindowInfo
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUserRaiseLowerShellWindow(
@@ -5822,7 +5247,6 @@ ScUserRaiseLowerShellWindow(
     _In_ BOOLEAN SetWithOptions
     );
 
-EXTERN_C
 HWND
 NTAPI
 ScUserRealChildWindowFromPoint(
@@ -5830,7 +5254,6 @@ ScUserRealChildWindowFromPoint(
     _In_ POINT ptParentClientCoords
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserRedrawWindow(
@@ -5840,7 +5263,6 @@ ScUserRedrawWindow(
     _In_ ULONG flags
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserRegisterCloakedNotification(
@@ -5848,7 +5270,6 @@ ScUserRegisterCloakedNotification(
     _In_ BOOL Register
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserRegisterHotKey(
@@ -5858,7 +5279,6 @@ ScUserRegisterHotKey(
     _In_ ULONG vk
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserRemoveMenu(
@@ -5867,7 +5287,6 @@ ScUserRemoveMenu(
     _In_ ULONG uFlags
     );
 
-EXTERN_C
 ULONG
 NTAPI
 ScUserSendInput(
@@ -5876,42 +5295,38 @@ ScUserSendInput(
     _In_ LONG cbSize
     );
 
-EXTERN_C
 HWND
 NTAPI
 ScUserSetActiveWindow(
     _In_ HWND WindowHandle
     );
 
-EXTERN_C
 ULONG
 NTAPI
 ScUserSetAdditionalForegroundBoostProcesses(
     _In_ HWND WindowHandle
     );
 
-EXTERN_C
 ULONG
 NTAPI
 ScUserSetAdditionalPowerThrottlingProcess(
-    _In_ HWND WindowHandle
+    _In_ HWND WindowHandle,
+    _In_ ULONG ProcessHandlesCount,
+    _In_reads_(ProcessHandlesCount) PHANDLE ProcessHandles
     );
 
-EXTERN_C
 HWND
 NTAPI
 ScUserSetCapture(
     _In_ HWND WindowHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUserSetChildWindowNoActivate(
     _In_ HWND WindowHandle
     );
 
-EXTERN_C
 WORD
 NTAPI
 ScUserSetClassWord(
@@ -5920,7 +5335,6 @@ ScUserSetClassWord(
     _In_ WORD wNewWord
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserSetCursorPos(
@@ -5928,21 +5342,18 @@ ScUserSetCursorPos(
     _In_ LONG Y
     );
 
-EXTERN_C
 HWND
 NTAPI
 ScUserSetFocus(
     _In_ HWND WindowHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUserSetForegroundWindowForApplication(
     _In_ HWND WindowHandle
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUserSetInformationThread(
@@ -5952,7 +5363,6 @@ ScUserSetInformationThread(
     _In_ ULONG ThreadInformationLength
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserSetLayeredWindowAttributes(
@@ -5962,35 +5372,43 @@ ScUserSetLayeredWindowAttributes(
     _In_ DWORD dwFlags
     );
 
-EXTERN_C
 LPARAM
 NTAPI
 ScUserSetMessageExtraInfo(
     _In_ LPARAM lParam
     );
 
-EXTERN_C
-BOOL
+NTSTATUS
 NTAPI
 ScUserSetProcessRestrictionExemption(
     _In_ BOOL EnableExemption
     );
 
-EXTERN_C
-LOGICAL
+NTSTATUS
+NTAPI
+ScUserSetProcessUIAccessZorder(
+    VOID
+    );
+
+NTSTATUS
+NTAPI
+ScUserSetProcessWin32Capabilities(
+    _In_reads_(Count) const USER_PROCESS_CAP_ENTRY* Capabilities,
+    _In_ ULONG Count
+    );
+
+BOOL
 NTAPI
 ScUserSetProcessWindowStation(
     _In_ HWINSTA WindowStationHandle
     );
 
-EXTERN_C
-LOGICAL
+BOOL
 NTAPI
 ScUserSetThreadDesktop(
     _In_ HDESK DesktopHandle
     );
 
-EXTERN_C
 ULONG_PTR
 NTAPI
 ScUserSetTimer(
@@ -6001,7 +5419,6 @@ ScUserSetTimer(
     _In_ ULONG uToleranceDelay
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserSetWindowPlacement(
@@ -6009,7 +5426,6 @@ ScUserSetWindowPlacement(
     _Inout_ const WINDOWPLACEMENT* lpwndpl
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserSetWindowPos(
@@ -6022,8 +5438,7 @@ ScUserSetWindowPos(
     _In_ ULONG uFlags
     );
 
-EXTERN_C
-LOGICAL
+BOOL
 NTAPI
 ScUserSetWindowStationUser(
     _In_ HWINSTA WindowStationHandle,
@@ -6032,7 +5447,6 @@ ScUserSetWindowStationUser(
     _In_ ULONG UserSidLength
     );
 
-EXTERN_C
 WORD
 NTAPI
 ScUserSetWindowWord(
@@ -6041,7 +5455,6 @@ ScUserSetWindowWord(
     _In_ WORD wNewWord
     );
 
-EXTERN_C
 HWND
 NTAPI
 ScUserShellForegroundBoostProcess(
@@ -6049,14 +5462,12 @@ ScUserShellForegroundBoostProcess(
     _In_ HWND WindowHandle
     );
 
-EXTERN_C
 LONG
 NTAPI
 ScUserShowCursor(
     _In_ BOOL bShow
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserShowWindow(
@@ -6064,7 +5475,6 @@ ScUserShowWindow(
     _In_ LONG nCmdShow
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserShowWindowAsync(
@@ -6072,7 +5482,6 @@ ScUserShowWindowAsync(
     _In_ LONG nCmdShow
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserShutdownBlockReasonQuery(
@@ -6081,15 +5490,13 @@ ScUserShutdownBlockReasonQuery(
     _Inout_ PULONG BufferCount
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserShutdownReasonDestroy(
     _In_ HWND WindowHandle
     );
 
-EXTERN_C
-LOGICAL
+BOOL
 NTAPI
 ScUserSwitchDesktop(
     _In_ HDESK DesktopHandle,
@@ -6097,21 +5504,18 @@ ScUserSwitchDesktop(
     _In_opt_ ULONG FadeTime
     );
 
-EXTERN_C
 NTSTATUS
 NTAPI
 ScUserTestForInteractiveUser(
     _In_ PLUID AuthenticationId
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserTrackMouseEvent(
     _In_ LPTRACKMOUSEEVENT lpEventTrack
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserTrackPopupMenuEx(
@@ -6123,14 +5527,12 @@ ScUserTrackPopupMenuEx(
     _In_ LPTPMPARAMS lptpm
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserUnhookWinEvent(
     _In_ HWINEVENTHOOK hWinEventHook
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserUnregisterHotKey(
@@ -6138,7 +5540,6 @@ ScUserUnregisterHotKey(
     _In_ LONG id
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserUserHandleGrantAccess(
@@ -6147,7 +5548,6 @@ ScUserUserHandleGrantAccess(
     _In_ BOOL Grant
     );
 
-EXTERN_C
 BOOL
 NTAPI
 ScUserValidateRect(
@@ -6155,21 +5555,18 @@ ScUserValidateRect(
     _In_ const RECT* Rect
     );
 
-EXTERN_C
 HWND
 NTAPI
 ScUserWindowFromDC(
     _In_ HDC hDC
     );
 
-EXTERN_C
 HWND
 NTAPI
 ScUserWindowFromPhysicalPoint(
     _In_ POINT Point
     );
 
-EXTERN_C
 HWND
 NTAPI
 ScUserWindowFromPoint(
