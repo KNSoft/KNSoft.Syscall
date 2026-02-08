@@ -236,8 +236,8 @@ NTAPI
 ScAlertMultipleThreadByThreadId(
     _In_ PHANDLE MultipleThreadId,
     _In_ ULONG Count,
-    _In_ PVOID Boost,
-    _In_ ULONG BoostCount
+    _Inout_updates_opt_(ExtendedParameterCount) PPS_ALERT_THREAD_EXTENDED_PARAMETER ExtendedParameters,
+    _In_ ULONG ExtendedParameterCount
     );
 
 NTSTATUS
@@ -960,7 +960,7 @@ NTSTATUS
 NTAPI
 ScCreateIRTimer(
     _Out_ PHANDLE TimerHandle,
-    _In_ PVOID Reserved,
+    _In_ PULONG TimerId,
     _In_ ACCESS_MASK DesiredAccess
     );
 
@@ -1291,9 +1291,9 @@ NTSTATUS
 NTAPI
 ScCreateTimer2(
     _Out_ PHANDLE TimerHandle,
-    _In_opt_ PVOID Reserved1,
+    _In_opt_ PULONG TimerId,
     _In_opt_ PCOBJECT_ATTRIBUTES ObjectAttributes,
-    _In_ ULONG Attributes, // TIMER_TYPE
+    _In_ ULONG Attributes,
     _In_ ACCESS_MASK DesiredAccess
     );
 
@@ -4095,7 +4095,7 @@ ScSetTimer2(
     _In_ HANDLE TimerHandle,
     _In_ PLARGE_INTEGER DueTime,
     _In_opt_ PLARGE_INTEGER Period,
-    _In_ PT2_SET_PARAMETERS Parameters
+    _In_opt_ PT2_SET_PARAMETERS Parameters
     );
 
 NTSTATUS
@@ -4591,12 +4591,41 @@ ScYieldExecution(
     VOID
     );
 
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserAllowForegroundActivation(
+    VOID
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserAllowSetForegroundWindow(
+    _In_ ULONG ProcessId
+    );
+
+_Success_(return != 0)
+ULONG
+NTAPI
+ScUserArrangeIconicWindows(
+    _In_ HWND hwnd
+    );
+
 NTSTATUS
 NTAPI
 ScUserAttachThreadInput(
     _In_ ULONG IdAttach,
     _In_ ULONG IdAttachTo,
     _In_ BOOL Attach
+    );
+
+_Success_(return != NULL)
+_Must_inspect_result_
+HDWP
+NTAPI
+ScUserBeginDeferWindowPos(
+    _In_ ULONG NumWindowsHint
     );
 
 HDC
@@ -4610,6 +4639,14 @@ BOOL
 NTAPI
 ScUserBlockInput(
     _In_ BOOL BlockInput
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserBroadcastImeShowStatusChange(
+    _In_ HWND Ime,
+    _In_ LOGICAL Show
     );
 
 NTSTATUS
@@ -4653,10 +4690,105 @@ ScUserCalculatePopupWindowPosition(
     _Inout_ RECT* popupWindowPosition
     );
 
+ULONG_PTR
+NTAPI
+ScUserCallHwnd(
+    _In_ HWND hwnd,
+    _In_ ULONG xpfnProc
+    );
+
+ULONG_PTR
+NTAPI
+ScUserCallHwndLock(
+    _In_ HWND hwnd,
+    _In_ ULONG xpfnProc
+    );
+
+ULONG_PTR
+NTAPI
+ScUserCallHwndLockSafe(
+    _In_ HWND hwnd,
+    _In_ ULONG xpfnProc
+    );
+
+ULONG_PTR
+NTAPI
+ScUserCallHwndOpt(
+    _In_opt_ HWND hwnd,
+    _In_ ULONG xpfnProc
+    );
+
+ULONG_PTR
+NTAPI
+ScUserCallHwndParam(
+    _In_ HWND hwnd,
+    _In_ ULONG_PTR Param,
+    _In_ ULONG xpfnProc
+    );
+
+ULONG_PTR
+NTAPI
+ScUserCallHwndParamLock(
+    _In_ HWND hwnd,
+    _In_ ULONG_PTR Param,
+    _In_ ULONG xpfnProc
+    );
+
+ULONG_PTR
+NTAPI
+ScUserCallHwndParamLockSafe(
+    _In_ HWND hwnd,
+    _In_ ULONG_PTR Param,
+    _In_ ULONG xpfnProc
+    );
+
+ULONG_PTR
+NTAPI
+ScUserCallHwndSafe(
+    _In_ HWND hwnd,
+    _In_ ULONG xpfnProc
+    );
+
+ULONG_PTR
+NTAPI
+ScUserCallNoParam(
+    _In_ ULONG xpfnProc
+    );
+
+ULONG_PTR
+NTAPI
+ScUserCallOneParam(
+    _In_ ULONG_PTR Param,
+    _In_ ULONG xpfnProc
+    );
+
+ULONG_PTR
+NTAPI
+ScUserCallTwoParam(
+    _In_ ULONG_PTR Param1,
+    _In_ ULONG_PTR Param2,
+    _In_ ULONG xpfnProc
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserCancelQueueEventCompletionPacket(
+    VOID
+    );
+
 BOOL
 NTAPI
 ScUserCanCurrentThreadChangeForeground(
     VOID
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserChangeWindowMessageFilter(
+    _In_ ULONG Message,
+    _In_ ULONG Flag // MSGFLT_* WinUser.h
     );
 
 NTSTATUS
@@ -4665,6 +4797,13 @@ ScUserCheckAccessForIntegrityLevel(
     _In_ ULONG ProcessIdFirst,
     _In_ ULONG ProcessIdSecond,
     _Out_ PBOOLEAN GrantedAccess
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserCheckImeShowStatusInThread(
+    _In_ HWND Ime
     );
 
 NTSTATUS
@@ -4680,6 +4819,28 @@ ScUserChildWindowFromPointEx(
     _In_ HWND WindowHandle,
     _In_ POINT pt,
     _In_ ULONG flags
+    );
+
+NTSTATUS
+NTAPI
+ScUserCitSetInfo(
+    _In_ ULONG_PTR InfoFlags,
+    _In_ ULONG_PTR Info
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserClearWakeMask(
+    VOID
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserClearWindowState(
+    _In_ HWND hwnd,
+    _In_ ULONG Flag // WF*, WEF*, BF*, DF*, CBF*, EF*, SF*
     );
 
 BOOL
@@ -4723,6 +4884,29 @@ ScUserCreateAcceleratorTable(
     _In_ LONG cAccel
     );
 
+_Success_(return != NULL)
+_Must_inspect_result_
+HMENU
+NTAPI
+ScUserCreateMenu(
+    VOID
+    );
+
+_Success_(return != NULL)
+_Must_inspect_result_
+HMENU
+NTAPI
+ScUserCreatePopupMenu(
+    VOID
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserCreateSystemThreads(
+    VOID
+    );
+
 NTSTATUS
 NTAPI
 ScUserCreateWindowStation(
@@ -4732,8 +4916,21 @@ ScUserCreateWindowStation(
     _In_opt_ PVOID KeyboardLayoutOffset,
     _In_opt_ PVOID NlsTableOffset,
     _In_opt_ PVOID KeyboardDescriptor,
-    _In_opt_ PUNICODE_STRING LanguageIdString,
+    _In_opt_ PCUNICODE_STRING LanguageIdString,
     _In_opt_ ULONG KeyboardLocale
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserCsDdeUninitialize(
+    _In_ HANDLE hInst
+    );
+
+ULONG_PTR
+NTAPI
+ScUserDeferredDesktopRotation(
+    VOID
     );
 
 BOOL
@@ -4742,6 +4939,20 @@ ScUserDeleteMenu(
     _In_ HMENU MenuHandle,
     _In_ ULONG Position,
     _In_ ULONG Flags
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserDeregisterShellHookWindow(
+    _In_ HWND hwnd
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserDestroyCaret(
+    VOID
     );
 
 BOOL
@@ -4758,7 +4969,28 @@ ScUserDestroyWindow(
 
 BOOL
 NTAPI
+ScUserDisableProcessWindowFiltering(
+    VOID
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
 ScUserDisableProcessWindowsGhosting(
+    VOID
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserDoInitMessagePumpHook(
+    VOID
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserDoUninitMessagePumpHook(
     VOID
     );
 
@@ -4779,6 +5011,13 @@ ScUserDragObject(
     _In_ HCURSOR hcur
     );
 
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserDrainThreadCoreMessagingCompletions(
+    VOID
+    );
+
 BOOL
 NTAPI
 ScUserDrawAnimatedRects(
@@ -4786,6 +5025,71 @@ ScUserDrawAnimatedRects(
     _In_ int idAni,
     _In_ const RECT* lprcFrom,
     _In_ const RECT* lprcTo
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserDrawMenuBar(
+    _In_ HWND hwnd
+    );
+
+ULONG_PTR
+NTAPI
+ScUserDwmLockScreenUpdates(
+    _In_ LOGICAL LockUpdates
+    );
+
+_Must_inspect_result_
+ULONG_PTR
+NTAPI
+ScUserDWP_GetEnabledPopupOffset(
+    _In_ HWND hwnd
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserEnableModernAppWindowKeyboardIntercept(
+    _In_ HWND hwnd,
+    _In_ LOGICAL Enable
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserEnableMouseInPointerForThread(
+    VOID
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserEnablePerMonitorMenuScaling(
+    VOID
+    );
+
+_Success_(return != 0)
+ULONG_PTR
+NTAPI
+ScUserEnableSessionForMMCSS(
+    _In_ LOGICAL Enable
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserEnableShellWindowManagementBehavior(
+    _In_ ULONG_PTR Param1,
+    _In_ ULONG_PTR Param2
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserEnableWindow(
+    _In_ HWND hwnd,
+    _In_ LOGICAL Enable
     );
 
 BOOL
@@ -4799,6 +5103,21 @@ NTAPI
 ScUserEndPaint(
     _In_ HWND WindowHandle,
     _Inout_ const PAINTSTRUCT* lpPaint
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserEnsureDpiDepSysMetCacheForPlateau(
+    _In_ ULONG Dpi
+    );
+
+_Success_(return != 0)
+_Must_inspect_result_
+ULONG
+NTAPI
+ScUserEnumClipboardFormats(
+    _In_ ULONG Format
     );
 
 BOOL
@@ -4833,6 +5152,12 @@ ScUserFlashWindowEx(
     _In_ PFLASHWINFO pfwi
     );
 
+UINT_PTR
+NTAPI
+ScUserForceEnableNumpadTranslation(
+    _In_ LOGICAL ForceNumlockTranslation
+    );
+
 HWND
 NTAPI
 ScUserGetAncestor(
@@ -4852,11 +5177,20 @@ ScUserGetCaretPos(
     _In_ LPPOINT lpPoint
     );
 
-HWND
+_Success_(return != NULL)
+_Must_inspect_result_
+HCURSOR
+NTAPI
+ScUserGetClassIcoCur(
+    _In_ HWND hwnd,
+    _In_ ULONG Index
+    );
+
+ULONG
 NTAPI
 ScUserGetClassName(
     _In_ HWND WindowHandle,
-    _In_ BOOL Real,
+    _In_ BOOL RealClassName,
     _Out_ PUNICODE_STRING ClassName
     );
 
@@ -4891,12 +5225,28 @@ ScUserGetCursorInfo(
     _In_ PCURSORINFO pci
     );
 
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserGetCursorPos(
+    _Out_ PPOINT Point,
+    _In_ ULONG CursorPosType // CURSOR_POS_TYPE_*
+    );
+
 HDC
 NTAPI
 ScUserGetDCEx(
     _In_ HWND WindowHandle,
     _In_ HRGN hrgnClip,
     _In_ ULONG flags
+    );
+
+_Success_(return != 0)
+_Must_inspect_result_
+ULONG
+NTAPI
+ScUserGetDeviceChangeInfo(
+    VOID
     );
 
 BOOL
@@ -4951,6 +5301,37 @@ ScUserGetIconSize(
     _Out_ PULONG YY
     );
 
+_Success_(return != 0)
+_Must_inspect_result_
+LOGICAL
+NTAPI
+ScUserGetIMEShowStatus(
+    VOID
+    );
+
+_Success_(return != NULL)
+_Must_inspect_result_
+HDESK
+NTAPI
+ScUserGetInputDesktop(
+    VOID
+    );
+
+_Success_(return != NULL)
+_Must_inspect_result_
+HANDLE
+NTAPI
+ScUserGetInputEvent(
+    _In_ ULONG WakeMask // QS_* WinUser.h
+    );
+
+_Must_inspect_result_
+ULONG
+NTAPI
+ScUserGetKeyboardType(
+    _In_ ULONG TypeFlag // KEYBOARD_*
+    );
+
 BOOL
 NTAPI
 ScUserGetLayeredWindowAttributes(
@@ -4984,6 +5365,21 @@ ScUserGetMenuItemRect(
     _In_ PRECT MenuRect
     );
 
+_Must_inspect_result_
+ULONG
+NTAPI
+ScUserGetMessagePos(
+    VOID
+    );
+
+_Success_(return != NULL)
+_Must_inspect_result_
+HWND
+NTAPI
+ScUserGetModernAppWindow(
+    _In_ HWND ShellFrame
+    );
+
 LONG
 NTAPI
 ScUserGetMouseMovePointsEx(
@@ -5004,9 +5400,44 @@ ScUserGetObjectInformation(
     _In_ PULONG LengthNeeded
     );
 
-HWND
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserGetProcessDefaultLayout(
+    _Out_ PULONG DefaultLayout
+    );
+
+NTSTATUS
+NTAPI
+ScUserGetProcessUIContextInformation(
+    _In_ HANDLE ProcessHandle,
+    _Out_ PPROCESS_UICONTEXT_INFORMATION UIContext
+    );
+
+HWINSTA
 NTAPI
 ScUserGetProcessWindowStation(
+    VOID
+    );
+
+HANDLE
+NTAPI
+ScUserGetProp(
+    _In_ HWND WindowHandle,
+    _In_ PCWSTR String
+    );
+
+HANDLE
+NTAPI
+ScUserGetProp2(
+    _In_ HWND WindowHandle,
+    _In_ PCUNICODE_STRING String
+    );
+
+_Must_inspect_result_
+ULONG_PTR
+NTAPI
+ScUserGetQueueIocp(
     VOID
     );
 
@@ -5036,10 +5467,20 @@ ScUserGetRegisteredRawInputDevices(
     _In_ ULONG RawInputDeviceSize
     );
 
-HMENU
+_Success_(return != NULL)
+_Must_inspect_result_
+HWND
 NTAPI
 ScUserGetSendMessageReceiver(
-    _In_ HANDLE ThreadId
+    _In_ ULONG ThreadIdSender
+    );
+
+_Success_(return != 0)
+_Must_inspect_result_
+ULONG_PTR
+NTAPI
+ScUserGetSysMenuOffset(
+    _In_ HWND hwnd
     );
 
 HMENU
@@ -5068,6 +5509,20 @@ ScUserGetTitleBarInfo(
     _In_ PTITLEBARINFO pti
     );
 
+_Must_inspect_result_
+ULONG
+NTAPI
+ScUserGetUnpredictedMessagePos(
+    VOID
+    );
+
+_Must_inspect_result_
+ULONG
+NTAPI
+ScUserGetWindowContextHelpId(
+    _In_ HWND hwnd
+    );
+
 HDC
 NTAPI
 ScUserGetWindowDC(
@@ -5088,10 +5543,37 @@ ScUserGetWindowProcessHandle(
     _In_ ACCESS_MASK DesiredAccess
     );
 
+_Success_(return != 0)
+ULONG_PTR
+NTAPI
+ScUserGetWindowTrackInfoAsync(
+    _In_ HWND hwnd
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserGetWinStationInfo(
+    _Out_ PWSINFO WsInfo
+    );
+
 HWND
 NTAPI
 ScUserGhostWindowFromHungWindow(
     _In_ HWND WindowHandle
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserHandleSystemThreadCreationFailure(
+    VOID
+    );
+
+ULONG_PTR
+NTAPI
+ScUserHideCursorNoCapture(
+    VOID
     );
 
 BOOL
@@ -5107,6 +5589,20 @@ HWND
 NTAPI
 ScUserHungWindowFromGhostWindow(
     _In_ HWND WindowHandle
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserInitAnsiOem(
+    _In_reads_(256) PCHAR OemToAnsi,
+    _In_reads_(256) PCHAR AnsiToOem
+    );
+
+ULONG_PTR
+NTAPI
+ScUserInitThreadCoreMessagingIocp(
+    _In_ HWND hwnd
     );
 
 HICON
@@ -5140,6 +5636,13 @@ ScUserInvalidateRgn(
     _In_ BOOL Erase
     );
 
+_Must_inspect_result_
+LOGICAL
+NTAPI
+ScUserIsQueueAttached(
+    VOID
+    );
+
 BOOL
 NTAPI
 ScUserIsTouchWindow(
@@ -5147,11 +5650,40 @@ ScUserIsTouchWindow(
     _In_ PULONG Flags
     );
 
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserKillSystemTimer(
+    _In_ HWND hwnd,
+    _In_ UINT_PTR IDEvent
+    );
+
 BOOL
 NTAPI
 ScUserKillTimer(
     _In_ HWND WindowHandle,
     _In_ ULONG_PTR IDEvent
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserLoadCursorsAndIcons(
+    VOID
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserLoadUserApiHook(
+    VOID
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserLockSetForegroundWindow(
+    _In_ ULONG LockCode // LSFW_* WinUser.h
     );
 
 BOOL
@@ -5167,12 +5699,35 @@ ScUserLogicalToPhysicalPoint(
     _In_ LPPOINT lpPoint
     );
 
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserLW_LoadFonts(
+    _In_ LOGICAL Remote
+    );
+
+_Success_(return != NULL)
+_Must_inspect_result_
+_Ret_maybenull_
+PVOID
+NTAPI
+ScUserMapDesktopObject(
+    _In_ HANDLE h
+    );
+
 LONG
 NTAPI
 ScUserMenuItemFromPoint(
     _In_ HWND WindowHandle,
     _In_ HMENU MenuHandle,
     _In_ POINT ptScreen
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserMessageBeep(
+    _In_ ULONG Type // MB_* (MB_ICONMASK) WinUser.h
     );
 
 BOOL
@@ -5184,6 +5739,22 @@ ScUserMoveWindow(
     _In_ LONG Width,
     _In_ LONG Height,
     _In_ BOOL Repaint
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserNlsKbdSendIMENotification(
+    _In_ ULONG ImeOpen,
+    _In_ ULONG ImeConversion
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserNotifyOverlayWindow(
+    _In_ HWND hwnd,
+    _In_ LOGICAL Enable
     );
 
 HANDLE
@@ -5214,6 +5785,27 @@ NTAPI
 ScUserPhysicalToLogicalPoint(
     _In_ HWND WindowHandle,
     _In_ LPPOINT lpPoint
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserPlayEventSound(
+    _In_ ULONG idSound // USER_SOUND_*
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserPostQuitMessage(
+    _In_ LONG ExitCode
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserPrepareForLogoff(
+    VOID
     );
 
 BOOL
@@ -5254,6 +5846,41 @@ ScUserRealChildWindowFromPoint(
     _In_ POINT ptParentClientCoords
     );
 
+ULONG
+NTAPI
+ScUserRealizePalette(
+    _In_ HDC hdc
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserReassociateQueueEventCompletionPacket(
+    VOID
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserRedrawFrame(
+    _In_ HWND hwnd
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserRedrawFrameAndHook(
+    _In_ HWND hwnd
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserRedrawTitle(
+    _In_ HWND hwnd,
+    _In_ ULONG Flags // DC_*
+    );
+
 BOOL
 NTAPI
 ScUserRedrawWindow(
@@ -5270,6 +5897,14 @@ ScUserRegisterCloakedNotification(
     _In_ BOOL Register
     );
 
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserRegisterGhostWindow(
+    _In_ HWND Ghost,
+    _In_ HWND Hung
+    );
+
 BOOL
 NTAPI
 ScUserRegisterHotKey(
@@ -5279,12 +5914,183 @@ ScUserRegisterHotKey(
     _In_ ULONG vk
     );
 
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserRegisterLogonProcess(
+    _In_ ULONG ProcessId,
+    _In_ PLUID LuidConnect
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserRegisterLPK(
+    _In_ ULONG LpkEntryPoints // LPK_FLAG_*
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserRegisterShellHookWindow(
+    _In_ HWND hwnd
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserRegisterSiblingFrostWindow(
+    _In_ HWND hwndFrost,
+    _In_ HWND hwnd
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserRegisterSystemThread(
+    _In_ ULONG Flags // RST_*
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserRegisterUserHungAppHandlers(
+    _In_ PFNW32ET W32EndTask,
+    _In_ HANDLE EventWowExec
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserRegisterWindowArrangementCallout(
+    _In_ HWND hwnd,
+    _In_ LOGICAL Register
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserReleaseCapture(
+    VOID
+    );
+
+_Must_inspect_result_
+ULONG
+NTAPI
+ScUserRemoteConnectState(
+    VOID
+    );
+
+NTSTATUS
+NTAPI
+ScUserRemoteConsoleShadowStop(
+    VOID
+    );
+
+NTSTATUS
+NTAPI
+ScUserRemoteDisconnect(
+    VOID
+    );
+
+NTSTATUS
+NTAPI
+ScUserRemoteNotify(
+    _In_ struct _DONOTIFYDATA* DoNotifyData
+    );
+
+NTSTATUS
+NTAPI
+ScUserRemotePassthruDisable(
+    VOID
+    );
+
+NTSTATUS
+NTAPI
+ScUserRemotePassthruEnable(
+    VOID
+    );
+
+NTSTATUS
+NTAPI
+ScUserRemoteReconnect(
+    _In_ struct _DOCONNECTDATA* DoConnectData
+    );
+
+NTSTATUS
+NTAPI
+ScUserRemoteShadowCleanup(
+    _In_reads_bytes_(ThinwireDataLength) PVOID ThinwireData,
+    _In_ ULONG ThinwireDataLength
+    );
+
+NTSTATUS
+NTAPI
+ScUserRemoteShadowSetup(
+    VOID
+    );
+
+NTSTATUS
+NTAPI
+ScUserRemoteShadowStart(
+    _In_reads_bytes_(ThinwireDataLength) PVOID ThinwireData,
+    _In_ ULONG ThinwireDataLength
+    );
+
+NTSTATUS
+NTAPI
+ScUserRemoteShadowStop(
+    VOID
+    );
+
+NTSTATUS
+NTAPI
+ScUserRemoteThinwireStats(
+    _Out_ struct CACHE_STATISTICS* Stats
+    );
+
 BOOL
 NTAPI
 ScUserRemoveMenu(
     _In_ HMENU MenuHandle,
     _In_ ULONG uPosition,
     _In_ ULONG uFlags
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserRemoveQueueCompletion(
+    VOID
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserReplyMessage(
+    _In_ LRESULT Result
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserResetDblClk(
+    VOID
+    );
+
+_Must_inspect_result_
+ULONG_PTR
+NTAPI
+ScUserScaleSystemMetricForDPIWithoutCache(
+    _In_ ULONG Metric,
+    _In_ ULONG ToDpi
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserScheduleDispatchNotification(
+    _In_ HWND hwnd
     );
 
 ULONG
@@ -5315,10 +6121,32 @@ ScUserSetAdditionalPowerThrottlingProcess(
     _In_reads_(ProcessHandlesCount) PHANDLE ProcessHandles
     );
 
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserSetCancelRotationDelayHintWindow(
+    _In_ HWND hwnd
+    );
+
 HWND
 NTAPI
 ScUserSetCapture(
     _In_ HWND WindowHandle
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserSetCaretBlinkTime(
+    _In_ ULONG Milliseconds
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserSetCaretPos(
+    _In_ LONG x,
+    _In_ LONG y
     );
 
 NTSTATUS
@@ -5342,10 +6170,39 @@ ScUserSetCursorPos(
     _In_ LONG Y
     );
 
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserSetDialogPointer(
+    _In_ HWND hwnd,
+    _In_ ULONG_PTR Ptr
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserSetDialogSystemMenu(
+    _In_ HWND hwnd
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserSetDoubleClickTime(
+    _In_ ULONG Milliseconds
+    );
+
 HWND
 NTAPI
 ScUserSetFocus(
     _In_ HWND WindowHandle
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserSetForegroundWindow(
+    _In_ HWND hwnd
     );
 
 NTSTATUS
@@ -5375,7 +6232,29 @@ ScUserSetLayeredWindowAttributes(
 LPARAM
 NTAPI
 ScUserSetMessageExtraInfo(
-    _In_ LPARAM lParam
+    _In_ LPARAM Param
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserSetModernAppWindow(
+    _In_ HWND ShellFrame,
+    _In_ HWND App
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserSetMsgBox(
+    _In_ HWND hwnd
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserSetProcessDefaultLayout(
+    _In_ ULONG DefaultLayout // LAYOUT_* wingdi.h
     );
 
 NTSTATUS
@@ -5403,10 +6282,46 @@ ScUserSetProcessWindowStation(
     _In_ HWINSTA WindowStationHandle
     );
 
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserSetProgmanWindow(
+    _In_opt_ HWND hwnd
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserSetShellChangeNotifyHWND(
+    _In_ HWND hwnd
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserSetSysMenu(
+    _In_ HWND hwnd
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserSetTaskmanWindow(
+    _In_opt_ HWND hwnd
+    );
+
 BOOL
 NTAPI
 ScUserSetThreadDesktop(
     _In_ HDESK DesktopHandle
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserSetThreadQueueMergeSetting(
+    _In_ ULONG ThreadId,
+    _In_ ULONG Flags
     );
 
 ULONG_PTR
@@ -5417,6 +6332,42 @@ ScUserSetTimer(
     _In_ ULONG uElapse,
     _In_ TIMERPROC lpTimerFunc,
     _In_ ULONG uToleranceDelay
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserSetTSFEventState(
+    _In_ ULONG StateFlags
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserSetVisible(
+    _In_ HWND hwnd,
+    _In_ ULONG Flags // SV_*
+    );
+
+LOGICAL
+NTAPI
+ScUserSetWaitForQueueAttach(
+    _In_ LOGICAL Waiting
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserSetWatermarkStrings(
+    _In_ PCUNICODE_STRING StringTable
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserSetWindowContextHelpId(
+    _In_ HWND hwnd,
+    _In_ ULONG ContextId
     );
 
 BOOL
@@ -5436,6 +6387,14 @@ ScUserSetWindowPos(
     _In_ LONG cx,
     _In_ LONG cy,
     _In_ ULONG uFlags
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserSetWindowState(
+    _In_ HWND hwnd,
+    _In_ ULONG Flag // WF*, WEF*, BF*, DF*, CBF*, EF*, SF*
     );
 
 BOOL
@@ -5468,6 +6427,21 @@ ScUserShowCursor(
     _In_ BOOL bShow
     );
 
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserShowOwnedPopups(
+    _In_ HWND Owner,
+    _In_ LOGICAL Show
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserShowStartGlass(
+    _In_ ULONG Timeout
+    );
+
 BOOL
 NTAPI
 ScUserShowWindow(
@@ -5496,6 +6470,12 @@ ScUserShutdownReasonDestroy(
     _In_ HWND WindowHandle
     );
 
+LOGICAL
+NTAPI
+ScUserSwapMouseButton(
+    _In_ LOGICAL SwapButtons
+    );
+
 BOOL
 NTAPI
 ScUserSwitchDesktop(
@@ -5504,10 +6484,25 @@ ScUserSwitchDesktop(
     _In_opt_ ULONG FadeTime
     );
 
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserSwitchToThisWindow(
+    _In_ HWND hwnd,
+    _In_ LOGICAL AltTab
+    );
+
 NTSTATUS
 NTAPI
 ScUserTestForInteractiveUser(
     _In_ PLUID AuthenticationId
+    );
+
+_Must_inspect_result_
+LOGICAL
+NTAPI
+ScUserThreadMessageQueueAttached(
+    _In_opt_ ULONG ThreadId
     );
 
 BOOL
@@ -5527,6 +6522,14 @@ ScUserTrackPopupMenuEx(
     _In_ LPTPMPARAMS lptpm
     );
 
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserUnhookWindowsHook(
+    _In_ LONG FilterType,
+    _In_ HOOKPROC FilterProc
+    );
+
 BOOL
 NTAPI
 ScUserUnhookWinEvent(
@@ -5540,6 +6543,35 @@ ScUserUnregisterHotKey(
     _In_ LONG id
     );
 
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserUpdateClientRect(
+    _In_ HWND hwnd
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserUpdatePerUserImmEnabling(
+    VOID
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserUpdateWindow(
+    _In_ HWND hwnd
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserUpdateWindows(
+    _In_ HWND hwnd,
+    _In_ HRGN hrgn
+    );
+
 BOOL
 NTAPI
 ScUserUserHandleGrantAccess(
@@ -5548,11 +6580,32 @@ ScUserUserHandleGrantAccess(
     _In_ BOOL Grant
     );
 
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserUserPowerCalloutWorker(
+    VOID
+    );
+
 BOOL
 NTAPI
 ScUserValidateRect(
     _In_ HWND WindowHandle,
     _In_ const RECT* Rect
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserValidateRgn(
+    _In_ HWND hwnd,
+    _In_ HRGN hrgn
+    );
+
+NTSTATUS
+NTAPI
+ScUserWakeRITForShutdown(
+    VOID
     );
 
 HWND
@@ -5571,6 +6624,20 @@ HWND
 NTAPI
 ScUserWindowFromPoint(
     _In_ POINT Point
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserWOWModuleUnload(
+    _In_ HANDLE Module
+    );
+
+_Success_(return != 0)
+LOGICAL
+NTAPI
+ScUserZapActiveAndFocus(
+    VOID
     );
 
 EXTERN_C_END

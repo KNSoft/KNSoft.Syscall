@@ -25,6 +25,9 @@ Syscall_DecodeThunkChar(
     } else if (Ch >= 53 && Ch <= 62)
     {
         return Ch - 53 + '0';
+    } else if (Ch == 63)
+    {
+        return '_';
     } else
     {
         return ANSI_NULL;

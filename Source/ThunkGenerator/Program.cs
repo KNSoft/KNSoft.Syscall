@@ -143,6 +143,8 @@ void HandleSyscalls(List<Cpp.Function> Syscalls, Boolean IsWin32u)
             } else if (Name[iName] >= '0' && Name[iName] <= '9')
             {
                 Char = (Byte)(Name[iName] - '0' + 53);
+            } else if (Name[iName] == '_') {
+                Char = 63;
             } else
             {
                 throw new InvalidDataException("Unrecognized character in name: " + Name);
